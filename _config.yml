@@ -21,6 +21,7 @@ timezone: Asia/Shanghai
 theme: minima
 plugins:
   - jekyll-feed
+show_excerpts: true
 
 # Exclude from processing.
 exclude:
@@ -40,7 +41,3 @@ exclude:
   - "**/*.aux"
   - "**/*.synctex.gz"
   - "_posts/try/"
-  # Temporarily excluding this post due to Liquid syntax errors.
-  # The permanent fix is to edit the file and wrap the Sphinx code
-  # blocks with {% raw %} ... {% endraw %} tags.
-  - "_posts/2025-05-31-Sphinx侧边栏功能完全指南.md"
