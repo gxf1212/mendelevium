@@ -3,7 +3,8 @@ title: Mendelevium
 tagline: A blog on MD simulations, chemoinformatics, and more.
 description: >-
   Mendelevium is a personal blog sharing my research and life experiences. I will write about MD simulations, chemoinformatics, Linux, basic tools. I will also share my thoughts on web scraping, web development, machine learning, and so on.
-# The url and baseurl are configured for your GitHub Pages project site.
+
+# GitHub Pages settings
 url: "https://gxf1212.github.io" 
 baseurl: "/mendelevium" 
 
@@ -11,8 +12,6 @@ baseurl: "/mendelevium"
 author: Xufan Gao
 location: "Hangzhou, Zhejiang, China"
 affiliation: "Zhejiang University (ZJU)"
-# You can add your avatar image here. Place the image in /assets/img/
-# avatar: "/assets/img/my-avatar.jpg"
 
 # --- Social Links ---
 social:
@@ -33,9 +32,6 @@ profile_img: "/assets/img/profile.webp"
 email: gxf1212@zju.edu.cn
 github_username: gxf1212
 twitter_username: Gaoxufan
-instagram_username: instagram
-linkedin_username: linkedin
-facebook_username: facebook
 
 # External API
 giscus_repo: "gxf1212/mendelevium"
@@ -45,20 +41,32 @@ giscus_categoryId: "DIC_kwDOKdHdGs4CiA-m"
 goatcounter_code: "gxf1212-mendelevium"
 google_analytics: ""
 
-# If your repo name follows the format "<user-name>.github.io", then leave the below blank.
-# Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
-baseurl:
-
-# Build settings
+# Build settings for GitHub Pages
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-loading-lazy
+  - jekyll-paginate
+  - jekyll-gist
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
 
 exclude:
   - docs/
   - old/
+  - _pages/archive/
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - "*.gemspec"
+  - README.md
+  - LICENSE
 
 collections:
   pages:
@@ -74,7 +82,10 @@ defaults:
       layout: "page"
       date: "1900-01-01"
 
-# Markdown newline activator 
+# Markdown settings
 kramdown:
   input: GFM
-  hard_wrap: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
