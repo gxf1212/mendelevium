@@ -17,6 +17,7 @@ gem "jekyll-last-modified-at", "~> 1.3"
 gem "jekyll-include-cache", "~> 0.2"
 gem "jekyll-redirect-from"
 gem "kramdown-parser-gfm", "~> 1.1"
+gem "faraday-retry"
 
 # Windows-specific gems for timezone data and performance.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
