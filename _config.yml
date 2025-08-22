@@ -33,11 +33,12 @@ email: gxf1212@zju.edu.cn
 github_username: gxf1212
 twitter_username: Gaoxufan
 
-# External API
-giscus_repo: "gxf1212/mendelevium"
-giscus_repoId: "MDEwOlJlcG9zaXRvcnk3MzY2MzAyOTA="
-giscus_category: "General"
-giscus_categoryId: "DIC_kwDOKdHdGs4CiA-m"
+# External API - You need to configure these manually
+# To setup Giscus: Go to https://giscus.app/ and follow the setup for your repository
+# giscus_repo: "gxf1212/mendelevium"
+# giscus_repoId: "YOUR_REPO_ID"
+# giscus_category: "General"
+# giscus_categoryId: "YOUR_CATEGORY_ID"
 goatcounter_code: "gxf1212-mendelevium"
 google_analytics: ""
 
@@ -71,7 +72,7 @@ exclude:
 collections:
   pages:
     output: true
-    permalink: /:path.html
+    permalink: /:path/
 
 defaults:
   -

@@ -17,16 +17,16 @@ Explore the latest research and technical insights in computational chemistry an
 
 ## Categories
 
-- [**Drug Design**](/Drug%20Design/) - Research in computational drug discovery
-- [**Machine Learning & AI**](/Machine%20Learning%20&%20AI/) - AI applications in molecular sciences  
-- [**Molecular Dynamics**](/Molecular%20Dynamics/) - MD simulation research and studies
-- [**MD Tools**](/MD%20Tools/) - Software tools for molecular dynamics
-- [**Techniques**](/Techniques/) - Programming, databases, and system administration
-- [**Field Knowledge**](/Field%20Knowledge/) - Biology and Physics fundamentals
-- [**Nano Polymers**](/Nano%20Polymers/) - Polymer and nanomaterial research
+- [**Drug Design**](Drug%20Design/) - Research in computational drug discovery
+- [**Machine Learning & AI**](Machine%20Learning%20&%20AI/) - AI applications in molecular sciences  
+- [**Molecular Dynamics**](Molecular%20Dynamics/) - MD simulation research and studies
+- [**MD Tools**](MD%20Tools/) - Software tools for molecular dynamics
+- [**Techniques**](Techniques/) - Programming, databases, and system administration
+- [**Field Knowledge**](Field%20Knowledge/) - Biology and Physics fundamentals
+- [**Nano Polymers**](Nano%20Polymers/) - Polymer and nanomaterial research
 
 ## About
 
 This blog shares research experiences and technical knowledge in molecular dynamics simulations, chemoinformatics, machine learning applications in chemistry, and related computational tools. 
 
-[Learn more about the author →](/about)
+[Learn more about the author →](about/)

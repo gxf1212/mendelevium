@@ -4,6 +4,7 @@ old
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+Gemfile.lock
 vendor
 Archive
 _pages/archive
