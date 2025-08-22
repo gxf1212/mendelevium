@@ -1,21 +1,9 @@
 source "https://rubygems.org"
 
-# Use Jekyll for local development, GitHub Pages for deployment
-gem "jekyll", "~> 4.3.0"
-
-# GitHub Pages compatible plugins
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-sitemap"
-  gem "jekyll-seo-tag"
-  gem "jekyll-paginate"
-  gem "jekyll-gist"
-end
-
-# For GitHub Pages deployment
+# Use GitHub Pages for deployment
 gem "github-pages", group: :jekyll_plugins
 
-# Required gems
+# Required gems for GitHub Pages compatibility
 gem "kramdown-parser-gfm"
 gem "webrick", "~> 1.7"
 
