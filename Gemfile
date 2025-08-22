@@ -1,11 +1,12 @@
 source "https://rubygems.org"
 
-# Specify the Jekyll version. Chirpy works well with this.
+# Specifies the Jekyll version for your project.
 gem "jekyll", "~> 4.3.3"
 
 # --- Chirpy Theme and its Dependencies ---
-# This is the main theme gem.
-gem "jekyll-theme-chirpy", "~> 6.0"
+# Use the jekyll-remote-theme plugin to fetch the theme from GitHub.
+# This is the standard way to use unsupported themes on GitHub Pages.
+gem "jekyll-remote-theme"
 
 # These are plugins required by the Chirpy theme for its features.
 gem "jekyll-feed", "~> 0.17"
@@ -17,7 +18,6 @@ gem "jekyll-last-modified-at", "~> 1.3"
 gem "jekyll-include-cache", "~> 0.2"
 gem "jekyll-redirect-from"
 gem "kramdown-parser-gfm", "~> 1.1"
-gem "faraday-retry"
 
 # Windows-specific gems for timezone data and performance.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
