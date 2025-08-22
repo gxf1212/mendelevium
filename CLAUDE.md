@@ -35,7 +35,9 @@ _pages/
 ```
 
 - Archive\jekyll-theme-satellite-master是原始模板，报错了可以参考，尤其是里面的docs
-- 
+- 为什么单篇文章，如2025-08-13-deep-covboost-ai-covid-target会出现在侧边栏？不应该出现的
+    bookmark: false我已经删掉了，就解决了，以后都不要写
+
 
 ## 注意事项 / Notes
 
