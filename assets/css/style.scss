@@ -64,3 +64,52 @@ input::-webkit-search-results-decoration{
 @import "post";
 @import "search";
 @import "darkmode";
+
+/* Mermaid diagram styling */
+.mermaid {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 300px;
+  margin: 1.5rem 0;
+  text-align: center;
+  overflow-x: auto;
+  
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    min-width: 600px;
+    font-size: 14px !important;
+  }
+  
+  /* Flow chart specific styles */
+  .node rect,
+  .node circle,
+  .node ellipse,
+  .node polygon {
+    stroke-width: 2px !important;
+  }
+  
+  /* Text sizing for better readability */
+  text {
+    font-size: 12px !important;
+    font-family: "Nunito Sans", 'Lucida Sans', sans-serif !important;
+  }
+  
+  /* Mindmap specific styling */
+  .mindmap-node {
+    font-size: 12px !important;
+  }
+  
+  /* Ensure diagrams are responsive */
+  @media (max-width: 768px) {
+    svg {
+      min-width: 100% !important;
+      font-size: 10px !important;
+    }
+    
+    text {
+      font-size: 9px !important;
+    }
+  }
+}

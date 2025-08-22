@@ -9,7 +9,7 @@ tags: [boltz-2, binding-affinity, ai, drug-discovery, fep, mit, deep-learning, p
 
 链接：http://jeremywohlwend.com/assets/boltz2.pdf
 
-![image-20250606225926808](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606225926808.png)
+![image-20250606225926808](Boltz-2.assets/image-20250606225926808.png)
 
 生物分子相互作用的精确建模是现代生物学的核心挑战。近年来，以AlphaFold3 和Boltz-1 为代表的AI模型在生物分子复合物的**结构预测**方面取得了革命性突破。然而，**结合亲和力**——这一衡量分子功能和药物疗效的关键性质——的预测仍然是该领域一块难啃的硬骨头。
 
@@ -120,7 +120,7 @@ Boltz-2的出现，正是为了打破这一僵局。它的成功建立在**数�
 
 Boltz-2的架构如图2所示，由四个主要模块构成：**Trunk（主干）**、**Denoising Module（去噪模块）**、**Confidence Module（置信度模块）和Affinity Module（亲和力模块）**。下面将重点介绍其与Boltz-1相比的主要区别，特别是可控性组件和亲和力模块。
 
-![image-20250606230108751](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606230108751.png)
+![image-20250606230108751](Boltz-2.assets/image-20250606230108751.png)
 
 ### 3.1 Trunk模块：强大的特征提取器
 
@@ -265,12 +265,12 @@ Boltz-2不仅能预测，还能**指导**新分子的生成。在评估中，Bol
 
 - **PDB通用评估集**：在一个包含2024年和2025年发布的、与训练集显著不同的新结构测试集上，Boltz-2的性能与Boltz-1相当或略有提升。尤其是在**RNA链**和**DNA-蛋白质复合物**这些模态上，提升最为显著，这表明大规模蒸馏数据策略对提升模型性能至关重要。与其他模型相比，Boltz-2性能具有竞争力，略优于Chai-1和ProteinX，但稍逊于AlphaFold3。
 
-![image-20250606230304038](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606230304038.png)
+![image-20250606230304038](Boltz-2.assets/image-20250606230304038.png)
 
 - **抗体基准测试**：在具有挑战性的抗体-抗原结构预测上，Boltz-2相比Boltz-1有中等程度的提升，进一步缩小了开源模型与专有模型（如AlphaFold3）之间的差距。
 - **Polaris-ASAP挑战赛**：这是一个针对新冠（SARS-CoV-2）和中东呼吸综合征（MERS-CoV）主蛋白酶配体姿态预测的竞赛。值得注意的是，**Boltz-2无需任何微调或额外的物理弛豫，其开箱即用的性能就与竞赛前5名的顶尖选手相当**，而这些选手大多使用了微调过的Boltz-1或AlphaFold3模型。
 
-![image-20250606230401302](E:\GitHub-repo\mendelevium\_posts\Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606230401302.png)
+![image-20250606230401302](Boltz-2.assets/image-20250606230401302.png)
 
 ### 5.2 蛋白质动力学捕捉：更精准的动态视图
 
@@ -288,7 +288,7 @@ Boltz-2不仅能预测，还能**指导**新分子的生成。在评估中，Bol
 > - **Recall lDDT**：衡量**真实MD系综中的每个构象**是否都能在**预测的系综中找到一个与之相似的构象**。高分表示模型捕捉到了真实构象的多样性。
 > - **Diversity lDDT**：衡量预测系综内部构象之间的平均不相似度（1-lDDT）。高分表示模型生成了多样化的构象，而不是单一的、重复的结构。
 
-![image-20250606230401302 - 副本](E:\GitHub-repo\mendelevium\_posts\Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606230401302 - 副本.png)
+![image-20250606230401302 - 副本](Boltz-2.assets/image-20250606230401302%20-%20副本.png)
 
 ### 5.3 关键突破：结合亲和力预测性能媲美FEP
 
@@ -309,13 +309,13 @@ Boltz-2不仅能预测，还能**指导**新分子的生成。在评估中，Bol
   - **完整OpenFE子集**：在包含876个复合物的更大规模OpenFE子集上，Boltz-2的性能同样接近了广泛使用的开源相对FEP方法OpenFE。
 - **CASP16亲和力挑战赛**：这是一个严格的盲测基准。竞赛参与者有数周时间，并可使用各种定制化的机器学习和物理工具。然而，**Boltz-2在没有任何微调或输入管理的情况下，其性能也明显优于所有排名靠前的参赛者**。
 
-![image-20250606230448781](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606230448781.png)
+![image-20250606230448781](Boltz-2.assets/image-20250606230448781.png)
 
 #### 5.3.2 模型泛化能力与数据泄漏检验
 
 一个常见的担忧是，AI模型的高性能是否仅仅因为它“记住”了训练集中相似的分子？附录中的**图10**有力地回应了这一质疑。该图分析了FEP+基准测试中，测试化合物与训练集化合物的最大Tanimoto相似度（一种衡量分子结构相似性的指标）和模型预测性能之间的关系。
 
-![image-20250606231227117](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606231227117.png)
+![image-20250606231227117](Boltz-2.assets/image-20250606231227117.png)
 
 **结论是：模型的预测性能与化合物的相似度之间没有显著的相关性。** 无论测试化合物与训练集中的分子是远亲还是近邻，模型的表现都相对稳定。这强有力地证明了Boltz-2并非简单地“记忆”数据，而是学习到了更普适的、能够泛化到新化学空间的物理和化学规律。
 
@@ -323,7 +323,7 @@ Boltz-2不仅能预测，还能**指导**新分子的生成。在评估中，Bol
 
 附录中的**图12**和**图14**展示了Boltz-2在公共验证集和私有工业界数据集上，针对**每一个具体实验（assay）**的性能散点图。这些图揭示了一个重要且真实的结论：**Boltz-2的性能在不同靶点和实验之间存在显著的异质性。**
 
-![image-20250606231522792](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606231522792.png)
+![image-20250606231522792](Boltz-2.assets/image-20250606231522792.png)
 
 可以看到，在某些靶点上（如某些激酶），模型的预测值与实验值高度相关（皮尔逊相关系数达0.5+）。然而，在另一些靶点上（如某些GPCR），相关性则要低得多。
 
@@ -331,7 +331,7 @@ Boltz-2不仅能预测，还能**指导**新分子的生成。在评估中，Bol
 
 - **真实的工业界挑战**：团队还在8个来自Recursion的、代表复杂真实世界药物化学项目的**内部盲测数据集**上评估了Boltz-2。结果显示，Boltz-2依然大幅超越其他机器学习基线，并在8个项目中的3个上取得了大于0.55的皮尔逊相关性。但同时，在另外5个项目上性能有限，这也提醒我们，公共基准上的强大性能并不总能直接转化为在所有真实世界复杂问题上的成功，这与FEP方法在某些蛋白类别（如GPCR）上也表现不佳的情况类似。
 
-![image-20250606230533375](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606230533375.png)
+![image-20250606230533375](Boltz-2.assets/image-20250606230533375.png)
 
 ### 5.4 虚拟筛选：大规模、高精度的苗头发现
 
@@ -357,7 +357,7 @@ Boltz-2不仅能预测，还能**指导**新分子的生成。在评估中，Bol
     - **生成式筛选流程表现更佳**：SynFlowNet生成的所有10个最终候选分子都被Boltz-ABFE预测为能够与TYK2结合，且平均亲和力高于固定库筛选出的分子，同时所需的计算预算远低于对整个HLL库的筛选。
     - **新颖性分析**：通过与PDB中已知的TYK2抑制剂进行Tanimoto相似性比较，发现SynFlowNet生成的化合物具有显著的新颖性，与已知结合物的最大骨架相似度仅为0.396。
 
-![image-20250606230627708](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606230627708.png)
+![image-20250606230627708](Boltz-2.assets/image-20250606230627708.png)
 
 前瞻性筛选的结果令人振奋，尤其是生成式筛选流程。附录中的**图20-23**详细展示了这一流程的成果。
 
@@ -365,7 +365,7 @@ Boltz-2不仅能预测，还能**指导**新分子的生成。在评估中，Bol
 
 * **惊人的新颖性**：这真的是AI的创造力吗？附录**图22**的相似性矩阵和**图23**的分子对比较给出了肯定的答案。
 
-![image-20250606231955941](Boltz-2 Towards Accurate and Efficient Binding Affinity Prediction.assets\image-20250606231955941.png)
+![image-20250606231955941](Boltz-2.assets/image-20250606231955941.png)
 
 分析显示，SynFlowNet生成的化合物与PDB中所有已知的TYK2抑制剂相比，具有**显著的化学新颖性**（最大骨架Tanimoto相似度仅为0.396）。有趣的是，模型自主地“发现”并利用了吡咯并嘧啶（pyrrolopyrimidine）这类经典的激酶铰链区结合基序（hinge-binding motif），但同时将这一基序嫁接到了全新的、多样的化学骨架上。这表明**Boltz-2不仅是在模仿，更是在进行有意义的、基于化学原理的创新组合**。
 
