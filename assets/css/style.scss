@@ -1,104 +1,66 @@
-// 首先，导入 Minima 主题的原始样式。
-// 我们是在它的基础上进行扩展和覆盖，而不是完全重写。
-@import "chirpy";
+---
+---
+$baseurl: "{{ site.baseurl }}";
 
-// --- 字体定制 ---
-// 我们将从 Google Fonts 引入一个现代、清晰的字体 'Inter'。
-// 字体链接将在第 2 步中添加到网站的 <head> 部分。
-
-// --- 全局样式覆盖 ---
-
-// 基础页面样式：为整个网站设置更专业的字体、背景和文本颜色。
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background-color: #f8f9fa; // 使用一个非常柔和的灰色背景，比纯白更护眼
-  color: #212529; // 使用更柔和的深灰色作为主要文本颜色
-  line-height: 1.7; // 增加行高以提高长文案的可读性
-  font-size: 17px; // 稍微增大基础字号
+html, body {
+  margin:0;
+  padding:0;
 }
 
-// --- 头部和导航栏样式 ---
-.site-header {
-  border-top: 5px solid #0056b3; // 添加一条深蓝色顶边作为强调
-  border-bottom: 1px solid #dee2e6; // 使用更柔和的边框颜色
-  background-color: #ffffff; // 确保头部背景是纯白，与内容区形成对比
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04); // 添加一层微妙的阴影
+.fonts-loaded {
+  a, span, p { font-family:"Nunito Sans", 'Lucida Sans', sans-serif; }
+  h1, h2, h3 { font-family:"Lato", Helvetica, sans-serif; }
+  mark { font-family:'Righteous', sans-serif; }
 }
 
-.site-title, .site-title:visited {
-  color: #212529 !important; // 网站标题使用主文本颜色
-  font-weight: bold;
+a { text-decoration:none; }
+a, span, p, h1, h2, h3, i { color:#3A241A; }
+a, span, p { font-family:'Lucida Sans', sans-serif; }
+h1, h2, h3, mark {
+  margin:0;
+  font-family:Helvetica, sans-serif;
+}
+mark { background-color:transparent; }
+
+svg {
+  width:16px;
+  aspect-ratio:1.0;
+  fill:#3A241A;
+  display:block;
+  margin:auto;
 }
 
-.site-nav .page-link {
-  color: #495057; // 导航链接使用中度灰色
-  font-weight: 500;
-  transition: color 0.2s ease-in-out, border-bottom 0.2s ease-in-out;
-  border-bottom: 2px solid transparent; // 为悬停效果准备
-  padding-bottom: 4px;
-
-  &:hover {
-    color: #0056b3; // 悬停时变为蓝色
-    border-bottom: 2px solid #0056b3; // 悬停时显示下划线
-  }
+button {
+  border:none;
+  background:none;
+  padding:0;
 }
 
-// --- 主要内容区域样式 ---
-
-// 在大屏幕上为内容区域设置更宽的宽度，以适应学术文章
-.wrapper {
-  max-width: 980px; // Minima 默认约 800px
-  margin-right: auto;
-  margin-left: auto;
+/* Disable default input cancel button */
+input::-ms-clear,
+input::-ms-reveal{
+	display:none;
+  width:0;
+  height:0;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+	display:none;
 }
 
-// 首页和文章页面的标题样式
-.post-link, .post-title {
-  color: #0056b3; // 标题使用醒目的蓝色
-  font-size: 2.2rem; // 增大标题字号
+@import 'vars';
+@import 'layout';
+
+:root{
+  --pagewidth-desktop:calc(max(min(100vw - #{$sidebarwd} - 2rem, #{$contentwd}), 44rem));
 }
 
-// 首页文章列表的日期样式
-.post-meta {
-  color: #6c757d; // 使用柔和的灰色
-  font-size: 0.9rem;
-}
-
-// --- 链接和代码块样式 ---
-a, a:visited {
-  color: #0056b3; // 所有链接统一为蓝色
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
-
-a:hover {
-  color: #003d82; // 悬停时颜色加深
-  text-decoration: underline;
-}
-
-// 代码块样式
-pre, code {
-  background-color: #f1f3f5; // 代码块使用浅灰色背景
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  font-size: 0.95em;
-}
-
-// --- 页脚样式 ---
-.site-footer {
-  border-top: 1px solid #dee2e6;
-  padding: 30px 0;
-  color: #6c757d;
-}
-
-// --- Mermaid 图表样式 ---
-// 为 Mermaid 图表添加一个漂亮的容器
-.mermaid {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #dee2e6;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-  text-align: center; // 让图表在容器内居中
-  margin: 2em 0; // 添加一些垂直间距
-}
+@import "sidebar";
+@import "navigation";
+@import "pagination";
+@import "toc";
+@import "post";
+@import "search";
+@import "darkmode";

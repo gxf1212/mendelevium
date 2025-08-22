@@ -21,71 +21,55 @@ social:
     - https://github.com/gxf1212
     # - https://space.bilibili.com/441196634
 
-# --- Build Settings ---
-# Use the 'remote_theme' directive instead of 'theme' for GitHub Pages.
-remote_theme: cotes2020/jekyll-theme-chirpy@latest
 
+logo_img: "/assets/img/favicon.webp"
+profile_img: "/assets/img/profile.webp"
+
+# Social Links
+email: gxf1212@gmail.com
+github_username: gxf1212
+twitter_username: XufanGao
+instagram_username: instagram
+linkedin_username: linkedin
+facebook_username: facebook
+
+# External API
+giscus_repo: "byanko55/jekyll-theme-satellite"
+giscus_repoId: "R_kgDOJ6fqWg"
+giscus_category: "Q&A"
+giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
+goatcounter_code: byanko77
+google_analytics:
+
+# If your repo name follows the format "<user-name>.github.io", then leave the below blank.
+# Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
+baseurl:
+
+# Build settings
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-gist
-  - jekyll-last-modified-at
-  - jekyll-include-cache
-  - jekyll-redirect-from
-  - jekyll-remote-theme # Make sure this plugin is listed
+  - jekyll-seo-tag
+  - jekyll-loading-lazy
 
-# --- Theme-Specific Settings (Chirpy) ---
-lang: en 
-timezone: Asia/Shanghai
-theme_mode: light 
-img_cdn: ""
-
-# Sidebar customization
-sidebar:
-  home_show: true
-  tabs_order: [ "nav", "categories", "tags" ] 
-
-# Table of Contents (TOC) settings
-toc:
-  enable: true
-  class: "post-content"
-  min_headings: 2
-  depth: 2
-
-# Comments settings (e.g., Disqus, Utterances, Giscus)
-comments:
-  provider: # "disqus", "utterances", "giscus"
-
-# --- Other Settings ---
-paginate: 10
-paginate_path: "/page:num/"
-
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
-
-# Exclude from processing.
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - "**/*.docx"
-  - "**/*.pdf"
-  - "**/*.aux"
-  - "**/*.synctex.gz"
-  - "_posts/try/"
+  - docs/
+
+collections:
+  pages:
+    output: true
+    permalink: /:path.html
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      date: "1900-01-01"
+
+# Markdown newline activator 
+kramdown:
+  input: GFM
+  hard_wrap: true
