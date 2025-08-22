@@ -1,0 +1,72 @@
+---
+# This empty front matter is required for Jekyll to process the file.
+---
+
+// First, import the original Minima theme's styles.
+// This is crucial because we want to ADD to the theme, not replace everything.
+@import "minima";
+
+// --- Font Customization ---
+// Let's use a modern, readable font from Google Fonts.
+// You'll need to add the font link to your site's <head>. We'll do that later.
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+// --- General Style Overrides ---
+
+// Body styles: Set background, text color, and font for the whole site.
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; // A clean, standard font stack
+  background-color: #fdfdfd; // A very light grey, easier on the eyes than pure white
+  color: #333; // A softer black for text
+  line-height: 1.6;
+}
+
+// --- Header and Navigation Styles ---
+.site-header {
+  border-top: 5px solid #4a90e2; // Add a blue accent color to the top
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #ffffff; // Make header background white
+}
+
+.site-title, .site-title:visited {
+  color: #2a2a2a !important; // Darker color for site title
+}
+
+.site-nav .page-link {
+  color: #555; // Calmer color for navigation links
+  &:hover {
+    color: #4a90e2; // Blue hover color
+  }
+}
+
+// --- Main Content Styles ---
+
+// Set a wider max-width for the main content area on larger screens
+.wrapper {
+  max-width: 960px; // Minima's default is around 800px. Adjust as you like.
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Style for post titles on the homepage and post pages
+.post-link, .post-title {
+  color: #333;
+}
+
+// --- Link Styles ---
+a, a:visited {
+  color: #4a90e2; // Make all links a consistent blue
+  text-decoration: none; // Remove underlines from links
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #1e63b3; // A darker blue for hover
+  text-decoration: underline; // Add underline on hover
+}
+
+// --- Footer Styles ---
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 20px 0;
+}
