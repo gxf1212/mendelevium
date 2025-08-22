@@ -1,3 +1,5 @@
+---
+---
 # 重磅！MIT发布Boltz-2：AI预测结合亲和力首次媲美FEP，千倍加速药物发现
 
 原标题：Boltz-2: Towards Accurate and Efficient Binding Affinity Prediction

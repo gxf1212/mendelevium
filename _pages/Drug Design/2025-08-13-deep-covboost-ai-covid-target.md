@@ -1,7 +1,7 @@
 ---
 title: "When Physics Meets AI: How Deep-CovBoost Precisely Targets COVID-19's Weak Spots"
 date: "2025-08-13"
-bookmark: true
+bookmark: false
 tags: [ai, covid-19, drug-design, deep-learning, fep, molecular-dynamics, protease-inhibitors]
 ---
 

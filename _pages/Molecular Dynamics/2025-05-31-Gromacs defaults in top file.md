@@ -1,3 +1,5 @@
+---
+---
 # GROMACS 中 comb-rule 与 [nonbond_params] 参数解析
 
 本文档旨在详细解释 GROMACS 拓扑文件中 `[defaults]` 指令下的 `comb-rule`（组合规则）以及 `[atomtypes]` 和 `[nonbond_params]` 部分中非键参数（特别是 Lennard-Jones 参数）的含义和解释方式。

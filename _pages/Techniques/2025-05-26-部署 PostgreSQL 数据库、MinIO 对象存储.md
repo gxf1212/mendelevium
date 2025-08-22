@@ -1,3 +1,5 @@
+---
+---
 # Ubuntu 22.04 服务器部署 PostgreSQL 数据库、MinIO 对象存储以及一个通过 Nginx 反向代理访问的 Docker化 Django 后端应用完整教程
 
 **目标：** 部署 PostgreSQL 数据库、MinIO 对象存储以及一个通过 Nginx 反向代理访问的 Docker化 Django 后端应用。

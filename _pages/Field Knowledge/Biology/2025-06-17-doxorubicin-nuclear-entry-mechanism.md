@@ -1,7 +1,7 @@
 ---
 title: "Doxorubicin Nuclear Entry Mechanisms: A Comprehensive Review"
 date: "2025-06-17"
-bookmark: true
+bookmark: false
 tags: [doxorubicin, nuclear-transport, drug-delivery, cancer-therapy, membrane-transport, cell-biology]
 ---
 

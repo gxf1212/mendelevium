@@ -1,3 +1,5 @@
+---
+---
 # clustering
 
 First you should prepare a `clus_result.dat` file containing the frame IDs in each cluster, like this (the first number in each cluster is the centroid):
