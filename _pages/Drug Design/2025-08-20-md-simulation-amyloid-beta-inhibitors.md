@@ -1,4 +1,11 @@
-# “看见”药物如何瓦解“老年斑”：分子动力学模拟揭秘Aβ蛋白抑制剂的微观世界
+---
+title: "Visualizing Drug Action Against Amyloid Plaques: MD Simulations Reveal Aβ Protein Inhibitor Mechanisms"
+date: "2025-08-20"
+bookmark: true
+tags: [molecular-dynamics, drug-design, alzheimer, amyloid-beta, inhibitors, endogenous-compounds, drug-repurposing]
+---
+
+# "看见"药物如何瓦解"老年斑"：分子动力学模拟揭秘Aβ蛋白抑制剂的微观世界
 
 ## 本文信息
 

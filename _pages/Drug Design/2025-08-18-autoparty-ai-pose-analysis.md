@@ -1,4 +1,11 @@
-# AI陪你看靶点：Autoparty如何将“人工看Pose”的“祖传手艺”变成可传承的模型
+---
+title: "AI-Assisted Molecular Docking: How Autoparty Transforms Manual Pose Inspection into Transferable Models"
+date: "2025-08-18"
+bookmark: true
+tags: [molecular-docking, active-learning, human-in-the-loop, virtual-screening, drug-discovery, machine-learning]
+---
+
+# AI陪你看靶点：Autoparty如何将"人工看Pose"的"祖传手艺"变成可传承的模型
 
 ## 本文信息
 

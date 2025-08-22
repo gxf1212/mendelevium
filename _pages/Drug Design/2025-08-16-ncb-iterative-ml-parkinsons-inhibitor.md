@@ -1,3 +1,10 @@
+---
+title: "AI-Driven Drug Discovery: Iterative Machine Learning for Discovering Potent Parkinson's α-Synuclein Inhibitors"
+date: "2025-08-16"
+bookmark: true
+tags: [machine-learning, parkinsons, alpha-synuclein, drug-discovery, active-learning, iterative-optimization]
+---
+
 # AI炼丹新范式：用迭代式机器学习发现帕金森病α-突触核蛋白的高效抑制剂
 
 ## 本文信息

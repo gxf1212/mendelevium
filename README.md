@@ -4,7 +4,7 @@ Blogs when reading biophysics research papers. Molecular simulation, free energy
 
 欢迎关注『东山月光下』的微信公众号和Bilibili频道：[东山月光下](https://space.bilibili.com/441196634)
 
-![](image.png)
+![](_data/image.png)
 
 The following is the original README file of the theme repository.
 

@@ -8,3 +8,4 @@ Gemfile.lock
 vendor
 Archive
 _pages/archive
+*py

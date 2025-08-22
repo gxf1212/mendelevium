@@ -1,4 +1,11 @@
-# **当物理模拟遇见AI：Deep-CovBoost如何精准狙击新冠病毒“软肋”？**
+---
+title: "When Physics Meets AI: How Deep-CovBoost Precisely Targets COVID-19's Weak Spots"
+date: "2025-08-13"
+bookmark: true
+tags: [ai, covid-19, drug-design, deep-learning, fep, molecular-dynamics, protease-inhibitors]
+---
+
+# **当物理模拟遇见AI：Deep-CovBoost如何精准狙击新冠病毒"软肋"？**
 
 ## **本文基本信息**
 
