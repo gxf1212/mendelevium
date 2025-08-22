@@ -1,7 +1,9 @@
 _site
 old
+.claude
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
 Archive
+_pages/archive

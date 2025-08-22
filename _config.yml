@@ -9,6 +9,8 @@ baseurl: "/mendelevium"
 
 # --- Author Info ---
 author: Xufan Gao
+location: "Hangzhou, Zhejiang, China"
+affiliation: "Zhejiang University (ZJU)"
 # You can add your avatar image here. Place the image in /assets/img/
 # avatar: "/assets/img/my-avatar.jpg"
 
@@ -17,29 +19,31 @@ social:
   name: Xufan Gao
   email: gxf1212@zju.edu.cn
   links:
+    - https://github.com/gxf1212/
     - https://twitter.com/XufanGao
-    - https://github.com/gxf1212
-    # - https://space.bilibili.com/441196634
-
+    - https://scholar.google.com/citations?hl=en&user=f8pi1BUAAAAJ
+    - https://gxf1212.github.io/notes/#/
+    - https://space.bilibili.com/441196634
+    - https://www.zhihu.com/people/wo-zhen-de-hao-cai-a
 
 logo_img: "/assets/img/favicon.webp"
 profile_img: "/assets/img/profile.webp"
 
 # Social Links
-email: gxf1212@gmail.com
+email: gxf1212@zju.edu.cn
 github_username: gxf1212
-twitter_username: XufanGao
+twitter_username: Gaoxufan
 instagram_username: instagram
 linkedin_username: linkedin
 facebook_username: facebook
 
 # External API
-giscus_repo: "byanko55/jekyll-theme-satellite"
-giscus_repoId: "R_kgDOJ6fqWg"
-giscus_category: "Q&A"
-giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
-goatcounter_code: byanko77
-google_analytics:
+giscus_repo: "gxf1212/mendelevium"
+giscus_repoId: "MDEwOlJlcG9zaXRvcnk3MzY2MzAyOTA="
+giscus_category: "General"
+giscus_categoryId: "DIC_kwDOKdHdGs4CiA-m"
+goatcounter_code: "gxf1212-mendelevium"
+google_analytics: ""
 
 # If your repo name follows the format "<user-name>.github.io", then leave the below blank.
 # Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
@@ -54,6 +58,7 @@ plugins:
 
 exclude:
   - docs/
+  - old/
 
 collections:
   pages:
