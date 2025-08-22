@@ -82,11 +82,41 @@ window.MathJax = {
 <!-- Mermaid for diagram rendering -->
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
+// Configure mermaid before DOMContentLoaded
+mermaid.initialize({ 
+  startOnLoad: true,
+  theme: 'default',
+  securityLevel: 'loose',
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true
+  },
+  mindmap: {
+    useMaxWidth: true
+  }
+});
+
+// Re-render mermaid diagrams after page load
 document.addEventListener('DOMContentLoaded', function() {
-  mermaid.initialize({ 
-    startOnLoad: true,
-    theme: 'default',
-    securityLevel: 'loose'
+  // Find all mermaid code blocks and convert them to proper mermaid divs
+  const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid, code.language-mermaid');
+  
+  mermaidBlocks.forEach((block, index) => {
+    const mermaidCode = block.textContent;
+    const mermaidDiv = document.createElement('div');
+    mermaidDiv.className = 'mermaid';
+    mermaidDiv.textContent = mermaidCode;
+    mermaidDiv.id = `mermaid-${index}`;
+    
+    // Replace the code block with the mermaid div
+    if (block.parentNode.tagName === 'PRE') {
+      block.parentNode.parentNode.replaceChild(mermaidDiv, block.parentNode);
+    } else {
+      block.parentNode.replaceChild(mermaidDiv, block);
+    }
   });
+  
+  // Re-initialize mermaid after converting blocks
+  mermaid.init();
 });
 </script>
