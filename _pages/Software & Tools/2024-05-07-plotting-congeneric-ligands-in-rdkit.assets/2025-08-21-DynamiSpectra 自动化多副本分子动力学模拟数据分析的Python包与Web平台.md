@@ -1,4 +1,7 @@
 ---
+title: "DynamiSpectra: Automated Multi-Replica Molecular Dynamics Simulation Data Analysis Python Package and Web Platform"
+date: "2025-08-21"
+tags: [dynamispectra, molecular-dynamics, data-analysis, python, web-platform, computational-biology, multi-replica, automation]
 ---
 # DynamiSpectra: 自动化多副本分子动力学模拟数据分析的Python包与Web平台
 

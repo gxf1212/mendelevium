@@ -1,4 +1,7 @@
 ---
+title: "FE-ToolKit: A Versatile Software Suite for Analysis of High-Dimensional Free Energy Surfaces and Alchemical Free Energy Networks"
+date: "2025-06-23"
+tags: [fe-toolkit, free-energy, alchemical, thermodynamic-networks, software, analysis, umbrella-sampling]
 ---
 # FE-ToolKit：一个用于分析高维自由能表面和炼金术自由能网络的多功能软件套件
 

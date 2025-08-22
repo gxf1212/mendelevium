@@ -1,4 +1,12 @@
 ---
+title: "VMD Gets a New Tool! PACKMOL-GUI: One-Stop Solution for Complex Molecular System Building"
+date: "2025-08-15"
+tags: [vmd, packmol-gui, molecular-packing, software-tools, molecular-modeling, gui, system-building]
+---
+---
+title: "VMD Gets a New Tool! PACKMOL-GUI: One-Stop Solution for Complex Molecular System Building"
+date: "2025-08-15"
+tags: [vmd, packmol-gui, molecular-packing, software-tools, molecular-modeling, gui, system-building]
 ---
 # VMD再添利器！PACKMOL-GUI：一站式搞定复杂分子体系的“搭积木”难题
 

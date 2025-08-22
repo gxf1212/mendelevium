@@ -1,4 +1,7 @@
 ---
+title: "Ubuntu Virtual Memory (Swap) Setup Tutorial: Enhance System Performance"
+date: "2025-06-21"
+tags: [ubuntu, swap, virtual-memory, system-administration, memory-management, server-management]
 ---
 # 在 Ubuntu 中增加虚拟内存（Swap）教程
 

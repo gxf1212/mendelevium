@@ -1,4 +1,7 @@
 ---
+title: "GROMACS Defaults in Topology Files: Understanding comb-rule and nonbond_params"
+date: "2025-05-31"
+tags: [gromacs, topology, nonbond-params, comb-rule, force-field, molecular-dynamics, parameters]
 ---
 # GROMACS 中 comb-rule 与 [nonbond_params] 参数解析
 

@@ -1,4 +1,7 @@
 ---
+title: "FE-ToolKit Methodology Deep Analysis: Mathematical Derivations and Physical Interpretations"
+date: "2025-06-23"
+tags: [fe-toolkit, free-energy, umbrella-sampling, collective-variables, methodology, wham, thermodynamics]
 ---
 # FE-ToolKit方法学深度解析：推公式和物理意义
 

@@ -1,4 +1,7 @@
 ---
+title: "Image-based Molecular Representation Learning for Drug Development: A Survey"
+date: "2025-05-28"
+tags: [image-based-ml, molecular-representation, drug-development, computer-vision, ai-drug-discovery, survey, mol2image]
 ---
 
 

@@ -1,4 +1,7 @@
 ---
+title: "Understanding Structure Factor S(q) and Its Applications in Polyelectrolyte Phase Separation Studies"
+date: "2025-06-03"
+tags: [structure-factor, scattering, phase-separation, polyelectrolyte, physics, theory, computational-physics]
 ---
 # 理解结构因子 $S(q)$ 及其在聚电解质相分离研究中的应用
 

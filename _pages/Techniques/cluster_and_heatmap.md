@@ -1,4 +1,7 @@
 ---
+title: "Molecular Dynamics Clustering Analysis and Heatmap Visualization"
+date: "2025-06-05"
+tags: [clustering, heatmap, molecular-dynamics, data-analysis, visualization, conformational-analysis, trajectory-analysis]
 ---
 # clustering
 

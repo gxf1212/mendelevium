@@ -1,4 +1,7 @@
 ---
+title: "Comprehensive Guide to Molecular Representation Language Models: From Proteins to Small Molecules"
+date: "2025-06-15"
+tags: [molecular-representation, language-models, protein-modeling, small-molecules, transformers, deep-learning, ai-drug-discovery]
 ---
 # 分子表示学习模型全览：从蛋白质到小分子的语言模型
 

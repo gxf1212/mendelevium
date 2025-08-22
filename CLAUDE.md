@@ -34,6 +34,9 @@ _pages/
 └── Nano Polymers/          # 纳米聚合物研究
 ```
 
+- Archive\jekyll-theme-satellite-master是原始模板，报错了可以参考，尤其是里面的docs
+- 
+
 ## 注意事项 / Notes
 
 - 图片路径使用相对路径，确保在不同环境下都能正常显示

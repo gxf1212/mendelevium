@@ -1,4 +1,7 @@
 ---
+title: "PostgreSQL Beginner Tutorial: From Installation to Daily Management"
+date: "2025-06-04"
+tags: [postgresql, database, tutorial, installation, administration, sql, ubuntu]
 ---
 
 

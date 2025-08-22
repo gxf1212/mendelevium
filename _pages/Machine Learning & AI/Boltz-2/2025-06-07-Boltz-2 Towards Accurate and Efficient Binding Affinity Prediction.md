@@ -1,4 +1,7 @@
 ---
+title: "MIT Releases Boltz-2: AI Binding Affinity Prediction Matches FEP Performance with 1000x Speedup"
+date: "2025-06-07"
+tags: [boltz-2, binding-affinity, ai, drug-discovery, fep, mit, deep-learning, protein-ligand, molecular-dynamics]
 ---
 # 重磅！MIT发布Boltz-2：AI预测结合亲和力首次媲美FEP，千倍加速药物发现
 
