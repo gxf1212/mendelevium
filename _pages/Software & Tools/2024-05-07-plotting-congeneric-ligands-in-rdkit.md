@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: page
 title: "Plotting congeneric ligands in rdkit"
 categories: "Small Molecules"
 tags: MD ParmEd Gromacs Amber NAMD
 author: Xufan
+date: 2024-05-07
 ---
 
 # Plotting congeneric ligands in rdkit
