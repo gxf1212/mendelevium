@@ -1,27 +1,90 @@
-# _config.yml (Corrected Version)
-
-# Site settings
+# --- Site Settings ---
 title: Mendelevium
-email: gxf1212@zju.edu.cn
-description: >- # this means to ignore newlines until "baseurl:"
+tagline: A blog on MD simulations, chemoinformatics, and more.
+description: >-
   Mendelevium is a personal blog sharing my research and life experiences. I will write about MD simulations, chemoinformatics, Linux, basic tools. I will also share my thoughts on web scraping, web development, machine learning, and so on.
-
-# GitHub Pages settings for a Project Page
-# The url is your main GitHub Pages domain.
-# The baseurl is the name of your repository.
+# The url and baseurl are configured for your GitHub Pages project site.
 url: "https://gxf1212.github.io" 
 baseurl: "/mendelevium" 
 
-twitter_username: XufanGao
-github_username:  gxf1212
-timezone: Asia/Shanghai
+# --- Author Info ---
+author: Xufan Gao
+# You can add your avatar image here. Place the image in /assets/img/
+# avatar: "/assets/img/my-avatar.jpg"
 
-# Build settings
-# This MUST match the theme specified in your Gemfile.
-theme: minima
+# --- Social Links ---
+# Fill in your social media usernames. They will appear in the sidebar.
+social:
+  name: Xufan Gao
+  email: gxf1212@zju.edu.cn
+  links:
+    - https://twitter.com/XufanGao
+    - https://github.com/gxf1212
+    # Add other links, e.g., your Bilibili channel
+    # - https://space.bilibili.com/441196634
+
+# --- Build Settings ---
+theme: jekyll-theme-chirpy
 plugins:
   - jekyll-feed
-show_excerpts: true
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-last-modified-at
+  - jekyll-include-cache
+  - jekyll-redirect-from
+
+# --- Theme-Specific Settings (Chirpy) ---
+# For documentation, see: https://chirpy.cotes.page/docs/getting-started/customization/
+lang: en # The language of your site. en, zh-CN, zh-TW are supported.
+timezone: Asia/Shanghai
+theme_mode: light # light, dark, or nil (default)
+img_cdn: "" # Your CDN URL for images, if you have one.
+
+# Sidebar customization
+sidebar:
+  # Whether to show the sidebar on the homepage.
+  home_show: true
+  # The order of the tabs in the sidebar.
+  tabs_order: [ "nav", "categories", "tags" ] # "nav" is the navigation tab
+
+# Table of Contents (TOC) settings
+toc:
+  # Whether to show the TOC in posts.
+  enable: true
+  # The CSS selector for the container of the post content.
+  # This is usually correct by default.
+  class: "post-content"
+  # How many headings are required before the TOC appears.
+  min_headings: 2
+  # The maximum level of headings to show in the TOC.
+  # 1 means only <h1>, 2 means <h1> and <h2>, etc.
+  depth: 2
+
+# Comments settings (e.g., Disqus, Utterances, Giscus)
+# You can configure one of these later by following the Chirpy docs.
+comments:
+  provider: # "disqus", "utterances", "giscus"
+  # ... (configuration for the chosen provider)
+
+# --- Other Settings ---
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Markdown processor
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    # Rouge Theme options: https://github.com/rouge-ruby/rouge/tree/master/lib/rouge/themes
+    # E.g., github, molokai, monokai.sublime
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Exclude from processing.
 exclude:
