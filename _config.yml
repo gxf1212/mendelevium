@@ -32,6 +32,8 @@ profile_img: "/assets/img/profile.webp"
 email: gxf1212@zju.edu.cn
 github_username: gxf1212
 twitter_username: Gaoxufan
+facebook_username: Xufan Gao
+linkedin_username: 高旭帆
 
 # External API - 你需要手动配置这些
 # 前往 https://giscus.app/ 并为你的仓库完成设置
@@ -41,6 +43,7 @@ giscus_category: "Blog Comments" # 这里填写你创建的分类名
 giscus_categoryId: "DIC_kwDOPh2Sc84CudnJ" # 例如: DIC_kwDOMxxxxxxxxx
 goatcounter_code: "gxf1212-mendelevium"
 google_analytics: ""
+goatcounter_code: "gxf1212"
 
 # Build settings for GitHub Pages
 plugins:

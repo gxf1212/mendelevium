@@ -1,3 +1,10 @@
+---
+title: "Doxorubicin Nuclear Entry Mechanisms: A Comprehensive Review"
+date: "2025-06-17"
+bookmark: true
+tags: [doxorubicin, nuclear-transport, drug-delivery, cancer-therapy, membrane-transport, cell-biology]
+---
+
 # 阿霉素进核机制综述
 
 ## 阿霉素自由状态的核转运机制
