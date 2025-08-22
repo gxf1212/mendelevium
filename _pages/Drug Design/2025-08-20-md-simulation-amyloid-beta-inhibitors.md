@@ -1,7 +1,6 @@
 ---
 title: "Visualizing Drug Action Against Amyloid Plaques: MD Simulations Reveal Aβ Protein Inhibitor Mechanisms"
 date: "2025-08-20"
-bookmark: false
 tags: [molecular-dynamics, drug-design, alzheimer, amyloid-beta, inhibitors, endogenous-compounds, drug-repurposing]
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: "AI-Assisted Molecular Docking: How Autoparty Transforms Manual Pose Inspection into Transferable Models"
 date: "2025-08-18"
-bookmark: false
 tags: [molecular-docking, active-learning, human-in-the-loop, virtual-screening, drug-discovery, machine-learning]
 ---
 
