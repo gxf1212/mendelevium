@@ -1,11 +1,14 @@
 ---
-title: "Molecular Dynamics Clustering Analysis and Heatmap Visualization"
-date: "2025-06-05"
-tags: [clustering, heatmap, molecular-dynamics, data-analysis, visualization, conformational-analysis, trajectory-analysis]
+title: "分子动力学聚类分析与热图可视化技术"
+date: "2025-08-22"
+tags: [clustering, heatmap, molecular-dynamics, data-analysis, visualization, conformational-analysis, trajectory-analysis, vmd, python, data-visualization]
 ---
-# clustering
 
-First you should prepare a `clus_result.dat` file containing the frame IDs in each cluster, like this (the first number in each cluster is the centroid):
+# 分子动力学聚类分析与热图可视化技术
+
+## 聚类分析
+
+首先需要准备一个包含每个聚类中帧ID的 `clus_result.dat` 文件，格式如下（每个聚类的第一个数字是中心构象）：
 
 ```
 cluster 1: 3722
@@ -17,7 +20,7 @@ cluster 2: 489
 ....
 ```
 
-This is created in VMD through
+在VMD中通过以下TCL脚本生成：
 
 ```tcl
 # http://github.com/anjibabuIITK/CLUSTER-ANALYSIS-USING-VMD-TCL
@@ -54,7 +57,7 @@ $sel writegro c02_${real_frame}.gro
 puts [format "write the centroid of 2nd cluster: frame %d" $real_frame]
 ```
 
-Then you plot this with Python:
+然后使用Python进行可视化：
 
 ```python
 import matplotlib.pyplot as plt
@@ -137,9 +140,9 @@ plot_clustering_id_with_time(np.array(id_with_time)[:, 1], 0.5, path=os.path.dir
 
 ```
 
-# FEP single mutation heatmap
+## FEP单点突变热图
 
-Read data:
+读取数据：
 
 ```python
 ddG = read_single()  
@@ -154,7 +157,7 @@ ddG = {
 }
 ```
 
-Then
+然后进行热图绘制：
 
 ```python
 import pandas as pd
@@ -198,4 +201,3 @@ def heatmap_single(df):
 df = get_matrix(ddG)
 heatmap_single(copy.deepcopy(df))
 ```
-

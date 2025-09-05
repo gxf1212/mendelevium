@@ -37,6 +37,8 @@ _pages/
 - Archive\jekyll-theme-satellite-master是原始模板，报错了可以参考，尤其是里面的docs
 - 为什么单篇文章，如2025-08-13-deep-covboost-ai-covid-target会出现在侧边栏？不应该出现的
     bookmark: false我已经删掉了，就解决了，以后都不要写
+- 常见要求：根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。about.md，index这种不要改。
+
 
 ## 注意事项 / Notes
 
@@ -52,3 +54,11 @@ _pages/
     $$
 
     其中，$k_B$ 是玻尔兹曼常数...
+
+- should add frontmatter for each post (identify .md files without ---), e.g.
+---
+title: "Random Forest and Enhanced Sampling Unite: Revealing and Correcting Ghost Errors in Alchemical Free Energy Calculations"
+date: "2025-08-22"
+tags: [random-forest, enhanced-sampling, alchemical-free-energy, gamd, error-analysis, machine-learning, molecular-dynamics]
+---
+  
