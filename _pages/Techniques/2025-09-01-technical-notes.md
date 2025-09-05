@@ -285,4 +285,95 @@ print("RDKit Chem imported successfully!")
 
 ---
 
-通过以上步骤，你可以快速完成 NVIDIA 驱动和 CUDA 的安装。如果需要进一步帮助，请提供具体错误信息！
+远程连接PyCharm时报错：
+```
+==== FAILURES ====
+
+The following exception failed the deployment
+
+com.jetbrains.gateway.ssh.deploy.DeployException: 
+
+Details:
+
+An error occurred while executing command: 'host-status --ide-path=/public/home/gxf1212/programs/pycharm-2025.1.2 --project-path=/public/home/gxf1212/data/work/NanoMedicine/pynanomed'
+
+Exit code: 1
+
+	at com.jetbrains.gateway.ssh.DeployFlowUtil$fullDeployCycleImpl$2.invokeSuspend(DeployFlowUtil.kt:308)
+
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+
+	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:115)
+
+	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:584)
+
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793)
+
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697)
+
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684)
+
+Caused by: com.jetbrains.gateway.ssh.deploy.DeployException: 
+
+Details:
+
+An error occurred while executing command: 'host-status --ide-path=/public/home/gxf1212/programs/pycharm-2025.1.2 --project-path=/public/home/gxf1212/data/work/NanoMedicine/pynanomed'
+
+Exit code: 1
+
+	at com.jetbrains.gateway.ssh.DeployFlowUtil$fullDeployCycleImpl$2.invokeSuspend(DeployFlowUtil.kt:303)
+
+... 8 more
+
+Caused by: com.jetbrains.gateway.ssh.deploy.DeployException: 
+
+Details:
+
+An error occurred while executing command: 'host-status --ide-path=/public/home/gxf1212/programs/pycharm-2025.1.2 --project-path=/public/home/gxf1212/data/work/NanoMedicine/pynanomed'
+
+Exit code: 1
+
+	at com.jetbrains.gateway.ssh.DeployFlowUtil$fullDeployCycleImpl$2.invokeSuspend(DeployFlowUtil.kt:301)
+
+... 8 more
+
+Caused by: com.jetbrains.gateway.ssh.RemoteCommandException: 
+
+Details:
+
+An error occurred while executing command: 'host-status --ide-path=/public/home/gxf1212/programs/pycharm-2025.1.2 --project-path=/public/home/gxf1212/data/work/NanoMedicine/pynanomed'
+
+Exit code: 1
+
+	at com.jetbrains.gateway.ssh.GoHighLevelHostAccessor.createException(GoHighLevelHostAccessor.kt:272)
+
+	at com.jetbrains.gateway.ssh.GoHighLevelHostAccessor.callAndGetError(GoHighLevelHostAccessor.kt:218)
+
+	at com.jetbrains.gateway.ssh.GoHighLevelHostAccessor.access$callAndGetError(GoHighLevelHostAccessor.kt:38)
+
+	at com.jetbrains.gateway.ssh.GoHighLevelHostAccessor$callAndGetError$2.invokeSuspend(GoHighLevelHostAccessor.kt)
+
+... 8 more
+```
+
+2. 清理远程IDE后端残留进程
+
+```bash
+# 查找PyCharm相关进程
+
+ps aux | grep -E 'pycharm|idea|jetbrains'
+
+# 强制终止（替换PID）
+
+kill -9 <PID>
+```
+
+
+
+
+
+

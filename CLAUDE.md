@@ -38,6 +38,7 @@ _pages/
 - 为什么单篇文章，如2025-08-13-deep-covboost-ai-covid-target会出现在侧边栏？不应该出现的
     bookmark: false我已经删掉了，就解决了，以后都不要写
 - 常见要求：根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。about.md，index这种不要改。
+- 文件名不能太长、有问题，包括图片文件夹。rename folder name to sth shorter.
 
 
 ## 注意事项 / Notes
