@@ -109,10 +109,7 @@ PRES GLYP 1.00 ! Glycine N-terminus
 ### 基础显示和预设
 
 #### 蛋白质界面分析
-```python
-# 使用预设显示蛋白质界面
-A--preset--protein interface
-```
+使用预设显示蛋白质界面：**A → preset → protein interface**
 
 #### 二硫键显示
 PyMOL有专门的二硫键显示功能：
@@ -126,30 +123,27 @@ PyMOL有专门的二硫键显示功能：
 ### 结构分析功能
 
 #### 序列搜索和对齐
-```python
-# findseq命令用于在结构中搜索特定序列
-# 参考：https://pymolwiki.org/index.php/Findseq
 
-# mcsalign用于多个结构的对齐
-# 参考：https://pymolwiki.org/index.php/Mcsalign
-```
+**findseq命令**：用于在结构中搜索特定序列
+参考：[PyMOL Findseq文档](https://pymolwiki.org/index.php/Findseq)：https://pymolwiki.org/index.php/Findseq
+
+**mcsalign命令**：用于多个结构的对齐
+参考：[PyMOL Mcsalign文档](https://pymolwiki.org/index.php/Mcsalign)：https://pymolwiki.org/index.php/Mcsalign
 
 #### RMSD矩阵计算
 对于多个PDB文件的配对RMSD分析：
-```python
-# 使用PyMOL API计算配对RMSD矩阵（对齐后）
-# 可以批量处理多个PDB文件
-```
+- 使用PyMOL API计算配对RMSD矩阵（对齐后）
+- 可以批量处理多个PDB文件
 
 #### 生化性质显示
 显示蛋白质的生化性质（如疏水性、电荷分布等）：
-- 参考：[PyMOL生化性质显示指南](https://pymolwiki.org/index.php/Displaying_Biochemical_Properties)
+- 参考：[PyMOL生化性质显示指南](https://pymolwiki.org/index.php/Displaying_Biochemical_Properties)：https://pymolwiki.org/index.php/Displaying_Biochemical_Properties
 
 ### 脚本和自动化
 
 #### 从脚本启动
 PyMOL支持从脚本启动和批量操作：
-- 参考：[从脚本启动PyMOL](https://pymolwiki.org/index.php/Launching_From_a_Script)
+- 参考：[从脚本启动PyMOL](https://pymolwiki.org/index.php/Launching_From_a_Script)：https://pymolwiki.org/index.php/Launching_From_a_Script
 
 ## 比较：VMD vs PyMOL
 
@@ -198,12 +192,12 @@ PyMOL支持从脚本启动和批量操作：
 ## 扩展资源
 
 ### 官方文档
-- [VMD用户指南](https://www.ks.uiuc.edu/Research/vmd/current/ug/)
-- [PyMOL Wiki](https://pymolwiki.org/)
+- [VMD用户指南](https://www.ks.uiuc.edu/Research/vmd/current/ug/)：https://www.ks.uiuc.edu/Research/vmd/current/ug/
+- [PyMOL Wiki](https://pymolwiki.org/)：https://pymolwiki.org
 
 ### 社区资源
-- [VMD邮件列表](https://www.ks.uiuc.edu/Research/vmd/mailing_list/)
-- [PyMOL讨论区](https://pymolwiki.org/index.php/Category:Script_Library)
+- [VMD邮件列表](https://www.ks.uiuc.edu/Research/vmd/mailing_list/)：https://www.ks.uiuc.edu/Research/vmd/mailing_list/
+- [PyMOL讨论区](https://pymolwiki.org/index.php/Category:Script_Library)：https://pymolwiki.org/index.php/Category:Script_Library
 
 ---
 

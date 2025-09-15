@@ -49,7 +49,7 @@ KDE Connect虽然不是投屏软件，但功能非常丰富：
 ### 远程桌面解决方案对比
 
 #### ToDesk
-- **官网**：https://www.todesk.com/linux.html
+- **官网**：[ToDesk Linux版](https://www.todesk.com/linux.html)：https://www.todesk.com/linux.html
 - **优点**：免费，跨平台支持好
 - **缺点**：
   - Linux不支持复制粘贴功能
@@ -60,12 +60,12 @@ KDE Connect虽然不是投屏软件，但功能非常丰富：
 - **安装和配置**：
   ```bash
   # 禁用自启动
-  # 参考：https://devicetests.com/disable-anydesk-autostart-ubuntu
+  # 参考：[AnyDesk禁用自启动指南](https://devicetests.com/disable-anydesk-autostart-ubuntu)：https://devicetests.com/disable-anydesk-autostart-ubuntu
   
   # 会话管理
-  # 参考：https://support.anydesk.com/knowledge/disconnecting-sessions
+  # 参考：[AnyDesk会话管理](https://support.anydesk.com/knowledge/disconnecting-sessions)：https://support.anydesk.com/knowledge/disconnecting-sessions
   ```
-- **Fedora安装问题**：https://discussion.fedoraproject.org/t/cannot-install-anydesk/73854
+- **Fedora安装问题**：[Fedora论坛讨论](https://discussion.fedoraproject.org/t/cannot-install-anydesk/73854)：https://discussion.fedoraproject.org/t/cannot-install-anydesk/73854
 
 ## 代理和网络配置
 
@@ -80,13 +80,13 @@ KDE Connect虽然不是投屏软件，但功能非常丰富：
 # electron-ssr在conda环境中不会报错
 ```
 
-相关问题讨论：https://github.com/shadowsocksrr/electron-ssr/issues/126
+相关问题讨论：[Electron-SSR GitHub问题](https://github.com/shadowsocksrr/electron-ssr/issues/126)：https://github.com/shadowsocksrr/electron-ssr/issues/126
 
 #### Clash for Windows Linux版
-- 配置指南：https://bestoko.cc/p/linux-clash-for-windows/
+- 配置指南：[Linux Clash配置教程](https://bestoko.cc/p/linux-clash-for-windows/)：https://bestoko.cc/p/linux-clash-for-windows/
 
 #### 其他代理工具
-- go-proxy-bingai设置：https://github.com/adams549659584/go-proxy-bingai
+- go-proxy-bingai设置：[GitHub项目](https://github.com/adams549659584/go-proxy-bingai)：https://github.com/adams549659584/go-proxy-bingai
 
 ### 网络连接问题诊断
 
@@ -121,7 +121,7 @@ vscode token: your_token_here
 - **虚拟桌面恢复**：VSCode或Firefox无法在Fedora KDE中将窗口恢复到正确的虚拟桌面，这是已知问题
 - **调试配置**：缺少.vscode文件夹可能导致调试扩展无法识别
 
-相关讨论：https://github.com/microsoft/vscode-vsce/issues/419
+相关讨论：[VSCode VSCE GitHub问题](https://github.com/microsoft/vscode-vsce/issues/419)：https://github.com/microsoft/vscode-vsce/issues/419
 
 ### Linux原生应用
 
@@ -194,17 +194,17 @@ ping -c 4 mirrors.fedoraproject.org
 ## 文档和教程资源
 
 ### Bash编程
-- [Bash序列表达式](https://linuxize.com/post/bash-sequence-expression/)
-- [Python字典排序](https://www.golinuxcloud.com/python-sort-dictionary-by-key/)
+- [Bash序列表达式](https://linuxize.com/post/bash-sequence-expression/)：https://linuxize.com/post/bash-sequence-expression/
+- [Python字典排序](https://www.golinuxcloud.com/python-sort-dictionary-by-key/)：https://www.golinuxcloud.com/python-sort-dictionary-by-key/
 
 ### 网络分析工具
 ```python
 import networkx as nx
-# NetworkX文档：https://networkx.org/documentation/stable/reference/algorithms/traversal.html
 ```
+NetworkX文档：[NetworkX算法文档](https://networkx.org/documentation/stable/reference/algorithms/traversal.html)：https://networkx.org/documentation/stable/reference/algorithms/traversal.html
 
 ### Ubuntu系统资源
-- [Amber22安装指南](http://archive.ambermd.org/202302/att-0090/Amber_22_and_Tools_22_install_Ubuntu_22.pdf)
+- [Amber22安装指南](http://archive.ambermd.org/202302/att-0090/Amber_22_and_Tools_22_install_Ubuntu_22.pdf)：http://archive.ambermd.org/202302/att-0090/Amber_22_and_Tools_22_install_Ubuntu_22.pdf
 
 ## 性能优化建议
 

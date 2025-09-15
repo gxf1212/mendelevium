@@ -32,7 +32,7 @@ parmchk2 -i ligand.mol2 -f mol2 -o ligand.frcmod
 ./update_amber --update
 
 # 检查可用的bug修复
-# 参考：https://ambermd.org/BugFixes.php
+# 参考：[Amber Bug修复页面](https://ambermd.org/BugFixes.php)：https://ambermd.org/BugFixes.php
 ```
 
 ### 小分子参数化
@@ -47,17 +47,6 @@ antechamber -i bay.log -fi gout -o bay.mol2 -fo mol2
 # 通过conda安装会获取另一个ambertools版本
 # 解决方案：在base环境中使用pip安装
 pip install acpype
-```
-
-### NAMD兼容性
-
-#### 参数设置
-```bash
-# NAMD可以分别缩放vdW和静电相互作用
-NAMD scale vdw and elec separately?
-
-# 示例配置
-alchVdwLambdaEnd        0.5
 ```
 
 ## GROMACS使用技巧
@@ -89,17 +78,10 @@ gmx mdrun -deffnm em_tpr
 bash gmx_fep_re_sep_conti.sh WT-M132-re quick 3 2>error.log
 ```
 
-#### 体系构建问题
-```bash
-# gmx genion导致的残基编号问题
-gmx genion makes all PA/PC/OL residue numbers become 1??
-```
-这是GROMACS处理离子加入时的一个已知问题，需要特殊处理。
-
 ### 力场和膜体系
 
 #### CHARMM36力场移植
-- [CHARMM36 GROMACS移植讨论](https://gromacs.bioexcel.eu/t/newest-charmm36-port-for-gromacs/868/9)
+- [CHARMM36 GROMACS移植讨论](https://gromacs.bioexcel.eu/t/newest-charmm36-port-for-gromacs/868/9)：https://gromacs.bioexcel.eu/t/newest-charmm36-port-for-gromacs/868/9
 - 注意力场兼容性和参数一致性问题
 
 #### 膜体系模拟设置
@@ -240,19 +222,19 @@ sed -i "/\#endif/a\n\#include \"LIG.itp\"" topol.top
 ## 资源和参考
 
 ### 官方教程
-- [Amber基础教程4b](https://ambermd.org/tutorials/basic/tutorial4b/)
-- [Amber膜体系教程](https://ambermd.org/tutorials/MembraneSystems.php)
-- [Amber高级教程16](https://ambermd.org/tutorials/advanced/tutorial16/)
-- [Amber高级教程38](https://ambermd.org/tutorials/advanced/tutorial38/index.php)
+- [Amber基础教程4b](https://ambermd.org/tutorials/basic/tutorial4b/)：https://ambermd.org/tutorials/basic/tutorial4b/
+- [Amber膜体系教程](https://ambermd.org/tutorials/MembraneSystems.php)：https://ambermd.org/tutorials/MembraneSystems.php
+- [Amber高级教程16](https://ambermd.org/tutorials/advanced/tutorial16/)：https://ambermd.org/tutorials/advanced/tutorial16/
+- [Amber高级教程38](https://ambermd.org/tutorials/advanced/tutorial38/index.php)：https://ambermd.org/tutorials/advanced/tutorial38/index.php
 
 ### 第三方资源
-- [AMBER antechamber指南](https://emleddin.github.io/comp-chem-website/AMBERguide-antechamber.html)
-- [PACKMOL用户指南](https://m3g.github.io/packmol/userguide.shtml)
-- [GROMACS伞型采样教程](https://group.miletic.net/en/tutorials/gromacs/5-umbrella/)
+- [AMBER antechamber指南](https://emleddin.github.io/comp-chem-website/AMBERguide-antechamber.html)：https://emleddin.github.io/comp-chem-website/AMBERguide-antechamber.html
+- [PACKMOL用户指南](https://m3g.github.io/packmol/userguide.shtml)：https://m3g.github.io/packmol/userguide.shtml
+- [GROMACS伞型采样教程](https://group.miletic.net/en/tutorials/gromacs/5-umbrella/)：https://group.miletic.net/en/tutorials/gromacs/5-umbrella/
 
 ### 社区讨论
-- [GROMACS论坛](https://gromacs.bioexcel.eu/)
-- [Amber邮件列表](http://archive.ambermd.org/)
+- [GROMACS论坛](https://gromacs.bioexcel.eu/)：https://gromacs.bioexcel.eu
+- [Amber邮件列表](http://archive.ambermd.org/)：http://archive.ambermd.org
 
 ## 总结
 

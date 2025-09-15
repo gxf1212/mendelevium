@@ -118,15 +118,9 @@ mklink /d C:\Users\Lenovo\.vscode F:\cache\.vscode
 ```bash
 # 1. 安装Claude Code CLI
 sudo npm install -g @anthropic-ai/claude-code
-
-# 2. 环境部署脚本
-curl -fsSL https://download.aicodemirror.com/env_deploy/env-deploy.sh | bash -s -- "your_api_key"
-
-# 3. API密钥配置
-(cat ~/.claude.json 2>/dev/null || echo 'null') | jq --arg key "${ANTHROPIC_API_KEY: -20}" '(. // {}) | .customApiKeyResponses.approved |= ([.[]?, $key] | unique)' > ~/.claude.json.tmp && mv ~/.claude.json.tmp ~/.claude.json
 ```
 
-### NonoCode代理配置
+### NonoCode配置
 ```bash
 function nonocode {
     export ANTHROPIC_BASE_URL="http://claude.nonocode.cn/api/"
@@ -135,7 +129,7 @@ function nonocode {
 }
 ```
 
-注册地址：http://claude.nonocode.cn/register
+注册地址：[NonoCode注册](http://claude.nonocode.cn/register?ref=3S5UMR)：http://claude.nonocode.cn/register?ref=3S5UMR
 
 ## 系统管理工具
 
@@ -190,18 +184,13 @@ find . -name "__pycache__" -type d -exec rm -rf {} +
 ## GNOME桌面环境
 
 ### 扩展程序修复
-修复Dash to Panel扩展：https://extensions.gnome.org/extension/1160/dash-to-panel/
-
-### Windows 11截图位置
-```
-E:\用户目录\Picture\Screenshots\.hid
-```
+修复Dash to Panel扩展：[Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)：https://extensions.gnome.org/extension/1160/dash-to-panel/
 
 ## pKa计算工具推荐
 
-- **PypKa**：https://github.com/mms-fcul/PypKa（开源推荐）
-- **DelphiPka**：https://github.com/delphi001/DelphiPka（较老版本）
-- **Rowan pKa Calculator**：https://rowansci.com/tools/pka（商业工具）
+- **PypKa**：[GitHub页面](https://github.com/mms-fcul/PypKa)：https://github.com/mms-fcul/PypKa（开源推荐）
+- **DelphiPka**：[GitHub页面](https://github.com/delphi001/DelphiPka)：https://github.com/delphi001/DelphiPka（较老版本）
+- **Rowan pKa Calculator**：[Rowan在线工具](https://rowansci.com/tools/pka)：https://rowansci.com/tools/pka（商业工具）
 
 ## 高级开发技巧
 
@@ -229,7 +218,7 @@ pip install -e .[dev]
 
 ## 系统磁盘扩展
 
-参考京东云文档：[扩展文件系统无分区](https://docs.jdcloud.com/cn/iavm/expand-filesystem-no-partition)
+参考京东云文档：[扩展文件系统无分区](https://docs.jdcloud.com/cn/iavm/expand-filesystem-no-partition)：https://docs.jdcloud.com/cn/iavm/expand-filesystem-no-partition
 
 ---
 

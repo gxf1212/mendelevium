@@ -169,7 +169,7 @@ print("RDKit Chem imported successfully!")
 #### **方法二：通过 `.run` 文件安装（手动）**
 如果 APT 仓库中没有 570 驱动，可手动下载 `.run` 文件安装：
 1. **下载驱动**：
-   - 访问 [NVIDIA 驱动下载页面](https://www.nvidia.cn/Download/index.aspx)。
+   - 访问 [NVIDIA 驱动下载页面](https://www.nvidia.cn/Download/index.aspx)：https://www.nvidia.cn/Download/index.aspx。
    - 选择你的显卡型号和系统版本，下载对应版本的 `.run` 文件（例如 `NVIDIA-Linux-x86_64-570.xx.run`）。
 
 2. **赋予执行权限**：
@@ -231,7 +231,7 @@ print("RDKit Chem imported successfully!")
 
 #### **方法二：通过 `.run` 文件安装**
 1. **下载 CUDA 安装包**：
-   - 访问 [CUDA Toolkit 下载页面](https://developer.nvidia.com/cuda-downloads)，选择与驱动 570 兼容的版本（如 CUDA 12.5）。
+   - 访问 [CUDA Toolkit 下载页面](https://developer.nvidia.com/cuda-downloads)：https://developer.nvidia.com/cuda-downloads，选择与驱动 570 兼容的版本（如 CUDA 12.5）。
    - 下载 `.run` 文件（例如 `cuda_12.5.0_570.53.1_linux.run`）。
 
 2. **安装 CUDA**：

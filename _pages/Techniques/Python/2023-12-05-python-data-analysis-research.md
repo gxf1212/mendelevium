@@ -88,7 +88,7 @@ sns.violinplot(data=data, cut=0)  # cut=0避免扩展到数据范围之外
 **问题说明**：使用`sns.violinplot`时发现某些分布低于0，但数据全为正值。这是因为核密度估计默认会在数据范围外进行插值。
 
 #### Violin Plot进阶用法
-- 参考：[Violin Plot数据分析指南](https://www.geeksforgeeks.org/violin-plot-for-data-analysis/)
+- 参考：[Violin Plot数据分析指南](https://www.geeksforgeeks.org/violin-plot-for-data-analysis/)：https://www.geeksforgeeks.org/violin-plot-for-data-analysis/
 
 ### 分组柱状图制作
 
@@ -142,7 +142,7 @@ mydict = {'c': 3, 'a': 1, 'b': 2}
 sorted_mydict = dict(sorted(mydict.items(), key=lambda item: item[0]))
 
 # 更多排序方法参考
-# https://www.golinuxcloud.com/python-sort-dictionary-by-key/
+# 参考：[Python字典排序指南](https://www.golinuxcloud.com/python-sort-dictionary-by-key/)：https://www.golinuxcloud.com/python-sort-dictionary-by-key/
 ```
 
 ## 图论和网络分析
@@ -177,7 +177,7 @@ my_list = [1, 2, 2, 3, 3, 3]
 counts = Counter(my_list)
 
 # 更多方法参考
-# https://datagy.io/python-count-occurrences-in-list/
+# 参考：[Python列表元素计数方法](https://datagy.io/python-count-occurrences-in-list/)：https://datagy.io/python-count-occurrences-in-list/
 ```
 
 ## Python语言特性
@@ -265,8 +265,7 @@ My electron-ssr on Fedora38 does not give errors in my conda environment
 
 ### Plotnine使用
 ```python
-# plotnine相关问题和解决方案
-# https://github.com/has2k1/plotnine/issues/79
+# plotnine相关问题和解决方案：[Plotnine GitHub问题](https://github.com/has2k1/plotnine/issues/79)：https://github.com/has2k1/plotnine/issues/79
 ```
 plotnine是Python中ggplot2的实现，适合熟悉R语法的用户。
 

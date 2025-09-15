@@ -32,8 +32,7 @@ def connect_mols(mol1, mol2, atom1, atom2):
     # atom1和atom2是连接点的原子索引
     pass
 
-# 参考资源
-# https://iwatobipen.wordpress.com/2020/10/16/easy-way-to-connect-fragments-rdkit-tips-memo/
+# 参考资源：[RDKit片段连接指南](https://iwatobipen.wordpress.com/2020/10/16/easy-way-to-connect-fragments-rdkit-tips-memo/)：https://iwatobipen.wordpress.com/2020/10/16/easy-way-to-connect-fragments-rdkit-tips-memo/
 ```
 
 #### 分子片段处理
@@ -68,11 +67,10 @@ from rdkit.Chem import Draw
 
 #### mol2文件处理
 处理mol2文件时的常见问题：
-```python
-# 价态错误处理
-# 如果遇到："Explicit valence for atom # 8 N, 4, is greater than permitted"
-# 这通常是因为氮原子的价态设置不正确
-```
+
+**价态错误处理**：
+- 如果遇到："Explicit valence for atom # 8 N, 4, is greater than permitted"
+- 这通常是因为氮原子的价态设置不正确
 
 #### 分子坐标处理
 ```python
@@ -219,7 +217,7 @@ chmod +x /path/to/Multiwfn_3.8_dev_bin_Linux/Multiwfn
 
 ### ACPYPE工具
 结合AmberTools + ACPYPE + Gaussian创建小分子GAFF力场的拓扑文件：
-- 参考：[ACPYPE GAFF力场创建指南](https://jerkwin.github.io/2015/12/08/使用AmberTools+ACPYPE+Gaussian创建小分子GAFF力场的拓扑文件/)
+- 参考：[ACPYPE GAFF力场创建指南](https://jerkwin.github.io/2015/12/08/使用AmberTools+ACPYPE+Gaussian创建小分子GAFF力场的拓扑文件/)：https://jerkwin.github.io/2015/12/08/使用AmberTools+ACPYPE+Gaussian创建小分子GAFF力场的拓扑文件/
 
 ### 在线工具和资源
 
@@ -229,9 +227,9 @@ chmod +x /path/to/Multiwfn_3.8_dev_bin_Linux/Multiwfn
 - 更新状态：Last update of the R.E.D. Home Page: June 16th, 2017
 
 #### 文档和教程
-- [RESP电荷计算指南](https://jamesmccarty.github.io/research-wiki/RESP)
-- [RDKit讨论区](https://sourceforge.net/p/rdkit/mailman/)
-- [mol2格式说明](http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf)
+- [RESP电荷计算指南](https://jamesmccarty.github.io/research-wiki/RESP)：https://jamesmccarty.github.io/research-wiki/RESP
+- [RDKit讨论区](https://sourceforge.net/p/rdkit/mailman/)：https://sourceforge.net/p/rdkit/mailman/
+- [mol2格式说明](http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf)：http://chemyang.ccnu.edu.cn/ccb/server/AIMMS/mol2.pdf
 
 ## 常见错误和解决方案
 

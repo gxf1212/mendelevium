@@ -11,8 +11,8 @@ tags: [gromacs, namd, pymol, vmd, molecular-dynamics, free-energy, pdb, boltz2, 
 ## GROMACS多GPU性能优化
 
 ### 多GPU配置参考资源
-- [GROMACS多GPU使用讨论](https://gromacs.bioexcel.eu/t/how-to-use-2-gpus-at-the-same-time-for-one-simulation/5481/3)
-- [ENCCS GPU性能指南](https://enccs.github.io/gromacs-gpu-performance/multi-gpu/)
+- [GROMACS多GPU使用讨论](https://gromacs.bioexcel.eu/t/how-to-use-2-gpus-at-the-same-time-for-one-simulation/5481/3)：https://gromacs.bioexcel.eu/t/how-to-use-2-gpus-at-the-same-time-for-one-simulation/5481/3
+- [ENCCS GPU性能指南](https://enccs.github.io/gromacs-gpu-performance/multi-gpu/)：https://enccs.github.io/gromacs-gpu-performance/multi-gpu/
 
 ### 动态负载平衡设置
 ```bash
@@ -41,7 +41,7 @@ gmx check -f trajectory.xtc
 - 将被牵引分子(SOLU)与膜(MEMB)连接作为反应坐标
 - 确定好初始距离和牵引方向(`pull-coord1-vec`)后即可运行
 
-参考：[GROMACS伞型采样应用详解](http://bbs.keinsci.com/thread-36490-1-1.html)
+参考：[GROMACS伞型采样应用详解](http://bbs.keinsci.com/thread-36490-1-1.html)：http://bbs.keinsci.com/thread-36490-1-1.html
 
 ## PyMOL轨迹可视化
 
@@ -100,7 +100,7 @@ MovieMaker::buildmovie
 
 ### Boltz-2蛋白质结构预测
 - **NVIDIA NIM for Boltz-2**：企业级蛋白质结构预测服务
-- 官方文档：https://docs.nvidia.com/nim/bionemo/boltz2/latest/index.html
+- 官方文档：[NVIDIA Boltz-2文档](https://docs.nvidia.com/nim/bionemo/boltz2/latest/index.html)：https://docs.nvidia.com/nim/bionemo/boltz2/latest/index.html
 - **限制**：目前不支持蛋白质-蛋白质结合亲和力预测，也不支持多配体结合亲和力预测
 
 ### Conda环境共享
@@ -116,9 +116,9 @@ conda create --prefix /opt/anaconda3/envs/boltz2 --clone /home/user/miniconda3/e
 ## 自由能计算工具
 
 ### 相关工具和资源
-- **Konnektor**: https://github.com/OpenFreeEnergy/konnektor
-- **SMArt**: https://github.com/drazen-petrov/SMArt  
-- **QSimulate FEP教程**: https://qsimulate.com/documentation/fep_tutorial/fep_tutorial.html
+- **Konnektor**: [GitHub项目](https://github.com/OpenFreeEnergy/konnektor)：https://github.com/OpenFreeEnergy/konnektor
+- **SMArt**: [GitHub项目](https://github.com/drazen-petrov/SMArt)：https://github.com/drazen-petrov/SMArt  
+- **QSimulate FEP教程**: [QSimulate官方教程](https://qsimulate.com/documentation/fep_tutorial/fep_tutorial.html)：https://qsimulate.com/documentation/fep_tutorial/fep_tutorial.html
 
 ### 立体化学处理注意事项
 在处理手性中心时，AND n组（如AND1）表示两个对映异构体的混合物：
@@ -168,11 +168,9 @@ pip install -e .[dev]
 ## 性能优化建议
 
 ### 内存映射和快速直方图
-```python
-# 大数据处理的优化管道
-# fast_histogram + memory mapping
-# fast_histogram 已内部优化，无需并行处理
-```
+大数据处理的优化管道：
+- **fast_histogram + memory mapping**
+- fast_histogram 已内部优化，无需并行处理
 
 ---
 
