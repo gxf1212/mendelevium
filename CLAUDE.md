@@ -46,6 +46,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 ## 常见要求
 
 - 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。
+- 去掉所有参考标记
 
 ### 技术记录
 
@@ -79,6 +80,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 - 发表时间: [论文发表时间]
 - **单位**: [如果可知，作者的主要单位，国家肯定是要标注的]
 - **引用格式**: [这里是完整的原文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
+这几项一个都不能少
 如果本文有源代码（GitHub等）、web server等，务必全部列出来。
 
 ---

@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "File Conversion Among MD Simulation Engines Using ParmEd"
-categories: "MD Simulation"
-tags: MD ParmEd Gromacs Amber NAMD modeling Python
-author: Xufan
+date: "2024-05-06"
+tags: [md-simulation, parmed, gromacs, amber, namd, modeling, python]
 ---
 
 # File Conversion Among MD Simulation Engines Using ParmEd
@@ -56,12 +54,10 @@ python xxx.py <system_name> <starting_residue_number>
 
 Your topolgy and coordinate files should be named `<system_name>.xxx` both. Note that we use `offset-1` in the code since by default ParmEd residue numbers start from 1. 
 
-> [!WARNING]
->
+**⚠️ 注意事项**
+
 > Always double check after the conversion!
 
-> [!WARNING]
->
 > For a very large system (hundreds of thousands of atoms), this process could take some time.
 
 ### From Amber to Gromacs
@@ -120,12 +116,12 @@ structure = pmd.load_file(prefix+'.pdb')
 structure.save(prefix+'.gro', overwrite=True, combine='all')
 ```
 
-> [!TIP]
->
+**💡 提示**
+
 > ParmEd does not realize that for epsilon gmx adopts the absolute value while charmm files store the real value (negative!)
 
-> [!NOTE]
->
+**📝 说明**
+
 > In parameter files like `par_all36m_prot.prm` downloaded from [CHARMM website](http://mackerell.umaryland.edu/charmm_ff.shtml), officially all atom type definitions are commented, but we should uncomment them for parmed, or it cannot find atomtypes. Or read `.rtf` files too. Double check your files!
 
 ### From Gromacs to Amber
@@ -246,7 +242,7 @@ CA   CG   317.0  1.510   ; Standard alkane bond
 
 #### Resolving Parameter Inconsistencies
 
-When converting from GROMACS to CHARMM formats using tools like ParmEd, discrepancies in how bond parameters are specified can lead to errors. For instance, ParmEd might encounter a `ParameterError` if it detects different bond parameters for the same atom types, which is permissible in GROMACS but not in CHARMM. This issue is particularly evident with complex ions or molecules optimized asymmetrically through QM methods, such as $\ce{Al(OH)(H2O)5^2+}$.
+When converting from GROMACS to CHARMM formats using tools like ParmEd, discrepancies in how bond parameters are specified can lead to errors. For instance, ParmEd might encounter a `ParameterError` if it detects different bond parameters for the same atom types, which is permissible in GROMACS but not in CHARMM. This issue is particularly evident with complex ions or molecules optimized asymmetrically through QM methods, such as Al(OH)(H2O)5^2+.
 
 To address these conversion challenges, users have two main options:
 
