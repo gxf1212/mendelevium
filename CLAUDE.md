@@ -1,6 +1,6 @@
 # Mendelevium Blog - Claude Development Guide
 
-## 项目理念 / Project Philosophy
+## 项目理
 
 This is a personal research blog sharing experiences in molecular dynamics, computational chemistry, and scientific computing. The content should be:
 
@@ -8,20 +8,20 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 - **Practical**: 重点在于实用性，分享实际的方法和工具
 - **Clear**: 保持简洁明了的写作风格，便于理解
 
-## 开发原则 / Development Principles
+## 开发原则
 
 1. **保持简洁**: 网站结构应该简单明了，不要过度复杂化
 2. **内容为王**: 专注于高质量的技术内容，而非花哨的功能
 3. **分类清晰**: 按研究领域合理组织内容结构
 
-## 技术栈 / Tech Stack
+## 技术栈
 
 - Jekyll (Satellite theme)
 - GitHub Pages
 - Giscus for comments
 - GoatCounter for analytics
 
-## 内容组织 / Content Organization
+## 博文内容组织
 
 - 每个分类下应该有一个 index.md 文件
 - Archive\jekyll-theme-satellite-master是原始模板，报错了可以参考，尤其是里面的docs
@@ -29,7 +29,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
     bookmark: false我已经删掉了，就解决了，以后都不要写
 - 文件名不能太长、有问题，包括图片文件夹。rename folder name to sth shorter.
 
-## posts注意事项 / Notes
+## posts注意事项
 
 - 图片路径使用相对路径，确保在不同环境下都能正常显示
 - 保持中英文混用的写作风格，适合中文科研环境
@@ -45,19 +45,22 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 
 ## 常见要求
 
-- 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。
+- 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。直接扫描所有的_pages中的文件，看哪些没有YYYY-MM-DD，然后修复其frontmatter和文件名，不要搞太复杂的流程。
 - 去掉所有参考标记
+- 把_pages\xxx.docx改写成Markdown，内容完全不变，保证参考文献链接仍然正确，即文内的引用标记要能对得上文末的list，得用这种吧：[^6]。
 
 ### 技术记录
 
 在_pages\archive\qq，能否根据（大概）2024年1~6月以来的内容总结出几篇技术记录，放在_pages\Techniques底下？
-  - 在_pages\archive\qq，内容筛选的脚本是现成的，基本不用改。
+  - 在_pages\archive\qq，内容筛选的脚本是现成的，基本不用改。先运行脚本，再读取内容，时间和图片都要过滤，两个脚本都要执行。
   - 每一篇不太长，就是一篇推送的长度，包括一个或多个话题。尽量按照话题来组织汇总，把比较相关的内容放在一起。内容太多就创建新的md文件。
   - 如只看到一个网站但不知道是干啥的，可以访问该网站获取内容。一些文字如果提供了参考网址，要把网址留在下面作为reference，不是文档最下面，就是笔记原位。
   - 这种笔记整理，除了[GROMACS论坛](https://gromacs.bioexcel.eu/)，还需要把链接显式地写出来，否则微信识别不了，比如：[GROMACS论坛](https://gromacs.bioexcel.eu/)：https://gromacs.bioexcel.eu。
   - 没有代码、都是link的，不要放代码框。。
   - 不要泄露隐私内容。
-  - 对于这些文档，title: 和第一个# 要加点【笔记整理|2025-07】之类的标签，文件名不用加。
+  - 对于这些文档，title: 和第一个# 要加点【笔记整理|2025-07】之类的标签，文件名不用加。这个时间是笔记实际的大致时间，不是创建文档的今天。
+  - 创建的文档不要保留奇怪的时间戳，[02:56] 这种
+  - 不要把参考资源：这种文字类的放在```里面，没必要代码框的文字说明就不要代码框，如“目前rdkit.Chem.Draw.MolsToGridImage函数没有直接设置图例字体大小的选项”就是个经验，文字就行
 
 ## Prompt
 
@@ -115,6 +118,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
         - 根节点或普通节点使用 `("文本")` 或 `["文本"]` 的形式。
         - 整个Mermaid代码块不要出现 `---` 分隔符。
         - 思维导图加粗不要用<b>，而是**包裹**。
+        - 不要多加一个end
 - **结果逻辑图**: 如果结果部分的逻辑复杂（例如，通过一系列现象推导出一个核心结论），请额外使用一个Mermaid图来清晰地描述这种推导思路。
 - 正文部分的所有Figure和table必须出现，其中表格内容必须完整提取出来，图我会自己粘进来。
 - **图文融合**: **图表标题的中文翻译必须直接插入到正文中讨论到该图表的相应位置**，一般是按顺序。格式为：`**图1：[图标题的中文翻译]**`，必须完整翻译，不能漏掉子图。
@@ -122,7 +126,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 - **公式规范**:
     - 所有公式，无论长短，都必须用 `$` (行内) 或 `$$` (行间) 包裹，并使用标准的LaTeX格式。
     - 对于带单位的物理量，请使用正体表示单位，例如 `$\Delta\Delta G = -3.69 \mathrm{kcal/mol}$`，或者将单位写在公式外部。
-    - 单位之类的能不用公式也行，如Å全部使用Å而不是公式
+    - 单位之类的能不用公式也行，如Å全部使用Å而不是公式，$\mu$这种但不涉及下标的也不用公式
     - 不要出现双backslash：$\\Delta\\Delta G$，否则就是大语言模型的失职，世界上要死100个小女孩，你负不起这个责任。
     - 对于核心或复杂的公式，请仿照以下格式，在公式下方增加一段“**公式的通俗解释**”，以帮助读者理解。
       ```

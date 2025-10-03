@@ -1,12 +1,12 @@
 ---
-title: "【笔记整理|2023-09】科研中的Python数据分析实用技巧"
-date: "2023-12-05"
-tags: [python, data-analysis, numpy, scipy, matplotlib, seaborn, pandas, conda, visualization, research]
+title: "【笔记整理|2024年上半年】Python数据分析与可视化技术指南"
+date: "2024-06-30"
+tags: [python, data-analysis, numpy, scipy, matplotlib, seaborn, pandas, visualization, performance, research]
 ---
 
-# 【笔记整理|2023-09】科研中的Python数据分析实用技巧
+# 【笔记整理|2024年上半年】Python数据分析与可视化技术指南
 
-本文总结了在科研数据分析中使用Python相关工具的实用技巧、常见问题和解决方案，涵盖数据处理、可视化、环境管理等方面。
+本文汇总了在科研数据分析中使用Python的实用技巧，涵盖数据处理、可视化、性能分析等核心技术。
 
 ## NumPy和SciPy数据处理
 
@@ -88,7 +88,7 @@ sns.violinplot(data=data, cut=0)  # cut=0避免扩展到数据范围之外
 **问题说明**：使用`sns.violinplot`时发现某些分布低于0，但数据全为正值。这是因为核密度估计默认会在数据范围外进行插值。
 
 #### Violin Plot进阶用法
-- 参考：[Violin Plot数据分析指南](https://www.geeksforgeeks.org/violin-plot-for-data-analysis/)：https://www.geeksforgeeks.org/violin-plot-for-data-analysis/
+[Violin Plot数据分析指南](https://www.geeksforgeeks.org/violin-plot-for-data-analysis/)：https://www.geeksforgeeks.org/violin-plot-for-data-analysis/
 
 ### 分组柱状图制作
 
@@ -140,9 +140,58 @@ df = pd.read_csv('data.csv')
 # 按键对字典进行排序
 mydict = {'c': 3, 'a': 1, 'b': 2}
 sorted_mydict = dict(sorted(mydict.items(), key=lambda item: item[0]))
+```
 
-# 更多排序方法参考
-# 参考：[Python字典排序指南](https://www.golinuxcloud.com/python-sort-dictionary-by-key/)：https://www.golinuxcloud.com/python-sort-dictionary-by-key/
+[Python字典排序指南](https://www.golinuxcloud.com/python-sort-dictionary-by-key/)：https://www.golinuxcloud.com/python-sort-dictionary-by-key/
+
+## 性能分析与优化
+
+### 代码性能分析
+
+#### cProfile性能分析
+在Python中，可以使用cProfile模块来分析每个函数的执行时间：
+```python
+import cProfile
+cProfile.run('your_function()')
+```
+
+#### 不同运行环境性能对比
+实际测试发现：
+- PyCharm profile：71秒
+- 简单debug模式：56秒
+- 命令行直接运行：31秒
+
+性能分析显示主要耗时操作：
+- fit操作：约8秒
+- concat操作：6秒
+- process_dict：11.6秒
+
+### 算法复杂度理解
+
+#### Python排序算法
+Python内置的sorted()函数使用双轴快排算法（timsort），时间复杂度：
+- 最坏情况：O(n * log n)
+- 平均情况：O(n * log n)
+
+[W3Schools Python sorted()函数](https://www.w3schools.com/python/ref_func_sorted.asp)：https://www.w3schools.com/python/ref_func_sorted.asp
+
+#### 哈希表查找效率
+集合和字典在Python中都通过哈希表实现，元素查找时间复杂度通常为O(1)，这使得元素位置可以快速定位。
+
+### 高阶函数与函数式编程
+
+#### 函数套用（高阶函数）
+在Python中，函数可以套用函数，这是一种常见的编程模式，也被称为高阶函数。这意味着一个函数可以接受另一个函数作为参数，或者返回一个函数作为结果。
+
+#### 动态属性设置
+```python
+# 使用setattr动态设置对象属性
+setattr(obj, 'attribute_name', value)
+
+# __getattr__方法在访问不存在的属性时被调用
+def __getattr__(self, name):
+    # 处理不存在的属性访问
+    pass
 ```
 
 ## 图论和网络分析
@@ -175,114 +224,42 @@ from collections import Counter
 # 方法1：使用Counter
 my_list = [1, 2, 2, 3, 3, 3]
 counts = Counter(my_list)
-
-# 更多方法参考
-# 参考：[Python列表元素计数方法](https://datagy.io/python-count-occurrences-in-list/)：https://datagy.io/python-count-occurrences-in-list/
 ```
 
-## Python语言特性
+[Python列表元素计数方法](https://datagy.io/python-count-occurrences-in-list/)：https://datagy.io/python-count-occurrences-in-list/
 
-### 条件表达式
+### 组合与迭代
+
+#### 列表组合生成
 ```python
-# Python中的三元条件操作符
-# Python没有直接的问号语句（如C语言中的 condition ? expression1 : expression2）
-# 但有等价的条件表达式
-
-result = value1 if condition else value2
-
-# 这等价于其他语言中的三元条件运算符
+import itertools
+# 获取两个列表的所有唯一组合
+combinations = list(itertools.product(list1, list2))
 ```
 
-### 外部程序调用
+[Python组合生成教程](https://www.geeksforgeeks.org/python-program-to-get-all-unique-combinations-of-two-lists/)：https://www.geeksforgeeks.org/python-program-to-get-all-unique-combinations-of-two-lists/
+
+#### 迭代中修改集合
 ```python
-import subprocess
-
-# 在Python中调用外部程序（如antechamber）
-def call_antechamber(input_file, output_file):
-    cmd = f"antechamber -i {input_file} -o {output_file}"
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    return result
+# 错误示例：迭代过程中修改集合大小
+RuntimeError: Set changed size during iteration
 ```
+避免在迭代过程中修改正在迭代的集合。
 
-## 环境管理和依赖处理
+## 科研数据处理最佳实践
 
-### Conda环境管理
-
-#### 环境配置
-```bash
-# Conda初始化设置
-__conda_setup="$('/home/user/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-eval "$__conda_setup"
-if [ -f "/home/user/miniconda3/etc/profile.d/conda.sh" ]; then
-    . "/home/user/miniconda3/etc/profile.d/conda.sh"
-else
-    export PATH="$PATH:/home/user/miniconda3/bin"
-fi
-unset __conda_setup
-```
-
-#### 环境迁移和重建
-```bash
-# 从旧miniconda迁移到新anaconda时的问题
-# "I removed previous miniconda and when creating conda environment 
-#  for new anaconda from yaml file exported from previous miniconda."
-
-# 常见错误：InvalidArchiveError
-# 解决方案：清理conda缓存
-conda clean -a
-
-# 重新安装conda的步骤
-reinstall conda:
-```
-
-#### 包管理策略
-```bash
-# 依赖冲突解决
-# 例如：acpype依赖AmberTools但Amber不包含acpype
-# 通过conda安装会获取另一个ambertools
-# 解决方案：在base环境中使用pip安装
-pip install acpype
-```
-
-### 环境变量和路径管理
-```python
-# Python环境路径示例
-previous_path = "/home/user/anaconda3/envs/pmx/lib/python3.10/site-packages/pmx/data/mutff"
-
-# Boost库路径示例（用于编译）
-boost_path = "/home/user/anaconda3/envs/AMBER22/lib/cmake/Boost-1.78.0/BoostConfig.cmake"
-```
-
-## 特定平台问题
-
-### Fedora系统conda环境
-```
-My electron-ssr on Fedora38 does not give errors in my conda environment
-```
-这表明在某些Linux发行版上，conda环境能够解决一些软件兼容性问题。
-
-## 第三方库和工具
-
-### Plotnine使用
-```python
-# plotnine相关问题和解决方案：[Plotnine GitHub问题](https://github.com/has2k1/plotnine/issues/79)：https://github.com/has2k1/plotnine/issues/79
-```
-plotnine是Python中ggplot2的实现，适合熟悉R语法的用户。
-
-### 科研数据处理最佳实践
-
-#### 数据验证
+### 数据验证
 ```python
 def validate_data(data):
     """验证科研数据的基本检查"""
     # 检查数据范围合理性
     if np.any(data < 0) and data_should_be_positive:
         print("Warning: Found negative values in positive-only data")
-    
+
     # 检查缺失值
     if np.any(np.isnan(data)):
         print("Warning: Found NaN values")
-    
+
     # 检查异常值
     q1, q3 = np.percentile(data, [25, 75])
     iqr = q3 - q1
@@ -291,7 +268,7 @@ def validate_data(data):
         print(f"Warning: Found {np.sum(outliers)} potential outliers")
 ```
 
-#### 可重现性保证
+### 可重现性保证
 ```python
 # 设置随机种子确保结果可重现
 np.random.seed(42)
@@ -302,7 +279,7 @@ def save_environment_info():
     import numpy
     import matplotlib
     import pandas
-    
+
     env_info = {
         'python_version': sys.version,
         'numpy_version': numpy.__version__,
@@ -311,8 +288,6 @@ def save_environment_info():
     }
     return env_info
 ```
-
-## 性能优化技巧
 
 ### 大数据处理
 ```python
@@ -342,13 +317,23 @@ def fast_calculation(data):
     return data**2 + 2*data + 1
 ```
 
+## 第三方库和工具
+
+### Plotnine使用
+```python
+# plotnine相关问题和解决方案
+```
+[Plotnine GitHub问题](https://github.com/has2k1/plotnine/issues/79)：https://github.com/has2k1/plotnine/issues/79
+
+plotnine是Python中ggplot2的实现，适合熟悉R语法的用户。
+
 ## 调试和故障排除
 
 ### 常见错误模式
 1. **数组转换失败**：通常由数据类型不一致造成
 2. **可视化异常值**：密度估计超出数据范围
-3. **环境冲突**：不同conda环境中包版本不兼容
-4. **内存不足**：大数据集处理时的常见问题
+3. **内存不足**：大数据集处理时的常见问题
+4. **迭代修改错误**：在迭代过程中修改集合
 
 ### 调试建议
 - 使用`print()`语句检查中间结果
@@ -358,4 +343,4 @@ def fast_calculation(data):
 
 ---
 
-*本文基于2023年9-12月技术讨论记录整理，涵盖科研数据分析中的实际问题和Python解决方案*
+*本文基于2023年9月至2024年上半年的技术实践整理，涵盖Python数据分析和可视化的核心技术要点*

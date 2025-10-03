@@ -1,3 +1,8 @@
+---
+title: "CentOS 7升级Rocky Linux 8无网络环境解决方案"
+date: "2025-09-17"
+tags: [techniques, linux]
+---
 
 ---
 title: "CentOS 7升级Rocky Linux 8无网络环境解决方案"
