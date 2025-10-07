@@ -165,7 +165,7 @@ PACKMOL-GUI的界面布局遵循自上而下的逻辑顺序，分为五个核心
 
 -----
 
-## Q\&A
+## Q&A
 
   - **Q1**: PACKMOL-GUI相比于之前的GEMS-Pack等GUI工具有哪些本质上的优势？
 

@@ -1,0 +1,19 @@
+# Robots.txt for Mendelevium Blog
+# This file tells search engine crawlers which pages or files they can or can't request from your site
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of archive and backup directories
+Disallow: /Archive/
+Disallow: /_pages/archive/
+
+# Disallow crawling of technical/system files
+Disallow: /assets/fonts/
+Disallow: /assets/js/
+
+# Allow crawling of important assets
+Allow: /assets/img/
+
+# Sitemap location
+Sitemap: https://gxf1212.github.io/mendelevium/sitemap.xml

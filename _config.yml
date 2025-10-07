@@ -5,33 +5,45 @@ description: >-
   Mendelevium is a personal blog sharing my research and life experiences. I will write about MD simulations, chemoinformatics, Linux, basic tools. I will also share my thoughts on web scraping, web development, machine learning, and so on.
 
 # GitHub Pages settings
-url: "https://gxf1212.github.io" 
-baseurl: "/mendelevium" 
+url: "https://gxf1212.github.io"
+baseurl: "/mendelevium"
+
+# Language setting for SEO
+lang: zh-CN
+
+# Site logo for structured data (used by jekyll-seo-tag)
+logo: "https://gxf1212.github.io/mendelevium/assets/img/favicon.webp"
 
 # --- Author Info ---
-author: Xufan Gao
+author:
+  name: Xufan Gao
+  email: gxf1212@zju.edu.cn
+  twitter: Gaoxufan
 location: "Hangzhou, Zhejiang, China"
 affiliation: "Zhejiang University (ZJU)"
 
-# --- Social Links ---
+# --- Social Links for SEO and Structured Data ---
 social:
   name: Xufan Gao
-  email: gxf1212@zju.edu.cn
   links:
-    - https://github.com/gxf1212/
+    - https://github.com/gxf1212
     - https://twitter.com/XufanGao
     - https://scholar.google.com/citations?hl=en&user=f8pi1BUAAAAJ
     - https://gxf1212.github.io/notes/#/
     - https://space.bilibili.com/441196634
     - https://www.zhihu.com/people/wo-zhen-de-hao-cai-a
 
+# Twitter username for Twitter Cards
+twitter:
+  username: Gaoxufan
+  card: summary_large_image
+
 logo_img: "/assets/img/favicon.webp"
 profile_img: "/assets/img/profile.webp"
 
-# Social Links
+# Social Links (legacy, kept for theme compatibility)
 email: gxf1212@zju.edu.cn
 github_username: gxf1212
-twitter_username: Gaoxufan
 facebook_username: Xufan Gao
 linkedin_username: 高旭帆
 

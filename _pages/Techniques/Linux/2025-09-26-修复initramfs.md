@@ -210,7 +210,7 @@ ALERT! UUID=... does not exist. Dropping to a shell!
 
 -----
 
-### **第五幕：疑难杂症处理（Q\&A）**
+### **第五幕：疑难杂症处理（Q&A）**
 
   * **问：chroot 中 `update-initramfs` 报错 `Failed to retrieve NVRAM data`？**
     **答**：正常现象，chroot 环境无法访问主板固件。可以临时将 `/etc/initramfs/post-update.d/zz-kernelstub` 脚本移走，运行完命令后再移回。

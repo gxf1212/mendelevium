@@ -1,7 +1,9 @@
 ---
 title: "When Physics Meets AI: How Deep-CovBoost Precisely Targets COVID-19's Weak Spots"
 date: "2025-08-13"
+description: "Deep-CovBoost 结合物理模拟与 AI，精准识别 COVID-19 关键靶点。通过深度学习和自由能计算，高效设计蛋白酶抑制剂，为抗病毒药物开发开辟新路径。"
 tags: [ai, covid-19, drug-design, deep-learning, fep, molecular-dynamics, protease-inhibitors]
+image: "/assets/img/thumbnail/nightgardenflower.jpg"
 ---
 
 # **当物理模拟遇见AI：Deep-CovBoost如何精准狙击新冠病毒"软肋"？**
@@ -81,7 +83,7 @@ tags: [ai, covid-19, drug-design, deep-learning, fep, molecular-dynamics, protea
 
 > **图6**：I3C-1 (A)和I3C-34 (B)与SARS2、SARS和MERS主蛋白酶的MD模拟RMSD曲线，以及与关键活性位点残基的接触频率。
 
-### **技术细节 Q\&A**
+### **技术细节 Q&A**
 
   * **Q1：本文的核心策略是“AI预测”和“FEP计算”的结合，两者之间的相关性如何？AI预测的结果足够可靠吗？**
     **A**：这是一个非常关键的问题。研究发现，AI模型预测的$\Delta\Delta G$值与FEP计算的$\Delta\Delta G$值之间存在**中等但显著的正相关**（皮尔逊相关系数PCC在0.5到0.54之间）。这意味着AI的预测趋势是**基本正确**的，能够有效地从海量分子中富集出高活性候选者。然而，相关性并非完美，也说明了AI预测存在一定的“噪音”和不确定性。因此，**AI的角色是高效的“漏斗”，用于大规模地排除劣质分子；而FEP则是必不可少的“精密天平”，用于对AI筛选出的少数精英分子进行最终的、高精度的验证**。两者结合，实现了效率与准确性的最佳平衡。
