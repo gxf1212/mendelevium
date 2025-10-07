@@ -2,6 +2,9 @@
 title: "角质层脂质基质的动态结构缺陷与屏障功能分子机制"
 date: "2025-10-04"
 tags: [stratum-corneum, skin-barrier, molecular-dynamics, lipid-bilayer, permeation-enhancer, ceramide, transdermal-delivery]
+description: "分子动力学模拟揭示皮肤屏障功能的双重机制：静态有序结构构建基础屏障，动态缺陷形成瞬时渗透通路，系统阐述脂质相分离与孔道缺陷的协同作用"
+thumbnail: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
+image: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
 ---
 
 # 角质层脂质基质的动态结构缺陷与屏障功能分子机制
