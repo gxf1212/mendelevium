@@ -53,9 +53,8 @@ giscus_repo: "gxf1212/mendelevium"
 giscus_repoId: "R_kgDOPh2Scw"  # 例如: R_kgDOMxxxxxxxxx
 giscus_category: "Blog Comments" # 这里填写你创建的分类名
 giscus_categoryId: "DIC_kwDOPh2Sc84CudnJ" # 例如: DIC_kwDOMxxxxxxxxx
-goatcounter_code: "gxf1212-mendelevium"
-google_analytics: ""
 goatcounter_code: "gxf1212"
+google_analytics: ""
 
 # Build settings for GitHub Pages
 plugins:
