@@ -2,6 +2,9 @@
 title: "【笔记整理|2024年上半年】Python开发环境与工程化笔记整理"
 date: "2024-06-30"
 tags: [python, development-environment, conda, cython, web-scraping, selenium, performance, environment-management]
+description: "全面覆盖Python开发环境配置与工程化实践，包括Conda虚拟环境管理、Cython性能优化、Selenium网络爬虫、依赖管理与最佳实践，为高效Python开发提供系统指南"
+thumbnail: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
+image: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
 ---
 
 # 【笔记整理|2024年上半年】Python开发环境与工程化笔记整理

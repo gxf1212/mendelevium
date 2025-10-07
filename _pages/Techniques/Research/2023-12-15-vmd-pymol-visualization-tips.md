@@ -2,6 +2,9 @@
 title: "【笔记整理|2023-09】VMD和PyMOL分子可视化实用技巧"
 date: "2023-12-15"
 tags: [vmd, pymol, visualization, molecular-graphics, structural-biology, trajectory-analysis]
+description: "VMD和PyMOL分子可视化软件的实用技巧集锦，包括WSL环境配置、轨迹分析、动画制作、分子对齐和高质量渲染的完整方案"
+thumbnail: "/assets/img/thumbnail_mine/wh-e7zqro.jpg"
+image: "/assets/img/thumbnail_mine/wh-e7zqro.jpg"
 ---
 
 # 【笔记整理|2023-09】VMD和PyMOL分子可视化实用技巧

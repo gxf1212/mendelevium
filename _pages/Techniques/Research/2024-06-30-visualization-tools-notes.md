@@ -2,6 +2,9 @@
 title: "【笔记整理|2024年上半年】科学可视化工具实用技巧集锦"
 date: "2024-06-30"
 tags: [visualization, vmd, pymol, chimerax, scientific-visualization, molecular-graphics, trajectory-analysis]
+description: "VMD、PyMOL和ChimeraX科学可视化工具的实用技巧，涵盖渲染模式优化、坐标变换、轨迹分析和高质量分子图形制作的完整方案"
+thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
 ---
 
 # 【笔记整理|2024年上半年】科学可视化工具实用技巧集锦

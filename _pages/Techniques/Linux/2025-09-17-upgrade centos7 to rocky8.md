@@ -2,6 +2,9 @@
 title: "CentOS 7 升级到 Rocky Linux 8/9 完整指南"
 date: "2025-09-17"
 tags: [centos, rocky-linux, leapp, elevate, system-upgrade, linux-migration]
+description: "从CentOS 7到Rocky Linux 8/9的系统迁移完整指南，详解ELevate和Leapp框架的使用方法，涵盖系统备份、软件源修复、内核升级和故障排查全流程"
+thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
 ---
 
 # CentOS 7 升级到 Rocky Linux 8/9 完整指南

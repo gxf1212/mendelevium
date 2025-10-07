@@ -2,6 +2,9 @@
 title: "分子动力学聚类分析与热图可视化技术"
 date: "2025-08-22"
 tags: [clustering, heatmap, molecular-dynamics, data-analysis, visualization, conformational-analysis, trajectory-analysis, vmd, python, data-visualization]
+description: "分子动力学轨迹聚类分析和构象热图可视化的完整技术方案，使用VMD的TCL脚本进行聚类，结合Python的seaborn绘制高质量热图"
+thumbnail: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
+image: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
 ---
 
 # 分子动力学聚类分析与热图可视化技术

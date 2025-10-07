@@ -1,13 +1,10 @@
 ---
 title: "CentOS 7升级Rocky Linux 8无网络环境解决方案"
 date: "2025-09-17"
-tags: [techniques, linux]
----
-
----
-title: "CentOS 7升级Rocky Linux 8无网络环境解决方案"
-date: "2025-09-17"
 tags: [centos, rocky-linux, 无网络升级, ssh隧道, 代理配置, 系统升级, linux运维]
+description: "详细讲解在无网络环境下将CentOS 7升级到Rocky Linux 8的完整方案，通过SSH隧道代理配置、本地Yum仓库搭建等技术手段实现受限环境的系统升级"
+thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
 ---
 
 # CentOS 7升级Rocky Linux 8无网络环境解决方案
