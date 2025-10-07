@@ -1,7 +1,10 @@
 ---
 title: "【笔记整理|2023-09】Linux科研开发环境配置和管理指南"
 date: "2023-12-12"
+description: "Linux科研开发环境的完整配置和管理指南。涵盖Fedora、Ubuntu系统设置，KDE桌面配置，远程连接、代理设置、VS Code开发环境等核心内容。"
 tags: [linux, fedora, ubuntu, kde, development-environment, remote-desktop, proxy, vscode, system-administration]
+thumbnail: "/assets/img/thumbnail/sorry.png"
+image: "/assets/img/thumbnail/sorry.png"
 ---
 
 # 【笔记整理|2023-09】Linux科研开发环境配置和管理指南

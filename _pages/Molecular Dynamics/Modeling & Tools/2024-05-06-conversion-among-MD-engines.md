@@ -1,7 +1,10 @@
 ---
 title: "File Conversion Among MD Simulation Engines Using ParmEd"
 date: "2024-05-06"
+description: "使用 ParmEd 工具实现 Gromacs、Amber、NAMD 等主流分子动力学模拟引擎之间的文件转换。详细教程展示如何无痛切换不同的模拟软件包。"
 tags: [md-simulation, parmed, gromacs, amber, namd, modeling, python]
+thumbnail: "/assets/img/thumbnail/example.jpg"
+image: "/assets/img/thumbnail/example.jpg"
 ---
 
 # File Conversion Among MD Simulation Engines Using ParmEd

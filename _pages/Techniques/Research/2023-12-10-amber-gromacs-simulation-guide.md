@@ -2,6 +2,8 @@
 title: "【笔记整理|2023-09】Amber和GROMACS分子动力学模拟实用指南"
 date: "2023-12-10"
 tags: [amber, gromacs, namd, molecular-dynamics, force-field, membrane-simulation, amber-tools]
+thumbnail: "/assets/img/thumbnail/example.jpg"
+image: "/assets/img/thumbnail/example.jpg"
 ---
 
 # 【笔记整理|2023-09】Amber和GROMACS分子动力学模拟实用指南

@@ -1,7 +1,10 @@
 ---
 title: "Deploy PostgreSQL Database and MinIO Object Storage: Complete Server Setup Guide"
 date: "2025-05-26"
+description: "完整的服务器部署指南：安装配置 PostgreSQL 数据库、MinIO 对象存储、Nginx 反向代理。适用于 Django 应用，支持 Docker 容器化部署。"
 tags: [postgresql, minio, deployment, ubuntu, docker, nginx, reverse-proxy, database, object-storage]
+thumbnail: "/assets/img/thumbnail/loading.webp"
+image: "/assets/img/thumbnail/loading.webp"
 ---
 # Ubuntu 22.04 服务器部署 PostgreSQL 数据库、MinIO 对象存储以及一个通过 Nginx 反向代理访问的 Docker化 Django 后端应用完整教程
 

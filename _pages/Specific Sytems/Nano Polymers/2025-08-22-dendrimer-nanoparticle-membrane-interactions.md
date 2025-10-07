@@ -2,6 +2,9 @@
 title: "树枝状大分子纳米粒表面与膜相互作用机理"
 date: "2025-08-22"
 tags: [dendrimers, nanoparticles, membrane-interactions, pi-systems, molecular-dynamics, surface-chemistry, cell-membrane, polymer-membrane]
+description: "全面综述树枝状聚合物和纳米粒表面π体系、刚性疏水结构与细胞膜相互作用的分子机制，揭示阳离子-π作用、CH/π接触、疏水锚定如何调控膜穿透和细胞摄取"
+thumbnail: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
+image: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
 ---
 
 # 树枝状大分子/纳米粒表面π体系与膜相互作用机理
