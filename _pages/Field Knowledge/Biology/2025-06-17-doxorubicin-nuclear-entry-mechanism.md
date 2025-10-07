@@ -1,7 +1,10 @@
 ---
-title: "Doxorubicin Nuclear Entry Mechanisms: A Comprehensive Review"
+title: "阿霉素进核机制全景：从被动扩散到纳米载体主动递送的多重路径"
 date: "2025-06-17"
 tags: [doxorubicin, nuclear-transport, drug-delivery, cancer-therapy, membrane-transport, cell-biology]
+description: "全面综述阿霉素进入细胞核的分子机制：游离态通过被动扩散和膜载体摄取，纳米载体通过内吞途径和核定位序列增强核靶向，P-糖蛋白介导的外排与肿瘤耐药性密切相关"
+thumbnail: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
+image: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
 ---
 
 # 阿霉素进核机制综述

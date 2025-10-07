@@ -1,7 +1,10 @@
 ---
-title: "Understanding Structure Factor S(q) and Its Applications in Polyelectrolyte Phase Separation Studies"
+title: "理解结构因子S(q)及其在聚电解质相分离研究中的应用"
 date: "2025-06-03"
 tags: [structure-factor, scattering, phase-separation, polyelectrolyte, physics, theory, computational-physics]
+description: "详解结构因子S(q)的物理意义与计算方法，从X射线散射到分子动力学模拟，深入分析其在聚电解质液-液相分离研究中的应用，揭示相分离动力学的特征长度和时间演化"
+thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 ---
 # 理解结构因子 $S(q)$ 及其在聚电解质相分离研究中的应用
 

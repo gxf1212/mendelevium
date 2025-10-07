@@ -1,4 +1,11 @@
 ---
+title: "分子动力学引擎间文件转换：使用ParmEd实现Gromacs、Amber、NAMD无缝切换"
+date: "2024-05-06"
+tags: [parmed, gromacs, amber, namd, file-conversion, molecular-dynamics]
+description: "详细教程展示如何使用ParmEd工具包实现主流分子动力学软件间的文件转换，让研究者无需重新搭建即可在不同模拟软件间自由切换"
+thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+---
 title: "File Conversion Among MD Simulation Engines Using ParmEd"
 date: "2024-05-06"
 description: "使用 ParmEd 工具实现 Gromacs、Amber、NAMD 等主流分子动力学模拟引擎之间的文件转换。详细教程展示如何无痛切换不同的模拟软件包。"

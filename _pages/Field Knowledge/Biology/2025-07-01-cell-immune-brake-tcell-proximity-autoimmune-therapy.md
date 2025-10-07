@@ -1,7 +1,10 @@
 ---
-title: "Unlocking T-Cell Proximity Control: How LAG-3 Proximity to TCR Enables Precision Autoimmune Therapy"
+title: "解锁T细胞邻近控制：LAG-3与TCR的空间接近如何实现精准自身免疫治疗"
 date: "2025-07-01"
 tags: [immunotherapy, lag-3, tcr, autoimmune, cell-biology, checkpoint-inhibitors, t-cells, bispecific-antibody]
+description: "Cell揭示LAG-3抑制T细胞的全新机制：需要与TCR而非CD4空间邻近，通过FSAL基序与CD3ε凝聚破坏Lck信号，开发的LAG-3/TCR双特异性抗体为自身免疫病提供精准治疗策略"
+thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
 ---
 # 【Cell】 解锁免疫“刹车”新用法：强制T细胞“邻近”可精准治疗自身免疫病
 

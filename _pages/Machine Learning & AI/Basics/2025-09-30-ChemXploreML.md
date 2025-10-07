@@ -1,5 +1,5 @@
 ---
-title: "ChemXploreML：一款"开箱即用"的桌面软件，让分子属性预测迈向自动化与平民化"
+title: "ChemXploreML：一款开箱即用的桌面软件，让分子属性预测迈向自动化与平民化"
 date: "2025-09-30"
 description: "ChemXploreML 是一款开箱即用的机器学习桌面软件，让分子属性预测变得简单易用。无需编程知识即可构建ML模型，推动计算化学民主化。"
 tags: [machine-learning-and-ai, chemoinformatics, molecular-properties, ml-software, desktop-application]

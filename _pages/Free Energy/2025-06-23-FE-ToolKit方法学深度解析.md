@@ -1,7 +1,10 @@
 ---
-title: "FE-ToolKit Methodology Deep Analysis: Mathematical Derivations and Physical Interpretations"
+title: "FE-ToolKit方法学深度解析：数学推导与物理诠释"
 date: "2025-06-23"
 tags: [fe-toolkit, free-energy, umbrella-sampling, collective-variables, methodology, wham, thermodynamics]
+description: "深入剖析FE-ToolKit软件的理论基础，详解伞形采样谐波偏置势定义、MBAR多态贝内特接受率方法、高维自由能表面构建及最小自由能路径优化的数学推导与物理意义"
+thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
 ---
 # FE-ToolKit方法学深度解析：推公式和物理意义
 

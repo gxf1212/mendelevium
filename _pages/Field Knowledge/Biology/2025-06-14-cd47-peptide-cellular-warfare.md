@@ -1,5 +1,5 @@
 ---
-title: "Don't Eat Me vs Eat Me: Cellular Warfare and the Dual Functions of CD47 Peptides"
+title: "CD47肽的"别吃我"与"吃我"双重功能：细胞攻防战的精密调控"
 date: "2025-06-14"
 tags: [cd47, sirpa, macrophage, phagocytosis, immunotherapy, drug-delivery, cell-biology]
 ---

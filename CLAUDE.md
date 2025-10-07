@@ -53,6 +53,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 
 - 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。直接扫描所有的_pages中的文件，看哪些没有YYYY-MM-DD，然后修复其frontmatter和文件名，不要搞太复杂的流程。
 - 去掉所有参考标记
+- 注意title要用中文标点，不要用英文标点，尤其是英文引号，请修复。类似于title: "皮肤屏障的“水之道”：分子模拟揭示脂质相共存如何稳定间质水"，内部是中文标点。【OpenFE】这种是可以的。。但文件名不要出现乱七八糟的东西，标点符号等。
 - 把_pages\xxx.docx改写成Markdown，内容完全不变，保证参考文献链接仍然正确，即文内的引用标记要能对得上文末的list，得用这种吧：[^6]。
 
 ### 技术记录
