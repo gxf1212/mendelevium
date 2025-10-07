@@ -1,7 +1,10 @@
 ---
 title: "AI-Assisted Molecular Docking: How Autoparty Transforms Manual Pose Inspection into Transferable Models"
 date: "2025-08-18"
+description: "Autoparty 将人工分子对接Pose评估转变为AI模型，通过人机循环学习实现自动化虚拟筛选。这革命性方法大幅提升药物发现中的Pose分析效率。"
 tags: [molecular-docking, active-learning, human-in-the-loop, virtual-screening, drug-discovery, machine-learning]
+thumbnail: "/assets/img/thumbnail/book.jpg"
+image: "/assets/img/thumbnail/book.jpg"
 ---
 
 # AI陪你看靶点：Autoparty如何将"人工看Pose"的"祖传手艺"变成可传承的模型

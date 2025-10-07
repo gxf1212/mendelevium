@@ -25,6 +25,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 
 - 每个分类下应该有一个 index.md 文件
 - Archive\jekyll-theme-satellite-master是原始模板，报错了可以参考，尤其是里面的docs
+- https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md 是SEO的插件，可以参考
 - 为什么单篇文章，如2025-08-13-deep-covboost-ai-covid-target会出现在侧边栏？不应该出现的
     bookmark: false我已经删掉了，就解决了，以后都不要写
 - 文件名不能太长、有问题，包括图片文件夹。rename folder name to sth shorter.
@@ -40,6 +41,11 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
   title: "Random Forest and Enhanced Sampling Unite: Revealing and Correcting Ghost Errors in Alchemical Free Energy Calculations"
   date: "2025-08-22"
   tags: [random-forest, enhanced-sampling, alchemical-free-energy, gamd, error-analysis, machine-learning, molecular-dynamics]
+  description: "深入分析 Boltz-2 AI 模型在配体亲和力预测中的表现，与 FEP 方法的对比，以及两者如何协同工作"
+  image: "/assets/img/thumbnail/bricks.webp"
+  thumbnail: "/assets/img/La-Mancha.jpg"
+  author: Xufan Gao
+  lang: zh-CN
   ---
   ```
 

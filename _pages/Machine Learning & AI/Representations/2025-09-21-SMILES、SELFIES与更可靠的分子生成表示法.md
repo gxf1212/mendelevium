@@ -1,7 +1,10 @@
 ---
-title: "为AI炼丹炉“净化”原料：SMILES、SELFIES与更可靠的分子生成表示法"
+title: "为AI炼丹炉"净化"原料：SMILES、SELFIES与更可靠的分子生成表示法"
 date: "2025-09-21"
-tags: [machine-learning-and-ai, representations]
+description: "深入分析 SMILES 和 SELFIES 分子表示法的优缺点，探索如何提高生成模型的可靠性和有效性。为 AI 药物发现中的分子表示提供最佳实践。"
+tags: [machine-learning-and-ai, representations, smiles, selfies, molecular-representation, generative-models, drug-discovery]
+thumbnail: "/assets/img/thumbnail/sample.png"
+image: "/assets/img/thumbnail/sample.png"
 ---
 # 为AI炼丹炉“净化”原料：SMILES、SELFIES与更可靠的分子生成表示法
 
@@ -54,24 +57,24 @@ tags: [machine-learning-and-ai, representations]
 
 ### 核心方法论：模型、指标与增强策略
 
-#### 1\. 分子表示法：SMILES vs. SELFIES
+#### 1. 分子表示法：SMILES vs. SELFIES
 
 **图1：γ-丁内酯（GBL）的SMILES和SELFIES表示法示例。**
 如图所示，对于同一个分子，SMILES使用匹配的括号`()`和数字`1`来表示支链和环的闭合，这是一种隐式的、需要前后对应的语法。而SELFIES则使用显式的`[Branch]`和`[Ring]`标记，其后的“重载标记”（overloaded tokens）用于定义支链或环的长度，语法更严格。
 
-#### 2\. 评估标准：有效性(Viability)与保真度(Fidelity)
+#### 2. 评估标准：有效性(Viability)与保真度(Fidelity)
 
   * **有效性指标**：包括**Validity**（RDKit能否解析为有效分子）、**Novelty**（生成分子不在训练集中的比例）和**Uniqueness**（生成分子中不重复的比例）。三者结合构成本文的Viability。
   * **保真度指标**：通过计算生成分子与训练集分子在四个关键理化性质上的分布相似性来衡量，包括**QED**（类药性）、**SA**（合成可及性）、**MW**（分子量）和**TPSA**（拓扑极性表面积）。分布的差异用**Wasserstein距离**来量化。
 
-#### 3\. 详解ClearSMILES流程
+#### 3. 详解ClearSMILES流程
 
 为了解决SMILES表示法存在的问题，作者提出了一种名为ClearSMILES的数据增强流程，其核心思想是为每个分子找到一种“对AI更友好”的SMILES变体。
+
 **图3：ClearSMILES流程图，展示了随机化Kekulé SMILES的生成和过滤步骤。**
 
 ```mermaid
-graph TD
-    subgraph direction LR
+graph LR
         subgraph "第一步：生成 (Generation)"
             A("输入一个分子的<br/>规范SMILES") -- "随机化遍历路径<br/>使用Kekulé式表示芳香环" --> B("生成10万个<br/>随机化的Kekulé SMILES")
         end
@@ -102,7 +105,7 @@ graph TD
 
 ### 结果与分析
 
-#### 1\. 基线模型的表现：SMILES与SELFIES的“死穴”
+#### 1. 基线模型的表现：SMILES与SELFIES的“死穴”
 
 **表1：基于SMILES的VAE（22维潜空间）生成的30万个样本的有效性指标。**
 | 增强方法 | 有效性(Validity) | 新颖性(Novelty) | 独特性(Uniqueness) | 综合有效性(Viability) |
@@ -119,14 +122,14 @@ graph TD
   * **SMILES的死穴——有效性**：如表1所示，使用标准SMILES训练的模型，其生成的分子中有**近20%是化学无效的**。
   * **SELFIES的死穴——保真度**：如表2所示，SELFIES的有效性确实是100%。但补充材料（表S2）的深入分析显示，**约92%的不稳定SELFIES字符串在解码过程中发生了信息丢失**（即解码再编码后，字符串变短了）。
 
-#### 2\. 错误溯源：为什么会失败？
+#### 2. 错误溯源：为什么会失败？
 
 **图2：(a) VAE模型和(b) MolGPT模型生成的SMILES样本的错误类型分布。**
 
   * **SMILES的错误根源**：如图2a所示，在SMILES生成的无效分子中，**绝大多数错误（蓝色条）都与芳香性（aromaticity）有关**。这证实了芳香性的抽象表示是模型学习的难点。
   * **SELFIES的保真度问题根源**：SELFIES的100%有效性是通过其解码算法强制实现的。当遇到可能导致化合价错误的指令时，算法会**主动删除**这些指令。补充材料（图S3）的分析表明，**删除（deletion）是导致字符串不稳定的最主要原因，其中环和支链相关的标记**最常被删除。这种纠错机制导致了生成分子的系统性偏差（如环更少、结构更简单），从而严重损害了对训练集性质分布的保真度。
 
-#### 3\. ClearSMILES的性能：有效性与保真度的双重提升
+#### 3. ClearSMILES的性能：有效性与保真度的双重提升
 
 ClearSMILES通过生成语法更简单的字符串来提升模型性能。作者通过图4和图5定量分析了其语法优越性。
 
@@ -153,7 +156,7 @@ ClearSMILES通过生成语法更简单的字符串来提升模型性能。作者
   * **有效性的大幅提升**：如表1所示，改用ClearSMILES后，VAE生成的**无效分子比例从19.25%骤降至2.2%**，综合有效性（Viability）从80.35%提升至**96.89%**。错误分析（图2a，橙色条）表明，ClearSMILES几乎完全消除了芳香性错误，并大幅减少了与环和括号相关的错误。
   * **保真度的中度改善**：如图6和表6所示，SMILES系列表示法在保真度上普遍优于SELFIES系列。特别是，SELFIES在类药性（QED）和合成可及性（SA）两个关键指标上与训练集（MOSES Dataset）的分布差异巨大。而**ClearSMILES在标准SMILES的基础上，进一步缩小了与训练集在QED和SA上的差距**（Wasserstein距离更小），表明其生成的分子在性质上更接近真实药物分子。
 
-#### 4\. 更强模型的表现：MolGPT
+#### 4. 更强模型的表现：MolGPT
 
 **图7：所有MolGPT模型（采样温度1.5）生成的有效样本的各项指标评估。**
 作者还使用了一个更强大的基于Transformer的MolGPT模型进行验证。结果（表3）显示，虽然MolGPT能将标准SMILES的有效性提升到90%以上，但ClearSMILES仍然能将其进一步提升至近95%。这表明，**即使对于更强大的模型，一个更优的分子表示法依然能带来性能上的增益**。
