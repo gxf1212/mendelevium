@@ -52,7 +52,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 ## 常见要求
 
 - 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。直接扫描所有的_pages中的文件，看哪些没有YYYY-MM-DD，然后修复其frontmatter和文件名，不要搞太复杂的流程。
-- 去掉所有参考标记
+- 去掉所有参考标记，如[cite\_start]、[cite: 3749]，根据CLAUDE.md修复所有格式
 - 注意title要用中文标点，不要用英文标点，尤其是英文引号，请修复。类似于title: "皮肤屏障的“水之道”：分子模拟揭示脂质相共存如何稳定间质水"，内部是中文标点。【OpenFE】这种是可以的。。但文件名不要出现乱七八糟的东西，标点符号等。
 - 把_pages\xxx.docx改写成Markdown，内容完全不变，保证参考文献链接仍然正确，即文内的引用标记要能对得上文末的list，得用这种吧：[^6]。
 
@@ -63,7 +63,8 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
   - 每一篇不太长，就是一篇推送的长度，包括一个或多个话题。尽量按照话题来组织汇总，把比较相关的内容放在一起。内容太多就创建新的md文件。
   - 如只看到一个网站但不知道是干啥的，可以访问该网站获取内容。一些文字如果提供了参考网址，要把网址留在下面作为reference，不是文档最下面，就是笔记原位。
   - 这种笔记整理，除了[GROMACS论坛](https://gromacs.bioexcel.eu/)，还需要把链接显式地写出来，否则微信识别不了，比如：[GROMACS论坛](https://gromacs.bioexcel.eu/)：https://gromacs.bioexcel.eu。
-  - 没有代码、都是link的，不要放代码框。。
+  - 没有代码、都是link的，不要放代码框。。正常的文字不要放quote 
+  - pip cache purge这种放在代码框或``包裹
   - 不要泄露隐私内容。
   - 对于这些文档，title: 和第一个# 要加点【笔记整理|2025-07】之类的标签，文件名不用加。这个时间是笔记实际的大致时间，不是创建文档的今天。
   - 创建的文档不要保留奇怪的时间戳，[02:56] 这种
@@ -74,7 +75,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 ```
 **角色**: 你是一位顶尖的科研媒体编辑和科学传播专家。你的读者是渴望学习新知识的科研新手和同行。你的任务是将一篇专业的、信息密集的科研论文，转换成一篇详尽、易懂、重点突出、排版精美的微信公众号推送文章。
 
-在关键的概念、结论或punchline处，请使用 `**加粗**` 来突出重点，但不要包含最后一个句号，**要放在最后一个句号之前，否则渲染不成功。**也不要包裹非常规内容，如公式，**"黑箱"**这种带引号的，**贝叶斯优化（Bayesian Optimization）**这种带括号的。就包含正常汉字、数字等就行。正文尽量用中文标点。
+在关键的概念、结论或punchline处，请使用 `**加粗**` 来突出重点，但不要包含最后一个句号，**要放在最后一个句号之前，否则渲染不成功。**也不要包裹非常规内容，如公式，**“黑箱”**这种带引号的，**贝叶斯优化（Bayesian Optimization）**这种带括号的。就包含正常汉字、数字等就行。正文尽量用中文标点。
 - **排版**: 全文使用中文标点符号，尤其是冒号、中文内容的引号。除了加粗的标题，尽量让段落自然换行，避免不必要的手动换行 `<br/>`。
 - Markdown格式：列表这些的两个item之间还是要有个空行，其他也要适当多空行。不要写Q\&A，而是Q&A；不要写1\.，而是1.，总之不要多加\。
 
@@ -86,7 +87,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 
 **输出格式 (Markdown)**:
 
-# [引人入胜但专业的中文标题]
+# [引人入胜但专业的中文标题，不要带奇怪的引号名词]
 
 ## 本文信息
 - **标题**: [论文标题中文翻译]
@@ -119,8 +120,8 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 [这是文章的主体部分。请根据原文的逻辑结构、图表和核心论点，自己定义章节（例如：`### 核心方法：PMODiff模型详解`，`### 实验结果与分析`等）。**务必列出并解读正文部分的所有主要结果，确保信息的完整性。**]
 
 - **方法详述**: 要有一个section描述方法，如MD模拟的建模过程，AI模型的数据集准备等。必须详细描述关键方法。要总结用到的各种工具。
-    - 如果文章提出了新方法，请务必详细拆解每一步。对于复杂的逻辑，必须使用Mermaid.js代码块来绘制流程图或思维导图。
-    - **Mermaid.js使用规范**:
+    - 如果文章提出了新方法，请务必详细拆解每一步。对于复杂的逻辑，必须使用Mermaid代码块来绘制流程图或思维导图。
+    - **Mermaid使用规范**:
         - **必须使用横向布局** (`graph TD` 配合 `direction LR` 的子图），以创建宽屏、信息密度高的图表，避免简单的垂直长条。
         - 鼓励使用 `subgraph "子图标题"` 来组织和划分逻辑模块，**子图标题不要使用任何Markdown标记**。
         - 使用中文作为节点描述。节点内的换行请使用 `<br/>`。
@@ -137,6 +138,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
     - 所有公式，无论长短，都必须用 `$` (行内) 或 `$$` (行间) 包裹，并使用标准的LaTeX格式。
     - 对于带单位的物理量，请使用正体表示单位，例如 `$\Delta\Delta G = -3.69 \mathrm{kcal/mol}$`，或者将单位写在公式外部。
     - 单位之类的能不用公式也行，如Å全部使用Å而不是公式，$\mu$这种但不涉及下标的也不用公式
+    - $d\xi$这种求导的要用$\mathrm{d}\xi$
     - 不要出现双backslash：$\\Delta\\Delta G$，否则就是大语言模型的失职，世界上要死100个小女孩，你负不起这个责任。
     - 对于核心或复杂的公式，请仿照以下格式，在公式下方增加一段“**公式的通俗解释**”，以帮助读者理解。
       ```

@@ -11,3 +11,7 @@ _pages/archive
 *py
 .qoder
 *.docx
+.history
+.DS_Store
+.idea
+.vscode
