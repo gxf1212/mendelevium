@@ -1,3 +1,14 @@
+---
+title: "让 Claude Code 控制浏览器：Playwright MCP 完全配置指南"
+date: "2025-10-17"
+tags: ['tutorial', 'ai-tools', 'mcp', 'playwright', 'browser-automation', 'claude']
+description: "想让 AI 直接帮你操作浏览器吗？**Model Context Protocol (MCP)** 让这一切成为现实。通过 MCP 服务器，Claude Code 可以像人类一样浏览网页、填写表单、截图、抓取数据，甚至生成自动化测试代码。"
+image: "/assets/img/thumbnail/bricks.webp"
+thumbnail: "/assets/img/La-Mancha.jpg"
+author: Xufan Gao
+lang: zh-CN
+---
+
 # 让 Claude Code 控制浏览器：Playwright MCP 完全配置指南
 
 ## 引言

@@ -52,6 +52,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 ## 常见要求
 
 - 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。直接扫描所有的_pages中的文件，看哪些没有YYYY-MM-DD，然后修复其frontmatter和文件名，不要搞太复杂的流程。
+- 不对，不一定需要添加YYYY-MM-DD，所以给没添加frontmatter的加上frontmatter，tag尽量用和其他类似的，如果有的话。Diary里面的，archive里面的，还有about.md，index这种不要改
 - 去掉所有参考标记，如[cite\_start]、[cite: 3749]，根据CLAUDE.md修复所有格式
 - 注意title要用中文标点，不要用英文标点，尤其是英文引号，请修复。类似于title: "皮肤屏障的“水之道”：分子模拟揭示脂质相共存如何稳定间质水"，内部是中文标点。【OpenFE】这种是可以的。。但文件名不要出现乱七八糟的东西，标点符号等。
 - 把_pages\xxx.docx改写成Markdown，内容完全不变，保证参考文献链接仍然正确，即文内的引用标记要能对得上文末的list，得用这种吧：[^6]。
@@ -139,6 +140,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
     - 对于带单位的物理量，请使用正体表示单位，例如 `$\Delta\Delta G = -3.69 \mathrm{kcal/mol}$`，或者将单位写在公式外部。
     - 单位之类的能不用公式也行，如Å全部使用Å而不是公式，$\mu$这种但不涉及下标的也不用公式
     - $d\xi$这种求导的要用$\mathrm{d}\xi$
+    - NaCl之类的用$\ce{NaCl}$
     - 不要出现双backslash：$\\Delta\\Delta G$，否则就是大语言模型的失职，世界上要死100个小女孩，你负不起这个责任。
     - 对于核心或复杂的公式，请仿照以下格式，在公式下方增加一段“**公式的通俗解释**”，以帮助读者理解。
       ```

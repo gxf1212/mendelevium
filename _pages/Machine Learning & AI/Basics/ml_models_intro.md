@@ -1,4 +1,3 @@
-# 🧬 分子性质预测：30+种机器学习回归算法详解
 ---
 title: "分子性质预测：30+种机器学习回归算法详解"
 date: "2025-06-15"
@@ -6,7 +5,12 @@ tags: [machine-learning, regression, molecular-property, scikit-learn, algorithm
 description: "全面介绍分子性质预测任务中的30余种回归算法，从线性模型到梯度提升、神经网络，详解每个模型的原理、公式和适用场景，基于scikit-learn实现"
 thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
 image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+author: Xufan Gao
+lang: zh-CN
 ---
+
+# 🧬 分子性质预测：30+种机器学习回归算法详解
+
 
 > **导读**：在分子性质预测、药物筛选、材料设计等回归任务中，选对机器学习模型至关重要。本文介绍30余种经典和前沿的回归算法，从简单的线性回归到复杂的变分自编码器，剖析每个模型的原理、公式和适用场景。所有模型均为scikit-learn中的回归器（regressor）实现。
 
