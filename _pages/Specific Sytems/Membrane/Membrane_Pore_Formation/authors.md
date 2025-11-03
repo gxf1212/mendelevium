@@ -3,7 +3,7 @@ title: "Untitled"
 date: "2025-10-19"
 tags: ['membrane-pore', 'authors', 'research-team']
 description: "CEITEC and NCBR, Faculty of Science, Masaryk University, Brno, Czech Republic"
-image: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
 thumbnail: "/assets/img/La-Mancha.jpg"
 author: Xufan Gao
 lang: zh-CN

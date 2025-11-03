@@ -3,7 +3,7 @@ title: "破解膜孔之谜：双CV联手揭示从成核到扩展的完整能量�
 date: "2025-10-19"
 tags: [membrane-pore, free-energy, molecular-dynamics, collective-variable, line-tension, umbrella-sampling, plumed]
 description: "两种创新集体变量揭示膜孔成核与扩展的能量学机制，跨越全原子与粗粒化尺度精准预测线张力"
-image: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail/nightgardenflower.jpg"
 thumbnail: "/assets/img/La-Mancha.jpg"
 author: Xufan Gao
 lang: zh-CN

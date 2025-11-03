@@ -3,7 +3,7 @@ title: "Martini 3 脂质组学补充材料概览：方法、验证与应用"
 date: "2025-10-09"
 tags: [martini, coarse-grained, lipid, force-field, molecular-dynamics, supplementary-information]
 description: "Martini 3脂质组学论文补充材料的系统性总结，涵盖弯曲模量计算、相行为验证、蛋白质-脂质相互作用及模型局限性等核心话题"
-image: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail_mine/wh-8oev1j.jpg"
 thumbnail: "/assets/img/La-Mancha.jpg"
 author: Xufan Gao
 lang: zh-CN

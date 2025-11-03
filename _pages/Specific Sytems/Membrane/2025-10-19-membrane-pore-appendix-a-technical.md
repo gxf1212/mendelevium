@@ -3,7 +3,7 @@ title: "附录A：CV设计原理与PLUMED实现的技术细节"
 date: "2025-10-19"
 tags: [membrane-pore, collective-variable, technical-details, plumed, enhanced-sampling, molecular-dynamics]
 description: "膜孔集体变量的物理原理、数学推导、PLUMED脚本实现及参数优化的深度技术解析"
-image: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 thumbnail: "/assets/img/La-Mancha.jpg"
 author: Xufan Gao
 lang: zh-CN

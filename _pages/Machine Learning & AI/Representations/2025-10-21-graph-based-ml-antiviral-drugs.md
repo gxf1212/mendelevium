@@ -3,7 +3,7 @@ title: "图论遇上机器学习：用拓扑指数预测抗病毒药物性质"
 date: "2025-10-21"
 tags: [machine-learning, graph-theory, topological-indices, antiviral-drugs, QSPR, random-forest, neural-network, drug-discovery]
 description: "介绍一种两阶段机器学习框架，通过拓扑指数预测抗病毒药物的理化性质，实现高精度的定量构效关系建模"
-image: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 thumbnail: "/assets/img/La-Mancha.jpg"
 author: Xufan Gao
 lang: zh-CN
@@ -81,12 +81,11 @@ lang: zh-CN
 
 ```mermaid
 graph TD
-    subgraph "阶段一：SMILES到拓扑指数"
-        A["SMILES字符串<br/>C1=CC=CC=C1"]
-        B["RDKit解析<br/>生成分子图"]
-        C["拓扑指数计算<br/>M1,M2,ABC,Randić,<br/>Harmonic,Forgotten"]
-        D["机器学习模型<br/>LR/RF/XGB/NN"]
-        A --> B --> C --> D
+
+    subgraph "模型评估"
+        I["交叉验证<br/>R²,MAE,RMSE"]
+        J["Williams图<br/>适用域分析"]
+        I --> J
     end
 
     subgraph "阶段二：拓扑指数到理化性质"
@@ -96,13 +95,13 @@ graph TD
         H["理化性质<br/>MR,PSA,P,MV,MW,C"]
         E --> F --> G --> H
     end
-
-    D --> E
-
-    subgraph "模型评估"
-        I["交叉验证<br/>R²,MAE,RMSE"]
-        J["Williams图<br/>适用域分析"]
-        H --> I --> J
+    
+    subgraph "阶段一：SMILES到拓扑指数"
+        A["SMILES字符串<br/>C1=CC=CC=C1"]
+        B["RDKit解析<br/>生成分子图"]
+        C["拓扑指数计算<br/>M1,M2,ABC,Randić,<br/>Harmonic,Forgotten"]
+        D["机器学习模型<br/>LR/RF/XGB/NN"]
+        A --> B --> C --> D
     end
 ```
 
@@ -118,17 +117,53 @@ graph TD
 
 研究选用了六种经典拓扑指数，它们从不同角度表征分子拓扑特征：
 
-1. **First Zagreb指数（M1）**：$M_1(G) = \sum_{v \in V(G)} d_v^2$，其中$d_v$是顶点$v$的度数。反映分子的**整体连接性和分支度**。
+1. **First Zagreb指数（M1）**：
 
-2. **Second Zagreb指数（M2）**：$M_2(G) = \sum_{uv \in E(G)} d_u d_v$，对所有边求度数乘积。捕捉**相邻原子的连接特征**。
+$$
+M_1(G) = \sum_{v \in V(G)} d_v^2
+$$
 
-3. **ABC指数**：$\mathrm{ABC}(G) = \sum_{uv \in E(G)} \sqrt{\frac{d_u + d_v - 2}{d_u d_v}}$，原子-键连接性指数，与**分子稳定性和应变能**相关。
+其中 $d_v$ 是顶点 $v$ 的度数。反映分子的**整体连接性和分支度**。
 
-4. **Randić指数**：$R(G) = \sum_{uv \in E(G)} \frac{1}{\sqrt{d_u d_v}}$，反映分子的**分支程度**，广泛用于沸点、折射率预测。
+2. **Second Zagreb指数（M2）**：
 
-5. **Harmonic指数**：$H(G) = \sum_{uv \in E(G)} \frac{2}{d_u + d_v}$，与分子的**电子性质**相关。
+$$
+M_2(G) = \sum_{uv \in E(G)} d_u d_v
+$$
 
-6. **Forgotten指数**：$F(G) = \sum_{v \in V(G)} d_v^3$，类似M1但对高度顶点赋予更大权重，适用于**复杂结构分子**。
+对所有边求度数乘积。捕捉**相邻原子的连接特征**。
+
+3. **ABC指数**：
+
+$$
+\mathrm{ABC}(G) = \sum_{uv \in E(G)} \sqrt{\frac{d_u + d_v - 2}{d_u d_v}}
+$$
+
+原子-键连接性指数，与**分子稳定性和应变能**相关。
+
+4. **Randić指数**：
+
+$$
+R(G) = \sum_{uv \in E(G)} \frac{1}{\sqrt{d_u d_v}}
+$$
+
+反映分子的**分支程度**，广泛用于沸点、折射率预测。
+
+5. **Harmonic指数**：
+
+$$
+H(G) = \sum_{uv \in E(G)} \frac{2}{d_u + d_v}
+$$
+
+与分子的**电子性质**相关。
+
+6. **Forgotten指数**：
+
+$$
+F(G) = \sum_{v \in V(G)} d_v^3
+$$
+
+类似M1但对高度顶点赋予更大权重，适用于**复杂结构分子**。
 
 ### 机器学习模型
 
@@ -218,7 +253,7 @@ graph TD
 
 **图3：摩尔折射率预测的Williams图**
 
-Williams图用于评估模型的**适用域**，横轴为杠杆值（leverage，表示样本在特征空间中的位置），纵轴为标准化残差。理想情况下，所有点应落在$\pm 3$的标准化残差范围内，且杠杆值小于临界值$h^*$。
+Williams图用于评估模型的**适用域**，横轴为杠杆值（leverage，表示样本在特征空间中的位置），纵轴为标准化残差。理想情况下，所有点应落在 $\pm 3$ 的标准化残差范围内，且杠杆值小于临界值 $h^*$。
 
 **关键发现**：
 - 59个样本中，**57个落在适用域内**，仅2个样本（Remdesivir和某HIV抑制剂）的杠杆值略高于临界值

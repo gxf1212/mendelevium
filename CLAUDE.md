@@ -23,7 +23,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 
 ## 博文内容组织
 
-- 每个分类下应该有一个 index.md 文件
+- 每个分类下应该有一个 index.md 文件， 所有index.md都得是---\n---，啥内容都没有 
 - Archive\jekyll-theme-satellite-master是原始模板，报错了可以参考，尤其是里面的docs
 - https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md 是SEO的插件，可以参考
 - 为什么单篇文章，如2025-08-13-deep-covboost-ai-covid-target会出现在侧边栏？不应该出现的
@@ -48,9 +48,13 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
   lang: zh-CN
   ---
   ```
+- frontmatter的date: "2025-08-22"不是文章发表的时间，而是写blog的时间，最后一次修改的日期
+- 能不能随机替换assets\img\thumbnail、assets\img\thumbnail_mine下的文件，雨露均沾，创建新文件的时候随机选取。**随机缩略图选择**: 已创建工具脚本来自动随机选择缩略图，避免过度使用bricks.webp。`tools/random_thumbnail.py`: 随机选择缩略图
+
 
 ## 常见要求
 
+- 根据@CLAUDE.md，为@_pages\Free Energy\fep-the-end-of-parameter-tuning.pdf写一篇推送Markdown文章
 - 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。直接扫描所有的_pages中的文件，看哪些没有YYYY-MM-DD，然后修复其frontmatter和文件名，不要搞太复杂的流程。
 - 不对，不一定需要添加YYYY-MM-DD，所以给没添加frontmatter的加上frontmatter，tag尽量用和其他类似的，如果有的话。Diary里面的，archive里面的，还有about.md，index这种不要改
 - 去掉所有参考标记，如[cite\_start]、[cite: 3749]，根据CLAUDE.md修复所有格式
@@ -71,20 +75,35 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
   - 创建的文档不要保留奇怪的时间戳，[02:56] 这种
   - 不要把参考资源：这种文字类的放在```里面，没必要代码框的文字说明就不要代码框，如“目前rdkit.Chem.Draw.MolsToGridImage函数没有直接设置图例字体大小的选项”就是个经验，文字就行
 
-## Prompt
+## 推文
+
+现在有了一个方便的工具来快速搜索PDF内容。我已经为你准备好了：
+
+使用方式：`python3 tools/search_pdf_text.py <pdf_file> <keyword> [context_lines]`
+
+  例子：
+```python
+# 搜索"MCS"，显示前后3行上下文
+python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tuning.pdf" "MCS" 3
+```
+必要的时候还是要直接读PDF全文
+
+### Prompt
 
 ```
-**角色**: 你是一位顶尖的科研媒体编辑和科学传播专家。你的读者是渴望学习新知识的科研新手和同行。你的任务是将一篇专业的、信息密集的科研论文，转换成一篇详尽、易懂、重点突出、排版精美的微信公众号推送文章。
+**角色**: 你是一位顶尖的科研媒体编辑和科学传播专家。你的读者是渴望学习新知识的科研新手和同行。你的任务是将一篇专业的、信息密集的科研论文，转换成一篇详尽、易懂、重点突出、排版精美的微信公众号推送文章。本地的话，用Python提取PDF文字来写推文，一步一步来写。
 
-在关键的概念、结论或punchline处，请使用 `**加粗**` 来突出重点，但不要包含最后一个句号，**要放在最后一个句号之前，否则渲染不成功。**也不要包裹非常规内容，如公式，**“黑箱”**这种带引号的，**贝叶斯优化（Bayesian Optimization）**这种带括号的。就包含正常汉字、数字等就行。正文尽量用中文标点。
-- **排版**: 全文使用中文标点符号，尤其是冒号、中文内容的引号。除了加粗的标题，尽量让段落自然换行，避免不必要的手动换行 `<br/>`。
+Markdown文件~300行的样子，多了就拆除一篇讲技术细节和其他结果的附录md文件。是把主文档的部分内容挪过去。先填补附录.md，再删除主文档里的。附录也不用过于长了，否则要再拆一个附录文件。附录不要自己的Q&A，除非正文的Q&A放不下。
+
+在关键的概念、结论或punchline处，请使用 `**加粗**` 来突出重点，但不要包含最后一个句号，**要放在最后一个句号之前，否则渲染不成功。**也不要包裹非常规内容，如公式，**“黑箱”**这种带引号的，**贝叶斯优化（Bayesian Optimization）**这种带括号的，应该改成“**黑箱**”、**贝叶斯优化**（Bayesian Optimization），或者不加粗。就包含正常汉字、数字等就行。正文尽量用中文标点。
+- **排版**: 全文使用中文标点符号，尤其是冒号、中文内容的引号。除了加粗的标题，尽量让段落自然换行，避免不必要的手动换行 `<br/>`。不要有"过拟合"这种，而是“过拟合”。
 - Markdown格式：列表这些的两个item之间还是要有个空行，其他也要适当多空行。不要写Q\&A，而是Q&A；不要写1\.，而是1.，总之不要多加\。
 
 **核心指令**:
 请严格遵循以下格式和要求，对用户提供的论文全文进行深度分析和重构。
 除了最终的Markdown文章，绝对不要输出任何额外的参考/引用标记、解释、评论或代码块标记，要能让我们直接粘贴到Markdown编辑器中而正确显示，不考虑在你的前端的渲染。
 标题要引人入胜，但也不夸大效果，坚决杜绝标题党，一语道破本文最核心的卖点。全文语气以客观为主，不要夸大promising或贬低，具体参考原文。
-不好翻译的学术词汇就不翻译了，如拉马钱德兰图。
+不好翻译的学术词汇就不翻译了，如Ramachandran plot，artifact什么的。
 
 **输出格式 (Markdown)**:
 
@@ -133,10 +152,13 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
         - 思维导图加粗不要用<b>，而是**包裹**。
         - 不要多加一个end
 - **结果逻辑图**: 如果结果部分的逻辑复杂（例如，通过一系列现象推导出一个核心结论），请额外使用一个Mermaid图来清晰地描述这种推导思路。
+- 结果与分析不能光图注啊，得有讲解的段落。不需要图形与表格总览目录；表头不要弄成heading，就普通文字。
 - 正文部分的所有Figure和table必须出现，其中表格内容必须完整提取出来，图我会自己粘进来。
 - **图文融合**: **图表标题的中文翻译必须直接插入到正文中讨论到该图表的相应位置**，一般是按顺序。格式为：`**图1：[图标题的中文翻译]**`，必须完整翻译，不能漏掉子图。
+- 如果有![](fep_omega/fig3.png)这种，应该放在图注上方
 - **公式规范**:
     - 所有公式，无论长短，都必须用 `$` (行内) 或 `$$` (行间) 包裹，并使用标准的LaTeX格式。
+    - 行间公式若一行太长就用aligned环境 
     - 对于带单位的物理量，请使用正体表示单位，例如 `$\Delta\Delta G = -3.69 \mathrm{kcal/mol}$`，或者将单位写在公式外部。
     - 单位之类的能不用公式也行，如Å全部使用Å而不是公式，$\mu$这种但不涉及下标的也不用公式
     - $d\xi$这种求导的要用$\mathrm{d}\xi$

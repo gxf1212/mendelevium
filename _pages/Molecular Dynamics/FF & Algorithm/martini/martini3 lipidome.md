@@ -3,7 +3,7 @@ title: "Martini 3 脂质组学：更精细的参数如何重塑膜模拟的未�
 date: "2025-10-09"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'lipidome', 'coarse-grained', 'lipid-bilayer']
 description: "* **提出了全新的Martini 3脂质映射方案**：通过引入小尺寸珠子，新方案能够区分长度仅相差2个碳原子的脂质尾链（例如16C vs 18C），极大地提升了模型的化学分辨率。"
-image: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail/nightgardenflower.jpg"
 thumbnail: "/assets/img/La-Mancha.jpg"
 author: Xufan Gao
 lang: zh-CN
