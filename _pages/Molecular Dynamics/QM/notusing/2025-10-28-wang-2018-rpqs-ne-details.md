@@ -3,11 +3,12 @@ title: "【非平衡方法探索】Jarzynski等式在QM/MM自由能计算中的�
 date: "2025-10-28"
 tags: [RPQS-NE, nonequilibrium, Jarzynski-equality, QM-MM-FEP, fast-switching, work-distribution, convergence, efficiency-comparison]
 description: "深入解析Wang等人的RPQS-NE方法:非平衡快速切换能否加速QM/MM自由能计算?答案令人意外——比RPQS-MSS慢1.5倍"
+image: "/assets/img/thumbnail/book.jpg"
+image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+thumbnail: "/assets/img/thumbnail/book.jpg"
 author: Xufan Gao
 lang: zh-CN
----
-
-# 【非平衡方法探索】Jarzynski等式在QM/MM自由能计算中的实践:速度不等于效率
+---# 【非平衡方法探索】Jarzynski等式在QM/MM自由能计算中的实践:速度不等于效率
 
 ## 本文信息
 

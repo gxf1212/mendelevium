@@ -3,6 +3,8 @@ title: "从3倍到12倍加速：QM/MM自由能计算的方法学突破之路"
 date: "2025-10-28"
 tags: [QM-MM-FEP, reference-potential, RPQS, RPQS-MSS, RPQS-NE, SAMPL6, efficiency, binding-affinity, PM6-DH+]
 description: "跟随Ryde课题组2017-2018年的系列工作，看QM/MM自由能微扰方法如何从理论走向实用，实现12倍加速的同时保持高精度"
+image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

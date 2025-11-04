@@ -3,11 +3,12 @@ title: "量子力学修正分子力场：QM/MM自由能微扰方法的突破与�
 date: "2025-10-28"
 tags: [QM-MM, free-energy-perturbation, binding-affinity, reference-potential, PM6-DH+, SAMPL, octa-acid, Jarzynski-equality]
 description: "深入解析Ryde课题组在QM/MM自由能计算领域的系统性研究：从方法建立到效率优化,实现配体结合自由能的高精度预测"
+image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+image: "/assets/img/thumbnail_mine/wh-dpepjo.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
 author: Xufan Gao
 lang: zh-CN
----
-
-# 量子力学修正分子力场：QM/MM自由能微扰方法的突破与优化
+---# 量子力学修正分子力场：QM/MM自由能微扰方法的突破与优化
 
 ## 引言
 

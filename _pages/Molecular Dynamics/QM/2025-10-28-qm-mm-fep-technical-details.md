@@ -3,11 +3,12 @@ title: "QM/MM自由能微扰深度技术解析：从热力学循环到收敛性�
 date: "2025-10-28"
 tags: [QM-MM-FEP, thermodynamic-cycle, BAR, MBAR, convergence, overlap-measures, PM6-DH+, RPQS, technical-details]
 description: "深入剖析QM/MM-FEP方法的技术细节：热力学循环设计、中间态选择、收敛性判断、并行化策略及实际应用中的关键参数"
+image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+image: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 author: Xufan Gao
 lang: zh-CN
----
-
-# QM/MM自由能微扰深度技术解析：从热力学循环到收敛性标准
+---# QM/MM自由能微扰深度技术解析：从热力学循环到收敛性标准
 
 ## 引言
 

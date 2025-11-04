@@ -3,11 +3,12 @@ title: "【QM/MM-FEP深度解析】参考势方法 vs 直接QM/MM-FEP：技术�
 date: "2025-10-28"
 tags: [QM-MM-FEP, reference-potential, thermodynamic-cycle, MBAR, BAR, PM6-DH+, convergence, overlap-measures]
 description: "深入解读Olsson & Ryde 2017年的开创性工作：如何用参考势方法将QM/MM自由能计算成本降至1/3,同时保持精度"
+image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+image: "/assets/img/thumbnail/nightgardenflower.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 author: Xufan Gao
 lang: zh-CN
----
-
-# 【QM/MM-FEP深度解析】参考势方法 vs 直接QM/MM-FEP：技术细节全剖析
+---# 【QM/MM-FEP深度解析】参考势方法 vs 直接QM/MM-FEP：技术细节全剖析
 
 ## 本文信息
 

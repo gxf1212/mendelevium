@@ -2,10 +2,11 @@
 title: "DynamiSpectra: Automated Multi-Replica Molecular Dynamics Simulation Data Analysis Python Package and Web Platform"
 date: "2025-08-21"
 description: "DynamiSpectra 是一个自动化多副本分子动力学模拟数据分析工具，提供 Python 包和 Web 平台。支持数据可视化、统计分析，大幅提升 MD 模拟数据处理效率。"
+image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
 tags: [dynamispectra, molecular-dynamics, data-analysis, python, web-platform, computational-biology, multi-replica, automation]
 image: "/assets/img/thumbnail/book.jpg"
----
-# DynamiSpectra: 自动化多副本分子动力学模拟数据分析的Python包与Web平台
+thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+---# DynamiSpectra: 自动化多副本分子动力学模拟数据分析的Python包与Web平台
 
 ## 本文信息
 
