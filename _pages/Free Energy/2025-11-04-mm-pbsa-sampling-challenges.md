@@ -145,13 +145,13 @@ $$\Delta G_{\text{cumulative}}(n) = \frac{1}{n}\sum_{i=1}^{n}\Delta G(i)$$
 
 #### 发现1：100纳秒并非真正的收敛点
 
-**图1：Four proteins and their small molecule ligands in this work**
+**图1：本研究的四种蛋白质及其小分子配体**
 
 本研究选择了四种重要蛋白质及其小分子配体（每个蛋白4-5个配体，总共19个复合系统）进行系统分析。图中展示了各靶点蛋白的整体结构（绿色）与对应的小分子配体（绿色球棍模型）。具体包括：**plpro系列的4个不同配体**（JW9、JWX、WUK、XB5），**hif2a系列的5个抑制剂**（compounds 234、57、252、164），**tnks2系列的5个化合物**（3b、5a、5e、5m、7），**cmet激酶系列的5个配体**（CHEMBL3402752等）。这些体系涵盖了**中等规模蛋白-配体复合物的多样性**，为MM/PBSA采样充分性的系统评估提供了有代表性的基准集合。
 
-**图2：Binding free energy calculated by MM/PBSA after 10 μs of MD simulations**
+**图2：10微秒MD模拟后计算的MM/PBSA结合自由能**
 
-图2展示了四个系列（总共19个复合物）从10微秒模拟轨迹中计算的MM/PBSA结合自由能结果。**左侧面板**展示原始能量随时间的变化（浅色噪声曲线），**中间面板**显示数据分布直方图，**右侧面板**为关键的**累积平均曲线**。每个面板中三条不同颜色的线代表三条独立的MD轨迹。关键观察：**(1) tnks2系列表现出最佳收敛性**，三条轨迹在10 μs时的最大差异仅0.1-1.1 kcal/mol，累积平均曲线在~1 μs后趋于稳定；**(2) plpro和hif2a系列表现出**配体依赖的收敛性**——plpro-8eua/8uob与hif2a-4/22/39收敛良好，但plpro-7sdr/7sqe与hif2a-25/29等呈现明显的多峰分布与缓慢漂移；**(3) cmet系列最具挑战性**，所有复合物都显示**非收敛行为**，三条轨迹间最大差异达12.9 kcal/mol（cmet-11），反映了大型灵活配体的采样困难。这个图直观地说明了**短期模拟（100 ns）显示的平台期可能是虚假收敛的表征**。
+图2展示了四个系列（总共19个复合物）从10微秒模拟轨迹中计算的MM/PBSA结合自由能结果。**左侧面板**展示原始能量随时间的变化（浅色噪声曲线），**中间面板**显示数据分布直方图，**右侧面板**为关键的**累积平均曲线**。每个面板中三条不同颜色的线代表三条独立的MD轨迹。关键观察：**(1) tnks2系列表现出最佳收敛性**，三条轨迹在10 μs时的最大差异仅0.1-1.1 kcal/mol，累积平均曲线在~1 μs后趋于稳定；(2) plpro和hif2a系列表现出**配体依赖的收敛性**——plpro-8eua/8uob与hif2a-4/22/39收敛良好，但plpro-7sdr/7sqe与hif2a-25/29等呈现明显的多峰分布与缓慢漂移；(3) cmet系列最具挑战性，所有复合物都显示**非收敛行为**，三条轨迹间最大差异达12.9 kcal/mol（cmet-11），反映了大型灵活配体的采样困难。这个图直观地说明了**短期模拟（100 ns）显示的平台期可能是虚假收敛的表征**。
 
 然而，当延长模拟到1微秒、3微秒乃至10微秒时，情况发生了逆转。许多系统的累积平均开始显示**缓慢的、持续的漂移**：
 
@@ -161,13 +161,13 @@ $$\Delta G_{\text{cumulative}}(n) = \frac{1}{n}\sum_{i=1}^{n}\Delta G(i)$$
 
 PCA分析进一步揭示了这背后的原因。以**plpro-7sdr**为例，在前100纳秒内，配体在PCA主成分空间中仅探索了完整可用相空间的约**24**%。到10微秒时，这一比例增加到约**60-70**%。换句话说，系统在早期模拟中被**困在一个局部最小值**中，误以为已经收敛。
 
-**图4：(A) Comparison of binding free energy and principal component projections from three trajectories of the plpro-7sdr system. (B) Representative conformations and interactions during the MD simulation of the plpro-7sdr system.**
+**图4：(A) plpro-7sdr系统三条轨迹的结合自由能与主成分投影对比。(B) plpro-7sdr系统MD模拟中的代表性构象与相互作用**
 
-为了探索不同构象中哪些特定的关键相互作用与分子的缓慢运动相关，我们进行了进一步分析。以plpro-7sdr系统为例（该系统表现出缓慢运动，导致结合自由能计算难以收敛），我们选择了配体周围8 Å内的所有受体原子，计算与配体原子的原子间距离作为PCA分析的特征。这些特征在PC2上的投影与结合自由能的变化高度相关（图4A），平均Pearson相关系数为0.73。基于PC2的权重，我们确定了三个参与受体-配体相互作用的的关键残基：E166、Y170和Y267。图4显示了plpro-7sdr模拟中的几种典型构象。
+为了探索不同构象中哪些特定的关键相互作用与分子的缓慢运动相关，我们进行了进一步分析。以plpro-7sdr系统为例，该系统表现出缓慢运动，导致结合自由能计算难以收敛。我们选择了配体周围8 Å内的所有受体原子，计算与配体原子的原子间距离作为PCA分析的特征。这些特征在PC2上的投影与结合自由能的变化高度相关，平均Pearson相关系数为**0.73**。基于PC2的权重，我们确定了三个参与受体-配体相互作用的关键残基：E166、Y170和Y267。图4显示了plpro-7sdr模拟中的几种典型构象。
 
 #### 发现2：蛋白质和配体的构象适应是长期过程
 
-**图3：Receptor RMSD, ligand RMSD, and major conformations of the different systems**
+**图3：不同系统的受体RMSD、配体RMSD和主要构象**
 
 图3展示了代表性系统在10 μs MD模拟过程中蛋白质与配体的RMSD演化。**左侧面板**为受体主链RMSD随时间的变化，**中间面板**为配体重原子RMSD，**右侧面板**为代表性构象的结构快照。关键发现：
 
@@ -180,7 +180,7 @@ PCA分析进一步揭示了这背后的原因。以**plpro-7sdr**为例，在前
 - **阶段II（100 ns-1 μs）**：侧链二级定位，结合位点微环境的重新组织，RMSD变化缓慢
 - **阶段III（1-10 μs）**：稀有构象的采样，隐溶剂效应的充分建立，导致结合能的缓慢漂移
 
-**图4：(A) Comparison of binding free energy and principal component projections from three trajectories of the plpro-7sdr system. (B) Representative conformations and interactions during the MD simulation of the plpro-7sdr system.**
+**图4：(A) 结合自由能与主成分投影的关联分析。(B) 主要相互作用网络的动态变化**
 
 图4详细解剖了**plpro-7sdr系统（采样困难的典型代表）中结合自由能与构象动力学的耦合机制**。
 
@@ -275,7 +275,7 @@ IaMD 通过修改势能表面来加快构象空间的探索，其核心思想是
 
 OPES 是一种基于集合变量（CV）的增强采样技术，通过**动态构建自适应偏置势**来引导系统朝着预设的目标概率分布采样。与 IaMD 的根本区别在于，OPES **依赖于对关键 CV 的精心选择**，但一旦 CV 选择得当，其加速效果往往更为显著。
 
-**图8：Cumulative weighted average of binding free energy by IaMD and OPES simulations**
+**图8：IaMD和OPES模拟的累积加权平均结合自由能**
 
 该图展示了**plpro-7sdr、hif2a-25、tnks2-5三个关键系统**在常规MD（cMD）、IaMD与OPES三种条件下的**累积加权平均结合自由能**演化。图中左侧显示cMD 10 μs的参考曲线，中间与右侧分别为IaMD与OPES的1 μs加权平均结果。关键观察：
 
@@ -300,7 +300,7 @@ OPES 是一种基于集合变量（CV）的增强采样技术，通过**动态�
 
 不同的相互作用对结合自由能的贡献并非均匀分布。通过能量分解分析，研究发现了显著的**系列间差异**：
 
-**图6：Range and Factors of the binding free energy components**
+**图6：结合自由能分量的范围和影响因素**
 
 该图展示了**范德华相互作用（vdW）与静电相互作用（Electrostatic）对MM/PBSA结合自由能的相对贡献**，按四个蛋白质系列（plpro、hif2a、tnks2、cmet）分别绘制相关系数散点图或分布统计。关键观察：
 
@@ -315,7 +315,7 @@ OPES 是一种基于集合变量（CV）的增强采样技术，通过**动态�
 
 为了探索采样限制是否源于全局蛋白质运动还是局部配体动力学，研究者进行了一组对比实验，对蛋白质施加**全局RMSD约束**（固定主链Cα原子）。
 
-**图7：Moving average of binding free energy with and without global restraints**
+**图7：有无全局约束条件的结合自由能滑动平均值**
 
 该图对比了**有全局RMSD约束（fixed Cα backbone）与无约束两种条件**下，plpro-7sqe、hif2a-29、tnks2-9、cmet-21四个代表性系统的结合自由能演化。图中灰线为无约束cMD的参考轨迹，彩色线（蓝/橙/绿）为约束MD的三条独立轨迹。关键发现：
 
