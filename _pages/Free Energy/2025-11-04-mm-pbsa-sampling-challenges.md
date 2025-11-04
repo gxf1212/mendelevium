@@ -239,11 +239,11 @@ PCA（主成分分析）将配体的构象空间投影到前两个主成分上�
 
 ### 增强采样方法的评估
 
-鉴于常规MD存在采样不足的问题，研究者评估了两种增强采样技术：
+鉴于常规MD存在采样不足的问题，研究者评估了两种增强采样技术：IaMD 和 OPES。这两种方法在原理和实现上有显著差异。关于它们的**详细数学原理、算法机制和参数设置**，请参考 📄 [**附录：IaMD 和 OPES 的原理与实现**](/Free%20Energy/2025-11-04-mm-pbsa-sampling-challenges-appendix-enhanced-sampling.md)。本节主要讨论这两种方法在本研究中的**实际应用效果和局限性**。
 
 #### IaMD（加速MD，Accelerated MD）
 
-IaMD通过对势能添加一个非负的**加速**项来加快跨越能量屏障的速度。参数（α、E、M）在表S5中给出。
+IaMD 通过修改势能表面来加快构象空间的探索，其核心思想是**集成多个加速参数不同的 aMD 子项**，并通过精确的重新加权恢复物理信息。参数（α、E、M）在表S5中给出。
 
 **图5：IaMD与常规MD（cMD）的收敛性对比**
 
@@ -271,9 +271,9 @@ IaMD通过对势能添加一个非负的**加速**项来加快跨越能量屏障
 - 对于某些系统（如**plpro-7sdr**），IaMD在早期会跳过某些重要的配体构象，这些构象只有在标准MD中才能通过缓慢的转变被充分采样
 - IaMD最有效的应用是**辅助标准MD的采样**，而非完全替代
 
-#### OPES（Onboarding Potential Energy Surfaces）
+#### OPES（On-the-Fly Probability Enhanced Sampling）
 
-OPES是一种更新的增强采样技术，通过实时构建一个修正势来探索配置空间。
+OPES 是一种基于集合变量（CV）的增强采样技术，通过**动态构建自适应偏置势**来引导系统朝着预设的目标概率分布采样。与 IaMD 的根本区别在于，OPES **依赖于对关键 CV 的精心选择**，但一旦 CV 选择得当，其加速效果往往更为显著。
 
 **图8：Cumulative weighted average of binding free energy by IaMD and OPES simulations**
 
