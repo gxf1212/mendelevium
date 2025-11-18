@@ -8,7 +8,7 @@ thumbnail: "/assets/img/thumbnail_mine/bricks.webp"
 author: Xufan Gao
 lang: zh-CN
 ---
-
+  
 # 生成式主动学习+物理模拟：AI与精准计算协力加速新药设计
 
 ## 本文信息
