@@ -1,6 +1,7 @@
 _site
 old
-.claude
+.claude/settings.local.json
+.claude/commands/*.md
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
@@ -9,6 +10,7 @@ vendor
 Archive
 _pages/archive
 *py
+!tools/*.py
 .qoder
 *.docx
 .history
@@ -17,8 +19,7 @@ _pages/archive
 .vscode
 _pages\Techniques\Linux\frp配置.md
 _pages/Techniques/Linux/frp配置.md
+_pages/Techniques/Linux/frp配置-添加本地服务.md
 _pages\*.pdf
 _pages/*.pdf
-_pages/Free Energy/jp5c04908_si_001.pdf
-_pages/Free Energy/sampling-challenges-of-mm-pbsa-binding-energy-calculations.pdf
-_pages/Specific Sytems/Skin Permeation/Simulations of Skin Barrier Function_ Free Energies of Hydrophobic and Hydrophilic Transmembrane Pores in Ceramide Bilayers.pdf
+
