@@ -1,6 +1,6 @@
 ---
 title: "ABCG2电荷模型技术细节：附录"
-date: "2025-10-31"
+date: "2025-11-02"
 tags: [ABCG2, BCC参数, 电荷模型, ACES方法, 模拟协议]
 description: "ABCG2电荷模型的ACES方法、模拟参数和验证协议详细技术附录"
 image: "/assets/img/thumbnail_mine/wh-m992d8.jpg"

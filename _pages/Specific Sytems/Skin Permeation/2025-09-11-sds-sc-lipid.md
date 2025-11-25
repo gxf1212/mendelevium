@@ -1,6 +1,6 @@
 ---
 title: "温柔还是粗暴？揭秘两种常见表面活性剂（SDS/SLES）如何破坏你的皮肤屏障"
-date: "2025-09-11"
+date: "2025-10-07"
 tags: [surfactants, lipid-membrane, skin-barrier, molecular-dynamics, membrane-permeability]
 description: "QCM-D与FT-IR联用揭示SDS通过破坏脂质有序性使膜变软增加水扩散，而SLES通过强吸湿性增加水溶解度，两种表面活性剂破坏皮肤屏障机制截然不同"
 thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"

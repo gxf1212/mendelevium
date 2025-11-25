@@ -1,6 +1,6 @@
 ---
 title: "优化单一性质≠改善相关性质：ABCG2电荷模型的启示"
-date: "2025-10-31"
+date: "2025-11-02"
 tags: [ABCG2, 力场参数, 电荷模型, 结合自由能, FEP, 分子动力学, 水化自由能]
 description: "ABCG2电荷模型在水化自由能计算中性能优异，但在蛋白-配体相互作用环境中未能带来改进，揭示力场优化的系统特异性"
 image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"

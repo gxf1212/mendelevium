@@ -1,6 +1,6 @@
 ---
 title: "重塑细胞膜的关键角色：Martini 3粗粒化力场下的新一代胆固醇模型"
-date: "2025-10-11"
+date: "2025-11-02"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'cholesterol', 'coarse-grained', 'lipid-bilayer']
 description: "胆固醇是动物细胞膜中不可或缺的“万能调解员”。它像楔子一样插入磷脂分子之间，灵巧地调节着细胞膜的流动性、刚性和通透性。同时，它还是形成“脂筏”——一种富含特定脂质和蛋白质的微观区域——的关键驱动力，深刻影响着细胞信号转导等多种生命过程。此外，胆固醇还能直接与膜蛋白相互作用，调控其功能，并且是合成类固..."
 image: "/assets/img/thumbnail_mine/wh-g78rle.jpg"

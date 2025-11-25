@@ -1,6 +1,6 @@
 ---
 title: "基于图像的分子表征学习：药物开发的AI图像识别新范式"
-date: "2025-05-28"
+date: "2025-10-08"
 tags: [image-based-ml, molecular-representation, drug-development, computer-vision, ai-drug-discovery, survey, mol2image]
 description: "Briefings in Bioinformatics重磅综述，系统梳理AI"看脸识药"新范式，从分子指纹、NLP、GNN到图像表征的演进，开启药物发现视觉化新路径"
 thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"

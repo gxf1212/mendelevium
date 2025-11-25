@@ -1,6 +1,6 @@
 ---
 title: "【效率革命】多条短轨迹策略:将QM/MM自由能计算提速4倍"
-date: "2025-10-28"
+date: "2025-11-04"
 tags: [RPQS-MSS, multiple-short-simulations, QM-MM-FEP, efficiency, convergence, parallel-computing, PM6-DH+, equilibration]
 description: "深入解析Steinmann等人的RPQS-MSS方法:如何通过多条短QM/MM MD模拟将计算效率提升4倍,同时保持与传统方法相当的精度"
 image: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"

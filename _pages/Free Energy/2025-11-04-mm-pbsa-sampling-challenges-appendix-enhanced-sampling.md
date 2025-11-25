@@ -1,6 +1,6 @@
 ---
 title: "MM-PBSA 结合能计算的采样挑战【附录】：增强采样方法 IaMD 和 OPES 的原理与实现"
-date: "2025-11-04"
+date: "2025-11-06"
 tags: [mm-pbsa, iamd, opes, enhanced-sampling, molecular-dynamics, sampling-challenges, accelerated-md, appendix]
 description: "详细介绍IaMD（Integrated Accelerated Molecular Dynamics）和OPES（On-the-Fly Probability Enhanced Sampling）两种增强采样方法的数学原理、算法机制、实现细节和应用特点"
 image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"

@@ -1,6 +1,6 @@
 ---
 title: "MIT发布Boltz-2：AI预测结合亲和力首次媲美FEP，千倍加速药物发现"
-date: "2025-06-07"
+date: "2025-10-08"
 tags: [boltz-2, binding-affinity, ai, drug-discovery, fep, mit, deep-learning, protein-ligand, molecular-dynamics]
 description: "MIT突破性AI模型Boltz-2在结合亲和力预测上达到FEP级别精度，速度提升千倍，通过系综监督学习捕获动态结构，为药物发现开辟高通量筛选新路径"
 thumbnail: "/assets/img/thumbnail_mine/wh-e7zqro.jpg"

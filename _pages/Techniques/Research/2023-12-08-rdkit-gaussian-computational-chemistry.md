@@ -1,6 +1,6 @@
 ---
 title: "【笔记整理|2023-09+2024年上半年】RDKit和Gaussian计算化学工具使用经验"
-date: "2023-12-08"
+date: "2025-10-08"
 tags: [rdkit, gaussian, computational-chemistry, quantum-chemistry, molecular-descriptors, antechamber, resp-charges, deepchem, molecular-alignment, mcs]
 description: "总结RDKit化学信息学处理与Gaussian量子化学计算的实用技巧，涵盖分子导入、片段连接、电荷计算、最大共同子结构分析等核心功能，为计算化学工作者提供工具使用经验"
 thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"

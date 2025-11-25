@@ -1,6 +1,6 @@
 ---
 title: "量子计算首次炼金：将CI方法引入自由能计算以提升药物预测精度"
-date: "2025-09-04"
+date: "2025-10-07"
 description: "量子计算突破传统炼金术极限，将CI方法引入自由能计算大幅提升dG预测精度。结合量子力学与分子模拟，为药物发现提供革命性精度提升。"
 tags: [quantum-computing, free-energy-calculation, ci-method, qm-mm, alchemical-free-energy, drug-discovery, quantum-chemistry]
 thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"

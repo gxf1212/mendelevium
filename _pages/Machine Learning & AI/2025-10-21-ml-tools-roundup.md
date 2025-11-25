@@ -1,6 +1,6 @@
 ---
 title: "机器学习赋能药物发现：四款实用工具与方法全解析"
-date: "2025-10-21"
+date: "2025-11-02"
 tags: [machine-learning, drug-discovery, molecular-dynamics, data-management, force-field, interpretability, SHAP, dpdata, gmx-ffconv]
 description: "介绍四项最新机器学习与计算化学工具：dpdata数据管理、gmx_ffconv力场转换、SHAP模型解释优化、图论机器学习预测抗病毒药物性质"
 image: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"

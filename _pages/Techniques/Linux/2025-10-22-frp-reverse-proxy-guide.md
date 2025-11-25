@@ -1,6 +1,6 @@
 ---
 title: "【实战教程】使用 frp 实现内网穿透：从零搭建安全的远程访问方案"
-date: "2025-10-22"
+date: "2025-11-02"
 tags: [frp, reverse-proxy, network, devops, systemd, security, nginx, internal-network]
 description: "完整的 frp 内网穿透部署指南，包含云服务器配置、Token 认证、HTTP 密码保护、WebSocket 支持等实战经验，适合科研开发和远程协作场景"
 thumbnail: "/assets/img/thumbnail_mine/wh-l3971q.jpg"

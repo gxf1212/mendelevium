@@ -1,6 +1,6 @@
 ---
 title: "【笔记整理|2024-07】高性能分子动力学模拟优化策略：GPU并行与多节点配置详解"
-date: "2024-07-01"
+date: "2025-10-08"
 tags: [gromacs, gpu-performance, molecular-dynamics, high-performance-computing, parallel-computing, simulation-optimization, technical-notes]
 description: "详细整理分子动力学模拟GPU并行计算与多节点集群配置的技术要点，涵盖动态负载平衡、多GPU通信优化、性能监控等关键技术，为HPC环境下的MD模拟提供实用指南"
 thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"

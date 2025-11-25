@@ -1,6 +1,6 @@
 ---
 title: "自由能计算的\"蝴蝶效应\"：初始速度 vs. 溶剂盒子，哪个对结果影响更大？"
-date: "2025-08-22"
+date: "2025-10-07"
 description: "深入分析炼金术自由能模拟中的速度和溶剂盒子参数影响，揭示自由能计算的\"蝴蝶效应\"，为计算化学参数优化提供重要见解。"
 tags: [free-energy, alchemical-simulations, parameters, velocity, solvation-boxes, computational-chemistry]
 thumbnail: "/assets/img/thumbnail/empty.jpg"

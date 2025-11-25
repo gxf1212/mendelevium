@@ -1,6 +1,6 @@
 ---
 title: "【笔记整理|2024-07】计算化学工具集锦：RDKit、VMD、PyMOL实战技巧"
-date: "2024-07-01"
+date: "2025-10-11"
 tags: [rdkit, vmd, pymol, computational-chemistry, molecular-modeling, cheminformatics, technical-notes]
 description: "RDKit、VMD、PyMOL等计算化学工具的实战技巧集锦，包括分子指纹生成、描述符计算、分子可视化、拓扑构建和结构分析等核心功能"
 thumbnail: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"

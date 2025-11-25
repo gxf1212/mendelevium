@@ -1,6 +1,6 @@
 ---
 title: "【笔记整理|2023-09+2024年上半年】系统运维与故障排除实用指南"
-date: "2024-06-30"
+date: "2025-10-08"
 tags: [system-administration, troubleshooting, linux, remote-access, command-line, desktop-environment, operations]
 description: "汇总Linux系统运维、远程连接、桌面环境配置及常见故障排除的实用技巧和解决方案，涵盖系统监控、显示器问题、键盘输入等多方面"
 thumbnail: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"

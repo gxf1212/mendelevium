@@ -1,6 +1,6 @@
 ---
 title: "When Physics Meets AI: How Deep-CovBoost Precisely Targets COVID-19's Weak Spots"
-date: "2025-08-13"
+date: "2025-10-07"
 description: "Deep-CovBoost 结合物理模拟与 AI，精准识别 COVID-19 关键靶点。通过深度学习和自由能计算，高效设计蛋白酶抑制剂，为抗病毒药物开发开辟新路径。"
 tags: [ai, covid-19, drug-design, deep-learning, fep, molecular-dynamics, protease-inhibitors]
 thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"

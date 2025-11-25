@@ -1,6 +1,6 @@
 ---
 title: "分子表示语言模型全览：从蛋白质到小分子的语言模型"
-date: "2025-08-22"
+date: "2025-10-08"
 tags: [molecular-representation, language-models, protein-modeling, small-molecules, transformers, deep-learning, ai-drug-discovery]
 description: "全面介绍分子表示语言模型技术栈，从Transformer架构到蛋白质和小分子应用，提供环境配置、模型训练和实际代码实现的完整指南"
 thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"

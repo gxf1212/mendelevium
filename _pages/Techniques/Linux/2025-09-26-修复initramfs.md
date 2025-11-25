@@ -1,6 +1,6 @@
 ---
 title: "NVIDIA & CUDA 环境综合诊断命令集合 (简洁版)"
-date: "2025-09-26"
+date: "2025-10-08"
 tags: [techniques, linux]
 description: "详细复盘Linux系统因NVIDIA驱动安装中断导致的引导失败问题，深入讲解UEFI、LUKS加密、LVM、initramfs启动机制，提供Live USB环境下的完整修复流程"
 thumbnail: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"

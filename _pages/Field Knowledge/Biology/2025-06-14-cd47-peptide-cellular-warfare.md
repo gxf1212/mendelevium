@@ -1,6 +1,6 @@
 ---
 title: "CD47肽的"别吃我"与"吃我"双重功能：细胞攻防战的精密调控"
-date: "2025-06-14"
+date: "2025-11-04"
 tags: [cd47, sirpa, macrophage, phagocytosis, immunotherapy, drug-delivery, cell-biology]
 ---
 # **『"别吃我" vs "吃我"』：细胞世界的攻防战，CD47的双重妙用**

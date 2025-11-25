@@ -1,6 +1,6 @@
 ---
 title: "Untitled"
-date: "2025-10-19"
+date: "2025-11-02"
 tags: ['membrane-pore', 'authors', 'research-team']
 description: "CEITEC and NCBR, Faculty of Science, Masaryk University, Brno, Czech Republic"
 image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"

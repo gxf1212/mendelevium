@@ -1,6 +1,6 @@
 ---
 title: "【笔记整理|2024-07】Python开发环境构建与性能优化：从编码规范到科学计算"
-date: "2024-07-01"
+date: "2025-10-11"
 tags: [python, performance-optimization, development-environment, scientific-computing, data-analysis, technical-notes]
 description: "系统整理Python开发环境构建和性能优化技巧，涵盖编码最佳实践、属性访问优化、迭代器效率、数据结构选择等关键开发要点，为科学计算提供高效Python编程指南"
 thumbnail: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"

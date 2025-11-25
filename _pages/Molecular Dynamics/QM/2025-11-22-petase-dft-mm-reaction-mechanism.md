@@ -1,6 +1,6 @@
 ---
 title: "DFT/MM揭示PETase催化机理与酶设计：理解自然，创造未来"
-date: "2025-11-22"
+date: "2025-11-23"
 tags: [petase, dft-mm, qm-mm, umbrella-sampling, serine-hydrolase, pet-degradation, enzymatic-catalysis, reaction-mechanism, biocatalysis, molecular-dynamics, enzyme-design, protein-engineering, computational-design, rfdiffusion]
 description: "从DFT/MM机理研究到Baker的从头酶设计——深度解析PETase催化PET降解的原子细节，揭示机理理解如何指导酶工程，探讨计算酶学从表征自然到创造未来的范式转变"
 image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"

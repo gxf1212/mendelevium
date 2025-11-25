@@ -1,6 +1,6 @@
 ---
 title: "GROMACS拓扑文件中comb-rule与非键参数详解"
-date: "2025-05-31"
+date: "2025-10-08"
 tags: [gromacs, topology, nonbond-params, comb-rule, force-field, parameters]
 description: "深入解析GROMACS拓扑文件defaults指令下的组合规则和非键参数，理解力场参数设置，为分子动力学模拟配置和参数优化提供完整指南"
 thumbnail: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"

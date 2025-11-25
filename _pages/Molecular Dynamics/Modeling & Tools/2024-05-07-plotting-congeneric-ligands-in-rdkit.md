@@ -1,6 +1,6 @@
 ---
 title: "在RDKit中可视化对比共轭配体：分子对齐与结构差异识别"
-date: "2024-05-07"
+date: "2025-10-08"
 tags: [rdkit, molecular-visualization, congeneric-ligands, scaffold-alignment, structural-comparison]
 description: "详细讲解使用RDKit对共轭配体系列进行二维可视化和分子对齐的技术方法，通过最大共同子结构自动对齐分子骨架，快速识别结构差异的Python实用指南"
 thumbnail: "/assets/img/thumbnail_mine/wh-g78rle.jpg"

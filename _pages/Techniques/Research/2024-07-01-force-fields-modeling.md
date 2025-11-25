@@ -1,6 +1,6 @@
 ---
 title: "【笔记整理|2024-07】力场与分子建模：从Martini 3粗粒化到OPLS-AA全原子力场"
-date: "2024-07-01"
+date: "2025-10-11"
 tags: [force-fields, martini, opls-aa, molecular-modeling, coarse-graining, parameterization, technical-notes]
 description: "全面解析Martini 3粗粒化力场和OPLS-AA全原子力场的参数化策略、珠子类型系统、介电常数设置和实际应用，为分子建模提供力场选择指南"
 thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"

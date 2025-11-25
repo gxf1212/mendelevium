@@ -68,18 +68,6 @@ graph TB
     C[节点3] --> D[节点4]
 ```
 
-或者：
-
-```mermaid
-graph TB
-    subgraph "第一部分"
-        A[节点1] --> B[节点2]
-    end
-
-    subgraph "第二部分"
-        C[节点3] --> D[节点4]
-    end
-```
 
 ---
 
@@ -210,6 +198,42 @@ mindmap
 ---
 
 ## 复杂流程图示例
+
+### Methods流程图推荐结构
+
+对于描述研究方法的流程图，推荐使用以下结构：
+
+```mermaid
+graph TB
+    subgraph S1["1.体系选择"]
+        direction LR
+        A["四大靶点<br/>19个复合物<br/>3×10 μs轨迹"]
+    end
+
+    subgraph S2["2.MD模拟与采样"]
+        direction LR
+        B["AMBER 14力场<br/>298 K, 2 fs步长"] --> C["1 ns保存一帧<br/>均匀抽取1,000帧"]
+    end
+
+    subgraph S3["3.多层次评估"]
+        direction LR
+        D["滑动平均<br/>累积平均"] --> E["PCA覆盖率<br/>RMSD演化"] --> F["相互作用时间演化"]
+    end
+
+    S1 --> S2 --> S3
+
+    style A fill:#e1f5ff
+    style C fill:#fff9c4
+    style F fill:#ffe0b2
+```
+
+**特点**：
+- 每个阶段用编号的subgraph包裹（如`S1["1.体系选择"]`）
+- 子图内使用`direction LR`横向排列
+- 子图之间通过`S1 --> S2 --> S3`连接
+- 可选：使用`style`为关键节点添加颜色
+
+### 通用流程图示例
 
 ```mermaid
 graph TB

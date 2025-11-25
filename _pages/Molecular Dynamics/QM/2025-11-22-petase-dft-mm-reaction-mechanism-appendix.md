@@ -1,6 +1,6 @@
 ---
 title: "PETase反应机理研究附录：技术细节与补充数据"
-date: "2025-11-22"
+date: "2025-11-23"
 tags: [petase, dft-mm, qm-mm, umbrella-sampling, serine-hydrolase, pet-degradation, supplementary-information]
 description: "PETase降解PET机理研究的技术细节、补充数据和计算方法参数"
 image: "/assets/img/thumbnail_mine/wh-72j52o.jpg"

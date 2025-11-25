@@ -1,6 +1,6 @@
 ---
 title: "为AI炼丹炉净化原料：SMILES、SELFIES与更可靠的分子生成表示法"
-date: "2025-09-21"
+date: "2025-10-08"
 description: "深入分析 SMILES 和 SELFIES 分子表示法的优缺点，探索如何提高生成模型的可靠性和有效性。为 AI 药物发现中的分子表示提供最佳实践。"
 tags: [machine-learning-and-ai, representations, smiles, selfies, molecular-representation, generative-models, drug-discovery]
 thumbnail: "/assets/img/thumbnail/sample.png"

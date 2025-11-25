@@ -1,6 +1,6 @@
 ---
 title: "数据分割的艺术：splito教程"
-date: "2025-11-13"
+date: "2025-11-14"
 tags: [data-splitting, machine-learning, drug-discovery, splito, cheminformatics, tutorial]
 description: "深入解析splito库中的数据分割方法，包括基础分割、结构分割、多目标优化等在药物发现中的应用"
 image: "/assets/img/thumbnail/bricks.webp"

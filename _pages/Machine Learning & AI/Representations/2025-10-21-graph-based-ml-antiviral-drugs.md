@@ -1,6 +1,6 @@
 ---
 title: "图论遇上机器学习：用拓扑指数预测抗病毒药物性质"
-date: "2025-10-21"
+date: "2025-11-02"
 tags: [machine-learning, graph-theory, topological-indices, antiviral-drugs, QSPR, random-forest, neural-network, drug-discovery]
 description: "介绍一种两阶段机器学习框架，通过拓扑指数预测抗病毒药物的理化性质，实现高精度的定量构效关系建模"
 image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"

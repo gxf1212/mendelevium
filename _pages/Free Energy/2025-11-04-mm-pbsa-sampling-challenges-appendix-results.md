@@ -1,6 +1,6 @@
 ---
 title: "MM-PBSA采样研究：详细数据和问答附录"
-date: "2025-11-04"
+date: "2025-11-06"
 tags: [mm-pbsa, appendix, data, qa]
 description: "完整的结果数据表、PCA统计、相互作用分析、常见问题解答、局限性分析"
 image: "/assets/img/thumbnail/bricks.webp"

@@ -1,6 +1,6 @@
 ---
 title: "短短10微秒就够了？MM/PBSA结合自由能计算的采样陷阱"
-date: "2025-11-04"
+date: "2025-11-06"
 tags: [mm-pbsa, molecular-dynamics, sampling, convergence, binding-free-energy, enhanced-sampling]
 description: "揭示为什么短期分子动力学模拟会给出看似收敛但实际上误导的结合自由能结果，以及如何确保足够的采样"
 image: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"

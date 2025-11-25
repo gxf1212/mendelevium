@@ -1,6 +1,6 @@
 ---
 title: "FEP Ω：从参数调优的困境中解脱【技术附录】"
-date: "2025-10-30"
+date: "2025-11-02"
 tags: [FEP, 机器学习, 药物发现, 自由能微扰, 分子动力学, 高通量计算, 技术细节]
 description: "FEP Ω论文的深入技术讨论、Q&A、特征工程细节、迭代改进机制等补充内容"
 image: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"

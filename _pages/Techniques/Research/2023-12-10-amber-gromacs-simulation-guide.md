@@ -1,6 +1,6 @@
 ---
 title: "【笔记整理|2023-09】Amber和GROMACS分子动力学模拟实用指南"
-date: "2023-12-10"
+date: "2025-10-08"
 tags: [amber, gromacs, namd, molecular-dynamics, force-field, membrane-simulation, amber-tools]
 description: "全面总结Amber、GROMACS和NAMD分子动力学模拟软件的实用技巧，涵盖AmberTools参数化、GROMACS性能优化、膜蛋白建模和轨迹分析等核心技能"
 thumbnail: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"

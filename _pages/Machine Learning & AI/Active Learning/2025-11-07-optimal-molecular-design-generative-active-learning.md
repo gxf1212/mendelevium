@@ -1,6 +1,6 @@
 ---
 title: "生成式主动学习+物理模拟：AI与精准计算协力加速新药设计"
-date: "2025-11-07"
+date: "2025-11-11"
 tags: [active-learning, generative-ai, reinforcement-learning, binding-free-energy, drug-discovery, molecular-design, REINVENT, ESMACS]
 description: "结合生成式AI和物理精算的主动学习框架，在超算Frontier上实现大规模化学空间探索，为现代药物发现提供全新范式"
 image: "/assets/img/thumbnail_mine/bricks.webp"

@@ -1,6 +1,6 @@
 ---
 title: "破解金属蛋白相互作用密码：新型12-6-4力场参数精准模拟金属-咪唑复合物"
-date: "2025-08-26"
+date: "2025-10-07"
 tags: [metal-protein, force-field, molecular-dynamics, 12-6-4-potential, imidazole-complexes, metalloproteins, amber]
 description: "开发适用于多咪唑配位的12-6-4力场参数，通过扩展采样捕获阳离子-π堆积效应，热力学循环验证误差仅0.61 kcal/mol，为金属蛋白模拟提供精准工具"
 thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"

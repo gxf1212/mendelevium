@@ -1,6 +1,6 @@
 ---
 title: "从序列到纳米结构：FibrilGen如何让肽自组装建模变得简单"
-date: "2025-09-26"
+date: "2025-11-02"
 tags: [peptide-self-assembly, beta-sheet, fibril, nanostructure, molecular-modeling, python, cryo-em, molecular-dynamics]
 description: "深入解析FibrilGen Python工具包，如何实现肽β折叠纳米结构的原子级建模，以及如何通过分子动力学模拟验证结构稳定性"
 image: "/assets/img/thumbnail/sample.png"
