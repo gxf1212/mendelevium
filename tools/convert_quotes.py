@@ -52,24 +52,48 @@ def convert_quotes_in_file(file_path: str) -> tuple[int, int]:
         return 0, 0
 
     try:
-        # 读取文件
-        with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
+        # 以二进制模式读取，确保准确识别所有ASCII引号
+        with open(file_path, "rb") as f:
+            content_bytes = f.read()
     except Exception as e:
         print(f"❌ 读取文件失败: {file_path}")
         print(f"   错误: {e}")
         return 0, 0
 
-    # 计算转换前的英文双引号数
-    english_quote_count = content.count(chr(0x0022))
+    # 计算转换前的ASCII双引号数（0x22）
+    english_quote_count = content_bytes.count(b'\x22')
+
+    # DEBUG
+    import os
+    if os.environ.get('DEBUG_QUOTES'):
+        print(f"DEBUG: 文件大小={len(content_bytes)}, ASCII引号数={english_quote_count}")
 
     if english_quote_count == 0:
-        print(f"✓ {file_path.name}: 无需转换（已全部是中文引号）")
+        print(f"✓ {file_path.name}: 无需转换（无ASCII引号）")
+        return 0, 0
+
+    # 解码为字符串进行处理
+    try:
+        content = content_bytes.decode('utf-8')
+    except Exception as e:
+        print(f"❌ 解码文件失败: {file_path}")
+        print(f"   错误: {e}")
         return 0, 0
 
     # 智能转换：排除特殊情况
     new_content = smart_convert_quotes(content)
-    quote_pair_count = count_converted_quotes(new_content)
+
+    # DEBUG
+    import os
+    if os.environ.get('DEBUG_QUOTES'):
+        new_bytes = new_content.encode('utf-8')
+        ascii_q = b'\x22'
+        left_q = b'\xe2\x80\x9c'
+        right_q = b'\xe2\x80\x9d'
+        print(f"DEBUG: 转换后文件大小={len(new_bytes)}")
+        print(f"DEBUG: 转换后ASCII引号数={new_bytes.count(ascii_q)}")
+        print(f"DEBUG: 转换后左引号数={new_bytes.count(left_q)}")
+        print(f"DEBUG: 转换后右引号数={new_bytes.count(right_q)}")
 
     # 写回文件
     try:
@@ -80,9 +104,13 @@ def convert_quotes_in_file(file_path: str) -> tuple[int, int]:
         print(f"   错误: {e}")
         return english_quote_count, 0
 
-    quotes_converted = english_quote_count - (new_content.count(chr(0x0022)))
+    # 重新统计ASCII引号数量
+    new_content_bytes = new_content.encode('utf-8')
+    remaining_quotes = new_content_bytes.count(b'\x22')
+    quotes_converted = english_quote_count - remaining_quotes
     quote_pair_count = quotes_converted // 2
-    print(f"✓ {file_path.name}: {quotes_converted} 个英文引号 → {quote_pair_count} 对中文引号")
+
+    print(f"✓ {file_path.name}: {quotes_converted} 个ASCII引号 → {quote_pair_count} 对中文引号")
 
     return quotes_converted, quote_pair_count
 
@@ -90,11 +118,13 @@ def convert_quotes_in_file(file_path: str) -> tuple[int, int]:
 def smart_convert_quotes(content: str) -> str:
     """智能转换英文引号为中文引号，排除特殊情况"""
 
+    # DEBUG
+    import os
+    debug = os.environ.get('DEBUG_QUOTES')
+
     # 定义需要排除的区域模式
     patterns = [
-        # Frontmatter: --- ... ---
-        (r'^---.*?^---', re.MULTILINE | re.DOTALL),
-        # 代码块: ```lang ... ```
+        # 代码块: ```lang ... ``` (先匹配，避免和其他模式冲突)
         (r'```.*?```', re.MULTILINE | re.DOTALL),
         # 内联代码: `code`
         (r'`[^`]+`', re.MULTILINE),
@@ -107,20 +137,42 @@ def smart_convert_quotes(content: str) -> str:
         (r'!\[[^\]]*\]\([^)]*"[^)]*\)', re.MULTILINE),
     ]
 
-    # 找到所有需要排除的区域
-    exclude_regions = []
+    # 特殊处理：Frontmatter只匹配文件开头的
+    if content.startswith('---\n') or content.startswith('---\r\n'):
+        # 找到第二个 ---
+        second_dash = content.find('\n---\n', 4)
+        if second_dash == -1:
+            second_dash = content.find('\n---\r\n', 4)
+        if second_dash != -1:
+            exclude_regions = [(0, second_dash + 5)]  # 包括 \n---\n
+            if debug:
+                print(f"DEBUG: Frontmatter排除区域 0-{second_dash + 5}")
+        else:
+            exclude_regions = []
+    else:
+        exclude_regions = []
+
+    # 找到其他需要排除的区域
     for pattern, flags in patterns:
         for match in re.finditer(pattern, content, flags):
             exclude_regions.append((match.start(), match.end()))
+            if debug:
+                print(f"DEBUG: 排除区域 {match.start()}-{match.end()}, 长度{match.end()-match.start()}")
 
     # 合并重叠的区域
     exclude_regions = merge_regions(exclude_regions)
+
+    if debug:
+        print(f"DEBUG: 合并后排除区域数={len(exclude_regions)}")
+        if exclude_regions:
+            print(f"DEBUG: 第一个排除区域={exclude_regions[0]}")
 
     # 逐个字符处理
     new_content = []
     i = 0
     quote_count = 0
     n = len(content)
+    total_converted = 0
 
     while i < n:
         # 检查当前位置是否在排除区域内
@@ -129,7 +181,11 @@ def smart_convert_quotes(content: str) -> str:
             if start <= i < end:
                 in_exclude = True
                 # 直接添加整个排除区域
-                new_content.append(content[i:end])
+                chunk = content[i:end]
+                if debug and '"' in chunk:
+                    quote_count_in_chunk = chunk.count('"')
+                    print(f"DEBUG: Position {i}-{end}: SKIPPING {quote_count_in_chunk} quotes in exclude region")
+                new_content.append(chunk)
                 i = end
                 break
 
@@ -139,19 +195,32 @@ def smart_convert_quotes(content: str) -> str:
         if i >= n:
             break
 
-        # 不在排除区域内，检查是否是英文双引号
-        if content[i] == chr(0x0022):  # 英文双引号 U+0022
+        # 不在排除区域内，检查是否是ASCII双引号
+        # 注意：'"' 在Python中就是 chr(0x22)，无论如何输入都是同一个字符
+        if content[i] == '"':  # ASCII双引号 (U+0022 或 0x22)
             if quote_count % 2 == 0:
-                new_content.append(chr(0x201C))  # 左引号 U+201C "
+                converted_char = '\u201C'  # 左引号 " (U+201C)
             else:
-                new_content.append(chr(0x201D))  # 右引号 U+201D "
+                converted_char = '\u201D'  # 右引号 " (U+201D)
+            new_content.append(converted_char)
+            if debug:
+                print(f"DEBUG: Position {i}: Quote #{quote_count+1} → {repr(converted_char)} (U+{ord(converted_char):04X})")
             quote_count += 1
+            total_converted += 1
         else:
             new_content.append(content[i])
 
         i += 1
 
-    return ''.join(new_content)
+    if debug:
+        print(f"DEBUG: smart_convert_quotes转换了 {total_converted} 个引号")
+        print(f"DEBUG: new_content列表长度={len(new_content)}")
+
+    result = ''.join(new_content)
+    if debug:
+        print(f"DEBUG: 返回字符串长度={len(result)}")
+
+    return result
 
 
 def merge_regions(regions: list) -> list:
