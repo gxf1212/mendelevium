@@ -17,9 +17,7 @@ _pages/archive
 .DS_Store
 .idea
 .vscode
-_pages\Techniques\Linux\frp配置.md
 _pages/Techniques/Linux/frp配置.md
 _pages/Techniques/Linux/frp配置-添加本地服务.md
-_pages\*.pdf
 _pages/*.pdf
 
