@@ -6,6 +6,13 @@ Blogs when reading biophysics research papers. Molecular simulation, free energy
 
 ![](assets/img/dsygx.png)
 
+Commands: 
+
+```shell
+bundle install
+bundle exec jekyll build
+```
+
 The following is the original README file of the theme repository.
 
 ---

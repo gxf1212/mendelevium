@@ -1,20 +1,34 @@
 # Blog Tools 工具集
 
-本目录包含9个自动化工具，用于博客文章生成和质量控制。
+本目录包含自动化工具，用于博客文章生成和质量控制。
 
 ## 📋 工具列表
+
+### 格式修复工具
+
+| 工具 | 功能 | 主要用途 |
+|-----|------|---------|
+| `fix_markdown.py` | **综合格式修复** | 一键修复所有格式问题（推荐使用） |
+| `convert_quotes.py` | 引号修复 | 英文引号 → 中文引号 |
+| `fix_parentheses.py` | 括号修复 | 英文括号 → 中文括号（智能识别） |
+| `fix_format.sh` | 快速修复 | Shell脚本快速修复 |
+
+### 内容生成工具
 
 | 工具 | 功能 | 主要用途 |
 |-----|------|---------|
 | `search_pdf_text.py` | PDF文本搜索 | 快速定位论文关键词和上下文 |
 | `extract_pdf_figures.py` | PDF图片提取 | 自动提取论文中的Figure |
+| `random_thumbnail.py` | 随机缩略图 | 为文章生成随机缩略图路径 |
+
+### 质量检查工具
+
+| 工具 | 功能 | 主要用途 |
+|-----|------|---------|
+| `check_blog_quality.py` | 质量检查 | 11项自动化质量检查 |
 | `verify_blog_figures.py` | 图片验证 | **最终验证**：检查图片编号、文件和图注 |
 | `verify_scheme_in_image.py` | Scheme验证 | OCR验证图片内是否包含Scheme文字 |
-| `random_thumbnail.py` | 随机缩略图生成 | 为文章生成随机缩略图路径 |
-| `convert_quotes.py` | 引号修复 | 英文引号 → 中文引号 |
-| `fix_parentheses.py` | 括号修复 | 英文括号 → 中文括号 |
-| `fix_format.sh` | 格式修复 | 修复列表、加粗等格式问题 |
-| `check_blog_quality.py` | 质量检查 | 11项自动化质量检查 |
+| `update_frontmatter_dates.py` | 日期更新 | 批量更新frontmatter日期 |
 
 ## 🚀 快速开始
 

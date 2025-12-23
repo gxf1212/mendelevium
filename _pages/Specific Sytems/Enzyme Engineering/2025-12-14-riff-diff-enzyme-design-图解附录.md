@@ -1,6 +1,6 @@
 ---
 title: "Riff-Diff：催化基序支架实现高效从头酶设计（图解附录）"
-date: "2025-12-13"
+date: "2025-12-14"
 tags: [enzyme-engineering, protein-design, Riff-Diff, computational-biology, retro-aldolase, MBH-reaction, biocatalysis, machine-learning]
 description: "附录：详细图解Riff-Diff方法的催化基序支架策略、反醛缩酶和MBH酶设计、实验验证数据及晶体结构分析"
 image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
