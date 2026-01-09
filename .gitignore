@@ -21,3 +21,10 @@ _pages/Techniques/Linux/frp配置.md
 _pages/Techniques/Linux/frp配置-添加本地服务.md
 _pages/*.pdf
 reference-mcp
+*private
+
+# FECR1 iron sensor materials
+_pages/Specific Sytems/Metal/fecr1_fe_sensor/
+_pages/Specific Sytems/Metal/2026-01-09-fecr1-cellular-iron-sensor.md
+
+
