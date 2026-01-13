@@ -8,7 +8,8 @@ image: "/assets/img/thumbnail_mine/wh-dpepjo.jpg"
 thumbnail: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
 author: Xufan Gao
 lang: zh-CN
----# 量子力学修正分子力场：QM/MM自由能微扰方法的突破与优化
+---
+# 量子力学修正分子力场：QM/MM自由能微扰方法的突破与优化
 
 ## 引言
 

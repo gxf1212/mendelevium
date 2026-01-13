@@ -8,7 +8,8 @@ image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
 thumbnail: "/assets/img/thumbnail/book.jpg"
 author: Xufan Gao
 lang: zh-CN
----# 【非平衡方法探索】Jarzynski等式在QM/MM自由能计算中的实践:速度不等于效率
+---
+# 【非平衡方法探索】Jarzynski等式在QM/MM自由能计算中的实践:速度不等于效率
 
 ## 本文信息
 

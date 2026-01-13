@@ -8,7 +8,8 @@ image: "/assets/img/thumbnail/nightgardenflower.jpg"
 thumbnail: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 author: Xufan Gao
 lang: zh-CN
----# 【QM/MM-FEP深度解析】参考势方法 vs 直接QM/MM-FEP：技术细节全剖析
+---
+# 【QM/MM-FEP深度解析】参考势方法 vs 直接QM/MM-FEP：技术细节全剖析
 
 ## 本文信息
 

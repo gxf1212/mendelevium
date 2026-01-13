@@ -8,7 +8,8 @@ image: "/assets/img/thumbnail_mine/img-01.jpg"
 thumbnail: "/assets/img/thumbnail/book.jpg"
 author: Xufan Gao
 lang: zh-CN
----# 【SAMPL6盲测挑战】三种方法大比拼：QM/MM-FEP首次战胜传统MM力场
+---
+# 【SAMPL6盲测挑战】三种方法大比拼：QM/MM-FEP首次战胜传统MM力场
 
 ## 本文信息
 

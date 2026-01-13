@@ -2,7 +2,7 @@
 title: "计算优化GAD65自身抗原肽段：为1型糖尿病免疫疗法设计疫苗候选物"
 date: "2026-01-03"
 tags: [type-1-diabetes, autoantigen, GAD65, molecular-dynamics, free-energy-perturbation, HLA-A0201, vaccine-design, immunotherapy]
-description: "通过分子动力学和自由能微扰计算优化GAD65<sub>114-122</sub>自身抗原，识别关键突变位点以增强HLA-A\*02:01结合亲和力，为1型糖尿病抗原特异性免疫疗法提供合理设计策略"
+description: "通过分子动力学和自由能微扰计算优化GAD65<sub>114-122</sub>自身抗原，识别关键突变位点以增强HLA-A*02:01结合亲和力，为1型糖尿病抗原特异性免疫疗法提供合理设计策略"
 image: "img/thumbnail_mine/wh-72j52o.jpg"
 thumbnail: "img/thumbnail_mine/wh-72j52o.jpg"
 author: Xufan Gao

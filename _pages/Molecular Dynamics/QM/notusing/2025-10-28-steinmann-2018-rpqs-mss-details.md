@@ -8,7 +8,8 @@ image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 thumbnail: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
 author: Xufan Gao
 lang: zh-CN
----# 【效率革命】多条短轨迹策略:将QM/MM自由能计算提速4倍
+---
+# 【效率革命】多条短轨迹策略:将QM/MM自由能计算提速4倍
 
 ## 本文信息
 

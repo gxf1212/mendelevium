@@ -8,7 +8,8 @@ image: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
 thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 author: Xufan Gao
 lang: zh-CN
----# QM/MM自由能微扰深度技术解析：从热力学循环到收敛性标准
+---
+# QM/MM自由能微扰深度技术解析：从热力学循环到收敛性标准
 
 ## 引言
 
