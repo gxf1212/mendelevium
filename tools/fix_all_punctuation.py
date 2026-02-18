@@ -6,6 +6,7 @@
 - 英文逗号 , → 中文逗号 ，
 - 英文句号 . → 中文句号 。（仅在中文句子末尾）
 - 英文分号 ; → 中文分号 ；
+- 英文冒号 : → 中文冒号 ：
 - 英文感叹号 ! → 中文感叹号 ！
 - 英文问号 ? → 中文问号 ？
 
@@ -41,6 +42,7 @@ def fix_all_punctuation(file_path: str) -> dict:
         '逗号': content.count(',') - new_content.count(','),
         '句号': content.count('.') - new_content.count('.'),
         '分号': content.count(';') - new_content.count(';'),
+        '冒号': content.count(':') - new_content.count(':'),
         '感叹号': content.count('!') - new_content.count('!'),
         '问号': content.count('?') - new_content.count('?'),
     }
@@ -137,6 +139,11 @@ def smart_convert_punctuation(content: str) -> str:
                 new_content.append('；')
             else:
                 new_content.append(';')
+        elif char == ':':
+            if should_convert_colon(content, i):
+                new_content.append('：')
+            else:
+                new_content.append(':')
         elif char == '!':
             if should_convert_exclamation(content, i):
                 new_content.append('！')
@@ -200,6 +207,22 @@ def should_convert_semicolon(text: str, pos: int) -> bool:
     """判断分号是否应该转换"""
     before = get_context_before(text, pos, 10)
     after = get_context_after(text, pos, 10)
+
+    # 如果前后有中文字符，转换
+    if has_chinese(before) or has_chinese(after):
+        return True
+
+    return False
+
+
+def should_convert_colon(text: str, pos: int) -> bool:
+    """判断冒号是否应该转换"""
+    before = get_context_before(text, pos, 10)
+    after = get_context_after(text, pos, 10)
+
+    # 时间/比例等数字格式不转换（如 12:30, 1:2）
+    if re.search(r'\d$', before) and re.search(r'^\d', after):
+        return False
 
     # 如果前后有中文字符，转换
     if has_chinese(before) or has_chinese(after):
