@@ -1,0 +1,332 @@
+---
+title: "高温分子动力学模拟：水模型选择与系综设置指南"
+date: "2025-02-23"
+tags: [molecular-dynamics, water-model, OPC, OPC3, high-temperature, NVT, NPT, force-field, amber]
+description: "深入探讨高温MD模拟中的水模型选择策略，对比OPC与OPC3在450 K下的性能差异，解析NVT与NPT系综的适用场景"
+image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+author: Xufan Gao
+lang: zh-CN
+---
+
+# 高温分子动力学模拟：水模型选择与系综设置指南
+
+> 搜到的资料不多，结合了AI整理和推断，如有错误恳请指出[合十][合十]。
+
+## 摘要
+
+> 在蛋白质高温分子动力学模拟中，水模型与系综设置共同决定采样结论的可靠性。本文结合 ff19SB 原论文与水模型基准研究，梳理 **OPC 与 OPC3 的适用边界**、**高温系综的选择逻辑** 和 **离子参数的配套原则**。ff19SB 论文在已测试水模型中推荐与 OPC 组合，且未评测 OPC3；独立基准研究显示 OPC 在宽温区密度–温度曲线和热膨胀上整体优于 OPC3，而 2024 的三点模型系统比较只覆盖三点水，不能据此推断 OPC3 优于 OPC<sup>[1]</sup>。<sup>[2]</sup><sup>[3]</sup><sup>[4]</sup> 对于 450 K 构象探索，更稳妥的流程是用 300 K NPT 得到合理密度，再在固定体积的 NVT 下升温采样，最终结论回到 300 K NPT 重新平衡<sup>[3]</sup>。 若体系含金属离子，必须同步匹配水模型的离子参数；三价/四价离子可优先采用 OPC/OPC3 的 12-6-4 参数集，其对配位球结构的保持更一致，但仍需结合 RDF 与实验做二次校验<sup>[5]</sup>。
+
+### 核心结论
+
+- **水模型优先级**：ff19SB 原论文在已测试的显式水模型中推荐 **ff19SB + OPC**，且未评测 OPC3；若受限必须用三点水，可选择 OPC3 作为折中方案<sup>[4]</sup>
+- **高温性能判断**：基准研究显示 OPC 在宽温区密度–温度曲线和热膨胀上整体优于 OPC3；2024 的三点模型系统比较只说明 OPC3 在三点模型中的位置，不能与四点 OPC 直接比较<sup>[1]</sup><sup>[2]</sup><sup>[3]</sup>
+- **构象采样策略**：450 K 用于初始构象探索时，建议以 300 K NPT 的体积进入 NVT 高温采样，**最终结论以 300 K NPT 的再平衡与生产采样为准**<sup>[3]</sup>
+- **离子参数配套**：更换水模型后必须同步更新对应的离子 Lennard-Jones 参数；三价/四价离子优先采用 OPC/OPC3 的 12-6-4 参数，并结合 RDF 与实验验证配位数<sup>[5]</sup>
+- **物理机制**：OPC 的 M-site 有助于更好拟合高阶多极矩，从而改善氢键网络与温度依赖性质<sup>[1]</sup><sup>[2]</sup>
+
+---
+
+## 背景
+
+高温分子动力学模拟（如 **450 K 退火或加速采样**）在蛋白质构象探索和增强采样中广泛应用。然而，高温条件下的水模型选择往往被研究者忽视，导致模拟结果可能引入不必要的系统偏差。
+
+水模型作为 MD 模拟中占比最大的组分（通常占体系原子数的 **80% 以上**），其性质对体系的动力学行为、热力学响应和溶剂化结构具有决定性影响。在常温（**300 K**）下，大多数主流水模型（TIP3P、OPC、OPC3 等）都能给出合理的结果。但在 **高温** 或 **宽温区** 研究中，不同水模型对 **温度依赖性质**（如密度随温度的变化、热膨胀系数、介电常数等）的拟合能力差异显著。
+
+当前存在一个关键的知识缺口：当研究者需要使用 **Amber ff19SB** 这一代高精度蛋白力场进行 **高温 MD 模拟**时，应该选择 **OPC** 还是 **OPC3** 水模型？两者在 **450 K** 下的性能有何差异？在 **NVT** 和 **NPT** 系综之间应该如何选择？这些选择背后的物理机制是什么？
+
+## 调研内容
+
+### ff19SB 水模型选择：OPC 还是 OPC3？
+
+在设计高温 MD 模拟方案时，第一个需要明确的问题是：**ff19SB 力场应该搭配哪个水模型**？
+
+#### ff19SB 的水模型兼容性
+
+**ff19SB 力场**以氨基酸特异的 **CMAP** 修正主链 $\phi/\psi$ 能量面，共拟合 16 组 CMAP（$24 \times 24$ 网格），训练目标为溶液相 QM 能量面，因此不依赖于某一个固定水模型。从兼容性角度，ff19SB 可以与 **OPC**、**OPC3**、**TIP3P** 等多种水模型组合使用。
+
+ff19SB 原论文仅比较了 **OPC 与 TIP3P** 并推荐在已测试的显式水模型中使用 OPC，同时强调 **ff19SB 并未用 OPC 拟合**，水模型仍可能是限制因素，未来其他水模型不排除更好<sup>[4]</sup>。
+
+> 需要说明的是，**OPC3 并未包含在 ff19SB 原论文的评测范围内**，本文关于 OPC3 的讨论主要来自水模型基准研究。
+>
+> http://archive.ambermd.org/202303/0144.html 里提到<sup>[6]</sup>
+> Hi Vlad,
+> Yes we have done some tests using opc3, nothing published yet. For peptides
+> the match to experiment degrades a little compared to opc, but better than
+> tip3p. I don't have more specifics since I am at the ACS meeting this week.
+> Carlos
+
+#### OPC vs OPC3：本质区别
+
+![model](metal_ion_figs/model.png)
+
+OPC（**Optimal Point Charge water**）与 OPC3（**Optimal Point Charge 3-point water**）是同一研究团队开发的两种水模型，它们的本质区别在于 **点位（sites）布置** 和 **电荷分布方式**：
+
+| 特性 | OPC | OPC3 |
+| --- | --- | --- |
+| **点位类型** | 4-point 模型 | 3-point 模型 |
+| **电荷布置** | 除了两个 H 和 O 以外，还有一个 **无质量的负电荷点（M-site）** 偏离氧原子中心 | 所有电荷都放在 O/H 原子上 |
+| **电荷参数** | q=0.6791 e<sup>[2]</sup> | q=0.447585 e<sup>[1]</sup> |
+| **几何参数** | l=0.8724 Å，$z_1$=0.1594 Å，θ=103.6°<sup>[2]</sup> | l=0.97888 Å，$z_1$=—，θ=109.47°<sup>[1]</sup> |
+| **LJ 参数** | $\sigma_\mathrm{LJ}$=3.16655 Å，$\varepsilon_\mathrm{LJ}$=0.89036 kJ/mol<sup>[2]</sup> | $\sigma_\mathrm{LJ}$=3.17427 Å，$\varepsilon_\mathrm{LJ}$=0.68369 kJ/mol<sup>[1]</sup> |
+| **设计理念** | 类似 **TIP4P** 的思路，通过 M-site 更准确地拟合水分子的静电分布与氢键网络 | 在 **3 点刚性水模型** 的精度上限约束下做的最优拟合 |
+| **拟合目标** | 优化整体水性质和溶质–水相互作用 | 在 3 点模型框架下达到最佳拟合 |
+
+> 注：$z_1$ 表示负电荷虚拟点（M-site）相对氧原子沿水分子对称轴的位移，OPC3 为三点模型因此不适用。<sup>[1]</sup><sup>[2]</sup>
+
+两者的共同点是以 **电荷分布** 为核心进行优化。OPC 的构建采用对 $\mu$–$Q_T$ 空间的系统搜索，仅保留对称性约束，以优化液相电静特征；OPC3 在相同思路下将模型压缩为三点形式，以获得更高的计算效率<sup>[1]</sup><sup>[2]</sup>
+
+从物理意义上理解，**OPC 的 M-site** 相当于在氧原子附近增加了一个额外的“虚拟电荷点”，使得模型能够更准确地再现水分子的高阶多极矩（quadrupole moment），从而改善对 **氢键网络** 和 **溶剂化结构** 的描述。
+
+> 这里的 $\mu$ 表示水分子偶极矩，$Q_T$ 表示四极矩的迹。OPC 论文定义了一个**质量评分**，用多项体相性质与水化自由能的综合误差来衡量模型在 $\mu$–$Q_T$ 空间的优劣，得分越高表示越接近目标性质<sup>[2]</sup>。
+
+**图1**：**OPC 的 $\mu$–$Q_T$ 质量评分图**（原文 Figure 3）<sup>[2]</sup>
+
+![图1：OPC 的 $\mu$–$Q_T$ 质量评分图](water_figs/fig_opc_quality_map.png)
+
+该图展示了在 $\mu$–$Q_T$ 空间中的模型质量分布，OPC 位于高质量区域，说明其电静多极矩选择更接近液相最优区间<sup>[2]</sup>。
+
+#### 精度 vs 速度/兼容性
+
+OPC 和 OPC3 的选择本质上是在 **精度** 和 **通用性** 之间做权衡：
+
+- **OPC 的优势**：在整体水性质、溶质–水静电相互作用、氢键网络的再现上通常更准确。但 4 点模型在某些 MD 引擎或工作流中会稍麻烦或略慢（如 GPU 加速路径对 4 点水的优化程度可能不如 3 点水）。
+- **OPC3 的优势**：通常更快、更“通用”（3 点水对很多程序/加速路径更友好），但就 **水本身的综合性质拟合** 而言一般不如 OPC。
+
+#### 社区实践经验
+
+基于原论文结论与常见实践，若不受 3 点水限制，优先使用 **OPC**；若必须使用 3 点水，再以 **OPC3** 作为替代。
+
+**ff19SB + OPC 的实验验证**：
+
+![图11：CLN025蛋白折叠模拟中ff19SB+OPC与ff14SB组合的性能对比](ff19sb_figs/fig11.png)
+
+**图11**：**CLN025 蛋白的主链 RMSD 随时间变化**（Maier et al., JCTC 2020, Figure 11）<sup>[4]</sup>
+
+该图展示了在 **CLN025**（一种快速折叠的 β-hairpin 蛋白）的模拟中，三种力场+水模型组合的性能：从 **天然结构（nat）** 与 **完全伸展结构（ext）** 出发，各 4 条轨迹，共 8 次独立模拟；**300 K** 进行，总时长约 **172 μs**
+
+**性能对比**：
+- **ff19SB + OPC**（蓝色）：能够可逆地折叠到天然结构，native population = **50% ± 17%**
+- **ff14SB + TIP3P**（红色）：native population = **75% ± 23%**
+- **ff14SB + OPC**（黄色）：native population = **33% ± 19%**
+
+**关键发现**：
+
+1. **折叠可逆性**：4 次 nat 与 4 次 ext 轨迹均回到天然结构，说明该组合稳定可靠
+2. **组合匹配性**：ff14SB + OPC 的 native population 低于 ff14SB + TIP3P，提示 OPC 与 ff14SB 的协同不足
+3. **协同优势**：ff19SB 并未专门拟合 OPC，但与 TIP3P 对比时 OPC 在折叠动力学与构象平衡上更好<sup>[4]</sup>
+
+这个实验数据支持 **ff19SB + OPC 作为推荐组合**的结论，特别是在蛋白折叠、构象平衡等应用中<sup>[4]</sup>。一个实用的 **经验法则**：
+
+- **默认（蛋白折叠/构象平衡/IDP 等）**：ff19SB + OPC
+- **必须 3 点水**（例如某些代码路径、极限性能、或你工作流只能稳定支持 3 点）：用 OPC3，并确保离子参数选择合理/一致
+
+---
+
+### 高温下的性能差异：OPC 还是 OPC3 更好？
+
+高温（**450 K**）是水模型性能差异被放大的场景。当温度升高，水分子的 **动能增加**、**氢键网络减弱**、**密度下降**，不同水模型对 **温度依赖性质** 的拟合能力差异会显著影响模拟结果的可靠性。
+
+#### 纯水基准测试：宽温区对比
+
+多项研究已经系统对比了 OPC 和 OPC3 在 **宽温区（270–650 K）** 的表现：
+
+1. **OPC3 相关论文（Izadi & Onufriev, 2016）**：直接对比了 OPC vs OPC3 的 **密度–温度曲线**，作者明确指出：<sup>[1]</sup>
+   - **4-point OPC** 在宽温区密度的温度依赖上比 **3-point OPC3** 更准确
+   - 给出了一个关键的派生量：**OPC3 的热膨胀系数偏差（约 $67.9\%$）远大于 OPC（约 $5\%$）**
+   - 文中指出 OPC3 在三点模型中显著优于 TIP3P/SPC/E，并认为实用三点刚性非极化模型已接近精度上限
+
+2. **2024 年三点水模型的大规模对比**（11 个刚性三点水模型）系统评估了液–汽共存、临界点与自发气化等高温行为：<sup>[3]</sup>
+   - 给出各模型的 $T_\mathrm{C}$、$T_\mathrm{MD}$ 与 $T_\mathrm{evap}$，$T_\mathrm{evap}$ 范围约为 $520$–$620~\mathrm{K}$，并明确指出 $T_\mathrm{evap}$ 不是沸点
+   - 该研究仅覆盖三点模型（包含 **OPC3**），**不包含四点 OPC**，因此不能据此得出 “OPC3 优于 OPC” 的结论
+
+3. **OPC 原始论文** 强调：OPC 通过优化点电荷分布来逼近液相电静特征，**体相性质平均相对误差约 $0.76\%$**，并且在宽温区保持与实验接近；同时小分子水化自由能的 RMS 误差可做到 **$<1~\mathrm{kcal/mol}$**<sup>[2]</sup>。
+
+#### 高温性能差异从何而来？
+
+OPC vs OPC3 在高温下的性能差异，核心来自 **电荷点位布置** 的不同：
+
+- **OPC（4-point，带 M-site）**：负电荷不锁死在氧原子上，而是分布在 M-site → 能更好复现高阶多极矩，从而改善氢键网络与温度依赖性质
+- **OPC3（3-point）**：负电荷必须在氧上 → 多极矩表达受限，作者明确指出这会拖累密度温度依赖与热膨胀等指标<sup>[1]</sup>
+
+OPC3 论文给出了两者的多极矩差异：OPC 的 $\mu = 2.48~\mathrm{D}$、$Q_T = 2.3~\mathrm{D\cdot Å}$，而 OPC3 的 $\mu = 2.43~\mathrm{D}$、$Q_T = 2.06~\mathrm{D\cdot Å}$<sup>[1]</sup><sup>[2]</sup>。 OPC 的负电荷可偏离氧原子以更好兼顾高阶多极矩；OPC3 负电荷固定在氧上，导致高阶多极矩拟合受限。
+
+#### 直接回答“高温下谁更好？”
+
+- 如果你说的“**高温**”是指 **$>350~\mathrm{K}$** 甚至更高并且你关心 **温度依赖的体相水性质**：**倾向选择 OPC**
+- 如果你受限于 3 点水（性能/引擎/工作流），**OPC3 是可接受的折中方案**，但要接受它在 **密度–温度曲线/热膨胀** 上偏差更大。
+
+---
+
+### 450 K 构象采样：NVT 还是 NPT？
+
+当你的研究目标是 **450 K 下进行蛋白质构象采样**（如高温退火、加速跨越能垒），系综的选择（**NVT** vs **NPT**）和体积/密度的设定策略会直接影响采样效率和结果可靠性。
+
+#### NVT vs NPT：物理意义的本质区别
+
+首先需要明确 **NVT** 和 **NPT** 系综在高温下的物理含义：
+
+- **NVT（等温等容）**：固定体积，温度耦和到热浴。体系密度被锁死，不会因温度升高而膨胀。
+- **NPT（等温等压）**：固定压力（通常 $1~\mathrm{bar}$），体积可以自由调整。体系会根据温度自动调整到平衡密度。
+
+在 **$450~\mathrm{K}$、$1~\mathrm{bar}$** 的条件下，液态水处于 **超热液体** 区域。对 11 种刚性三点水模型的系统研究表明，NPT 下存在模型相关的 **自发气化温度** $T_\mathrm{evap}$，且 **$T_\mathrm{evap}$ 并不等于沸点**。该研究给出的 $T_\mathrm{evap}$ 范围约为 $520$–$620~\mathrm{K}$，其中 **OPC3 的 $T_\mathrm{evap}$ 为 $593.7 \pm 1.2~\mathrm{K}$**（C-rescale barostat）<sup>[3]</sup>。
+
+因此，**450 K 低于 $T_\mathrm{evap}$**，体系在 NPT 下仍可能保持液相，但密度会明显下降，并对 barostat 与升温速率更敏感。若继续升温接近 $T_\mathrm{evap}$，则可能出现 **空泡、密度骤降、体积迅速增大** 的“自发气化”现象。
+
+#### 你关心的问题类型
+
+选择 NVT 还是 NPT，取决于你的研究目标：
+
+**1) 只是要一个稳定溶剂环境（重点关注蛋白高温退火/加速采样）**
+
+✅ **NVT 是合理选择**。OPC3 可以用（或 OPC，如果你能用 4-point）。作为三点模型，OPC3 在温度依赖的体相性质上精度有限，但用于“稳定溶剂环境”的需求通常足够。
+
+在这种用途里，决定能否稳定运行的往往不是水模型，而是：
+- **初始密度是否合理**（NVT 下密度不会自动纠正）
+- **约束/时间步/恒温器设置是否稳定**
+
+一个常见参照是温度‑REMD：**多数 REMD 实现会在 NVT 下运行多个 replica**，在 Amber 这类力场工作流中也很常见；Amber 早期 REMD 只支持 NVT，后续才扩展到 NPT‑REMD<sup>[7]</sup><sup>[8]</sup>。因此，**把高温 NVT 当作构象探索的工具是合理的**，但最终统计仍应回到常温 NPT 的再平衡与生产采样。
+
+如果你只需要“稳定液相环境”，核心问题是 **$450~\mathrm{K}$ 是否低于 $T_\mathrm{evap}$**。三点水模型的大规模对比研究给出 **OPC3 的 $T_\mathrm{evap}=593.7 \pm 1.2~\mathrm{K}$**，明显高于 $450~\mathrm{K}$，因此在 **$450~\mathrm{K}$ NVT** 下使用 OPC3 作为稳定溶剂环境是合理的<sup>[3]</sup>。
+
+需要强调的是，**高温轨迹只用于初始构象探索**，最终统计应回到 **$300~\mathrm{K}$ NPT** 重新平衡与生产采样。若进行高温 NPT 预平衡，建议采用 **C-rescale** 并先在中间温度预平衡密度。
+
+**2) 你要在 450 K 下比较水的热力学/界面性质（密度-温度曲线、热膨胀、表面张力等）**
+
+⚠️ **需要谨慎**：OPC3 论文认为实用三点刚性非极化模型已接近精度上限；相比之下 **OPC（4-point）** 在密度温度依赖与热膨胀上通常更贴近实验<sup>[1]</sup>。
+
+如果你在意这些“**水本身**”的量，优先考虑 **OPC**（如果你能用 4-point）或其他被广泛用来做宽温区热力学的模型。
+
+**图2**：**OPC 与 OPC3 的密度–温度曲线对比**（原文 Figure 7）<sup>[1]</sup>
+
+![图2：OPC 与 OPC3 的密度–温度曲线对比](water_figs/fig_opc_opc3_density.png)
+
+黑色为实验数据，蓝色虚线为 OPC，橙色为 OPC3。可以看到 OPC 在较宽温区内更贴近实验曲线，OPC3 在高温段偏离更明显<sup>[1]</sup>。
+
+#### 密度设定策略：用300 K NPT 平衡还是 450 K NPT？
+
+对于大多数“**关注蛋白构象采样**”的场景，推荐的流程是：
+
+```mermaid
+graph LR
+  A["300 K NPT（1 bar）<br/>得到合理液态密度与体积"] --> B["固定体积<br/>NVT 升温到 450 K<br/>建议 simulated annealing 或分段升温"]
+  B --> C["450 K NVT 采样初始构象<br/>目标：稳定高温溶剂环境"] --> D["300 K NPT，多条平行<br/>真正用无偏MD采样"]
+```
+
+**为什么这样选？**
+
+- **450 K、$1~\mathrm{bar}$ 的 NPT** 会显著降低液态密度，且密度对 barostat 和升温方式更敏感；如果目标是“维持高温液态环境以加速采样”，这与 NPT 的密度松弛方向存在冲突。
+- 你需要的是“高动能且保持液态的溶剂环境”。
+- 用 **300 K NPT 的体积（接近常温液态密度）** 去做 450 K NVT，等价于在高温下维持一个高温但仍致密的溶剂箱，使蛋白在溶剂中更快跨越能垒。
+
+#### 推荐的 GROMACS 参数配置
+
+**450 K + NVT 在 GROMACS 的实操建议（保证 OPC3 可稳定使用）**：
+
+1. **先 NPT 调整密度，再切 NVT**
+   - NVT 下密度锁死；如果直接用 300 K 的密度升到 450 K，水会处在不合理的内压状态，性质会出现偏差。
+   - 若必须做高温 NPT，建议 **先在中间温度预平衡密度**，再升到目标高温；并优先使用 **C-rescale barostat**。三点水模型的 $T_\mathrm{evap}$ 对 barostat 有系统偏移：Berendsen 通常偏高、PR 往往更低。
+
+2. **水用刚性约束（SETTLE）**
+   - OPC/OPC3 都是 rigid water；在 GROMACS 里建议用 SETTLE 约束水（更稳定/更快）。
+
+3. **时间步适当保守**
+   - 450 K 动力学更活跃：如果你用全键约束 + 虚拟氢（有的话）可以 2 fs；不确定就从 **1–2 fs** 起步，先看能量漂移和约束警告。
+
+4. **离子参数的“水模型一致性”**
+   - 如果有盐，离子 LJ 参数最好与水模型配套，否则溶剂化/离子对结构可能出现漂移（这点在高温会更敏感）。
+
+---
+
+## 实操注意事项：离子参数要配套
+
+水模型更换后，**离子 Lennard-Jones 参数** 建议使用对应或推荐的参数集，否则盐桥/屏蔽/溶剂化自由能可能出现系统性漂移。
+
+> AMBER 生态里针对不同水模型有不同 **frcmod.ions** 组合；在一些讨论里也会提到 **OPC/OPC3** 与不同离子参数集的搭配。
+> 
+> **OPC3 论文** 提到一个过渡方案：在缺少 OPC3 专用离子参数时，可谨慎使用 **Joung/Cheatham（TIP3P）** 的单价离子参数。作者比较了 $\ce{Na+}$、$\ce{K+}$、$\ce{Cl-}$ 的离子–氧距离，指出该参数集在 OPC3 中能在 $\pm 0.05~\mathrm{Å}$ 内匹配目标 IOD 值。
+
+### 金属离子参数：高价离子的特殊考虑
+
+对于 **三价（$\ce{M^{3+}}$）和四价（$\ce{M^{4+}}$）金属离子**，离子参数的选择更为关键。这类离子在稀土化学、材料科学和金属蛋白中广泛存在，如 **$\ce{Fe^{3+}}$、$\ce{Al^{3+}}$、$\ce{Cr^{3+}}$、$\ce{U^{4+}}$、$\ce{Ce^{4+}}$** 等。
+
+**12-6-4 LJ 模型**：由于传统 12-6 LJ 模型无法同时重现 **水化自由能（HFE）** 和 **离子–氧距离（IOD）**，研究者开发了包含 **$C_4$ 项**的 12-6-4 模型来考虑 **离子诱导偶极相互作用**。该模型能够同时重现实验 HFE 和 IOD 值，误差分别在 **$2~\mathrm{kcal/mol}$** 和 **$0.01~\mathrm{Å}$** 以内<sup>[5]</sup>。
+
+**OPC/OPC3 金属离子参数可用性**：
+
+- **参数覆盖范围**：已为 18 个三价和 6 个四价金属离子开发了配套 OPC/OPC3 的 12-6-4 参数（Li & Merz, JCTC 2021）<sup>[5]</sup>
+- **水模型依赖性**：$C_4$ 项存在显著的水模型依赖性，因此 OPC/OPC3 需要专门的重新参数化，不能直接沿用 TIP3P 的参数
+- **性能表现**：在四种新水模型（OPC3、OPC、TIP3P-FB、TIP4P-FB）中，**OPC3 在模拟高价金属离子时表现最佳**
+
+文中进一步比较 HFE–IOD 曲线与实验目标点（Figure 4）后指出：**在仅使用 12-6 模型（$C_4 = 0$）时，OPC3 的 HFE–IOD 曲线最接近实验目标值，因此在 12-6 框架下表现最好**。这也是作者在结论部分“三点水模型整体优于四点水模型，OPC3 最佳”的依据。需要注意的是，这一结论是基于 **HFE 与 IOD 的联合接近程度**，而不是单纯“最负的 HFE”。
+
+**Figure 4：IOD–HFE 扫描曲线与实验目标点对比**：
+
+![图4：IOD与HFE扫描曲线及实验目标点对比](metal_ion_figs/fig4.png)
+
+该图将各水模型的 IOD–HFE 扫描曲线与实验目标点放在同一平面上，用于判断在 12-6 条件下哪一套水模型更接近实验目标。作者据此指出 OPC3 在三价与四价金属离子中均更接近目标点。
+
+**Figure 5：12-6 模型下 HFE 与 IOD 的百分误差（OPC3 vs OPC）**：
+
+![图5：12-6模型下OPC3与OPC的HFE与IOD误差对比](metal_ion_figs/fig5.png)
+
+该图将 12-6 模型下的 HFE 与 IOD 误差拆开统计，显示 **OPC3 与 OPC 的误差分布存在系统性差异**。它与 Figure 4 的 HFE–IOD 目标点对比一起构成“12-6 模型下 OPC3 更接近实验”的直接证据链。
+
+> IOD明显OPC是过于小了，无论怎样都用OPC3吧
+
+**结论**：
+
+当使用 **12-6 模型**（$C_4 = 0$）时：
+- **OPC3 的 HFE vs IOD 曲线最接近实验目标值**
+- 在三点水模型和四点水模型之间，**三点水模型（OPC3）表现优于四点水模型（OPC）**
+
+这与蛋白模拟中的情况相反（通常 OPC 优于 OPC3），突显了**金属离子模拟的特殊性**。
+
+**金属蛋白应用案例**：该参数化研究在超氧化物还原酶（superoxide reductase）体系中验证了 12-6-4 模型的可靠性。模拟结果表明，12-6-4 参数在 **保留配位球结构** 方面比 12-6 模型表现出更好的一致性，特别是在配合不同水模型时<sup>[5]</sup>。
+
+更具体地说，作者在不同水模型下比较了 12-6 的 HFE/IOD 参数集与 12-6-4：在部分组合（如 HFE/OPC、HFE/OPC3 或 IOD/TIP3P）中，**12-6 参数集更容易出现结合位点结构失稳**；而 12-6-4 在不同水模型之间的表现更一致，更能保留活性位点结构<sup>[5]</sup>。这也是论文建议在金属蛋白体系中优先考虑 12-6-4 的主要依据。
+
+从“配位数是否更优”的角度看，论文并未给出系统的数值对比，而是用“配位环境的保持性”作为证据链：结论是 **12-6-4 更一致地保持配位球**，整体优于 12-6，但并不保证所有体系的配位数都更接近实验。若你实测配位数偏大，可能与离子参数、水模型或采样条件有关，建议结合 RDF 积分与实验参考再评估<sup>[5]</sup>。
+
+补充（文献层面）：公开综述给出 Mg$^{2+}$ 水合中 12-6-4（TIP3P/SPC/E/TIP4P-EW）对应的 **CN=6** 与实验一致，但该表没有 12-6 的并列对照，因此不能据此直接判定“12-6-4 比 12-6 更接近实验”<sup>[9]</sup>。在蛋白锌体系的对比中，LJ12–6-4 反而更容易引入额外配位水、使 CN 增加的现象也有报道，这与你的观察一致，说明仍需做体系级验证<sup>[10]</sup>。
+
+**实操建议**：
+
+- 对于包含 $\ce{Fe^{3+}}$、$\ce{Zn^{2+}}$、$\ce{Mg^{2+}}$ 等金属离子的体系，优先使用为对应水模型专门参数化的 **12-6-4 LJ 参数**<sup>[5]</sup>
+- 如果体系涉及 **金属蛋白的金属结合位点**，12-6-4 模型在 **配位几何结构稳定性** 上通常优于 12-6 模型<sup>[5]</sup>
+- 参数表格可在 Supporting Information 中找到（Table 4：12-6-4 参数集）<sup>[5]</sup>
+
+> 有蛋白锌体系的对比显示 12‑6‑4 反而更易引入额外配位水、使 CN 增加。我之前测12-6-4的配位数也是偏大的，Al3+的CN=7，当然，是14SB+TIP3P
+
+## 关键结论
+
+- **水模型选择的优先级**：ff19SB 原论文在已测试水模型中推荐 **ff19SB + OPC**，且未评测 OPC3；若受限必须使用三点水，可选择 OPC3 作为折中方案<sup>[4]</sup>
+- **高温性能差异的本质**：OPC 通过 M-site 改善高阶多极矩拟合，从而在宽温区的密度–温度曲线与热膨胀上整体优于 OPC3；三点模型的系统比较不足以对 OPC 与 OPC3 做跨模型结论<sup>[1]</sup><sup>[2]</sup><sup>[3]</sup>
+- **构象采样的系综选择**：450 K 仅用于初始构象探索时，推荐用 300 K NPT 得到的液态密度进入 NVT，再回到 300 K NPT 重新平衡并进行最终统计<sup>[3]</sup>
+- **离子参数配套的重要性**：更换水模型后必须同步更新对应的离子 Lennard-Jones 参数；三价/四价离子可优先采用 OPC/OPC3 的 12-6-4 参数并核验配位数<sup>[5]</sup>
+
+---
+
+## **参考文献**
+
+1. Izadi, S., & Onufriev, A. (2016). Accuracy limit of rigid 3-point water models. *The Journal of Chemical Physics*, **145**(7), 074501. https://doi.org/10.1063/1.4960175. [OPC3 原始论文，系统对比 OPC 和 OPC3 在宽温区的性能]
+
+2. Izadi, S., Anandakrishnan, R., & Onufriev, A. (2014). Building Water Models: A Different Approach. *The Journal of Physical Chemistry Letters*, **5**(21), 3863-3871. https://doi.org/10.1021/jz501780a. [OPC 原始论文]
+
+3. N. C. Quoika, et al. (2024). Liquid−Vapor Coexistence and Spontaneous Evaporation at Atmospheric Pressure of Common Rigid Three-Point Water Models in Molecular Simulations. *The Journal of Physical Chemistry B*, **128**, 2457-2468. https://doi.org/10.1021/acs.jpcb.3c08183. [三点水模型的 $T_\mathrm{evap}$、$T_\mathrm{C}$ 与 $T_\mathrm{MD}$ 系统对比，包含 OPC3]
+
+4. Maier, J. A., et al. (2019). ff19SB: Amino-Acid-Specific Protein Backbone Parameters Trained against Quantum Mechanics Energy Surfaces in Solution. *Journal of Chemical Theory and Computation*, **15**(8), 3696-3713. https://doi.org/10.1021/acs.jctc.9b00591. [ff19SB 力场原论文，推荐在已测试的显式水模型中使用 OPC]
+
+5. Li, P., & Merz, K. M., Jr. (2021). Parameterization of trivalent and tetravalent metal ions for the OPC3, OPC, TIP3P-FB, and TIP4P-FB water models. *Journal of Chemical Theory and Computation*, **17**(4), 2342-2354. [DOI: 10.1021/acs.jctc.0c01320] [18 个三价和 6 个四价金属离子的 12-6-4 LJ 参数，包含 OPC/OPC3 专门参数化]
+
+6. AMBER 邮件列表归档（2023-03-14）：关于 OPC3 的未发表测试反馈。http://archive.ambermd.org/202303/0144.html
+
+7. Case, D. A., et al. (2025). Recent Developments in Amber Biomolecular Simulations. *Journal of Chemical Information and Modeling*, **65**(15), 7835-7843. https://doi.org/10.1021/acs.jcim.5c01063. [AMBER 的 REMD 支持扩展，含 NPT‑REMD 说明]
+
+8. Bergonzo, C., Henriksen, N. M., Roe, D. R., Swails, J. M., Roitberg, A. E., & Cheatham, T. E., III. (2014). Multidimensional Replica Exchange Molecular Dynamics Yields a Converged Ensemble of an RNA Tetranucleotide. *Journal of Chemical Theory and Computation*, **10**(1), 492-499. https://doi.org/10.1021/ct400862k. [AMBER REMD 中每个 replica 以 NVT 生产运行的示例]
+
+9. Li, P., Roberts, B. P., Chakravorty, D. K., & Merz, K. M., Jr. (2017). Metal Ion Modeling Using Classical Mechanics. *Chemical Reviews*, **117**(3), 1564-1686. https://doi.org/10.1021/acs.chemrev.6b00440. [综述 Table 2 汇总了 12-6-4 模型的配位数示例]
+
+10. Gervasoni, S., Giorgi, M., Manzoni, F., & Penasa, M. (2022). A multiscale approach to predict the binding mode of metallo beta-lactamase inhibitors: Binding mode prediction for IMP-1 inhibitors. *Proteins: Structure, Function, and Bioinformatics*, **90**(12), 2155-2164. https://doi.org/10.1002/prot.26408. [比较 LJ12-6 与 LJ12-6-4 时，12-6-4 在部分体系中倾向增加配位数]
+
+**致谢**：感谢 MD 模拟社区（GROMACS 论坛、AMBER 邮件列表）在实操经验上的无私分享。
