@@ -120,27 +120,56 @@ class MarkdownFixer:
 
     def fix_bold_formatting(self, content: str) -> str:
         """修复加粗格式"""
+        original = content
         count = 0
 
-        # 1. 移除加粗内的标点
-        new_content = re.sub(r'\*\*([^*]+?)([。！？，；])\*\*', r'**\1**\2', content)
-        count += len(re.findall(r'\*\*[^*]+?[。！？，；]\*\*', content))
+        # 0. 移除加粗开头的中文标点（如：然而**，文本** → 然而，**文本**）
+        # 将 **[标点] 替换为 [标点]**
+        new_content = re.sub(r'\*\*([\uFF0C\uFF1B\uFF1A\u3001])', r'\1**', content)
+        if new_content != content:
+            count_matches = len(re.findall(r'\*\*([\uFF0C\uFF1B\uFF1A\u3001])', content))
+            count += count_matches
+        content = new_content
+
+        # 0.5. 合并连续的加粗标记（如：**，**** → ，**）
+        new_content = re.sub(r'\*\*([，：；])\*\*\*\*', r'\1**', content)
+        if new_content != content:
+            count += len(re.findall(r'\*\*[，：；]\*\*\*\*', content))
+        content = new_content
+
+        # 1. 移除加粗内的标点（只处理单个加粗标记内的情况）
+        # 使用负向前瞻确保不会跨越多个加粗标记
+        new_content = re.sub(r'\*\*((?:(?!\*\*).)+?)([。！？，；])\*\*', r'**\1**\2', content)
+        if new_content != content:
+            count += len(re.findall(r'\*\*(?:(?!\*\*).)+?[。！？，；]\*\*', content))
+        content = new_content
 
         # 2. 引号移到外面
+        new_content = re.sub(r'\*\*"([^"]+?)"\*\*', r'"**\1**"', content)
         new_content = re.sub(r'\*\*"([^"]+?)"\*\*', r'"**\1**"', new_content)
-        new_content = re.sub(r'\*\*"([^"]+?)"\*\*', r'"**\1**"', new_content)
+        content = new_content
 
         # 3. 括号移到外面
-        new_content = re.sub(r'\*\*([^*（）]+?)（([^）]+?)）\*\*', r'**\1**（\2）', new_content)
+        new_content = re.sub(r'\*\*([^*（）]+?)（([^）]+?)）\*\*', r'**\1**（\2）', content)
         new_content = re.sub(r'\*\*([^*\(\)]+?)\(([^\)]+?)\)\*\*', r'**\1**(\2)', new_content)
+        content = new_content
 
         # 4. 百分号移到外面
-        new_content = re.sub(r'\*\*(\d+)%\*\*', r'**\1**%', new_content)
+        new_content = re.sub(r'\*\*(\d+)%\*\*', r'**\1**%', content)
+        content = new_content
 
+        # 5. 冒号和逗号移到外面（**text：** → **text**：，**text，** → **text**，）
+        # 使用非贪婪匹配，匹配 ** 开始到 ：** 或 ，** 结束的内容
+        # 注意：(?:(?!\*\*).)+? 表示匹配任何字符，但不包括 **
+        new_content = re.sub(r'\*\*((?:(?!\*\*).)+?)([：，])\*\*', r'**\1**\2', content)
         if new_content != content:
+            count += len(re.findall(r'\*\*(?:(?!\*\*).)+?[：，]\*\*', content))
+        content = new_content
+
+        if content != original:
             self.stats['加粗格式'] += count
 
-        return new_content
+        return content
 
     def fix_list_spacing(self, content: str) -> str:
         """删除列表项之间的空行"""
@@ -170,6 +199,12 @@ class MarkdownFixer:
 
     def fix_punctuation(self, content: str) -> str:
         """修复中文标点符号"""
+        # 先修复图片标记中的中文感叹号
+        count_img = len(re.findall(r'！\[', content))
+        content = re.sub(r'！\[', '![', content)
+        if count_img > 0:
+            self.stats['图片标记'] = count_img
+
         regions = self.find_excluded_regions(content)
         result = []
         i = 0

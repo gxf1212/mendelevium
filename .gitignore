@@ -22,7 +22,7 @@ _pages/Techniques/Linux/frp配置-添加本地服务.md
 *.pdf
 reference-mcp
 *private
-
+tools/__pycache__/
 
 # FECR1 iron sensor materials
 _pages/Specific Sytems/Metal/fecr1_fe_sensor/
