@@ -95,21 +95,64 @@ class BlogQualityChecker:
 
     def check_bold_format(self):
         """检查加粗格式"""
-        # 检查加粗包含标点
-        if re.search(r'\*\*[^*]*[。，；：！？.]\*\*', self.body):
-            self.errors.append("❌ 发现加粗包含标点符号，如 **xxx。**")
+        # 更精确的检测：逐行检查，避免跨越多个加粗标记
+
+        # 检查加粗包含标点 - 逐行检查，避免跨行匹配
+        punct_in_bold_errors = []
+        for line in self.body.split('\n'):
+            # 在单行内查找所有**...**模式
+            # 排除列表项（以-或>开头，后面有**xxx**：格式）
+            if line.strip().startswith(('- **', '> **')):
+                # 这是列表标题，检查是否有：紧跟在**之后
+                if re.search(r'\*\*[^*]*[。，；：！?][^*]*\*:', line):
+                    # 冒号在**外，这是正确的
+                    continue
+
+            # 查找行内所有**...**模式
+            bold_matches = re.finditer(r'\*\*([^*]+?)\*\*', line)
+            for match in bold_matches:
+                content = match.group(1)
+                # 检查内容结尾是否有标点（不是数字或字母的标点）
+                if content and content[-1] in '。，；：！？.':
+                    # 排除特殊情况：如果内容是纯数字或单个字符，标点可以在内
+                    if not (content[:-1].isdigit() or len(content) <= 2):
+                        punct_in_bold_errors.append(f"❌ 发现加粗包含标点: **{content[:30]}...**")
+                        break  # 每行只报告一次
+
+        self.errors.extend(punct_in_bold_errors[:5])  # 最多显示5个错误
 
         # 检查加粗包含百分号
-        if re.search(r'\*\*\d+%\*\*', self.body):
-            self.errors.append("❌ 发现加粗包含百分号，如 **24%**，应为 **24**%")
+        pct_bold = re.findall(r'\*\*(\d+%)\*\*', self.body)
+        if pct_bold:
+            for match in pct_bold[:3]:
+                clean_num = match[:-1]  # 去掉百分号
+                self.errors.append(f"❌ 发现加粗包含百分号: **{match}**，应为 **{clean_num}**%")
 
         # 检查加粗包含引号
-        if re.search(r'\*\*"[^"]*"\*\*', self.body):
-            self.errors.append("❌ 发现加粗包含引号，如 **\"xxx\"**，应为 \"**xxx**\"")
+        quote_bold = re.findall(r'\*\*("[^"]+")\*\*', self.body)
+        if quote_bold:
+            for match in quote_bold[:3]:
+                clean_text = match.replace('"', '')
+                self.errors.append(f"❌ 发现加粗包含引号: **{match}**，应为 \"{clean_text}\"")
 
-        # 检查加粗包含括号
-        if re.search(r'\*\*[^*]*（[^）]*）[^*]*\*\*', self.body):
-            self.errors.append("❌ 发现加粗包含括号，如 **xxx（yyy）**，应为 **xxx**（yyy）")
+        # 检查加粗包含括号（括号必须在**外面）
+        # 逐行检查 **xxx（yyy）** 这种模式
+        paren_bold_errors = []
+        for line in self.body.split('\n'):
+            # 查找行内所有**xxx（yyy）**模式
+            bold_matches = re.finditer(r'\*\*([^*]+?（[^）]*？）)\*\*', line)
+            for match in bold_matches:
+                content = match.group(1)
+                # 检查是否是 **xxx（yyy）** 格式
+                if '（' in content and content.endswith('）'):
+                    parts = content.split('（', 1)
+                    if len(parts) == 2:
+                        before_paren = parts[0]
+                        after_paren = parts[1][:-1]  # 去掉最后的）
+                        paren_bold_errors.append(f"❌ 发现加粗包含括号: **{content[:30]}...**，应为 **{before_paren}**（{after_paren}）")
+                        break  # 每行只报告一次
+
+        self.errors.extend(paren_bold_errors[:3])  # 最多显示3个错误
 
     def check_punctuation(self):
         """检查中文标点"""
