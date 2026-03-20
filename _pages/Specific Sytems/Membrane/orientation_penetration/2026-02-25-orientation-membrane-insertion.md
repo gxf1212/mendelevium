@@ -1,5 +1,5 @@
 ---
-title: "取向角即判据：用倾斜角识别膜肽插入状态的S/T/I三态模型与实验证据"
+title: "分子主轴相对膜法向的取向角用于识别膜肽插入状态的S/T/I三态模型与实验证据"
 date: "2026-03-08"
 tags: [membrane, orientation, tilt-angle, S-state, T-state, I-state, $\ce{^2H}$-NMR, molecular-dynamics]
 description: "分子主轴相对膜法向的倾斜角可作为区分非结合、表面吸附和跨膜插入三种状态的定量判据"
