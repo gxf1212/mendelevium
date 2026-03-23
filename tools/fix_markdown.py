@@ -125,10 +125,17 @@ class MarkdownFixer:
 
         # 0. 移除加粗开头的中文标点（如：然而**，文本** → 然而，**文本**）
         # 将 **[标点] 替换为 [标点]**
-        new_content = re.sub(r'\*\*([\uFF0C\uFF1B\uFF1A\u3001])', r'\1**', content)
+        new_content = re.sub(r'\*\*([，；：、。！？])', r'\1**', content)
         if new_content != content:
-            count_matches = len(re.findall(r'\*\*([\uFF0C\uFF1B\uFF1A\u3001])', content))
+            count_matches = len(re.findall(r'\*\*([，；：、。！？])', content))
             count += count_matches
+        content = new_content
+
+        # 0.25. 如果中文标点被错误地包进了加粗开头，把它移到加粗外
+        # 例如：较大时**，BAC和MCC也显示较大值** → 较大时，**BAC和MCC也显示较大值**
+        new_content = re.sub(r'([^\*\n])\*\*([，；：、。！？])([^*]+?)\*\*', r'\1\2**\3**', content)
+        if new_content != content:
+            count += len(re.findall(r'([^\*\n])\*\*([，；：、。！？])([^*]+?)\*\*', content))
         content = new_content
 
         # 0.5. 合并连续的加粗标记（如：**，**** → ，**）
