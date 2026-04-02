@@ -1,6 +1,6 @@
 ---
 title: "对比学习破译DEL口袋模式：从蛋白质语言模型到靶点预测"
-date: "2026-02-28"
+date: "2026-03-01"
 tags: [DEL, contrastive-learning, pocket-representation, ESM-2, protein-language-model, drug-discovery, virtual-screening, AI]
 description: "利用ErePOC模型通过对比学习解析DNA编码库的蛋白质口袋特征，实现人类蛋白质组的DEL适配性预测"
 image: "/assets/img/thumbnail/bricks.webp"
