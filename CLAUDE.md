@@ -162,6 +162,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - 这是 MetalKB 最有说服力的部分之一
   - 这张表本身已经把主要趋势讲得很清楚。
   - 这样讲更符合本文的方法顺序。
+  - Introduction 里其实已经把这条技术路线梳理得比较清楚。
   - 不要用“作者还提醒，……”、“原文还说明，……”、“PDF 里明确提到，……”等客观的表述、转述的语气。就直接说内容，最多主语统一成“本文/程序名、工具名（如MetalKB）xxx……”
   - “不一定稳”，“拍脑袋得到的”，这种话太口语化，一眼就是ChatGPT写的
 - 特别要强调的punchline段落、需要解释的关键概念（短段落），用引用环境。如：
