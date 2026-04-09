@@ -1,178 +1,211 @@
 #!/usr/bin/env python3
 """
-博客文章图片验证工具
-在完成文章撰写后，验证所有Figure/Scheme的编号、文件和图注是否正确
+Blog文章图片验证工具
+验证图片引用、图注和文件完整性
 """
 
-import os
 import re
-import sys
+import os
+import hashlib
 from pathlib import Path
+import argparse
 
 
-def extract_figure_references(md_file):
-    """从Markdown文件中提取所有图片引用"""
+def calculate_file_hash(filepath):
+    """计算文件的MD5哈希值"""
+    try:
+        with open(filepath, 'rb') as f:
+            return hashlib.md5(f.read()).hexdigest()
+    except:
+        return None
+
+
+def verify_blog_figures(md_file, verbose=True):
+    """
+    验证blog文章中的图片引用和图注
+
+    Args:
+        md_file: markdown文件路径
+        verbose: 是否输出详细信息
+
+    Returns:
+        dict: 验证结果
+    """
+    if not os.path.exists(md_file):
+        print(f"❌ 错误: 文件不存在: {md_file}")
+        return None
+
     with open(md_file, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # 匹配 ![figX](path) 和 ![schemeX](path)
-    pattern = r'!\[(fig|scheme)(\d+)\]\(([^)]+)\)'
-    matches = re.findall(pattern, content)
+    # 提取图片引用
+    figure_refs = re.findall(r'!\[fig(\d+)\]', content)
+    scheme_refs = re.findall(r'!\[scheme(\d+)\]', content)
 
-    references = []
-    for match in matches:
-        fig_type = match[0]  # 'fig' or 'scheme'
-        fig_num = int(match[1])
-        fig_path = match[2]
-        references.append({
-            'type': fig_type,
-            'number': fig_num,
-            'path': fig_path,
-            'full_name': f'{fig_type}{fig_num}'
-        })
+    # 提取图注（支持中文和英文图注）
+    figure_captions = re.findall(r'\*\*图(\d+)：', content) + re.findall(r'\*\*Figure (\d+):', content)
+    scheme_captions = re.findall(r'\*\*Scheme (\d+)：', content) + re.findall(r'\*\*Scheme (\d+):', content)
 
-    return references
+    # 提取图片路径
+    figure_paths = re.findall(r'!\[fig\d+\]\(([^)]+)\)', content)
+    scheme_paths = re.findall(r'!\[scheme\d+\]\(([^)]+)\)', content)
 
+    # 验证编号连续性
+    figures = sorted(set(int(f) for f in figure_refs))
+    schemes = sorted(set(int(s) for s in scheme_refs))
 
-def extract_figure_captions(md_file):
-    """从Markdown文件中提取所有图注"""
-    with open(md_file, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    expected_figures = list(range(1, len(figures) + 1)) if figures else []
+    expected_schemes = list(range(1, len(schemes) + 1)) if schemes else []
 
-    captions = []
-    for i, line in enumerate(lines):
-        # 匹配 **图X：** 或 **Scheme X：**
-        match = re.match(r'\*\*(?:图|Scheme)\s*(\d+)：(.+?)\*\*', line.strip())
-        if match:
-            fig_num = int(match.group(1))
-            caption_text = match.group(2)
-            captions.append({
-                'number': fig_num,
-                'text': caption_text,
-                'line': i + 1
-            })
-
-    return captions
-
-
-def verify_blog_figures(md_file, pdf_file=None):
-    """
-    验证博客文章中的图片
-
-    Args:
-        md_file: Markdown文件路径
-        pdf_file: 原始PDF文件路径（可选，用于对照验证）
-    """
-    print(f"🔍 验证博客文章图片: {md_file}\n")
-    print("=" * 80)
-
-    # 1. 提取所有图片引用
-    references = extract_figure_references(md_file)
-    print(f"\n✓ 找到 {len(references)} 个图片引用:")
-    for ref in references:
-        print(f"  - {ref['full_name']}: {ref['path']}")
-
-    # 2. 检查文件是否存在
-    print(f"\n📁 检查图片文件是否存在:")
-    md_dir = os.path.dirname(os.path.abspath(md_file))
+    # 验证文件存在性
+    base_dir = Path(md_file).parent
     missing_files = []
+    existing_files = []
+    file_hashes = {}
 
-    for ref in references:
-        file_path = os.path.join(md_dir, ref['path'])
-        if os.path.exists(file_path):
-            file_size = os.path.getsize(file_path) / 1024  # KB
-            print(f"  ✓ {ref['full_name']}: {file_path} ({file_size:.1f} KB)")
+    for path in figure_paths + scheme_paths:
+        full_path = base_dir / path
+        if full_path.exists():
+            existing_files.append(path)
+            file_hash = calculate_file_hash(full_path)
+            if file_hash:
+                file_hashes[path] = file_hash
         else:
-            print(f"  ✗ {ref['full_name']}: 文件不存在 - {file_path}")
-            missing_files.append(ref['full_name'])
+            missing_files.append(path)
 
-    # 3. 检查编号连续性
-    print(f"\n🔢 检查编号连续性:")
+    # 检测重复的哈希值
+    hash_to_files = {}
+    for path, hash_val in file_hashes.items():
+        if hash_val not in hash_to_files:
+            hash_to_files[hash_val] = []
+        hash_to_files[hash_val].append(path)
 
-    # 分别检查fig和scheme
-    figs = sorted([r for r in references if r['type'] == 'fig'], key=lambda x: x['number'])
-    schemes = sorted([r for r in references if r['type'] == 'scheme'], key=lambda x: x['number'])
+    duplicate_hashes = {h: files for h, files in hash_to_files.items() if len(files) > 1}
 
-    # 检查Figure编号
-    if figs:
-        fig_numbers = [f['number'] for f in figs]
-        expected_figs = list(range(1, max(fig_numbers) + 1))
-        missing_figs = set(expected_figs) - set(fig_numbers)
+    # 输出结果
+    if verbose:
+        print(f"\n{'='*60}")
+        print(f"验证文件: {md_file}")
+        print(f"{'='*60}\n")
 
-        if missing_figs:
-            print(f"  ⚠️  Figure编号不连续，缺少: {sorted(missing_figs)}")
+        # 图片引用统计
+        print(f"📊 图片引用统计:")
+        print(f"  Figure引用: {len(figure_refs)}个 (编号: {', '.join(map(str, figures))})")
+        print(f"  Scheme引用: {len(scheme_refs)}个 (编号: {', '.join(map(str, schemes))})")
+
+        # 图注统计
+        print(f"\n📝 图注统计:")
+        print(f"  Figure图注: {len(figure_captions)}个")
+        print(f"  Scheme图注: {len(scheme_captions)}个")
+
+        # 编号连续性检查
+        print(f"\n🔢 编号连续性检查:")
+        if figures == expected_figures:
+            print(f"  ✓ Figure编号连续: {', '.join(map(str, figures))}")
         else:
-            print(f"  ✓ Figure编号连续: 1-{max(fig_numbers)}")
+            print(f"  ❌ Figure编号不连续:")
+            print(f"     实际: {', '.join(map(str, figures))}")
+            print(f"     期望: {', '.join(map(str, expected_figures))}")
 
-    # 检查Scheme编号
-    if schemes:
-        scheme_numbers = [s['number'] for s in schemes]
-        expected_schemes = list(range(1, max(scheme_numbers) + 1))
-        missing_schemes = set(expected_schemes) - set(scheme_numbers)
+        if schemes == expected_schemes:
+            print(f"  ✓ Scheme编号连续: {', '.join(map(str, schemes))}")
+        elif schemes:
+            print(f"  ❌ Scheme编号不连续:")
+            print(f"     实际: {', '.join(map(str, schemes))}")
+            print(f"     期望: {', '.join(map(str, expected_schemes))}")
 
-        if missing_schemes:
-            print(f"  ⚠️  Scheme编号不连续，缺少: {sorted(missing_schemes)}")
+        # 图注完整性检查
+        print(f"\n📋 图注完整性检查:")
+        if len(figure_refs) == len(figure_captions):
+            print(f"  ✓ Figure引用和图注数量一致 ({len(figure_refs)}个)")
         else:
-            print(f"  ✓ Scheme编号连续: 1-{max(scheme_numbers)}")
+            print(f"  ⚠️  Figure引用({len(figure_refs)})和图注({len(figure_captions)})数量不匹配")
 
-    # 4. 提取图注
-    captions = extract_figure_captions(md_file)
-    print(f"\n📝 找到 {len(captions)} 个图注:")
-    for cap in captions:
-        print(f"  - 图{cap['number']}: {cap['text'][:50]}...")
+        if len(scheme_refs) == len(scheme_captions):
+            print(f"  ✓ Scheme引用和图注数量一致 ({len(scheme_refs)}个)")
+        elif scheme_refs:
+            print(f"  ⚠️  Scheme引用({len(scheme_refs)})和图注({len(scheme_captions)})数量不匹配")
 
-    # 5. 检查图片引用和图注是否匹配
-    print(f"\n🔗 检查图片引用和图注匹配:")
-    ref_numbers = set([r['number'] for r in references if r['type'] == 'fig'])
-    caption_numbers = set([c['number'] for c in captions])
+        # 文件存在性检查
+        print(f"\n📁 文件存在性检查:")
+        if existing_files:
+            print(f"  ✓ 存在的文件: {len(existing_files)}个")
+        if missing_files:
+            print(f"  ❌ 缺失的文件: {len(missing_files)}个")
+            for path in missing_files:
+                print(f"     - {path}")
 
-    only_in_refs = ref_numbers - caption_numbers
-    only_in_captions = caption_numbers - ref_numbers
+        # 重复哈希检查
+        if duplicate_hashes:
+            print(f"\n⚠️  检测到重复的图片（MD5相同）:")
+            for hash_val, files in duplicate_hashes.items():
+                print(f"  哈希值: {hash_val}")
+                for path in files:
+                    file_path = base_dir / path
+                    size = os.path.getsize(file_path) if os.path.exists(file_path) else 0
+                    print(f"    - {path} ({size:,} bytes)")
+            print(f"\n  💡 请手动确认这些图片是否为重复或同一页面的子图")
+        else:
+            print(f"\n✓ 未检测到重复的图片")
 
-    if only_in_refs:
-        print(f"  ⚠️  有图片引用但无图注: {sorted(only_in_refs)}")
-    if only_in_captions:
-        print(f"  ⚠️  有图注但无图片引用: {sorted(only_in_captions)}")
-    if not only_in_refs and not only_in_captions:
-        print(f"  ✓ 所有图片都有对应的图注")
+        print(f"\n{'='*60}")
+        print(f"验证完成!")
+        print(f"{'='*60}\n")
 
-    # 6. 总结
-    print(f"\n" + "=" * 80)
-    print(f"📊 验证总结:")
-    print(f"  - 图片引用总数: {len(references)}")
-    print(f"    - Figures: {len(figs)}")
-    print(f"    - Schemes: {len(schemes)}")
-    print(f"  - 图注总数: {len(captions)}")
-    print(f"  - 缺失文件: {len(missing_files)}")
-
-    if missing_files:
-        print(f"\n❌ 验证失败: {len(missing_files)} 个文件缺失")
-        return False
-    elif only_in_refs or only_in_captions:
-        print(f"\n⚠️  验证通过但有警告")
-        return True
-    else:
-        print(f"\n✅ 验证通过: 所有图片文件和图注都正确")
-        return True
+    return {
+        'figures': figures,
+        'schemes': schemes,
+        'figure_refs': figure_refs,
+        'scheme_refs': scheme_refs,
+        'figure_captions': figure_captions,
+        'scheme_captions': scheme_captions,
+        'figure_paths': figure_paths,
+        'scheme_paths': scheme_paths,
+        'existing_files': existing_files,
+        'missing_files': missing_files,
+        'duplicate_hashes': duplicate_hashes,
+        'file_hashes': file_hashes
+    }
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("用法: python3 verify_blog_figures.py <markdown_file> [pdf_file]")
-        print("\n示例:")
-        print("  python3 verify_blog_figures.py article.md")
-        print("  python3 verify_blog_figures.py article.md original.pdf")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(
+        description='验证blog文章中的图片引用和图注',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+使用示例:
+  # 验证主文档
+  python3 tools/verify_blog_figures.py article.md
 
-    md_file = sys.argv[1]
-    pdf_file = sys.argv[2] if len(sys.argv) > 2 else None
+  # 验证附录
+  python3 tools/verify_blog_figures.py article-appendix.md
 
-    if not os.path.exists(md_file):
-        print(f"错误: Markdown文件不存在: {md_file}")
-        sys.exit(1)
+  # 简洁模式（仅输出错误）
+  python3 tools/verify_blog_figures.py article.md --quiet
+        """
+    )
 
-    success = verify_blog_figures(md_file, pdf_file)
-    sys.exit(0 if success else 1)
+    parser.add_argument('md_file', help='markdown文件路径')
+    parser.add_argument('--quiet', '-q', action='store_true', help='简洁模式，仅输出错误和警告')
+
+    args = parser.parse_args()
+
+    result = verify_blog_figures(args.md_file, verbose=not args.quiet)
+
+    if result is None:
+        exit(1)
+
+    # 如果有错误，返回非零退出码
+    has_errors = (
+        result['missing_files'] or
+        (result['figures'] != list(range(1, len(result['figures']) + 1)) if result['figures'] else False) or
+        len(result['figure_refs']) != len(result['figure_captions'])
+    )
+
+    if has_errors:
+        exit(1)
+    else:
+        exit(0)
 
 
 if __name__ == "__main__":

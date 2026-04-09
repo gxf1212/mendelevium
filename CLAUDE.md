@@ -244,13 +244,14 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 # [引人入胜但专业的中文标题，信息丰富、包括所有关键点，但别太长，不要带奇怪的引号名词]
 
 ## 本文信息
-- **标题**: [论文标题中文翻译，推文标题可以和这个不一样，但这里应该是严格翻译]
-- **作者**: [论文的主要作者]
-- 发表时间: [论文发表时间，某年某月某日]
-- **单位**: [如果可知，作者的主要单位，国家肯定是要标注的]
-- **引用格式**: [这里是完整的原文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
+- **标题**：[论文标题中文翻译，推文标题可以和这个不一样，但这里应该是严格翻译]
+- **作者**：[论文的主要作者]
+- 发表时间：[论文发表时间，某年某月某日]
+- **单位**：[如果可知，作者的主要单位，国家肯定是要标注的]
+  - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成“浙江大学定量生物中心”，就是我们课题组
+- **引用格式**：[这里是完整的原文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
 这几项一个都不能少
-如果本文有源代码（GitHub等）、web server等，务必全部列出来。
+如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在就不说了。
 
 ## 摘要
 > [这里是摘要的专业级中文翻译，保持学术严谨性，注意使用生物物理化学计算机等领域的专有名词的翻译。少量加粗强调。就是翻译原文，没有任何改写]

@@ -37,6 +37,9 @@ python3 tools/search_pdf_text.py paper.pdf "conclusion" 5
 
 **用法**：
 ```bash
+# 推荐工作流程：先扫描，再提取
+python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --scan-only
+
 # 自动模式：按页码提取
 python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --pages 3,5,6
 
@@ -50,22 +53,75 @@ python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --interactive
 **参数**：
 - `pdf_path`: PDF文件路径
 - `output_dir`: 输出目录（建议使用文章同名文件夹）
+- `--scan-only`: 仅扫描模式，显示所有包含大图的页面
 - `--pages`: 指定页码（逗号分隔）
 - `--figures`: 指定Figure编号和页码的映射
 - `--interactive`: 交互模式
+- `--min-size`: 最小图片面积（像素²），默认50000
 
 **示例**：
 ```bash
-# 提取第3、5、6页的图片
-python3 tools/extract_pdf_figures.py "paper.pdf" "article_folder/" --pages 3,5,6
+# 步骤1：扫描PDF，找出所有包含大图的页面
+python3 tools/extract_pdf_figures.py "paper.pdf" "article_folder/" --scan-only
+# 输出：
+# 页面 32: 1张大图 (166188 bytes)
+# 页面 33: 1张大图 (129857 bytes)
+# 页面 34: 1张大图 (100349 bytes)
+# 页面 35: 3张大图 (70259 bytes each)
+# 页面 36: 1张大图 (121236 bytes)
 
-# Figure 1在第3页，Figure 2在第5页
-python3 tools/extract_pdf_figures.py "paper.pdf" "article_folder/" --figures "1:3,2:5"
+# 步骤2：根据扫描结果提取图片
+python3 tools/extract_pdf_figures.py "paper.pdf" "article_folder/" --pages 32,33,34,35,36
+
+# 或者精确指定Figure编号和页码
+python3 tools/extract_pdf_figures.py "paper.pdf" "article_folder/" --figures "1:34,2:32,3:33,4:35,5:35,6:35,7:36"
 ```
 
 **建议**：
-- 优先使用自动模式
+- ⚠️ **必须先使用--scan-only扫描PDF**，不要假设图表位置
+- 配合search_pdf_text.py确认图注位置
 - 图片保存到与markdown文件同名的文件夹
+
+---
+
+## 2.5. 图片验证
+
+### tools/verify_blog_figures.py
+
+**功能**：验证blog文章中的图片引用、图注和文件完整性
+
+**用法**：
+```bash
+python3 tools/verify_blog_figures.py <主文档.md>
+python3 tools/verify_blog_figures.py <附录.md>  # 如有附录
+```
+
+**检查项**：
+- ✓ 提取所有图片引用（`![figX]`和`![schemeX]`）
+- ✓ 验证图片文件是否存在
+- ✓ 检查图注是否完整
+- ✓ 验证编号连续性
+- ✓ 检测MD5相同的重复图片
+
+**示例**：
+```bash
+# 验证主文档
+python3 tools/verify_blog_figures.py "_pages/Other/2026-04-09-rna-2d-3d-crosstalk.md"
+
+# 输出示例：
+# ✓ 找到7个图片引用
+# ✓ 所有图片文件存在
+# ✓ Figure编号连续: 1, 2, 3, 4, 5, 6, 7
+# ⚠️  fig4, fig5, fig6的MD5相同，请手动确认
+#   fig4.jpeg: 817a1815f11367f80d6752edad13d356
+#   fig5.jpeg: 817a1815f11367f80d6752edad13d356
+#   fig6.jpeg: 817a1815f11367f80d6752edad13d356
+```
+
+**建议**：
+- 提取图片后立即运行验证
+- 对于MD5相同的图片，手动查看确认是否为重复
+- 在提交文章前再次验证
 
 ---
 

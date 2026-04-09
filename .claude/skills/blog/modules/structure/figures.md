@@ -115,6 +115,34 @@ _pages/<分类>/YYYY-MM-DD-<标题>/
 
 ## 提取图片
 
+### ⚠️ 推荐工作流程（避免常见陷阱）
+
+**关键原则**：先扫描，后提取，再验证
+
+```bash
+# 步骤1：扫描PDF，找出所有包含大图的页面
+python3 tools/extract_pdf_figures.py <pdf_path> output_dir --scan-only
+
+# 步骤2：搜索图注位置，确认图表编号
+python3 tools/search_pdf_text.py <pdf_path> "Figure 1." 3
+python3 tools/search_pdf_text.py <pdf_path> "Figure 2." 3
+# ... 继续搜索所有Figure
+
+# 步骤3：根据扫描和搜索结果，准确提取图片
+python3 tools/extract_pdf_figures.py <pdf_path> output_dir --figures "1:34,2:32,3:33,4:35,5:35,6:35,7:36"
+
+# 步骤4：验证提取结果
+python3 tools/verify_blog_figures.py <主文档.md>
+```
+
+**常见陷阱**：
+- ❌ 不要假设图表在文档开头（很多论文的图表在最后几页）
+- ❌ 不要根据页面顺序猜测图表编号（Figure 1可能在第34页）
+- ❌ 不要忽略小尺寸图片（可能是水印，需要过滤）
+- ❌ 不要跳过验证步骤（必须确认图注和图片匹配）
+
+**详细经验总结**：参见 `modules/lessons_learned.md`
+
 ### 使用工具
 
 ```bash
@@ -123,6 +151,9 @@ python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --pages 3,5,6
 
 # 指定Figure编号
 python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --figures "1:3,2:5,3:6"
+
+# 扫描模式（找出所有包含大图的页面）
+python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --scan-only
 ```
 
 ### ⚠️ 图注位置验证（关键原则）
