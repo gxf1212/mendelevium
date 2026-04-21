@@ -40,3 +40,4 @@ tools/*.json
 tools/*.txt
 .venv-copilot/
 _pages/Specific Sytems/Metal/SI_0211/
+_pages/Molecular Dynamics/*/*/*.md.bak
