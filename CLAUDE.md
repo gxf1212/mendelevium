@@ -255,15 +255,18 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 ## 本文信息
 - **标题**：[论文标题中文翻译，推文标题可以和这个不一样，但这里应该是严格翻译]
 - **作者**：[论文的主要作者，不要翻译人名为中文。]
-- 发表期刊：[英文全称]
-- 发表时间：[论文发表时间，某年某月某日]
+- **发表期刊**：[英文期刊全称]
+- **发表时间**：[论文实际发表时间，根据DOI或PDF页面信息确定，注意Received/Accepted日期与最终发表年份可能不同]
+- **DOI**：[必须包含DOI链接，格式：https://doi.org/xxxxx]
 - **单位**：[如果可知，作者的主要单位，国家肯定是要标注的]
-  - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成“浙江大学定量生物中心”，就是我们课题组
+  - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成”浙江大学定量生物中心”，就是我们课题组
 - **引用格式**：[这里是完整的原文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
-这几项一个都不能少
-如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在就不说了。
+- **代码与数据**：[如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在则删除此栏]
 
-> 备注：frontmatter的date: "2025-08-22"不是文章发表的时间，而是写blog的时间，最后一次修改的日期
+> **重要提示**：
+> - 发表年份必须根据DOI或PDF页面信息确定，不能仅根据Received日期推测
+> - 例如：Received November 2025，Accepted April 2026 → 发表年份是2026而非2025
+> - frontmatter的date: “2025-08-22”不是文章发表的时间，而是写blog的时间，最后一次修改的日期
 
 ## 摘要
 > [这里是摘要的专业级中文翻译，保持学术严谨性，注意使用生物物理化学计算机等领域的专有名词的翻译。少量加粗强调。就是翻译原文，没有任何改写，适当加粗重点。]
