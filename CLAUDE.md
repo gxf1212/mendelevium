@@ -184,7 +184,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   
   > 这里的 clique 指的是**完全连通子图**。在 MetalKB 里，它表示一组供体原子两两之间都满足合理距离约束，因此有可能共同围成一个真实金属位点。
 
-  不要做个连续的引用框！
+  不要做个连续的引用框！尽量不是添加重复信息，而是把部分已有文字改成引用
 - **Mermaid使用规范**:
   - **必须使用横向布局** (必须`graph TB`，如果subgraph中有箭头，请使用 `direction LR`，否（节点间只是简单并列）则TB方向。），以创建宽屏、信息密度高的图表，避免简单的垂直长条。参考_pages\Free Energy\2025-11-04-mm-pbsa-sampling-challenges.md这篇里面的示例。subgraph都有个代号，类似subgraph S3["3.多层次评估"] 
   - 鼓励使用 `subgraph "子图标题"` 来组织和划分逻辑模块，**子图标题不要使用任何Markdown标记**。
