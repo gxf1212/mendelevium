@@ -49,7 +49,12 @@ python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --figures "1:3,2:5,
 ## 阶段2：文章撰写
 
 ### 步骤2.1：撰写主文档
-严格遵循 `structure/template.md` 的结构要求
+严格遵循 `structure/sections.md` 的结构要求
+
+**重要**：不再使用独立的Q&A章节，将深入讨论融合到正文相应章节：
+- 技术细节讨论 → 融入方法部分
+- 结果深入解读 → 融入结果部分
+- 潜在争议辨析 → 融入批判性总结
 
 ### 步骤2.2：检查长度
 主文档必须**严格250-300行**
@@ -57,7 +62,6 @@ python3 tools/extract_pdf_figures.py <pdf_path> <output_dir> --figures "1:3,2:5,
 ### 步骤2.3：拆分附录（如需要）
 如果主文档超过300行，创建附录文件：
 - 文件名：`YYYY-MM-DD-<标题>-appendix.md`
-- 附录不需要自己的Q&A
 
 ### ✅ Checkpoint
 - [ ] 主文档结构完整
