@@ -177,7 +177,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - 不要用“作者还提醒，……”、“原文还说明，……”、“PDF 里明确提到，……”等客观的表述、转述的语气。就直接说内容，最多主语统一成“本文/程序名、工具名（如MetalKB）xxx……”，虽然我prompt总是说“原文”，但写出来应该是“本文”。
   - “口径”，“不一定稳”，“拍脑袋得到的”，这种话太口语化，一眼就是ChatGPT写的
   - 不是而是的句式是要尽量少一点的，就直接说结果就好了。倒也并不担心就是读者误读，只要是什么能说清楚
-- 特别要强调的punchline段落、需要解释的关键概念（短段落），用引用环境，字不要太多。不要搞太多，一个heading3最多有一个就行了，没有别硬加。如：
+- 特别要强调的punchline段落、需要解释的关键概念（短段落），用引用环境，字不要太多。不要搞太多，一个heading3最多有一个就行了，没有别硬加，但一般还是有的。。如：
   > MetalKB 的整体思想：**先靠几何筛候选，再靠统计势做化学判别**。这比一上来在整条蛋白上做均匀网格扫描更高效，因为**大量非结合区域根本不会进入后续步骤**。
   
   或
@@ -215,7 +215,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
     - 单位之类的能不用公式也行，如Å全部使用Å而不是公式，$\mu$这种但不涉及下标的也不用公式
     - k<sub>cat</sub>这种其实是要求用公式的，$k_cat$或$k_\text{cat}$，k₄改成$k_4$，M<sup>-1</sup>s<sup>-1</sup>也是，但前面的数字可以不用
     - $d\xi$这种求导的要用$\mathrm{d}\xi$,$\dfrac{dU}{dx}$ 这种都得用 $\mathrm{d}x$
-    - NaCl之类的化学式用$\ce{NaCl}$；简称如DMPC、POPC可以不用
+    - NaCl之类的化学式用$\ce{NaCl}$；简称如DMPC、POPC可以不用；该完整添加的必须完整添加，如\ce{CH3COO^-}，不能弄一半；不允许普通公式，如${Mg(II)}$，必须ce
     - r = -0.84, p<0.001，R²=0.33，这些类似的都用公式，不是数学公式的也用Markdown兼容的<sup>1</sup>和<sub>1</sub>之类的标签，能化学式的就用$\ce{NaCl}$这种
     - 连续的多个居中行间公式，方程组之类的，不要多个$$环境，而是\\分隔每一行。连续推导：xxxx=xx=yy=zz这种才有必要也可以用\begin{aligned}来对齐等号，一般就换行，但也别拆多个公式块！
       ```
@@ -255,7 +255,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 
 **输出格式 (Markdown)**:
 
-# [引人入胜但专业的中文标题，信息丰富、包括所有关键点，但别太长，不要带奇怪的引号名词，少用冒号，就正常人说的一两句话]
+# [引人入胜但专业的中文标题，信息丰富、包括所有关键点，但别太长，不要带奇怪的引号名词，少用冒号，尽量别用，就正常人说的一两句话]
 
 ## 本文信息
 - **标题**：[论文标题中文翻译，推文标题可以和这个不一样，但这里应该是严格翻译]
@@ -265,7 +265,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 - **DOI**：[必须包含DOI链接，格式：https://doi.org/xxxxx]
 - **单位**：[如果可知，作者的主要单位，国家肯定是要标注的]
   - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成”浙江大学定量生物中心”，就是我们课题组
-- **引用格式**：[这里是完整的原文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
+- **引用格式**：[这里是完整的本文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
 - **代码与数据**：[如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在则删除此栏]
 
 > **重要提示**：
@@ -274,7 +274,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 > - frontmatter的date: “2025-08-22”不是文章发表的时间，而是写blog的时间，最后一次修改的日期
 
 ## 摘要
-> [这里是摘要的专业级中文翻译，保持学术严谨性，注意使用生物物理化学计算机等领域的专有名词的翻译。少量加粗强调。就是翻译原文，没有任何改写，适当加粗重点。]
+> [这里是摘要的专业级中文翻译，保持学术严谨性，注意使用生物物理化学计算机等领域的专有名词的翻译。少量加粗强调。就是翻译本文，没有任何改写，适当加粗重点。]
 
 ### 核心结论
 
@@ -292,7 +292,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 ---
 
 ## 研究内容
-[这是文章的主体部分。请根据原文的逻辑结构、图表和核心论点，自己定义章节（例如：`### 核心方法：PMODiff模型详解`，`### 实验结果与分析`等）。**务必列出并解读正文部分的所有主要结果，确保信息的完整性。**]
+[这是文章的主体部分。请根据本文的逻辑结构、图表和核心论点，自己定义章节（例如：`### 核心方法：PMODiff模型详解`，`### 实验结果与分析`等）。**务必列出并解读正文部分的所有主要结果，确保信息的完整性。**]
 
 - **方法详述**: 要有一个section描述方法，如MD模拟的建模过程，AI模型的数据集准备等。必须详细描述关键方法。要总结用到的各种工具。
   - 如果文章提出了新方法，请务必详细拆解每一步。对于复杂的逻辑，必须使用Mermaid代码块来绘制流程图或思维导图。
@@ -317,17 +317,17 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
       - 该页面的图片才是对应的Figure/Scheme
       - 不要根据顺序或猜测来分配编号
     - **Scheme特殊性**: Scheme图通常是反应机理图或流程图，图注文字"Scheme X."应该与图片在同一页或紧邻页面。如果某页有"Scheme 4"的文字描述但没有对应的大图，说明不存在Scheme 4的图片
-    - **避免杂乱**: 不得提取原文中不存在的图片（如错误编号的Figure 7, 8, 9等），也不得创建自定义编号的图表
+    - **避免杂乱**: 不得提取本文中不存在的图片（如错误编号的Figure 7, 8, 9等），也不得创建自定义编号的图表
     - **验证工具**: 使用verify_scheme_in_image.py（OCR）验证图片内是否包含Scheme文字（可选，作为辅助验证）
     - **最终验证步骤**（必须执行）：写完文档后，必须重新逐一确认所有图片：
       1. 对照原文PDF，验证每个Figure/Scheme的编号是否正确
-      2. 检查提取的图片内容是否与原文图注描述一致
+      2. 检查提取的图片内容是否与本文图注描述一致
       3. 验证文档中的图注中文翻译是否准确描述了图片内容
       4. 确认没有遗漏或多余的图片
       5. 使用grep检查文档中所有`![fig`和`![scheme`引用，确保文件都存在且命名正确
-    - 结果与分析不能光图注啊，得有讲解的段落。不需要图形与表格总览目录；表头不要弄成heading，就普通文字。不要所有图caption都是heading，按原文逻辑甚至抄原文的小标题
+    - 结果与分析不能光图注啊，得有讲解的段落。不需要图形与表格总览目录；表头不要弄成heading，就普通文字。不要所有图caption都是heading，按本文逻辑甚至抄本文的小标题
     - 图注最起码得说明什么颜色的是什么东西吧，以及各子图是什么
-    - 正文部分的所有Figure和table必须出现，其中表格内容必须完整提取出来，但完整的可以放在附录或让我去截图，能否试试tools\extract_pdf_figures.py从原文PDF提取一下图片，选出正确的留下来并添加![fig3](fep_omega/fig3.png)这种，应该放在图注上方。
+    - 正文部分的所有Figure和table必须出现，其中表格内容必须完整提取出来，但完整的可以放在附录或让我去截图，能否试试tools\extract_pdf_figures.py从本文PDF提取一下图片，选出正确的留下来并添加![fig3](fep_omega/fig3.png)这种，应该放在图注上方。
   - **图文融合**: **图表标题的中文翻译必须直接插入到正文中讨论到该图表的相应位置**，一般是按顺序，尽量符合原文和讲解逻辑。前面要和![fig7](metalkb_figs/fig7.png)这种的有个换行。格式为：`![fig7](metalkb_figs/fig7.png) 换行 **图1：[图标题的中文翻译]**`，短的内容**必须完整翻译**，长的caption应该弄一个列表来清晰地分点叙述，甚至和results对照着讲也行。不能漏掉子图信息，必须包含什么颜色代表什么，要不然都不知道读者怎么读这张图。图注最好放在图片下面。
   - <img src="mma_polymer_om_figs/fig7.png" alt="fig7" style="zoom:50%;" /> 这种格式是允许的，可以不用统一，根据需求，不要把我弄的改掉。。
   - SI的PDF是否有别的重要的结构图能补充到正文，补全逻辑漏洞，和讲解文字照应？也可以看看
