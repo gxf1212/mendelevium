@@ -317,6 +317,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
       - 该页面的图片才是对应的Figure/Scheme
       - 不要根据顺序或猜测来分配编号
     - **Scheme特殊性**: Scheme图通常是反应机理图或流程图，图注文字"Scheme X."应该与图片在同一页或紧邻页面。如果某页有"Scheme 4"的文字描述但没有对应的大图，说明不存在Scheme 4的图片
+    - 摘要图，ACS系列的就在首页，有的类似，有的没有toc图。命名一般为abs.png，不是fig1。提取完检查下图片大小差不多合理
     - **避免杂乱**: 不得提取本文中不存在的图片（如错误编号的Figure 7, 8, 9等），也不得创建自定义编号的图表
     - **验证工具**: 使用verify_scheme_in_image.py（OCR）验证图片内是否包含Scheme文字（可选，作为辅助验证）
     - **最终验证步骤**（必须执行）：写完文档后，必须重新逐一确认所有图片：

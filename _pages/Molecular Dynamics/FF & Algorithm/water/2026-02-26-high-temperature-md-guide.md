@@ -12,6 +12,7 @@ lang: zh-CN
 # Amber ff19SB高温MD模拟的水模型选择、系综设置与金属离子参数
 
 > 搜到的资料不多，结合了AI整理和推断，如有错误恳请指出[合十][合十]。
+> PDF已经移动到[literature-reading](https://github.com/gxf1212/literature-reading)\metal-ions\ff
 
 ## 摘要
 
