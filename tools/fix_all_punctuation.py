@@ -196,6 +196,10 @@ def should_convert_period(text: str, pos: int) -> bool:
     if re.search(r'\b[A-Z][a-z]?$', before):
         return False
 
+    # markdown有序列表不转换 (如 "1. " 或 "\n1.")
+    if re.search(r'(^|\n)\s*\d+$', before):
+        return False
+
     # 如果前面有中文且后面是换行或空格，转换
     if has_chinese(before) and re.match(r'^(\s|$|\n)', after):
         return True
@@ -234,6 +238,11 @@ def should_convert_colon(text: str, pos: int) -> bool:
 def should_convert_exclamation(text: str, pos: int) -> bool:
     """判断感叹号是否应该转换"""
     before = get_context_before(text, pos, 10)
+    after = get_context_after(text, pos, 5)
+
+    # Markdown图片标记不转换 (如 ![alt](url))
+    if re.match(r'^\[', after):
+        return False
 
     # 如果前面有中文字符，转换
     if has_chinese(before):
