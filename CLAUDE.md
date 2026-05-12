@@ -195,7 +195,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - 整个Mermaid代码块不要出现 `---` 分隔符。
   - 思维导图加粗不要用<b>，而是**包裹**。
   - 不要多加一个end
-  - mermaid似乎渲染不了公式？
+  - mermaid似乎渲染不了公式？mermaid里面的<sup>2+</sup>等换成unicode
   - mindmap的root用简单括号：root(碳水化合物建模)
 - **公式规范**:
     - 所有公式，无论长短，都必须用 `$` (行内) 或 `$$` (行间) 包裹，并使用标准的LaTeX格式。
