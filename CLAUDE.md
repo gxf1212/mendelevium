@@ -173,7 +173,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - 这样讲更符合本文的方法顺序。
   - Introduction 里其实已经把这条技术路线梳理得比较清楚。
   - 为避免读者在三张表之间来回切换，这里把关键量合并为一张对照表。
-  - 原文对这件事的判断其实很明确：……
+  - 原文对这件事的判断其实很明确：……；xxx很直接；
   - 不要用“作者还提醒，……”、“原文还说明，……”、“PDF 里明确提到，……”等客观的表述、转述的语气。就直接说内容，最多主语统一成“本文/程序名、工具名（如MetalKB）xxx……”，虽然我prompt总是说“原文”，但写出来应该是“本文”。
   - “口径”，“不一定稳”，“拍脑袋得到的”，这种话太口语化，一眼就是ChatGPT写的
   - 不是而是的句式是要尽量少一点的，就直接说结果就好了。倒也并不担心就是读者误读，只要是什么能说清楚
@@ -187,7 +187,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   不要做个连续的引用框！尽量不是添加重复信息，而是把部分已有文字改成引用
 - **Mermaid使用规范**:
   - **必须使用横向布局** (必须`graph TB`，如果subgraph中有箭头，请使用 `direction LR`，否（节点间只是简单并列）则TB方向。），以创建宽屏、信息密度高的图表，避免简单的垂直长条。参考_pages\Free Energy\2025-11-04-mm-pbsa-sampling-challenges.md这篇里面的示例。subgraph都有个代号，类似subgraph S3["3.多层次评估"] 
-  - 鼓励使用 `subgraph "子图标题"` 来组织和划分逻辑模块，**子图标题不要使用任何Markdown标记**。
+  - 鼓励使用 `subgraph "子图标题"` 来组织和划分逻辑模块，**子图标题不要使用任何Markdown标记**。单个元素的就不用subgraph了
   - 使用中文作为节点描述。节点内的换行请使用 `<br/>`。
   - "2. 随机森林"这样的列表不要在2.后有空格，应该是"2.随机森林"，否则会出现Unsupported Markdown
   - 不要在内容中使用会引起语法错误的符号，如英文括号，尽量都用中文标点
@@ -195,7 +195,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - 整个Mermaid代码块不要出现 `---` 分隔符。
   - 思维导图加粗不要用<b>，而是**包裹**。
   - 不要多加一个end
-  - mermaid似乎渲染不了公式？mermaid里面的<sup>2+</sup>等换成unicode
+  - mermaid似乎渲染不了公式？mermaid里面的<sup>2+</sup>等也不用换成unicode，就类似A["Ru(bpy)<sub>3</sub><sup>2+</sup>"]
   - mindmap的root用简单括号：root(碳水化合物建模)
 - **公式规范**:
     - 所有公式，无论长短，都必须用 `$` (行内) 或 `$$` (行间) 包裹，并使用标准的LaTeX格式。
