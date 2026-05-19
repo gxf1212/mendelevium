@@ -169,7 +169,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - 所有不常见的，不为人熟知的，或者说这篇文章专有的英文缩写都应该解释，而且是在第1次出现的时候出现全称，以及比如说关键的地方去解释。
 - 明显像是AI写的、对读者没有帮助的语句都不要写，如：
   - 这是 MetalKB 最有说服力的部分之一
-  - 这张表本身已经把主要趋势讲得很清楚。
+  - 这张表本身已经把主要趋势讲得很清楚。结果很清晰……
   - 这样讲更符合本文的方法顺序。
   - Introduction 里其实已经把这条技术路线梳理得比较清楚。
   - 为避免读者在三张表之间来回切换，这里把关键量合并为一张对照表。
@@ -216,6 +216,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
     - k<sub>cat</sub>这种其实是要求用公式的，$k_cat$或$k_\text{cat}$，k₄改成$k_4$，M<sup>-1</sup>s<sup>-1</sup>也是，但前面的数字可以不用
     - $d\xi$这种求导的要用$\mathrm{d}\xi$,$\dfrac{dU}{dx}$ 这种都得用 $\mathrm{d}x$
     - NaCl之类的化学式用$\ce{NaCl}$；简称如DMPC、POPC可以不用；该完整添加的必须完整添加，如\ce{CH3COO^-}，不能弄一半；不允许普通公式，如${Mg(II)}$，必须ce
+    - d⁵高自旋这种符号，请用$\ce{d^5}$或$\mathrm{d^5}$
     - r = -0.84, p<0.001，R²=0.33，这些类似的都用公式，不是数学公式的也用Markdown兼容的<sup>1</sup>和<sub>1</sub>之类的标签，能化学式的就用$\ce{NaCl}$这种
     - 连续的多个居中行间公式，方程组之类的，不要多个$$环境，而是\\分隔每一行。连续推导：xxxx=xx=yy=zz这种才有必要也可以用\begin{aligned}来对齐等号，一般就换行，但也别拆多个公式块！
       ```
@@ -290,6 +291,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 
 ### 创新点
 [用一个列表清晰地总结本文在理论、方法或应用上的主要创新之处。前面不要加：本研究旨在解决以下核心问题：才列表。谨慎使用“首次”等说法，最好能和原文献对上，不要过度推断。]
+综述类文章不用写这个
 
 ---
 
@@ -334,6 +336,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - **图文融合**: **图表标题的中文翻译必须直接插入到正文中讨论到该图表的相应位置**，一般是按顺序，尽量符合原文和讲解逻辑。前面要和![fig7](metalkb_figs/fig7.png)这种的有个换行。格式为：`![fig7](metalkb_figs/fig7.png) 换行 **图1：[图标题的中文翻译]**`，短的内容**必须完整翻译**，长的caption应该弄一个列表来清晰地分点叙述，甚至和results对照着讲也行。不能漏掉子图信息，必须包含什么颜色代表什么，要不然都不知道读者怎么读这张图。图注最好放在图片下面。
   - <img src="mma_polymer_om_figs/fig7.png" alt="fig7" style="zoom:50%;" /> 这种格式是允许的，可以不用统一，根据需求，不要把我弄的改掉。。
   - SI的PDF是否有别的重要的结构图能补充到正文，补全逻辑漏洞，和讲解文字照应？也可以看看
+  - PDF论文中真的有的表才标注表4：等，表格化的普通内容不用。
 - 讨论部分：如有Discussion部分，对研究的发现及其意义进行深刻的阐述。
 
 ---
