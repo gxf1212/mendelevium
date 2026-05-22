@@ -67,7 +67,6 @@ class BlogQualityChecker:
             '### 关键科学问题',
             '### 创新点',
             '## 研究内容',
-            '## Q&A',
             '## 关键结论与批判性总结'
         ]
 
@@ -153,6 +152,29 @@ class BlogQualityChecker:
                         break  # 每行只报告一次
 
         self.errors.extend(paren_bold_errors[:3])  # 最多显示3个错误
+
+        # 检查加粗包含LaTeX公式
+        formula_bold = re.findall(r'\*\*[^*]*?\$[^$]+\$[^*]*?\*\*', self.body)
+        if formula_bold:
+            self.errors.append(f"❌ 发现加粗包含LaTeX公式，禁止在加粗内使用公式")
+
+        # 检查加粗包含代码
+        code_bold = re.findall(r'\*\*[^*]*?`[^`]+`[^*]*?\*\*', self.body)
+        if code_bold:
+            self.errors.append(f"❌ 发现加粗包含代码，禁止在加粗内使用代码")
+
+        # 检查过短的加粗（1-2个字符）
+        short_bold = re.findall(r'\*\*([一-鿿]{1,2})\*\*', self.body)
+        if short_bold:
+            for match in short_bold[:3]:
+                self.warnings.append(f"⚠️ 发现过短的加粗: **{match}**，建议扩展加粗内容或删除加粗")
+
+        # 检查过于碎片化的加粗（多个短加粗在同一行）
+        for line in self.body.split('\n'):
+            bold_count = line.count('**')
+            if bold_count >= 6:  # 至少3个**xxx**加粗
+                self.warnings.append(f"⚠️ 可能存在过于碎片化的加粗，建议合并或删除部分加粗: {line[:60]}...")
+                break  # 每行只报告一次
 
     def check_punctuation(self):
         """检查中文标点"""
@@ -262,6 +284,29 @@ class BlogQualityChecker:
             if word in self.content:
                 self.warnings.append(f"⚠️ 发现标题党词汇: {word}")
 
+    def check_qa_format(self):
+        """检查Q&A格式"""
+        # 检查是否错误地使用了 Q\&A 而非 Q&A
+        if r'Q\&A' in self.content:
+            self.errors.append(r"❌ 发现错误格式 Q\&A，应为 Q&A")
+
+        # 检查是否错误地使用了 1\. 而非 1.
+        if r'1\.' in self.content or r'2\.' in self.content:
+            self.errors.append(r"❌ 发现多余转义符，如 1\. 应为 1.")
+
+        # 检查是否错误地使用了 \~ 而非 ~
+        if r'\~' in self.content:
+            self.errors.append(r"❌ 发现多余转义符 \~，应直接使用 ~")
+
+        # 检查是否错误地使用了 \* 而非 *
+        if '\\*' in self.content and not self.content.count('\\*') > 100:  # 排除大量加粗的情况
+            # 精确查找 \* 不在 **...** 中的情况
+            lines = self.body.split('\n')
+            for line in lines[:20]:  # 只检查前20行
+                if re.search(r'(?<!\*)\\\*(?!\*)', line):
+                    self.errors.append(r"❌ 发现多余转义符 \*，应直接使用 *")
+                    break
+
     def run_all_checks(self) -> Tuple[List[str], List[str]]:
         """运行所有检查"""
         self.load_file()
@@ -280,6 +325,7 @@ class BlogQualityChecker:
         self.check_figures()
         self.check_length()
         self.check_title_words()
+        self.check_qa_format()
 
         return self.errors, self.warnings
 

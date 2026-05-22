@@ -11,35 +11,32 @@ Archive
 _pages/archive
 *py
 !tools/*.py
+tools/*.json
+tools/*.txt
+tools/__pycache__/
+.venv-copilot/
 .qoder
-*.docx
 .history
 .DS_Store
 .idea
 .vscode
-_pages/Techniques/Linux/frp配置.md
-_pages/Techniques/Linux/frp配置-添加本地服务.md
+*.xlsx
+*.docx
 *.pdf
 reference-mcp
 *private
-tools/__pycache__/
 
 # FECR1 iron sensor materials
 _pages/Specific Sytems/Metal/fecr1_fe_sensor/
 _pages/Specific Sytems/Metal/2026-01-09-fecr1-cellular-iron-sensor.md
-
 _pages/Machine Learning & AI/Workflow & Agent/ChemLint/
-
-
 _pages/20260311医学院.txt
 _pages/Diary/diary4_bak.md
 _pages/Specific Sytems/Membrane/orientation_penetration/这篇微凝胶-膜包裹论文对你们 Figure 3 的分子取向解释.md
 _pages/Specific Sytems/Metal/MetalKB/
 node_modules/
-tools/*.json
-tools/*.txt
-.venv-copilot/
 _pages/Specific Sytems/Metal/SI_0211/
 _pages/Molecular Dynamics/*/*/*.md.bak
-
 _pages/Techniques/AI/free-claude-code/
+_pages/Techniques/Linux/frp配置.md
+_pages/Techniques/Linux/frp配置-添加本地服务.md
