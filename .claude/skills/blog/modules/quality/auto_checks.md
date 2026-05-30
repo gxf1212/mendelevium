@@ -39,8 +39,9 @@ python3 tools/check_blog_quality.py <markdown_file>
 - 关键科学问题
 - 创新点
 - 研究内容
-- Q&A
 - 关键结论与批判性总结
+
+**注意**：Q&A章节为可选，简讯（brief）或综述类文章可不包含。
 
 **本文信息检查**：
 - [ ] 标题
