@@ -153,8 +153,8 @@ class BlogQualityChecker:
 
         self.errors.extend(paren_bold_errors[:3])  # 最多显示3个错误
 
-        # 检查加粗包含LaTeX公式
-        formula_bold = re.findall(r'\*\*[^*]*?\$[^$]+\$[^*]*?\*\*', self.body)
+        # 检查加粗包含LaTeX公式（仅在同一行内匹配，避免跨行误判）
+        formula_bold = re.findall(r'\*\*[^\*\n]*?\$[^\$\n]+\$[^\*\n]*?\*\*', self.body)
         if formula_bold:
             self.errors.append(f"❌ 发现加粗包含LaTeX公式，禁止在加粗内使用公式")
 
