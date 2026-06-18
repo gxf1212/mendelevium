@@ -63,7 +63,6 @@ name="description"
 content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 <!-- MathJax for LaTeX rendering -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
 window.MathJax = {
@@ -83,7 +82,8 @@ window.MathJax = {
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
 // Configure mermaid before DOMContentLoaded
-mermaid.initialize({ 
+/*
+mermaid.initialize({
   startOnLoad: true,
   theme: 'default',
   securityLevel: 'loose',
@@ -100,14 +100,14 @@ mermaid.initialize({
 document.addEventListener('DOMContentLoaded', function() {
   // Find all mermaid code blocks and convert them to proper mermaid divs
   const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid, code.language-mermaid');
-  
+
   mermaidBlocks.forEach((block, index) => {
     const mermaidCode = block.textContent;
     const mermaidDiv = document.createElement('div');
     mermaidDiv.className = 'mermaid';
     mermaidDiv.textContent = mermaidCode;
     mermaidDiv.id = `mermaid-${index}`;
-    
+
     // Replace the code block with the mermaid div
     if (block.parentNode.tagName === 'PRE') {
       block.parentNode.parentNode.replaceChild(mermaidDiv, block.parentNode);
@@ -115,8 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
       block.parentNode.replaceChild(mermaidDiv, block);
     }
   });
-  
+
   // Re-initialize mermaid after converting blocks
   mermaid.init();
 });
+*/
 </script>

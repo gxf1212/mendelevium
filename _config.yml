@@ -105,4 +105,16 @@ kramdown:
   syntax_highlighter_opts:
     css_class: 'highlight'
 
+# Jekyll SEO Tag plugin settings - 禁用polyfill.io
+seo:
+  title: false
+  meta: false
+  google:
+    publisher: false
+  exclude:
+    - "scripts/*.html"
+  noindex: false
+  follow: true
+  polyfill: false
+
 
