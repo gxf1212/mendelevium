@@ -25,6 +25,8 @@ bookmark: true
 
 **My Bilibili channel**: [东山月光下](https://space.bilibili.com/441196634). From time to time, I will share full courses, specialized mini-lecture, animated demonstrations and cutting-edge lectures in macromolecular structure study, molecular dynamics simulation/statistical thermodynamics, oncology and immunology. English-Chinese dual subtitles are added for videos from YouTube. Please subscribe and triple click (一键三连)! 
 
+![](assets/img/bilibili.png)
+
 Representatives:
 
 - [Molecular Biophysics course 2020, by Erik Lindahl](https://www.bilibili.com/video/BV1gL411471e)
