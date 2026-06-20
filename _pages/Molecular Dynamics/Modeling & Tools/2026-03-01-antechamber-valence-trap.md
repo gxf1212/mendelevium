@@ -1,6 +1,7 @@
 ---
 title: "antechamber 的一个隐蔽坑：羧基键级被改写后的 valence 报错"
 date: "2026-03-01"
+last_modified_at: "2026-03-01"
 tags: [molecular-dynamics, ambertools, antechamber, gaff, mol2, forcefield]
 description: "记录一次 antechamber 报 Weird atomic valence 的排查过程，根因是中间文件丢失双键"
 image: "/assets/img/thumbnail/nightgardenflower.jpg"

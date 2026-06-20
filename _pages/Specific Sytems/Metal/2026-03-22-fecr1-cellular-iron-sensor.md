@@ -1,6 +1,7 @@
 ---
 title: "植物如何感知细胞内铁离子？首个$\ce{Fe^{3+}}$受体FECR1揭示根际酸化的快速调控机制"
 date: "2026-03-22"
+last_modified_at: "2026-03-22"
 tags: [iron-sensor, rhizosphere-acidification, post-translational-regulation, receptor-kinase, iron-deficiency, cell-biology, plant-physiology]
 description: "浙江大学团队在Cell发表重要研究，鉴定出首个细胞内三价铁离子受体FECR1，揭示了植物通过磷酸化14-3-3蛋白快速激活质膜质子泵、驱动根际酸化的翻译后调控新机制"
 image: "/assets/img/thumbnail_mine/wh-g78rle.jpg"

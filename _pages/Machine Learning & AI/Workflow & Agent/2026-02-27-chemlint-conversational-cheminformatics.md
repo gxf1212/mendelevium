@@ -1,6 +1,7 @@
 ---
 title: "ChemLint对话式分子机器学习平台揭开数据质量危机：63.6%测试集骨架已在训练集中出现"
 date: "2026-02-27"
+last_modified_at: "2026-02-27"
 tags: [cheminformatics, large-language-model, molecular-machine-learning, data-quality, reproducibility, MCP, drug-discovery, data-curation]
 description: "荷兰埃因霍温理工大学团队推出ChemLint，提供约150个对话式工具（数据管理、分子清洗、描述符、机器学习、质量报告、可视化等13类），通过对话界面系统性地审计了MoleculeNet等主流基准数据集，揭示随机分割导致42.5%-63.6%的scaffold重叠"
 image: "/assets/img/thumbnail_mine/wh-z8yjqy.jpg"

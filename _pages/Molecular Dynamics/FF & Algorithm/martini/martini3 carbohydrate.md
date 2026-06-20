@@ -1,6 +1,7 @@
 ---
 title: "Martini 3粗粒化力场下的碳水化合物建模"
 date: "2025-11-16"
+last_modified_at: "2025-11-16"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'carbohydrate', 'coarse-grained', 'hyaluronic-acid', 'NAG', 'GlcA']
 description: "透明质酸（玻尿酸）及其单糖单元N-乙酰葡萄糖胺（NAG）和葡萄糖醛酸（GlcA）在Martini 3力场中的参数化方法、建模策略和验证方法"
 image: "/assets/img/thumbnail/book.jpg"

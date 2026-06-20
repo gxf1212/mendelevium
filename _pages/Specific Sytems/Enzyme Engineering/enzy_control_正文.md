@@ -2,6 +2,7 @@
 title: "让酶生成可控：EnzyControl为骨架生成引入功能与底物特异性"
 description: "在SE(3)等变骨架生成中注入底物条件和功能位点约束，实现功能可控的酶设计"
 date: "2025-11-05"
+last_modified_at: "2025-11-05"
 tags: [enzyme-design, deep-learning, se3-equivariance, flow-matching, attention-mechanism, protein-generation, functional-control, substrate-specificity]
 image: "/assets/img/thumbnail/bricks.webp"
 thumbnail: "/assets/img/thumbnail/bricks.webp"

@@ -1,6 +1,7 @@
 ---
 title: "QuantumPDB：从蛋白质结构到量子化学模型的高通量自动化之路"
 date: "2026-05-27"
+last_modified_at: "2026-05-27"
 tags: [QuantumPDB, QM-cluster, high-throughput, DFT, enzyme-modeling, Voronoi-tessellation]
 description: QuantumPDB自动化构建多球层QM簇模型，实现从PDB结构到量子化学计算的全流程，揭示酶环境对底物电荷和偶极矩的一致性调制效应
 image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"

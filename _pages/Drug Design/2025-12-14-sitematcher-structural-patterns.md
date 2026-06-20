@@ -1,6 +1,7 @@
 ---
 title: "SiteMatcher：把蛋白-配体相互作用模板化的结构设计工作台"
 date: "2025-12-14"
+last_modified_at: "2025-12-14"
 tags: [structure-based-design, fragment, web-server, cheminformatics]
 description: "SiteMatcher 把PDB中的相互作用模式拆成可搜索的片段+连接子数据库，并提供可视化的Grow/Replace流程与真实案例"
 thumbnail: "/assets/img/thumbnail_mine/wh-l3971q.jpg"

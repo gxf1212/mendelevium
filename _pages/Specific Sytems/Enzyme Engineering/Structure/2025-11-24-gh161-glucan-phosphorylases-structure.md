@@ -1,6 +1,7 @@
 ---
 title: "GH161家族β-葡聚糖磷酸化酶：从肠道宏基因组到催化机制的结构解析"
 date: "2025-11-25"
+last_modified_at: "2025-11-25"
 tags: [glycoside-phosphorylase, cryo-EM, beta-glucan, GH161, enzyme-structure, conformational-dynamics, carbohydrate-active-enzyme]
 description: "通过冷冻电镜解析GH161家族磷酸化酶的结构，揭示gate loop动力学如何调控β-1,3-葡聚糖的合成"
 image: "img/thumbnail_mine/wh-8oev1j.jpg"

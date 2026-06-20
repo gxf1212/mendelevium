@@ -1,6 +1,7 @@
 ---
 title: "【东山随笔#2】去人迹罕至的地方，去视角高远的地方"
 date: "2025-09-03"
+last_modified_at: "2025-09-03"
 tags: [diary, research, ai4s, media, thoughts, academic-life]
 ---
 

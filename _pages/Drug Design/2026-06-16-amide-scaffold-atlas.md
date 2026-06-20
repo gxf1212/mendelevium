@@ -1,6 +1,7 @@
 ---
 title: "近290万化合物拆解出1.7万酰胺骨架，这张化学空间图谱如何指导多靶点药物设计"
 date: "2026-06-16"
+last_modified_at: "2026-06-16"
 tags: [scaffold-analysis, chemical-space, amide-motifs, polypharmacology, scaffold-hopping, drug-design, cheminformatics]
 description: "酰胺基团是药物化学中最常见的结构单元之一，但从骨架层面系统分析其组织结构的工作仍然很少。这项研究从近290万个化合物中提炼出1.7万个不同的C(=O)N骨架，构建了酰胺骨架化学空间图谱，揭示了其靶标分布规律和多靶点设计潜力。"
 author: Xufan Gao

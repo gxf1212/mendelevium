@@ -1,6 +1,7 @@
 ---
 title: "机器学习如何预测酶的催化能力：从数据到应用的系统综述"
 date: "2025-12-22"
+last_modified_at: "2025-12-22"
 tags: [machine-learning, enzyme-kinetics, kcat, Km, deep-learning, protein-engineering, metabolic-modeling, enzyme-mining]
 description: "系统综述机器学习模型在预测酶动力学参数方面的最新进展，涵盖全局模型、局部模型、应用场景以及未来发展方向"
 image: "/assets/img/thumbnail/bricks.webp"

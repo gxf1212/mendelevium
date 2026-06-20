@@ -1,6 +1,7 @@
 ---
 title: "人工智能必须更科学：让AI与科学方法兼容"
 date: "2025-11-07"
+last_modified_at: "2025-11-07"
 tags: [artificial-intelligence, scientific-method, machine-learning, ethics, reproducibility, transparency, causality]
 description: "深入探讨AI与科学方法的兼容性，分析当前AI在可重复性、透明性、客观性和机制理解方面的局限，提出与科学方法完全兼容的AI发展方向"
 image: "/assets/img/thumbnail/bricks.webp"

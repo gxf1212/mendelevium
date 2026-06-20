@@ -1,6 +1,7 @@
 ---
 title: "AMDAT——面向过冷液体与玻璃态体系的长时标MD分析工具"
 date: "2026-06-06"
+last_modified_at: "2026-06-06"
 tags: [AMDAT, molecular-dynamics, glass-forming, supercooled-liquids, trajectory-analysis, polymer, structure-factor, mean-squared-displacement]
 description: "Simmons组开发的开源C++轨迹分析工具AMDAT，专为过冷液体、玻璃态材料和复杂流体设计，核心特点是内存处理、指数时间采样与模块化数据抽象"
 image: "/assets/img/thumbnail_mine/wh-z8yjqy.jpg"

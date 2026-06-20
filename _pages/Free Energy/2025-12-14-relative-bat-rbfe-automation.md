@@ -1,6 +1,7 @@
 ---
 title: "相对BAT：SepTop自动化让BRD4结合自由能评估真正可扩展"
 date: "2025-12-14"
+last_modified_at: "2025-12-14"
 tags: [free-energy, rbfe, batpy, amber, openmm]
 description: "Relative BAT 在SepTop热力学框架下统一AMBER与OpenMM，相对结合自由能预测与实验、ABFE和传统RBFE都实现对齐"
 thumbnail: "/assets/img/thumbnail_mine/wh-g75zg3.jpg"

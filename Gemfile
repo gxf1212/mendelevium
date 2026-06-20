@@ -1,24 +1,19 @@
 source "https://rubygems.org"
 
-# Use GitHub Pages for deployment
-gem "github-pages", group: :jekyll_plugins
+# Use latest Jekyll instead of github-pages for better compatibility
+gem "jekyll", "~> 4.3"
 
-# Required gems for GitHub Pages compatibility
+# Required gems
 gem "kramdown-parser-gfm"
 gem "webrick", "~> 1.7"
-
-# Windows and JRuby does not include zoneinfo files
-platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", ">= 1", "< 3"
-  gem "tzinfo-data"
-end
-
-# Performance-booster for watching directories on Windows
+gem "tzinfo", ">= 1", "< 3"
+gem "tzinfo-data"
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
-# Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
-
 group :jekyll_plugins do
+  gem "jekyll-feed"
   gem "jekyll-sitemap"
+  gem "jekyll-seo-tag"
+  gem "jekyll-paginate"
+  gem "jekyll-gist"
 end

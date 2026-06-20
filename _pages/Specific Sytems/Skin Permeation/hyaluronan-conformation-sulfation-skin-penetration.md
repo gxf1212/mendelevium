@@ -1,6 +1,7 @@
 ---
 title: "透明质酸硫酸化，多糖的构象特征决定其皮肤渗透能力"
 date: "2026-04-17"
+last_modified_at: "2026-04-17"
 tags: [hyaluronic-acid, sulfation, skin-permeation, molecular-dynamics, conformation, franz-diffusion-cell, CLSM, transcellular-pathway]
 description: "透明质酸硫酸化如何影响皮肤渗透？MD模拟揭示构象是关键——1%硫酸化使链伸展柔性，渗透量提升5倍"
 image: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"

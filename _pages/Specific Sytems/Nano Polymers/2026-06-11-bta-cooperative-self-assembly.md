@@ -1,6 +1,7 @@
 ---
 title: "从合作自组装到水溶性超分子聚合物：粗粒化模拟揭示BTA纤维的逐步生长机制"
 date: "2026-06-11"
+last_modified_at: "2026-06-11"
 tags: [supramolecular-polymer, BTA, coarse-grained-simulation, MARTINI, self-assembly, cooperative-polymerization, molecular-dynamics]
 description: "基于MARTINI力场的BTA水溶性超分子聚合物粗粒化模型，揭示了从快速疏水聚集到有序纤维生长的逐步合作聚合机制"
 thumbnail: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"

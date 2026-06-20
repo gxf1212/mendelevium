@@ -1,6 +1,7 @@
 ---
 title: "我们是否低估了过拟合？重新审视模型复杂度的“双下降”现象"
 date: "2026-05-29"
+last_modified_at: "2026-05-29"
 tags: [qsar, machine-learning, deep-learning, overfitting, double-descent, model-complexity]
 description: "传统的QSAR建模强调控制参数避免过拟合，但近年表明过度参数化的深度学习模型也能展现出极强的泛化能力。我们是否该拥抱“良性过拟合”？"
 author: Xufan Gao

@@ -1,6 +1,7 @@
 ---
 title: "药物协同预测黑箱怎么破？用graphlet指纹把子结构直接送进模型"
 date: "2026-05-31"
+last_modified_at: "2026-05-31"
 tags: [interpretability, drug-synergy, graphlet-fingerprints, deep-learning, xai, anticancer]
 description: "药物协同预测有个老毛病，模型分数不错但说不清看中了分子的哪一块。GraFSyn用graphlet指纹把子结构直接送进深度模型，既保住了分数又能说清楚原因。"
 author: Xufan Gao

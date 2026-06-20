@@ -1,6 +1,7 @@
 ---
 title: "TS-DAR实用指南：生物分子模拟中的过渡态分析"
 date: "2025-11-21"
+last_modified_at: "2025-11-21"
 tags: ['molecular-dynamics', 'transition-state', 'deep-learning', 'markov-state-model', 'protein-dynamics', 'out-of-distribution', 'VAMP']
 description: "利用分布外检测和变分原理正则化神经网络系统识别生物分子构象变化中的所有过渡态，为药物结合、酶活性和突变效应研究提供强大工具"
 image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"

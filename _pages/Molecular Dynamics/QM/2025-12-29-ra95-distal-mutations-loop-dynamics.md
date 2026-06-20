@@ -1,6 +1,7 @@
 ---
 title: "设计逆醛缩酶RA95的远端突变研究：环动力学调控、电场优化与速率限制步骤的转移"
 date: "2025-12-29"
+last_modified_at: "2025-12-29"
 tags: [enzyme-design, directed-evolution, retro-aldolase, distal-mutations, loop-dynamics, molecular-dynamics, electrostatics, QM-MM]
 description: "深入解析远端突变如何通过调控环动力学和局部电场，在设计逆醛缩酶RA95中实现速率限制步骤转移并提高催化效率6倍"
 image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"

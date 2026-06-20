@@ -1,6 +1,7 @@
 ---
 title: "MetalKB：用知识驱动图框架预测蛋白金属结合位点"
 date: "2026-04-02"
+last_modified_at: "2026-04-02"
 tags: [metal-binding, graph-theory, bioinformatics, protein-structure, computational-biology, metalloproteins]
 description: "全面解析MetalKB如何结合团检测与金属特异性统计势，预测蛋白中的金属结合位点与配位残基"
 image: "/assets/img/thumbnail/bricks.webp"

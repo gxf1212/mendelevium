@@ -1,6 +1,7 @@
 ---
 title: "Polyply：图匹配算法驱动的聚合物模拟参数生成与结构构建"
 date: "2025-11-16"
+last_modified_at: "2025-11-16"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'polymer', 'coarse-grained', 'graph-algorithm', 'automation']
 description: "深入解析Polyply软件的核心算法：图匹配驱动的参数生成和多尺度随机游走坐标生成，为聚合物和生物大分子模拟提供自动化工作流"
 image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"

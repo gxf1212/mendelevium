@@ -1,6 +1,7 @@
 ---
 title: "自由能计算四十年：生物分子过程中的方法、基准测试与应用"
 date: "2026-03-30"
+last_modified_at: "2026-03-30"
 tags: [free-energy-calculation, biomolecular-processes, molecular-dynamics, benchmarking, QM/MM, drug-discovery, enhanced-sampling]
 description: "围绕JPCB自由能计算特刊导言，梳理该领域四十年发展脉络，以及蛋白识别、核酸、酶催化、膜环境中的渗透与扰动和方法学基准测试中的代表性进展"
 image: "/assets/img/thumbnail_mine/wh-g78rle.jpg"

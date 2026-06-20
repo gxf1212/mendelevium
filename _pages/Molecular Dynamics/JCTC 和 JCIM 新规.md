@@ -3,6 +3,7 @@
 ---
 title: "JCTC 和 JCIM 新规来了，2026 年 5 月起原创计算化学论文需提交可复现所需数据与软件"
 date: "2026-05-03"
+last_modified_at: "2026-05-03"
 tags: [reproducibility, data-sharing, JCTC, JCIM, open-science]
 description: "解读 JCTC 与 JCIM 联合社论，说明从 2026-05-01 起对数据、代码与软件可获得性的要求与建议"
 image: "/assets/img/thumbnail/bricks.webp"

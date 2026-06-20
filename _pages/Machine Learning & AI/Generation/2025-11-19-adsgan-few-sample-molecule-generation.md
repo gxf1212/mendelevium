@@ -1,6 +1,7 @@
 ---
 title: "ADSeqGAN：辅助判别器增强的小样本分子生成框架"
 date: "2025-11-19"
+last_modified_at: "2025-11-19"
 tags: ['generative-model', 'GAN', 'molecular-generation', 'few-shot-learning', 'SMILES', 'drug-discovery', 'deep-learning']
 description: "整合随机森林辅助判别器与SeqGAN框架，解决小样本数据集下的分子生成挑战，在核酸结合剂、CNS药物和CB1配体设计中展现优异性能"
 image: "/assets/img/thumbnail/bricks.webp"

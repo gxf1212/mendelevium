@@ -1,6 +1,7 @@
 ---
 title: "单步O-GlcNAc标记锁定FEN1糖基化控制细胞周期"
 date: "2026-01-06"
+last_modified_at: "2026-01-06"
 tags: [enzyme-engineering, glycobiology, proteomics, dna-replication, fen1, oglcna]
 description: "通过结构引导的GalT1突变与生物素化UDP-GalNAc，实现高灵敏度的一步式O-GlcNAc捕获，首次揭示FEN1在S352的糖基化如何调控PCNA互作、DNA复制与细胞周期"
 image: "img/thumbnail_mine/wh-g78rle.jpg"

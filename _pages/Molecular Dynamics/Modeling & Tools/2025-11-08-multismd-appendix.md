@@ -1,6 +1,7 @@
 ---
 title: "多方向牵引分子动力学新利器：附录（技术细节与案例研究）"
 date: "2025-11-08"
+last_modified_at: "2025-11-08"
 tags: [分子动力学, SMD, 附录, 技术细节, ATP通道, 无序区域]
 description: "multiSMD工具的技术实现细节、案例研究II和III的完整分析、计算成本评估"
 image: "/assets/img/thumbnail/random.webp"

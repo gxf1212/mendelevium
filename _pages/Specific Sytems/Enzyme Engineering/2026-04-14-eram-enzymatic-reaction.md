@@ -1,6 +1,7 @@
 ---
 title: ERAM让酶促反应建模真正走向多模态与任务无关
 date: 2026-04-20
+last_modified_at: 2026-04-20
 tags: [enzyme-reaction, multimodal-learning, protein-language-model, knowledge-graph, ERAM, deep-learning, bioinformatics]
 description: ERAM框架通过多模态关系学习，将酶反应建模为知识图谱三元组，在酶检索、底物预测和结合位点预测等多个任务上达到领先性能
 image: /assets/img/thumbnail/bricks.webp

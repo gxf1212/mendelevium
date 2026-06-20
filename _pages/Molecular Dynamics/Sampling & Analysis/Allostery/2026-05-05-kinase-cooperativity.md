@@ -1,6 +1,7 @@
 ---
 title: "激酶为什么能分清底物和抑制剂？答案藏在协同性和变构网络里"
 date: "2026-05-05"
+last_modified_at: "2026-05-05"
 tags: [kinase, allostery, cooperativity, drug-design, signaling, NMR, CHESCA, protein-dynamics]
 description: "明尼苏达大学Veglia团队综述激酶变构结合协同性，涵盖PKA、Src、BRAF等多种激酶的正负协同机制，以及如何利用协同性设计选择性抑制剂"
 image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"

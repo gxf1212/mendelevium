@@ -1,6 +1,7 @@
 ---
 title: "Martini 3蛋白质建模tips之结构约束方法"
 date: "2025-12-25"
+last_modified_at: "2025-12-25"
 tags: [Martini, coarse-grained, molecular-dynamics, protein-modeling, martinize2, elastic-network, GoMartini, force-field]
 description: "深入浅出地介绍Martini 3粗粒化蛋白质建模的全流程，重点讲解弹性网络、Gō-Martini和OLIVES三种结构约束方法，帮助新手避免蛋白质'散架'等常见问题"
 image: "/assets/img/thumbnail/bricks.webp"

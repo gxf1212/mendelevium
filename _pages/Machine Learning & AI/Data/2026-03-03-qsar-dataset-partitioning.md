@@ -1,6 +1,7 @@
 ---
 title: "QSAR模型的数据集划分陷阱：为何内部测试性能可能骗过你"
 date: "2026-03-03"
+last_modified_at: "2026-03-03"
 tags: [QSAR, data-partitioning, cross-validation, model-validation, machine-learning, cheminformatics, random-split, similarity-based-split]
 description: "系统评估随机划分和相似性划分对QSAR模型性能的影响，揭示内部测试性能的不可靠性"
 image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"

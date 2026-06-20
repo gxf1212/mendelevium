@@ -1,6 +1,7 @@
 ---
 title: "自由能计算方法新进展：从经典方法到量子硬件加速"
 date: "2026-04-20"
+last_modified_at: "2026-04-20"
 tags: [free-energy-calculation, MM-PBSA, ABFE, umbrella-sampling, quantum-computing, FEP, QM-MM, drug-discovery]
 description: "三项研究分别展示了经典自由能计算方法的系统性比较评估、量子硬件在蛋白-配体自由能微扰计算中的创新应用，以及自动化量子计算管线的开发"
 image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"

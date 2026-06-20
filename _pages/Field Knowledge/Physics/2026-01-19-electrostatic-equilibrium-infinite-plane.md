@@ -1,6 +1,7 @@
 ---
 title: "带电高分子与脂质膜相互作用的静电学模型"
 date: "2026-01-19"
+last_modified_at: "2026-01-19"
 tags: [electrostatics, polyelectrolyte, lipid-membrane, potential-energy, molecular-dynamics]
 description: "从点电荷模型到高分子链相互作用：推导带电高分子与脂质双分子层的静电平衡理论"
 image: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"

@@ -1,6 +1,7 @@
 ---
 title: "双管齐下：CADD筛选发现SARS-CoV-2 RdRp双位点小分子抑制剂"
 date: "2026-01-15"
+last_modified_at: "2026-01-15"
 tags: [cadd, virtual-screening, rdrp, sars-cov-2, drug-repurposing, molecular-docking, enzyme-kinetics, drug-design]
 description: "计算机辅助药物发现从25万化合物中筛选出4个先导分子，分别靶向RdRp催化位点和变构位点，经实验验证具有纳摩尔至微摩尔级抗病毒活性"
 image: "/assets/img/thumbnail/bricks.webp"

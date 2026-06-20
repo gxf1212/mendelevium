@@ -1,6 +1,7 @@
 ---
 title: "东山随笔#4"
 date: "2026-03-08"
+last_modified_at: "2026-03-08"
 tags: [diary, thoughts, research-philosophy, writing]
 ---
 

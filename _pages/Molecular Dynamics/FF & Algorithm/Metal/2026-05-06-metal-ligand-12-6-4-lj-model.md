@@ -1,6 +1,7 @@
 ---
 title: "12-6-4模型如何解决金属离子模拟难题？通过调节螯合原子极化率适配化学环境"
 date: "2026-05-06"
+last_modified_at: "2026-05-06"
 tags: [metal-ions, force-field, molecular-dynamics, lennard-jones, parameterization, amber, metalloprotein]
 description: "合并解读金属-咪唑和金属-醋酸盐相互作用的两篇论文，系统阐述12-6-4 Lennard-Jones非键模型的参数化策略与验证结果"
 image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"

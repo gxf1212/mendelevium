@@ -1,6 +1,7 @@
 ---
 title: "甲基丙烯酸酯聚合物如何作用于细菌外膜：粗粒化分子动力学给出的四阶段机制"
 date: "2026-04-08"
+last_modified_at: "2026-04-08"
 tags: [methacrylate-polymers, bacterial-outer-membrane, coarse-grained-md, martini3, lps, umbrella-sampling, polymer-membrane]
 description: "基于 MARTINI 3 粗粒化模拟，系统比较四类甲基丙烯酸酯聚合物与革兰阴性菌外膜的黏附与渗入行为，量化静电作用、水合作用与自由能势垒的协同关系。"
 image: "/assets/img/thumbnail_mine/wh-72j52o.jpg"

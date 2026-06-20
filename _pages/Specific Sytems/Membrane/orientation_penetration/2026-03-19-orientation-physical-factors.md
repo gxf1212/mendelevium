@@ -1,6 +1,7 @@
 ---
 title: "倾斜角的物理决定因素：从膜厚度到跨膜电位"
 date: "2026-03-19"
+last_modified_at: "2026-03-19"
 tags: [membrane, orientation, tilt-angle, hydrophobic-matching, transmembrane-potential, PPM-model]
 description: "疏水匹配、能量分化和静电调控三大定律决定了膜相关螺旋的最优倾斜角"
 image: "/assets/img/thumbnail/bricks.webp"

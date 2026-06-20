@@ -1,6 +1,7 @@
 ---
 title: "二聚体Kindlin-2的不对称肌动蛋白结合模式：F3结构域的关键作用"
 date: "2026-03-15"
+last_modified_at: "2026-03-15"
 tags: [kindlin-2, actin, molecular-dynamics, protein-protein-interaction, focal-adhesion, co-ip]
 description: "JPCB 2026研究：整合计算模拟与实验验证，揭示二聚体Kindlin-2通过F3结构域与肌动蛋白结合的不对称机制，F3结构域疏水残基与整合素结合位点重叠提示其双重角色"
 image: "/assets/img/thumbnail/bricks.webp"

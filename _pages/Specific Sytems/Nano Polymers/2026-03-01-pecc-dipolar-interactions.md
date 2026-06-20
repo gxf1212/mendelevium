@@ -1,6 +1,7 @@
 ---
 title: "偶极复合驱动的聚电解质凝聚：从离子熵到相图"
 date: "2026-03-01"
+last_modified_at: "2026-03-01"
 tags: [polyelectrolyte-complex-coacervation, dipolar-interactions, mean-field-theory, phase-separation, salt-effects]
 description: "基于偶极复合链的平均场模型，解析盐、温度与组分不对称如何调控聚电解质复合凝聚"
 image: "/assets/img/thumbnail_mine/dna3.jpg"

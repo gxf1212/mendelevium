@@ -1,6 +1,7 @@
 ---
 title: "PMF不是画出来就算数：从收敛、重加权到2D自由能面的物理判据"
 date: "2026-03-31"
+last_modified_at: "2026-03-31"
 tags: [molecular-dynamics, free-energy, PMF, umbrella-sampling, convergence, sampling-analysis]
 description: "一篇面向科研初学者的实用指南：什么样的PMF才算物理上站得住脚，什么时候只能报局部自由能，什么时候才能认真讨论2D自由能面。"
 image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"

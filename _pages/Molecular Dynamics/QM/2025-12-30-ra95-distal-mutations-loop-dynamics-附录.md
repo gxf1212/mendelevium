@@ -1,6 +1,7 @@
 ---
 title: "设计逆醛缩酶RA95的远端突变研究 - 技术附录"
 date: "2025-12-30"
+last_modified_at: "2025-12-30"
 tags: [enzyme-design, directed-evolution, retro-aldolase, distal-mutations, loop-dynamics, molecular-dynamics, electrostatics, QM-MM]
 description: "RA95逆醛缩酶远端突变研究的详细技术方法、完整数据表格和深度Q&A解析"
 image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"

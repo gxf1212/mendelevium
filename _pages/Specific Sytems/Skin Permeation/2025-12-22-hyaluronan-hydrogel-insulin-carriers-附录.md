@@ -1,6 +1,7 @@
 ---
 title: "透明质酸基水凝胶胰岛素载体：技术细节与补充结果【附录】"
 date: "2025-12-22"
+last_modified_at: "2025-12-22"
 tags: [hydrogel, insulin, hyaluronan, rheology, kinetics, mathematical-modeling]
 description: "详细的动力学模型、流变学数学建模、实验方法和补充数据"
 image: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"

@@ -1,6 +1,7 @@
 ---
 title: "零代码玩转化学信息学CADS平台整合：DOPtools实现从分子结构到性质预测的全流程自动化"
 date: "2026-03-21"
+last_modified_at: "2026-03-21"
 tags: [chemoinformatics, qspr, molecular-descriptors, machine-learning, web-platform, doptools, cads, hyperparameter-optimization, model-interpretability]
 description: "将DOPtools无缝整合到CADS平台，实现从SMILES到模型预测的全流程零代码自动化，支持11种描述符、Optuna超参数优化和ColorAtom原子贡献可视化"
 image: "/assets/img/thumbnail_mine/wh-e7zqro.jpg"

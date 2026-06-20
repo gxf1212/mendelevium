@@ -1,6 +1,7 @@
 ---
 title: "会议摄影怎么拍得稳妥、正式又不翻车"
 date: "2026-04-13"
+last_modified_at: "2026-04-13"
 tags: [meeting-photography, news-photography, campus-media, photography, practical-guide]
 description: "根据一份会议摄影培训转录整理出实用清单：领导层级、机位、时机、选片和常见翻车点，一篇讲清楚"
 image: "/assets/img/thumbnail_mine/wh-1kxerg.jpg"

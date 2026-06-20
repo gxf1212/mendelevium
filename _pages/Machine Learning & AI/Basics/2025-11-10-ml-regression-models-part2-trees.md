@@ -1,6 +1,7 @@
 ---
 title: "分子性质预测：机器学习回归算法详解（二）树模型与梯度提升"
 date: "2025-11-10"
+last_modified_at: "2025-11-10"
 tags: [machine-learning, regression, decision-tree, random-forest, xgboost, lightgbm, gradient-boosting]
 description: "系列第二篇：详解决策树、随机森林、梯度提升家族（XGBoost/LightGBM/CatBoost等），实战中最常用的竞赛级回归模型"
 thumbnail: "/assets/img/thumbnail/empty.jpg"

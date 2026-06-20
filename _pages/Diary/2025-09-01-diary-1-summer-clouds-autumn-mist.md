@@ -1,6 +1,7 @@
 ---
 title: "【东山随笔】#1 残云收夏暑，新雨带秋岚"
 date: "2025-09-01"
+last_modified_at: "2025-09-01"
 tags: [diary, life, research, claude-code, phd-life, thoughts]
 ---
 # 【东山随笔】#1 残云收夏暑，新雨带秋岚

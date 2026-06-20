@@ -1,6 +1,7 @@
 ---
 title: "可审计的自动化药物分子优化多智能体平台"
 date: "2026-03-04"
+last_modified_at: "2026-03-04"
 tags: [multi-agent-system, molecular-optimization, drug-discovery, LLM, docking, cheminformatics, AI-agent, workflow-automation]
 description: "分层多智能体框架自动化药物分子优化，对比5个大语言模型在AKT1靶点上的表现"
 image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"

@@ -1,6 +1,7 @@
 ---
 title: "从描述符到几何图神经网络：分子性质预测的输入表示全景图"
 date: "2026-05-31"
+last_modified_at: "2026-05-31"
 tags: [molecular-property-prediction, machine-learning, molecular-representation, GNN, graph-neural-networks, transformer, geometric-GNN]
 description: "系统综述分子性质预测中的输入类型与信息处理机制，从传统描述符到最前沿的几何图神经网络"
 image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
