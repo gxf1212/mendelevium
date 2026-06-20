@@ -1,6 +1,7 @@
 ---
 title: "Polyply技术细节：算法实现与扩展案例（附录）"
 date: "2025-11-16"
+last_modified_at: "2025-11-16"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'polymer', 'coarse-grained', 'algorithm']
 description: "Polyply软件的技术实现细节、算法参数推导、扩展验证案例和性能优化策略"
 image: "/assets/img/thumbnail/book.jpg"

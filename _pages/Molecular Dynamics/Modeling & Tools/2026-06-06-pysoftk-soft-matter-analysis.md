@@ -1,6 +1,7 @@
 ---
 title: "PySoftK v1.0：软物质自组装的自动化分析工具集"
 date: "2026-06-06"
+last_modified_at: "2026-06-06"
 tags: [pysoftk, soft-matter, molecular-dynamics, self-assembly, ring-stacking, density-analysis, software-tools]
 description: "PySoftK v1.0为软物质和生物大分子MD模拟提供自动化分析工具，涵盖界面分析、分子相互作用和自组装追踪，特别是针对大于半盒尺寸纳米粒子的PBC unwrapping"
 thumbnail: "/assets/img/thumbnail_mine/wh-l3m9lp.jpg"

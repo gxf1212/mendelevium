@@ -1,6 +1,7 @@
 ---
 title: "药物发现中的分子表示：从序列到多模态融合"
 date: "2026-03-27"
+last_modified_at: "2026-03-27"
 tags: [molecular-representation, drug-discovery, multimodal-fusion, knowledge-graph, QSAR, machine-learning, cheminformatics]
 description: "全面梳理药物发现中的分子表示方法，从一维序列到四维时间模态，以及多模态融合和知识图谱的最新进展"
 image: "/assets/img/thumbnail_mine/wh-l3971q.jpg"

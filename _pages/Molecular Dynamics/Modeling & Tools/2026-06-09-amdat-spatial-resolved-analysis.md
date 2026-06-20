@@ -1,6 +1,7 @@
 ---
 title: "AMDAT——用于聚合物纳米复合材料空间分辨MD轨迹分析的工具"
 date: "2026-06-09"
+last_modified_at: "2026-06-09"
 tags: [AMDAT, molecular-dynamics, spatial-analysis, polymer-nanocomposites, PNC, interface, trajectory-bin-list, per-atom-properties]
 description: "AMDAT对聚合物纳米复合材料（PNC）的空间分辨分析能力演示，包括区域划分、ISFS计算、per-atom属性提取和OVITO可视化"
 image: "/assets/img/thumbnail_mine/wh-z8yjqy.jpg"

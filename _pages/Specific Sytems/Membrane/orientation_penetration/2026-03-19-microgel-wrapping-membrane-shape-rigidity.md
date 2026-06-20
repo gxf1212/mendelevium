@@ -1,6 +1,7 @@
 ---
 title: "椭球粒子更易被膜包裹？微凝胶形状与膜刚性调控细胞摄取机制"
 date: "2026-03-19"
+last_modified_at: "2026-03-19"
 tags: [membrane-wrapping, microgel, particle-shape, membrane-rigidity, endocytosis, lipid-membrane, giant-unilamellar-vesicles, anisotropic-particles]
 description: "深入解析PNAS 2023年研究：椭球形微凝胶粒子比球形粒子更容易被脂质膜深度包裹，揭示形状、膜刚性和粘附能如何协同调控纳米颗粒的细胞摄取过程"
 image: "/assets/img/thumbnail/bricks.webp"

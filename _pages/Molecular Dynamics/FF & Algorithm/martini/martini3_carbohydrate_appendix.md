@@ -1,6 +1,7 @@
 ---
 title: "Martini 3碳水化合物力场：验证方法与应用案例（附录）"
 date: "2025-11-16"
+last_modified_at: "2025-11-16"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'carbohydrate', 'validation', 'application']
 description: "Martini 3碳水化合物力场的详细验证方法（SASA、转移自由能、渗透压）和应用案例（葡聚糖、蛋白质-糖脂识别等）"
 image: "/assets/img/thumbnail_mine/wh-6oqzgq.jpg"

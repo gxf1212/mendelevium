@@ -1,6 +1,7 @@
 ---
 title: "EasyHybrid：让量子化学/分子力学混合模拟变得触手可及"
 date: "2026-02-21"
+last_modified_at: "2026-02-21"
 tags: [qc-mm, pdynamo3, visualization, molecular-modeling, open-source, easyhybrid]
 description: "EasyHybrid为pDynamo3提供直观图形界面，支持QM/MM模拟的全流程管理，从系统构建到轨迹分析"
 thumbnail: "/assets/img/thumbnail_mine/wh-l3m9lp.jpg"

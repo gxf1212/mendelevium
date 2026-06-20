@@ -1,6 +1,7 @@
 ---
 title: "把重复长度写成方程：HttEx1 与 polyQ 疾病的长度依赖模型汇总（临床—分子—凝聚态）"
 date: "2026-01-13"
+last_modified_at: "2026-01-13"
 tags: [polyq, huntington-disease, spinocerebellar-ataxia, sbma, modeling, biology]
 description: "系统整理 polyQ 疾病的长度依赖模型：从临床发病年龄到分子聚集与相分离，汇总可复用的公式、速率方程与参数建议"
 thumbnail: "/assets/img/thumbnail_mine/default-biology.jpg"

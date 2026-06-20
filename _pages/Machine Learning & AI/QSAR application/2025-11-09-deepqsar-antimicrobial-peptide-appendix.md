@@ -1,6 +1,7 @@
 ---
 title: "DeepQSAR抗菌肽发现——技术细节与扩展数据"
 date: "2025-11-09"
+last_modified_at: "2025-11-09"
 tags: [DeepQSAR, QSAR, antimicrobial-peptides, technical-appendix, molecular-dynamics]
 description: "完整的方法细节、Top 10肽列表、与其他工具的对比、毒性数据和MD模拟结果"
 image: "/assets/img/thumbnail/bricks.webp"

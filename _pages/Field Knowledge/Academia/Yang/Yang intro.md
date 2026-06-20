@@ -1,6 +1,7 @@
 ---
 title: "威斯康星大学麦迪逊分校Yang Yang研究组工作总结：CNEO理论及其应用"
 date: "2026-02-21"
+last_modified_at: "2026-02-21"
 tags: [CNEO, nuclear-quantum-effects, proton-transfer, multicomponent-quantum-chemistry, theoretical-chemistry]
 description: "总结Yang Yang教授在约束核电子轨道(CNEO)理论方面的研究工作"
 ---

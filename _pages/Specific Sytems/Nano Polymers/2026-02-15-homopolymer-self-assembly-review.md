@@ -1,6 +1,7 @@
 ---
 title: "均聚物也能自组装：驱动力、设计策略与应用全景"
 date: "2026-02-19"
+last_modified_at: "2026-02-19"
 tags: [homopolymer, self-assembly, nanomaterials, amphiphilic-polymers, soft-matter, review]
 description: "系统梳理均聚物自组装的驱动力、分子设计策略、形貌调控与应用版图，强调“模糊边界”带来的结构优势与可控性。"
 thumbnail: "/assets/img/thumbnail_mine/wh-72j52o.jpg"

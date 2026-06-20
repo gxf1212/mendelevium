@@ -1,6 +1,7 @@
 ---
 title: "RBFE计算在多亚基ATP酶中的适用性边界：大规模基准研究提供明确指导原则"
 date: "2025-11-03"
+last_modified_at: "2025-11-03"
 tags: [alchemical-free-energy, RBFE, multimeric-ATPases, nucleotide-binding, force-field, AlphaFold3, computational-chemistry, molecular-dynamics, F1-ATPase, FtsK]
 description: "55个界面位点、六类ATP酶的RBFE大规模基准研究，系统量化结构稳定性与位点柔性的影响，展示固定电荷力场的适用范围"
 image: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"

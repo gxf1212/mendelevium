@@ -1,6 +1,7 @@
 ---
 title: "X射线晶体学与QM/MM模拟联手：揭示嘧啶从头合成关键酶OPRTase的催化反应机制 - 附录"
 date: "2025-12-14"
+last_modified_at: "2025-12-14"
 tags: [oprtase, qm-mm, reaction-mechanism, x-ray-crystallography, computational-chemistry, fep, transition-state, enzyme-catalysis, pyrimidine-biosynthesis]
 description: "OPRTase反应机制研究的计算化学技术细节、方法学补充和Supporting Information解读"
 image: "/assets/img/thumbnail/bricks.webp"

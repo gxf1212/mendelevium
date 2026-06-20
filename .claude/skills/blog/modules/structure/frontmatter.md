@@ -6,6 +6,7 @@
 ---
 title: "文章标题（中文，使用中文标点）"
 date: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期
+last_modified_at: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期
 tags: [tag1, tag2, tag3]  # 尽量复用已有tags
 description: "简短描述"
 image: "/assets/img/thumbnail/xxx.jpg"

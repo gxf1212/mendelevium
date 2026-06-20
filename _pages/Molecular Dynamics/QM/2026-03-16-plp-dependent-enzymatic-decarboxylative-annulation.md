@@ -1,6 +1,7 @@
 ---
 title: "解锁PLP酶的隐藏超能力：罕见VGQ中间体实现酶催化[3+2]环化反应"
 date: "2026-03-16"
+last_modified_at: "2026-03-16"
 tags: [PLP酶, 生物催化, 3+2环化, VGQ中间体, 定向进化, 酶工程]
 description: "通过重新编程PLP依赖酶SphA，利用罕见的乙烯基甘氨酸醌式中间体(VGQ)实现脱羧[3+2]环化反应，为构建复杂碳环氨基酸提供了新策略"
 image: "/assets/img/thumbnail/bricks.webp"
@@ -13,7 +14,7 @@ lang: zh-CN
 
 ## 本文信息
 
-- **标题**：吡哆醛-5′-磷酸依赖酶催化的脱羧环化反应
+- **标题**：吡哆醛-5'-磷酸依赖酶催化的脱羧环化反应
 - **作者**：Weiwei Chai, Shenggan Luo（共同第一作者）, Wenhui Xi, Xu He, Ting Zhang, Yike Zou（通讯作者）, Yang Hai（通讯作者）
 - **收稿/修回/接收**：2025年11月26日 / 2026年2月19日 / 2026年2月24日
 - **单位**：

@@ -1,6 +1,7 @@
 ---
 title: "抗体亲和力评测：RE-MMPBSA与PMF的实战清单"
 date: "2025-12-14"
+last_modified_at: "2025-12-14"
 tags: [antibody, binding-free-energy, mm-pbsa, umbrella-sampling, rosetta, tre-md]
 description: "对比Replica-Exchange MMPBSA、Rosetta与PMF三套策略，拆解抗CXCR2抗体-肽体系的亲和力预测要点"
 image: "/assets/img/thumbnail_mine/wh-1kxerg.jpg"

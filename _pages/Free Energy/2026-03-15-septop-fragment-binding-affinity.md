@@ -1,6 +1,7 @@
 ---
 title: "片段药物亲和力预测的新工具：分离拓扑方法突破结构重叠限制"
 date: "2026-03-15"
+last_modified_at: "2026-03-15"
 tags: [fragment-based-drug-discovery, separated-topologies, free-energy-calculation, molecular-dynamics, alchemical-transformation, binding-affinity, FBDD]
 description: "使用Separated Topologies方法解决片段药物发现中的亲和力预测挑战，在Cyclophilin D和SARS-CoV-2 Macrodomain 1系统上验证"
 image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"

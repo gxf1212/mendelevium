@@ -1,6 +1,7 @@
 ---
 title: "SwissParam命令行完全指南：从小分子参数化到结果获取"
 date: "2025-11-02"
+last_modified_at: "2025-11-02"
 description: "详细介绍SwissParam命令行工具的使用方法，包括服务器状态检查、小分子参数化、共价小分子处理、作业状态查询和结果下载等完整操作流程。"
 tags: [swissparam, force-field, parameterization, molecular-modeling, command-line, charmm, md-simulation]
 thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"

@@ -1,6 +1,7 @@
 ---
 title: "分子性质预测中的图神经网络与几何学习"
 date: "2026-05-31"
+last_modified_at: "2026-05-31"
 tags: [GNN, geometric-GNN, graph-neural-networks, molecular-property-prediction, message-passing, equivariant, SchNet, DimeNet]
 description: "深入解析图神经网络的信息处理机制，从消息传递到最前沿的等变几何图神经网络"
 image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"

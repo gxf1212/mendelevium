@@ -1,6 +1,7 @@
 ---
 title: "告别手动调参：Uni-QSAR如何让分子性质预测实现全自动化"
 date: "2026-05-28"
+last_modified_at: "2026-05-28"
 tags: [QSAR, automated-workflow, molecular-property-prediction, AutoML, drug-discovery, deep-learning]
 description: "Uni-QSAR通过多表示学习与自动化工作流，减少分子性质预测中的手动调参与模型选择"
 image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"

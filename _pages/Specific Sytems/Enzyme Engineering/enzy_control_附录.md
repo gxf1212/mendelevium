@@ -2,6 +2,7 @@
 title: "EnzyControl：酶设计方法的技术细节与算法深解"
 description: "EnzyControl论文的技术附录，详细阐述完整的数据流：从输入初始化到迭代生成再到输出"
 date: "2025-11-05"
+last_modified_at: "2025-11-05"
 tags: [enzyme-design, deep-learning, se3-equivariance, flow-matching, attention-mechanism, protein-generation]
 image: "/assets/img/thumbnail/bricks.webp"
 thumbnail: "/assets/img/thumbnail/bricks.webp"

@@ -1,6 +1,7 @@
 ---
 title: "Agent Reach：让AI助手访问互联网的超简单方法"
 date: "2026-03-10"
+last_modified_at: "2026-03-10"
 tags: [AI-agent, internet-access, MCP, tool-integration, Claude]
 description: "只需一句话，让Claude等AI助手获得GitHub、YouTube、Twitter等平台的访问能力"
 image: "/assets/img/thumbnail/empty.jpg"

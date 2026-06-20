@@ -1,6 +1,7 @@
 ---
 title: "如何设计出高对映选择性的人工金属酶？David Baker团队的从头设计尝试"
 date: "2026-05-19"
+last_modified_at: "2026-05-19"
 tags: [artificial-metalloenzyme, de-novo-design, photocatalysis, enantioselectivity, protein-design, Rosetta, ruthenium, iridium]
 description: "David Baker和Jared Lewis团队通过从头蛋白设计与定向进化，构建了可实现高对映选择性[2+2]光环化的人工金属酶光催化剂"
 image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"

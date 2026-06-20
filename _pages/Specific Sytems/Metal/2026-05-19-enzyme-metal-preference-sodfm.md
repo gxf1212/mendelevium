@@ -1,6 +1,7 @@
 ---
 title: "铁锰摇摆：超氧化物歧化酶如何通过氧化还原调谐改变金属偏好"
 date: "2026-05-19"
+last_modified_at: "2026-05-19"
 tags: [metalloprotein, redox-tuning, metal-preference, SOD-evolution, secondary-coordination-sphere, enzymatic-mechanism]
 description: "解析SodFM如何通过次级配位层调节金属辅因子的静息氧化态，使Fe/Mn依赖性超氧化物歧化酶在进化中改变金属偏好"
 image: "/assets/img/thumbnail/bricks.webp"

@@ -85,6 +85,7 @@ python3 tools/random_thumbnail.py --frontmatter
 ---
 title: "文章标题（中文，使用中文标点）"
 date: "YYYY-MM-DD"  # 今天的日期！
+last_modified_at: "YYYY-MM-DD"  # 今天的日期！
 tags: [tag1, tag2, tag3]
 description: "简短描述"
 image: "/assets/img/thumbnail/xxx.jpg"

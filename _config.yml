@@ -87,6 +87,8 @@ collections:
   pages:
     output: true
     permalink: /:path.html
+    future: true
+    sort_by: date
 
 defaults:
   -
@@ -95,7 +97,6 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      date: "1900-01-01"
 
 # Markdown settings
 kramdown:

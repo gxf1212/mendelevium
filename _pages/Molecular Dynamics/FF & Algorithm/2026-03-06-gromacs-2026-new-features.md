@@ -1,6 +1,7 @@
 ---
 title: "GROMACS 2026.0：NN势函数、GPU加速与AMBER/PLUMED完整支持"
 date: "2026-03-06"
+last_modified_at: "2026-03-06"
 tags: [GROMACS, neural-network-potentials, GPU, HPC, molecular-dynamics]
 description: "GROMACS 2026.0重磅更新：原生支持神经网络势函数，完整AMD GPU HIP后端，NVIDIA自由能计算加速，AMBER力场完整验证，PLUMED 2.9稳定集成"
 image: "/assets/img/thumbnail_mine/dna3.jpg"

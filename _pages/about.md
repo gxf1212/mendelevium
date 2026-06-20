@@ -1,6 +1,7 @@
 ---
 title: "关于"
 date: "2025-08-24"
+last_modified_at: "2025-08-24"
 tags: [个人信息, 联系方式, 研究兴趣, 项目介绍, 关于]
 bookmark: true
 ---

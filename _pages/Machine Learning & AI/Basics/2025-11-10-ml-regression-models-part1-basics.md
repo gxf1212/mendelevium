@@ -1,6 +1,7 @@
 ---
 title: "分子性质预测：机器学习回归算法详解（一）基础回归模型"
 date: "2025-11-10"
+last_modified_at: "2025-11-10"
 tags: [machine-learning, regression, linear-models, svm, knn, molecular-property]
 description: "系列第一篇：全面介绍分子性质预测中的基础回归模型，包括线性模型家族、支持向量回归、近邻方法，从简单的线性回归到鲁棒回归、广义线性模型"
 thumbnail: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"

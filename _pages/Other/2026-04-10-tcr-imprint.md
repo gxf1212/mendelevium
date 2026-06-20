@@ -1,6 +1,7 @@
 ---
 title: "IMPRINT解码TCR识别：几何深度学习捕捉pMHC界面免疫指纹"
 date: "2026-04-10"
+last_modified_at: "2026-04-10"
 tags: [tcr-recognition, geometric-deep-learning, immunological-fingerprint, mhc, bioinformatics, structural-biology, machine-learning]
 description: "利用几何深度学习从pMHC界面提取免疫指纹，预测T细胞受体结合偏好并提供可解释性洞察"
 image: "/assets/img/thumbnail_mine/wh-g83qpe.jpg"

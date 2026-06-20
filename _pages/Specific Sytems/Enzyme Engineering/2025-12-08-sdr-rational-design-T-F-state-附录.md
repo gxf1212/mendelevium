@@ -1,6 +1,7 @@
 ---
 title: "预反应态vs自由态：用双态MD梳理SDR“葫芦口袋”精准打开大位阻芳香酮入口（附录）"
 date: "2025-12-08"
+last_modified_at: "2025-12-08"
 tags: [enzyme-engineering, MD-simulation, rational-design, SDR, enantioselectivity, protein-engineering, biocatalysis]
 description: "附录：完整实验数据、动力学参数、亲和力测定及方法细节"
 image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"

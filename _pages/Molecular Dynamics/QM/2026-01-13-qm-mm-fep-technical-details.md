@@ -1,11 +1,10 @@
 ---
 title: "QM/MM自由能微扰深度技术解析：从热力学循环到收敛性标准"
 date: "2026-01-13"
+last_modified_at: "2026-01-13"
 tags: [QM-MM-FEP, thermodynamic-cycle, BAR, MBAR, convergence, overlap-measures, PM6-DH+, RPQS, technical-details]
 description: "深入剖析QM/MM-FEP方法的技术细节：热力学循环设计、中间态选择、收敛性判断、并行化策略及实际应用中的关键参数"
 image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
-image: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
@@ -20,8 +19,6 @@ lang: zh-CN
 - **收敛性标准**：如何判断计算是否可信
 - **并行化策略**：如何最大化计算资源利用率
 - **实践建议**：从体系准备到结果分析的完整流程
-
----
 
 ## 一、理论基础：参考势方法的热力学循环
 
@@ -663,7 +660,7 @@ gmx trjconv -f traj.xtc -s topol.tpr -o snapshots.pdb \
 - **避坑指南**：少走弯路，提高成功率
 - **定制优化**：根据具体体系调整参数
 
-**QM/MM-FEP不再是"黑魔法"，而是有章可循的工程化方法**。
+**QM/MM-FEP不再是“黑魔法”，而是有章可循的工程化方法**。
 
 ---
 

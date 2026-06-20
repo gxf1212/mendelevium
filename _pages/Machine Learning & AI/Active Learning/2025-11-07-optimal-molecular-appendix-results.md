@@ -1,6 +1,7 @@
 ---
 title: "生成式主动学习+物理模拟：详细结果分析（附录）"
 date: "2025-11-07"
+last_modified_at: "2025-11-07"
 tags: [active-learning, generative-ai, reinforcement-learning, binding-free-energy, drug-discovery, molecular-design]
 description: "TNKS2靶点详细结果、图表说明和补充分析"
 image: "/assets/img/thumbnail_mine/bricks.webp"

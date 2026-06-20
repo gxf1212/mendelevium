@@ -1,6 +1,7 @@
 ---
 title: "【综述】计算酶学全景：QM/MM方法揭示催化机制、蛋白质动力学与变构调控，指导从头酶设计与共价药物开发"
 date: "2025-12-14"
+last_modified_at: "2025-12-14"
 tags: [computational-enzymology, QM-MM, enzyme-design, protein-dynamics, allostery, covalent-drugs, machine-learning, drug-discovery]
 description: "全面综述计算酶学领域的核心原理、方法学进展和应用前景，涵盖催化机制、蛋白质动力学、变构调控、酶的从头设计及共价药物开发等前沿话题"
 image: "/assets/img/thumbnail/empty.jpg"
