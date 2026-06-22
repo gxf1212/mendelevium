@@ -48,7 +48,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
   lang: zh-CN
   ---
   ```
-- frontmatter的date: "2025-08-22"不是文章发表的时间，而是写blog的时间，最后一次修改的日期
+- frontmatter的date: "2025-08-22"不是文章发表的时间，而是初次写blog的时间，last_modified_at是最后一次修改的日期
 - **必须同时添加last_modified_at字段**：由于jekyll-sitemap插件对html_pages只识别`last_modified_at`，所有博客文章必须同时包含`date`和`last_modified_at`字段，否则sitemap会显示错误的1900-01-01日期。新文章创建时必须同时添加这两个字段。
   ```
   ---
@@ -264,7 +264,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 **输出格式 (Markdown)**:
 
 # [引人入胜但专业的中文标题]
-标题：引人入胜但专业，信息丰富、包括所有关键点，但别太长，不要带奇怪的引号名词，少用冒号，尽量别用，就正常人说的一两句话。
+标题：引人入胜但专业，信息丰富，结合全文考虑，包括所有关键点，但别太长，不要带奇怪的引号名词，少用冒号，尽量别用，就正常人说的一两句话。
 - 一般研究文章可以考虑：“科学问题？本文的回答”这种模板。
 - 综述的模板：【综述】涵盖的具体领域、主要结论等
 - 如果是软件工具类的，统一用“软件名——具体干什么的工具”这个模板
