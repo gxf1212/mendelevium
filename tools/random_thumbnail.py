@@ -4,7 +4,6 @@
 用于为新的博客文章随机选择缩略图
 """
 
-import os
 import random
 import sys
 from pathlib import Path
@@ -19,7 +18,9 @@ def get_random_thumbnail():
     # 定义缩略图目录
     thumbnail_dirs = [
         "assets/img/thumbnail",
-        "assets/img/thumbnail_mine"
+        "assets/img/thumbnail_mine",
+        "assets/img/Wallpaper_compressed",
+        "assets/img/4K_1080P_compressed"
     ]
 
     # 支持的图片扩展名

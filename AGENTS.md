@@ -49,7 +49,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
   ---
   ```
 - frontmatter的date: "2025-08-22"不是文章发表的时间，而是写blog的时间，最后一次修改的日期
-- 能不能随机替换assets\img\thumbnail、assets\img\thumbnail_mine下的文件，雨露均沾，创建新文件的时候随机选取。**随机缩略图选择**: 已创建工具脚本来自动随机选择缩略图，避免过度使用bricks.webp。`tools/random_thumbnail.py`: 随机选择缩略图。image和thumbnail这俩参数得一样啊。
+- 能不能随机替换assets\img\thumbnail、assets\img\thumbnail_mine、assets\img\Wallpaper_compressed下的文件，雨露均沾，创建新文件的时候随机选取。**随机缩略图选择**: 已创建工具脚本来自动随机选择缩略图，避免过度使用bricks.webp。`tools/random_thumbnail.py`: 随机选择缩略图。`assets/img/Wallpaper/compress.py`: 将Wallpaper原图压缩到≤500kB输出到Wallpaper_compressed。image和thumbnail这俩参数得一样啊。
 
 
 ## 常见要求
