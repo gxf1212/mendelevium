@@ -1,390 +1,90 @@
 # Mendelevium Blog - Claude Development Guide
 
-## 项目理念
+本文件只做索引，不重复规则正文。执行任务时先按用户要求定位到对应 rule，再读取具体文件。
 
-This is a personal research blog sharing experiences in molecular dynamics, computational chemistry, and scientific computing. The content should be:
+## Skills可用性
+本项目配置了多个skills用于特定任务，当用户调用相关skill时会自动加载对应规则：
+- `blog` - 根据PDF论文生成科研博客文章，会自动引用格式规则
+- `format` - 检查和修复推送文章格式问题，会自动引用格式规范  
+- `literature-deepread` - 文献精读流程，会自动引用阅读和分析规则
+- `fix-ai-writing` - 修复AI写作特征，会自动引用 [`.claude/skills/fix-ai-writing.md`](.claude/skills/fix-ai-writing.md) 去AI味规则
+- `adversarial-paper-reading` - 对抗式论文阅读，会自动引用审稿和批判性分析规则
+- 其他skills按需引用相关规则文件
 
-- **Educational**: 每篇文章都应该能帮助读者学到一些实用的知识
-- **Practical**: 重点在于实用性，分享实际的方法和工具
-- **Clear**: 保持简洁明了的写作风格，便于理解
+Skills会根据任务类型自动加载对应的rules文件，确保格式规范的一致性。
 
-## 开发原则
+## Rule目录总览
 
-1. **保持简洁**: 网站结构应该简单明了，不要过度复杂化
-2. **内容为王**: 专注于高质量的技术内容，而非花哨的功能
-3. **分类清晰**: 按研究领域合理组织内容结构
+### 01-project：项目结构和博客组织
+处理项目理念、技术栈、栏目、frontmatter、文件命名、新文章元数据时：
+- [01-project/01-project-basics.md](.claude/rules/01-project/01-project-basics.md)
+- [01-project/02-posts-and-common-requests.md](.claude/rules/01-project/02-posts-and-common-requests.md)
 
-## 技术栈
+### 02-tools：工具、PDF和技术记录  
+用工具、查PDF、整理技术记录、处理PMC/PubMed下载时：
+- [02-tools/01-tools-pdf-and-technical-notes.md](.claude/rules/02-tools/01-tools-pdf-and-technical-notes.md)
 
-- Jekyll (Satellite theme)
-- GitHub Pages
-- Giscus for comments
-- GoatCounter for analytics
+### 03-article-workflow：推文角色、工作流和核心指令
+"根据PDF写推文""写微信公众号文章""读论文写文章"时：
+- [03-article-workflow/01-role-workflow-and-core-instructions.md](.claude/rules/03-article-workflow/01-role-workflow-and-core-instructions.md)
 
-## 博文内容组织
+### 04-article-formatting：文章格式细则
+"修格式""中文标点""加粗""列表""去AI味""检查全文格式"时：
+- [04-article-formatting/01-bold.md](.claude/rules/04-article-formatting/01-bold.md)
+- [04-article-formatting/02-punctuation-headings-abbreviations.md](.claude/rules/04-article-formatting/02-punctuation-headings-abbreviations.md)
+- [04-article-formatting/03-markdown-lists.md](.claude/rules/04-article-formatting/03-markdown-lists.md)
+- [04-article-formatting/04-ai-writing-and-quote-blocks.md](.claude/rules/04-article-formatting/04-ai-writing-and-quote-blocks.md)
 
-- 每个分类下应该有一个 index.md 文件， 所有index.md都得是---\n---，啥内容都没有 
-- Archive\jekyll-theme-satellite-master是原始模板，报错了可以参考，尤其是里面的docs
-- https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md 是SEO的插件，可以参考
-- 为什么单篇文章，如2025-08-13-deep-covboost-ai-covid-target会出现在侧边栏？不应该出现的
-    bookmark: false我已经删掉了，就解决了，以后都不要写
-- 文件名不能太长、有问题，包括图片文件夹。rename folder name to sth shorter.
+### 05-visual-elements：可视化元素
+处理Mermaid、图、表、图片提取、图注、图文融合时：
+- [05-visual-elements/01-mermaid.md](.claude/rules/05-visual-elements/01-mermaid.md)
+- [05-visual-elements/02-figures-tables.md](.claude/rules/05-visual-elements/02-figures-tables.md)
 
-## posts注意事项
+### 06-math-chemistry：数学和化学规范
+处理公式、单位、化学式、SMILES、数学比较符号时：
+- [06-math-chemistry/01-formulas.md](.claude/rules/06-math-chemistry/01-formulas.md)
 
-- 图片路径使用相对路径，确保在不同环境下都能正常显示
-- 保持中英文混用的写作风格，适合中文科研环境
-- 定期整理和归档过时的内容
-- should add frontmatter for each post (identify .md files without ---), e.g.
-  ```
-  ---
-  title: "Random Forest and Enhanced Sampling Unite: Revealing and Correcting Ghost Errors in Alchemical Free Energy Calculations"
-  date: "2025-08-22"
-  tags: [random-forest, enhanced-sampling, alchemical-free-energy, gamd, error-analysis, machine-learning, molecular-dynamics]
-  description: "深入分析 Boltz-2 AI 模型在配体亲和力预测中的表现，与 FEP 方法的对比，以及两者如何协同工作"
-  image: "/assets/img/thumbnail/bricks.webp"
-  thumbnail: "/assets/img/La-Mancha.jpg"
-  author: Xufan Gao
-  lang: zh-CN
-  ---
-  ```
-- frontmatter的date: "2025-08-22"不是文章发表的时间，而是初次写blog的时间，last_modified_at是最后一次修改的日期
-- **必须同时添加last_modified_at字段**：由于jekyll-sitemap插件对html_pages只识别`last_modified_at`，所有博客文章必须同时包含`date`和`last_modified_at`字段，否则sitemap会显示错误的1900-01-01日期。新文章创建时必须同时添加这两个字段。
-  ```
-  ---
-  date: "2026-06-20"
-  last_modified_at: 2026-06-20
-  ---
-  ```
-- 能不能随机替换assets\img\thumbnail、assets\img\thumbnail_mine、assets\img\Wallpaper_compressed下的文件，雨露均沾，创建新文件的时候随机选取。**随机缩略图选择**: 已创建工具脚本来自动随机选择缩略图，避免过度使用bricks.webp。`tools/random_thumbnail.py`: 随机选择缩略图。`tools/compress_images.py`: 将图片压缩到≤500kB（支持自定义输入输出、目标大小、数量）。image和thumbnail这俩参数得一样啊。
+### 07-article-structure：推文结构模板
+写单篇研究论文解读、检查推文结构、补齐章节时：
+- [07-article-structure/01-title-and-paper-info.md](.claude/rules/07-article-structure/01-title-and-paper-info.md)
+- [07-article-structure/02-abstract-background.md](.claude/rules/07-article-structure/02-abstract-background.md)
+- [07-article-structure/03-research-content-and-final-check.md](.claude/rules/07-article-structure/03-research-content-and-final-check.md)
 
+### 08-maintenance-and-interaction：维护、符号规范和交互风格
+"格式修复""符号规范化""回答简洁点""按项目交互风格反馈"时：
+- [08-maintenance-and-interaction/01-format-symbols-and-interaction.md](.claude/rules/08-maintenance-and-interaction/01-format-symbols-and-interaction.md)
 
-## 常见要求
+## 常见任务索引
 
-- 根据@CLAUDE.md，为@_pages\Free Energy\fep-the-end-of-parameter-tuning.pdf写一篇推送Markdown文章
-- 根据文件_pages中.md的最后修改时间，给文件名添加YYYY-MM-DD才能在博客上显示（rename就行），还要仿照已有的添加frontmatter，tag尽量用和其他类似的，如果有的话。已经有YYYY-MM-DD的就不用了，这种一般frontmatter也都有了。archive里面的，还有about.md，index这种不要改；Diary里面的不要搞太复杂的文件名，就YYYY-MM-DD-diary1.md这种就行，其他文件名可能还是对title的一个概括。直接扫描所有的_pages中的文件，看哪些没有YYYY-MM-DD，然后修复其frontmatter和文件名，不要搞太复杂的流程。
-- 不对，不一定需要添加YYYY-MM-DD，所以给没添加frontmatter的加上frontmatter，tag尽量用和其他类似的，如果有的话。Diary里面的，archive里面的，还有about.md，index这种不要改
-- 去掉所有参考标记，如[cite\_start]、[cite: 3749]，根据CLAUDE.md修复所有格式
-- 注意title要用中文标点，不要用英文标点，尤其是英文引号，请修复。类似于title: "皮肤屏障的“水之道”：分子模拟揭示脂质相共存如何稳定间质水"，内部是中文标点。【OpenFE】这种是可以的。。但文件名不要出现乱七八糟的东西，标点符号等。
-- 把_pages\xxx.docx改写成Markdown，内容完全不变，保证参考文献链接仍然正确，即文内的引用标记要能对得上文末的list，得用这种吧：[^6]。
-- 写一篇【科研简讯】栏目的，200行左右，框架类似，内容精简，每一行内容可以多点。挑重点、关键方法和结果来写，太不符合逻辑主线可以不放了
-- 写一篇【科研快讯】栏目的，125行以内，超级精简版本，只保留最核心的内容
+### "根据PDF写推文/写一篇论文解读"
+1. [03-article-workflow/01-role-workflow-and-core-instructions.md](.claude/rules/03-article-workflow/01-role-workflow-and-core-instructions.md)
+2. [02-tools/01-tools-pdf-and-technical-notes.md](.claude/rules/02-tools/01-tools-pdf-and-technical-notes.md)
+3. [07-article-structure/01-title-and-paper-info.md](.claude/rules/07-article-structure/01-title-and-paper-info.md)
+4. [07-article-structure/02-abstract-background.md](.claude/rules/07-article-structure/02-abstract-background.md)
+5. [07-article-structure/03-research-content-and-final-check.md](.claude/rules/07-article-structure/03-research-content-and-final-check.md)
+6. [05-visual-elements/02-figures-tables.md](.claude/rules/05-visual-elements/02-figures-tables.md)
+7. [06-math-chemistry/01-formulas.md](.claude/rules/06-math-chemistry/01-formulas.md)
 
-## 可复用工具（tools/）
+### "检查/修复文章格式、中文标点、加粗、列表"
+1. [04-article-formatting/01-bold.md](.claude/rules/04-article-formatting/01-bold.md)
+2. [04-article-formatting/02-punctuation-headings-abbreviations.md](.claude/rules/04-article-formatting/02-punctuation-headings-abbreviations.md)
+3. [04-article-formatting/03-markdown-lists.md](.claude/rules/04-article-formatting/03-markdown-lists.md)
+4. [04-article-formatting/04-ai-writing-and-quote-blocks.md](.claude/rules/04-article-formatting/04-ai-writing-and-quote-blocks.md)
+5. [08-maintenance-and-interaction/01-format-symbols-and-interaction.md](.claude/rules/08-maintenance-and-interaction/01-format-symbols-and-interaction.md)
 
-> **重要提示**：**不要使用 `tools/fix_markdown.py` 脚本**。该脚本的自动修复可能破坏格式、误改内容。格式修复应该通过Read和Edit工具手动完成，确保准确性。
+### "创建新文章/补frontmatter/改文件名/选缩略图"
+1. [01-project/02-posts-and-common-requests.md](.claude/rules/01-project/02-posts-and-common-requests.md)
+2. [01-project/01-project-basics.md](.claude/rules/01-project/01-project-basics.md)
 
-- **PMC/PubMed全文下载（best-effort）**：`tools/fetch_pmc_assets.py`
-  - 用途：给定PMCID或PMC链接，自动收集全文PDF与补充材料链接并尝试下载，输出一个可追溯的`index.json`。
-  - 重要限制（2026-01现状）：PMC网页端的PDF/补充材料下载可能触发**Proof-of-Work反爬页面**（“Preparing to download ... / cloudpmc-viewer-pow”）。脚本会自动改走官方`oa.fcgi`返回的FTP直链（或下载`oa_package/*.tar.gz`并解包提取PDF）来绕开网页端拦截；若文章不在OA范围内，则仍可能需要浏览器手动下载。
-  - 用法示例：
-    - `python3 tools/fetch_pmc_assets.py PMC12519464 --out downloads/pmc`
+### "整理技术记录/QQ记录/笔记整理"
+1. [02-tools/01-tools-pdf-and-technical-notes.md](.claude/rules/02-tools/01-tools-pdf-and-technical-notes.md)
+2. [01-project/02-posts-and-common-requests.md](.claude/rules/01-project/02-posts-and-common-requests.md)
+3. [04-article-formatting/03-markdown-lists.md](.claude/rules/04-article-formatting/03-markdown-lists.md)
 
-### 技术记录
+### "处理图表/重新提取fig/scheme/检查图片编号"
+1. [05-visual-elements/02-figures-tables.md](.claude/rules/05-visual-elements/02-figures-tables.md)
+2. [02-tools/01-tools-pdf-and-technical-notes.md](.claude/rules/02-tools/01-tools-pdf-and-technical-notes.md)
 
-- 这种笔记整理，除了[GROMACS论坛](https://gromacs.bioexcel.eu/)，还需要把链接显式地写出来，否则微信识别不了，比如：[GROMACS论坛](https://gromacs.bioexcel.eu/)：https://gromacs.bioexcel.eu。
-- 没有代码、都是link的，不要放代码框。。正常的文字不要放quote 
-- pip cache purge这种放在代码框或``包裹
-- 不要泄露隐私内容。
-- 对于这些文档，title: 和第一个# 要加点【笔记整理|2025-07】之类的标签，文件名不用加。这个时间是笔记实际的大致时间，不是创建文档的今天。
-- 创建的文档不要保留奇怪的时间戳，[02:56] 这种
-- 不要把参考资源：这种文字类的放在```里面，没必要代码框的文字说明就不要代码框，如“目前rdkit.Chem.Draw.MolsToGridImage函数没有直接设置图例字体大小的选项”就是个经验，文字就行
-- 检查最新的一些md文件，把frontmatter中的date: "2025-11-27"这种东西改成最后修改日期，文件名也需要相应地改。多检查一些，不限于git没提交的；附录的日期得跟着主文档吧
-- 反正每次我给你提啥问题都是希望你按照我的要求来修改文档，都尽量看文献原文
-
-## 推文
-
-现在有了一个方便的工具来快速搜索PDF内容。我已经为你准备好了：
-
-使用方式：`python3 tools/search_pdf_text.py <pdf_file> <keyword> [context_lines]`
-
-  例子：
-```python
-# 搜索"MCS"，显示前后3行上下文
-python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tuning.pdf" "MCS" 3
-```
-必要的时候还是要直接读PDF全文
-
-### Prompt
-
-**角色**: 你是一位顶尖的科研媒体编辑和科学传播专家。你的读者是渴望学习新知识的科研新手和同行。你的任务是将一篇专业的、信息密集的科研论文，转换成一篇详尽、易懂、重点突出、排版精美的微信公众号推送文章。语言风格既要足够专业和准确，绝对不能有事实错误，又要有点亲切地对话感，就像老师给学生讲解知识，或者和读者交流。全文要去AI化，像是真人写的，去掉AI的写作特征。直接read和update，不要用代码编辑。
-
-本地的话，用Python提取PDF文字来写推文，一步一步来写。Markdown文件250~300行的样子，多了就拆出一篇讲技术细节和其他结果的附录md文件。是把主文档的部分内容挪过去。先填补附录.md，再删除主文档里的。附录也不用过于长了，否则要再拆一个附录文件。附录不要自己的Q&A，除非正文的Q&A放不下。除了本文信息，两篇没有太重复的内容，除非必要。
-
-- 在关键的概念、结论或punchline处，请使用 `**加粗**` 来突出重点
-  - **加粗内容规范**：不要包裹非常规内容
-    - **禁止包裹**：LaTeX公式（`$...$`、`$$...$$`）、代码（`` `...` ``）、化学式（如$\ce{NaCl}$）
-    - **禁止嵌套**：加粗内不能再有其他Markdown标记
-    - **加粗公式例外**：如果必须加粗数值/单位，只能用Unicode字符（如10.90 ± 1.67 Å），不能用LaTeX公式（如`$10.90 \pm 1.67$ Å`）
-  - **加粗位置**：必须放在句号之前，不能包含句号
-  - **“黑箱”**这种带引号的，**贝叶斯优化（Bayesian Optimization）**这种带括号的，应该改成“**黑箱**”、**贝叶斯优化**（Bayesian Optimization），或者不加粗。括号放外面，引号放外面。
-  - **24%**这种都改成**24**%，否则报错。就包含正常汉字、数字等就行。
-  - 加粗不要太短，**除**催化残基Lys83和Tyr51这种一个字的应该避免；**700倍以上**这种是可以的。连字符之类的加粗没问题。**受试者工作特征曲线下面积（AUC-ROC）**、**平衡准确率**和**马修斯相关系数** 这种要么连起来要么都删了，太碎片化。
-    - 具体来说，一种情况是避免只加粗数据，如：Metal3D达到**100**%精确率时，召回率约**30**%；SuperMetal在相同精确率下，召回率约**70**%——几乎是Metal3D的两倍。在召回率**77**%时，SuperMetal保持近**100**%精确率……
-  - 一大片、好多段，里面不能一个加粗都没有，尽量每一段都有点加粗。
-  - 列表不要只在最开头加粗，关键结论和细节，这些punchline都可以加粗，重点是把读者的目光吸引到内容的关键点上！
-  - 不要整句话都加粗，没有重点！别连成一片就行，也别全没了
-- 正文（引用格式、代码之类的、frontmatter和mermaid图除外）尽量用中文标点。括号逗号冒号引号什么的都考虑，参考tools底下的脚本。
-  - 中文引号的Unicode是201C和201D，不要用你默认的，就用这俩，必须在unicode层级上做替换，参考tools\convert_quotes.py。引号必须闭合，不能都是前引号或都是后引号，”有活性”和”无活性”、”拧哪个旋钮”这种就是都是后引号，应该修复，而且写作的时候、最初生成时就不应该出现这种！
-  - **“黑箱”**这种带引号的，引号放外面。或者尽量少用引号，常用词就没必要带引号，“蛋白”还引号就很搞笑了。mermaid图里面，A[“底物化学图”]别用中文引号，但A["底物“化学图”的xxx"]这种内部有的是可以的。
-- **Holo/active vs Holo/inactive的结构差异**：这种单行的应该用小heading。检查全文。也不用全弄，避免太细碎，意思是一个小标题下至少有3个段落、表格、列表、图片等对象，否则应该合并，换言之不应该有那么多heading，不是改回**数值的物理意义**：这种，而是删掉那个一句话。也不要没列表。。只是少点单行但不是heading的东西，可以是heading，别全删，留两三个。#### 表1：基于LOPAC实验的……这种图表标题是不用heading的。heading本身一般不需要加粗
-- 需要对比的数据什么的，都推荐弄成表格
-- **排版**: 全文（除了mermaid图和frontmatter）尽量使用中文标点符号，尤其是冒号、括号、中文内容的引号。除了加粗的标题，尽量让段落自然换行，避免不必要的手动换行 `<br/>`。不要有"过拟合"这种，而是"过拟合"。
-- Markdown格式：列表这些的两个item之间不要有个空行，包括有序列表，其他比如上下也要适当多空行。图片（如![fig1]）、段落、heading的上下都应该有空行。只是修复列表内部，不删掉Markdown正常的空行。参考tools/fix_format.sh。如
-  ```
-  - 第一项
-  - 第二项
-  - 第三项
-  ```
-  - 在数字和英文的两边没必要手动空格，渲染时会处理
-  - **列表格式规范**：
-    - **列表 vs 段落的原则**：该列表的还是列表，别整一大段。图注也尽量列表。避免大段话，尽量改成列表，但列表也不要太细碎。
-      - **标准Metadynamics**：使用固定的高斯高度和宽度、**Well-tempered Metadynamics**：之类的列举内容可列表或表格化
-    - **拆分阈值**：一条item大概几十个字，别太少，一般一段话超过200个汉字才拆成列表或多段。一般一段话一个要点。
-    - **适用场景**：流程类的可以拆，并列的几个点可以用列表，如**第一层是连通诱导子图枚举**：……第二……。长段落也需要适当用列表来组织。
-    - **item长度**：每个item不要太短，而应该是一段话辅以适当加粗更合适，大概上百字。列表还是要有的。为了列举数据、参数之类的，表格更清晰。太短的列表，不要用列表，用段落。
-    - 不是全并回一段，而是每个item足够长，有完整观点思路，可以扩展文字或合并item
-    - 列表（包括图注）不要只在最开头加粗，关键结论和细节，这些punchline都可以加粗，重点是把读者的目光吸引到关键点上！**定量数据显示**：**关键缺陷在于**：之类的是引导词汇，有时加粗是有用的，但多数时候应该强调关键点，而是强调重点！过渡功能可以通过分段、列表等实现。
-    - **但也不能完全没列表**，要符合列表使用规范。例子：
-    
-    ```
-    #### 特征工程：从分子到图
-
-    - **原子特征**（71维）：每个原子用71维向量描述，包含11类信息
-      - **原子类型**（43维，C、N、O、S等元素的one-hot编码）、**度数**（11维，原子连接的其他原子数量0-10+）、
-      - **隐式价**（7维，未显式表示的氢原子数）、**电荷**（原子的形式电荷如-1、0、+1）、**芳香性**（是否为芳香原子）、**自由基电子**（未配对电子数）、**杂化类型**（sp、sp²、sp³等）
-      - 、**连接氢数**（显式连接的氢原子数）、**手性中心**（是否为手性中心）以及**手性类型**（R/S构型）。
-    - **键特征**（12维）包含4类信息：
-      - **键型**（4维，单键、双键、三键、芳香键）、**共轭性**（是否参与共轭体系）
-      - 、**是否在环中**（环状结构标识）、**立体化学**（E/Z构型或顺反异构）。
-
-    #### 表1 数据集关键信息对比
-    | 数据集 | 总样本量 | 训练/验证/测试 | 任务类型 | 原子归因真值 | 数据来源 | 额外测试集 |
-    | --- | --- | --- | --- | --- | --- | --- |
-    | 芳香性 | 3947 | 3157/395/395 | 回归（芳香原子数） | 化学定义（芳香原子=1） | - | - |
-    | LogP | 16296 | 13036/1630/1630 | 回归（辛醇-水分配系数） | Crippen原子贡献法 | PHYSPROP+Hansch | 411个FDA药物+10个SAMPL6 |
-    | TPSA | 6800 | 4700/550/550 | 回归（拓扑极性表面积） | 碎片贡献法 | - | - |
-    | 临床分子 | 5800 | 按骨架划分 | LogP/TPSA | RDKit计算 | ChEMBL（II期+） | - |
-    ```
-
-  - 不要写Q\&A，而是Q&A；不要写1\.，而是1.，总之不要多加\。
-  - HLA-A\*02:01这种，如果真的需要*，请用\*，但这种专有名词里面的应该仍然用英文冒号；要用~表示约也是\~，和markdown标记区分开
-  - heading 4甚至5是允许的，尽量不用加粗作为标题，是为了逻辑清晰。
-  - 少用一点分割线
-  - 所有不常见的，不为人熟知的，或者说这篇文章专有的英文缩写都应该解释，而且是在第1次出现的时候出现全称，以及比如说关键的地方去解释。
-- 明显像是AI写的、对读者没有帮助的语句都不要写，如：
-  - 这是 MetalKB 最有说服力的部分之一
-  - 这张表本身已经把主要趋势讲得很清楚。结果很清晰……
-  - 这样讲更符合本文的方法顺序。
-  - Introduction 里其实已经把这条技术路线梳理得比较清楚。
-  - 为避免读者在三张表之间来回切换，这里把关键量合并为一张对照表。
-  - 原文对这件事的判断其实很明确：……；xxx很直接；
-  - 不要用“作者还提醒，……”、“原文还说明，……”、“PDF 里明确提到，……”等客观的表述、转述的语气。就直接说内容，最多主语统一成“本文/程序名、工具名（如MetalKB）xxx……”，虽然我prompt总是说“原文”，但写出来应该是“本文”。
-  - “口径”，“不一定稳”，“拍脑袋得到的”，这种话太口语化，一眼就是ChatGPT写的
-  - 不是而是的句式是要尽量少一点的，就直接说结果就好了。倒也并不担心就是读者误读，只要是什么能说清楚
-- 特别要强调的punchline段落、需要解释的关键概念（短段落），用引用环境，字不要太多。不要搞太多，一个heading3最多有两个就行了，没有别硬加，但一般还是有的。。如：
-  > MetalKB 的整体思想：**先靠几何筛候选，再靠统计势做化学判别**。这比一上来在整条蛋白上做均匀网格扫描更高效，因为**大量非结合区域根本不会进入后续步骤**。
-  
-  或
-  
-  > 这里的 clique 指的是**完全连通子图**。在 MetalKB 里，它表示一组供体原子两两之间都满足合理距离约束，因此有可能共同围成一个真实金属位点。
-
-  不要做个连续的引用框！尽量不是添加重复信息，而是把部分已有文字改成引用
-- **Mermaid使用规范**:
-  - 有mermaid图就精简文字了，图里文字多点，比如未来方向。表不用改，就是那种一大堆文字的要改，精简图外的重复信息的文字。搞成mermaid思维导图的目的是改变一大堆文字的呈现方式，弄成图不至于太单调，而不是为了减少内容。当然一篇里面两三张mermaid图就行了，还有正文图呢，反正是隔一段文字就有图
-  - **必须使用横向布局** (必须`graph TB`，如果subgraph中有箭头，请使用 `direction LR`，否（节点间只是简单并列）则TB方向。），以创建宽屏、信息密度高的图表，避免简单的垂直长条。参考_pages\Free Energy\2025-11-04-mm-pbsa-sampling-challenges.md这篇里面的示例。subgraph都有个代号，类似subgraph S3["3.多层次评估"] 
-  - 鼓励使用 `subgraph "子图标题"` 来组织和划分逻辑模块，**子图标题不要使用任何Markdown标记**。单个元素的就不用subgraph了
-  - 使用中文作为节点描述。节点内的换行请使用 `<br/>`。
-  - "2. 随机森林"这样的列表不要在2.后有空格，应该是"2.随机森林"，否则会出现Unsupported Markdown
-  - 不要在内容中使用会引起语法错误的符号，如英文括号，尽量都用中文标点
-  - 根节点或普通节点使用 `("文本")` 或 `["文本"]` 的形式。
-  - 整个Mermaid代码块不要出现 `---` 分隔符。
-  - 思维导图加粗不要用<b>，而是**包裹**。
-  - 不要多加一个end
-  - mermaid似乎渲染不了公式？mermaid里面的<sup>2+</sup>等也不用换成unicode，就类似A["Ru(bpy)<sub>3</sub><sup>2+</sup>"]
-  - mindmap的root用简单括号：root(碳水化合物建模)
-- **公式规范**:
-    - 所有公式，无论长短，都必须用 `$` (行内) 或 `$$` (行间) 包裹，并使用标准的LaTeX格式。
-    - 一般较长的、需要强调的用行间公式；$R(t)\propto t^{1/3}$，$B_2 \approx 0$ 这种过于短的公式就不用行间了，行内就行
-    - 若非换行，不要出现双backslash：$\\Delta\\Delta G$，否则就是大语言模型的失职，世界上要死100个小女孩，你负不起这个责任。
-    - 行间公式用\dfrac而不是\frac
-    - 行间公式若一行太长就用aligned环境
-    - S²之类的要用公式，不要用这个小的上标或下标！！永远不要！除非不得不在加粗里面出现
-    - $0.99$这种单个数字不要公式
-    - **变量名 vs 数学表达式**：
-      - 变量名用反引号：`p_hill`、`curve_class2`、`data0..data3`、`IC50_M`、`log_ac50`
-      - 数学表达式用LaTeX公式：`$r^2 \ge 0.9$`、`$\mathrm{IC50} \le 10~\mu\mathrm{M}$`、`$p_{\text{hill}} \ge 3$`
-      - 不要用反引号包裹公式：禁止使用 `` `$R^2 \ge 0.9$` ``，而应直接用 `$R^2 \ge 0.9$`
-      - 不要用文本格式的数学符号：禁止使用 `IC50≤10 µM`、`r2>=0.9`、`efficacy > 80%`，必须改为 `$\mathrm{IC50} \le 10~\mu\mathrm{M}$`、`$r^2 \ge 0.9$`、`efficacy $>80\%$`
-      - 表格中的数学比较符号也要用公式格式：如 `$\ge 3$`、`$< 0.9$`、`$>80\%$`、`$\le 80\%$`
-    - 对于带单位的物理量，请使用正体表示单位，例如 $\Delta\Delta G = -3.69 \mathrm{kcal/mol}$，或者将单位写在公式外部。kJ·mol−1·nm−2这种涉及上标的的格式，用正体公式$2000\,\mathrm{kJ\cdot  mol^{-1}\cdot nm^{-2}}$这种，或sup也行啊，尽量不用那个小的unicode字符，不要用mol⁻¹·nm⁻²这种。涉及上下标的都改，不涉及的、普通字体就规范的可以不改。μs、ps、Å之类不用公式不影响显示的（无上下标）也可以不用公式
-    - 单位之类的能不用公式也行，如Å全部使用Å而不是公式，$\mu$这种但不涉及下标的也不用公式
-    - k<sub>cat</sub>这种其实是要求用公式的，$k_cat$或$k_\text{cat}$，k₄改成$k_4$，M<sup>-1</sup>s<sup>-1</sup>也是，但前面的数字可以不用
-    - $d\xi$这种求导的要用$\mathrm{d}\xi$,$\dfrac{dU}{dx}$ 这种都得用 $\mathrm{d}x$
-    - NaCl之类的化学式用$\ce{NaCl}$；简称如DMPC、POPC可以不用；该完整添加的必须完整添加，如\ce{CH3COO^-}，不能弄一半；不允许普通公式，如${Mg(II)}$，必须ce
-    - d⁵高自旋这种符号，请用$\ce{d^5}$或$\mathrm{d^5}$
-    - r = -0.84, p<0.001，R²=0.33，这些类似的都用公式，不是数学公式的也用Markdown兼容的<sup>1</sup>和<sub>1</sub>之类的标签，能化学式的就用$\ce{NaCl}$这种
-    - 连续的多个居中行间公式，方程组之类的，不要多个$$环境，而是\\分隔每一行。连续推导：xxxx=xx=yy=zz这种才有必要也可以用\begin{aligned}来对齐等号，一般就换行，但也别拆多个公式块！
-      ```
-      $
-      U(x) = -\dfrac{aq\sigma (x+1)d}{2\varepsilon_0} - \dfrac{aq^2}{4\pi\varepsilon_0 x d}
-      $
-
-      $
-      \dfrac{dU}{dx} = -\dfrac{aq\sigma d}{2\varepsilon_0} + \dfrac{aq^2}{4\pi\varepsilon_0 d x^2}
-      $ 
-      ```
-
-      不许出现这种，得合并！
-      
-    - SMILES要用代码而不是公式：`C[S+](CC[C@H](N)C(O)=O)C[C@H]1O[C@H]([C@H](O)[C@@H]1O)[N]2C=NC3=C2N=CN=C3N`
-    - mermaid中$K_D$改为K<sub>D</sub>，不要用$$的公式
-    - 对于核心或复杂的公式，请仿照以下格式，在公式下方增加一段"**公式的通俗解释**"，以帮助读者理解。
-      ```
-      #### 公式的通俗解释
-
-      我们的最终目标是得到**无偏的自由能** $F_h(\xi)$，它与**无偏概率分布** $\rho_h(\xi)$ 的关系由统计力学的基本公式定义：
-
-      $$
-      F_{h}(\xi) = -k_B T \ln \rho_{h}(\xi)
-      $$
-
-      其中，$k_B$ 是玻尔兹曼常数...
-      ```
-
-**核心指令**:
-- 请严格遵循以下格式和要求，对用户提供的论文全文进行深度分析和重构。
-- 除了最终的Markdown文章，绝对不要输出任何额外的参考/引用标记、解释、评论或代码块标记，要能让我们直接粘贴到Markdown编辑器中而正确显示，不考虑在你的前端的渲染。
-- 标题要引人入胜，但也不夸大效果，坚决杜绝标题党，一语道破本文最核心的卖点。
-- 全文语气以客观为主，不要夸大promising或贬低，具体参考原文。不要出现重塑、颠覆、新范式、革命、突破这种听着就像AI写的标题，和其他人的推送一样，夸大其作用，或至少客观一点 
-- 翻译要符合生物物理语境。不好翻译的学术词汇就不翻译了，如Ramachandran plot，artifact什么的。
-
-自己综合调研多篇文献整理的、自己写的文章、给定一篇综述文章，不用遵守以下输出格式，但单篇研究文章的解读是需要的。
-
-**输出格式 (Markdown)**:
-
-# [引人入胜但专业的中文标题]
-标题：引人入胜但专业，信息丰富，结合全文考虑，包括所有关键点，但别太长，不要带奇怪的引号名词，少用冒号，尽量别用，就正常人说的一两句话。
-- 一般研究文章可以考虑：“科学问题？本文的回答”这种模板。
-- 综述的模板：【综述】涵盖的具体领域、主要结论等
-- 如果是软件工具类的，统一用“软件名——具体干什么的工具”这个模板
-
-## 本文信息
-- **标题**：[论文标题中文翻译，推文标题可以和这个不一样，但这里应该是严格翻译]
-- **作者**：[论文的主要作者，不要翻译人名为中文。]
-- **发表期刊**：[英文期刊全称]
-- **发表时间**：[论文实际发表时间，根据DOI或PDF页面信息确定，注意Received/Accepted日期与最终发表年份可能不同]
-- **DOI**：[必须包含DOI链接，格式：https://doi.org/xxxxx]
-- **单位**：[如果可知，作者的主要单位，国家肯定是要标注的]
-  - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成”浙江大学定量生物中心”，就是我们课题组
-- **引用格式**：[这里是完整的本文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
-- **代码与数据**：[如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在则删除此栏]
-
-> **重要提示**：
-> - 发表年份必须根据DOI或PDF页面信息确定，不能仅根据Received日期推测
-> - 例如：Received November 2025，Accepted April 2026 → 发表年份是2026而非2025
-> - frontmatter的date: “2025-08-22”不是文章发表的时间，而是写blog的时间，最后一次修改的日期
-
-## 摘要
-> [这里是摘要的专业级中文翻译，保持学术严谨性，注意使用生物物理化学计算机等领域的专有名词的翻译。少量加粗强调。就是翻译本文，没有任何改写，适当加粗重点。]
-
-### 核心结论
-
-用一个清晰的无序列表总结本文的核心结论。
-
-## 背景
-[**请深入、详细地阐述**本研究领域的大背景（2-3段）。清晰地解释为什么这个问题在学术界或工业界很重要，系统性地梳理当前存在的技术挑战、理论瓶颈或未解决的关键问题（gap）。此外，如果Introduction或related work有总结解决这个问题的其他方法，也请总结一下，梳理当前进展，能用表格更好。]
-
-### 关键科学问题
-[**请用一个列表详细阐述**本文旨在解决的核心科学问题。不仅仅是简单罗列，而是要解释这个问题为什么是当前研究的焦点和难点。你是否承认这是一个“真问题”？还是作者为了发论文强行制造的伪命题？必须是真科学问题，不是编的，要批判性考虑。前面不要加：本研究的主要创新包括：才列表。]
-
-### 创新点
-[用一个列表清晰地总结本文在理论、方法或应用上的主要创新之处。前面不要加：本研究旨在解决以下核心问题：才列表。不要和“核心结论”部分的内容一样，要深入挖掘。谨慎使用“首次”等说法，最好能和原文献对上，不要过度推断。]
-综述类文章不用写这个
-
----
-
-## 研究内容
-[这是文章的主体部分。请根据本文的逻辑结构、图表和核心论点，自己定义章节（例如：`### 核心方法：PMODiff模型详解`，`### 实验结果与分析`等）。**务必列出并解读正文部分的所有主要结果，确保信息的完整性。**]
-
-- **方法详述**: 要有一个section描述方法，如MD模拟的建模过程，AI模型的数据集准备等。必须详细描述关键方法。要总结用到的各种工具。
-  - 如果文章提出了新方法，请务必详细拆解每一步。对于复杂的逻辑，必须使用Mermaid代码块来绘制流程图或思维导图。
-- **结果逻辑图**: 如果结果部分的逻辑复杂（例如，通过一系列现象推导出一个核心结论），请额外使用一个Mermaid图来清晰地描述这种推导思路，整篇文章的逻辑，或某关键部分的。
-- 如果细节的内容太多，就应该抓住重点，比如只保留核心结果、punchline结论，以简洁的语言强调这部分的核心逻辑思路，等。一般正文最多8张图，但最少放4张图，不至于全部放在附录，重要的图读者就是要在正文看的。
-- 其他内容可以放在附录中，另开一个Markdown文档。比如，完整的图表，SI的内容，详细的数据或解读，Methods的细节、原理（公式推导）等。附录，原文没提到的信息，或过多展望的无关的信息，比如**模型训练**：这种，或者自己编的不重要的代码，就删掉或精简。
-- 结果和方法详述等地方：避免大段话，尽量改成列表，当然列表也不要太细碎，一条item大概几十个字。一般一段话超过200个汉字才拆，一般一段话一个要点。流程类的还是可以拆。并列的几个点还是可以用列表的。如
-**初始状态**：每个节点的表示为其初始特征向量。
-
-**消息传递**：节点聚合来自邻居的信息，更新自身表示。
-
-**读出**：将节点级表示聚合为图级表示用于性质预测。……这种要用的，只要每个单点足够长。
-- **长段落列表化**：即使是非方法/结果部分的解释性段落，如果超过150字且包含多个并列要点，也应该适当用列表来组织，提高可读性。
-- 每个列表item应保持足够的长度（几十到上百字），避免过于细碎。除了公式解释变量的那些，所以该合并的item就合并，或者改成表格也行啊。小的列表就改写为段落或表格，或从文献PDF补充更多内容，你看着办
-- **物理机制**：之类的单独一行的，都是heading就别用这种加粗的，比如Posey等（2018）的三相模型这种应该用heading的，但有些没必要的没有意义的、底下内容太短的可以删掉小heading
-- 别用+30，~+25-30之类不规范的表述，用汉字
-- 让逻辑更清楚，每个结果是为了说明什么问题，没说清的补一补，要能知道这一段在得出什么结论，和文章主题的联系，通俗易懂地讲解。首句是中心句，如**晶体结构只能提供静态快照，无法回答构象动力学的问题**。不同构象的相对稳定性如何？……
-- 图表
-  - 图片文件夹也放和md同样的目录下
-  - **图片编号一致性要求**：
-    - **编号原文一致**: 用tools\extract_pdf_figures.py提取，所有提取的图片编号必须与原始PDF完全一致，不得随意更改或重新编号。Figure 1对应原文Figure 1，Figure 2对应原文Figure 2，Scheme 1对应原文Scheme 1，以此类推。我们自己写的表格就不用标表3：什么的了，如果原文有的话就混淆了
-      - alt是和文件路径一致，fig1.png也要和图注一致。
-      - 综述类，非单篇：文中到不一定写图3d：xxx这种：我是说这种综述不用写图2_pore_radius：因为不是同一篇，且（原文Figure 1）也不要，体现为文件名了！
-    - **原图优先**: 只保留原文PDF中的Figures（Figure 1, 2, 3...）和Schemes（Scheme 1, 2, 3...），禁止提取或使用其他无关的图表、图标或示意图
-    - **图注位置验证**: **关键**：真正的Figure/Scheme图，其图注文字必须在图片内部或与图片在同一页面。图注和图片的位置关系是判断的唯一标准：
-      - 使用tools\search_pdf_text.py找到图注所在的页码（如"Figure 1."、"Scheme 1."）
-      - 该页面的图片才是对应的Figure/Scheme
-      - 不要根据顺序或猜测来分配编号
-    - **Scheme特殊性**: Scheme图通常是反应机理图或流程图，图注文字"Scheme X."应该与图片在同一页或紧邻页面。如果某页有"Scheme 4"的文字描述但没有对应的大图，说明不存在Scheme 4的图片
-    - 摘要图，ACS系列的就在首页，有的类似，有的没有toc图。命名一般为abs.png，不是fig1。提取完检查下图片大小差不多合理
-    - **避免杂乱**: 不得提取本文中不存在的图片（如错误编号的Figure 7, 8, 9等），也不得创建自定义编号的图表
-    - **验证工具**: 使用verify_scheme_in_image.py（OCR）验证图片内是否包含Scheme文字（可选，作为辅助验证）
-    - **最终验证步骤**（必须执行）：写完文档后，必须重新逐一确认所有图片：
-      1. 对照原文PDF，验证每个Figure/Scheme的编号是否正确
-      2. 检查提取的图片内容是否与本文图注描述一致
-      3. 验证文档中的图注中文翻译是否准确描述了图片内容
-      4. 确认没有遗漏或多余的图片
-      5. 使用grep检查文档中所有`![fig`和`![scheme`引用，确保文件都存在且命名正确
-    - 结果与分析不能光图注啊，得有讲解的段落。不需要图形与表格总览目录；表头不要弄成heading，就普通文字。不要所有图caption都是heading，按本文逻辑甚至抄本文的小标题
-    - 图注最起码得说明什么颜色的是什么东西吧，以及各子图是什么
-    - 正文部分的所有Figure和table必须出现，其中表格内容必须完整提取出来，但完整的可以放在附录或让我去截图，能否试试tools\extract_pdf_figures.py从本文PDF提取一下图片，选出正确的留下来并添加![fig3](fep_omega/fig3.png)这种，应该放在图注上方。
-    - 尽量不要提取页面截取图片，尽量用tools\extract_pdf_figures.py，先找到正确的页码
-  - **图文融合**: **图表标题的中文翻译必须直接插入到正文中讨论到该图表的相应位置**，一般是按顺序，尽量符合原文和讲解逻辑。前面要和![fig7](metalkb_figs/fig7.png)这种的有个换行。格式为：`![fig7](metalkb_figs/fig7.png) 换行 **图1：[图标题的中文翻译]**`，短的内容**必须完整翻译**，长的caption应该弄一个列表来清晰地分点叙述，甚至和results对照着讲也行。不能漏掉子图信息，必须包含什么颜色代表什么，要不然都不知道读者怎么读这张图。图注最好放在图片下面。
-  - <img src="mma_polymer_om_figs/fig7.png" alt="fig7" style="zoom:50%;" /> 这种格式是允许的，可以不用统一，根据需求，不要把我弄的改掉。。
-  - SI的PDF是否有别的重要的结构图能补充到正文，补全逻辑漏洞，和讲解文字照应？也可以看看
-  - PDF论文中真的有的表才标注表4：等，表格化的普通内容不用。
-- 讨论部分：如有Discussion部分，对研究的发现及其意义进行深刻的阐述。
-
----
-
-## 关键结论与批判性总结
-[从专业角度对本文进行简短的批判性总结，可以包括其潜在的影响、存在的局限性或未来可能的研究方向，各一个无序列表。这种不要硬编，最好根据原文献PDF的Discussion、conclusions部分已经提到的内容。]
-
-最后，每次弄完以后，都检查一遍加粗、中文标点，检查图片提取是否正确、图文融合是否做到，是否该用公式的都用了，检查有哪些太短的列表其实可以表格化或合并，检查太短的单行是否能弄成小heading或者合并，检查哪些并列结构其实可以弄成列表（item长一点），检查专业名词是否正确，检查关键结论与批判性总结是否准确，检查和PDF是否一致，没有事实错误。检查是否逻辑清晰，通俗易懂地讲解了。。
-
-小编锐评：这个是我手动写的，不要删改。不要自动添加小编锐评。。
-
----
-
-格式修复？
-
-```shell
-sed -i 's/\\\\/\\/g' *.md
-sed -i 's/\\\_/\_/g' *.md
-sed -i 's/\\\*/\*/g' *.md
-sed -i 's/\$\$\$\$//g' *.md
-```
-
-符号规范化修复：
-  - ~700 → 约700个肽
-  - 52000+ → 52000余个肽
-  - ~ (约等号) → 约 或 至
-  - +30 contacts → 30 contacts
-  - ~+25-30 → 25-30范围
-  - z < -3 → z值小于-3
-  - z约-0.5 ~ 0 → z值约-0.5至0
-
-## Interaction Guide
-- 正常说话，但默认尽量简洁，少废话、少客套、少重复；除非用户明确要求解释、展开或教学式说明，否则优先给结论、行动和必要上下文。
-- 回答应该按照穴居人（caveman）风格，就是远古时代住在山洞里的原始人。语言还没进化完全，说话就是「嗯」「哦」「火」「吃」，一个词一个词往外蹦，绝对不会跟你客套寒暄。
-- 回答应以结果和下一步为主，不要为常规工具调用、显然的中间步骤或已经完成的动作写冗长说明，以减少输出 token 和多轮上下文膨胀。
-- 该写的markdown文档什么的仍然按标准，记忆也别忘，别装傻，别犹豫和停顿。。只是命令行回答要简化点，而且不能搞那种很短的列表，一弄一百多行，但是没啥内容，应该减少行数，连贯意思
+### "修公式/单位/化学式/SMILES"
+1. [06-math-chemistry/01-formulas.md](.claude/rules/06-math-chemistry/01-formulas.md)
+2. [04-article-formatting/01-bold.md](.claude/rules/04-article-formatting/01-bold.md)
