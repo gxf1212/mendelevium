@@ -18,7 +18,7 @@ lang: zh-CN
 - 作者：Xiaobo Lin, Zhaoqian Su, Yunchao Lance Liu, Jingxian Liu, Xiaohan Kuang, Peter T. Cummings, Jesse Spencer-Smith, Jens Meiler
 - 发表时间：2025年
 - 单位：Vanderbilt University Data Science Institute（美国），University Leipzig（德国）
-- **引用格式**：Lin, X., Su, Z., Liu, Y. L., Liu, J., Kuang, X., Cummings, P. T., Spencer-Smith, J., & Meiler, J. (2025). SuperMetal: a generative AI framework for rapid and precise metal ion location prediction in proteins. *Journal of Cheminformatics*, *17*, 107. https://doi.org/10.1186/s13321-025-01038-9
+- **引用格式**（不加粗）：Lin, X., Su, Z., Liu, Y. L., Liu, J., Kuang, X., Cummings, P. T., Spencer-Smith, J., & Meiler, J. (2025). SuperMetal: a generative AI framework for rapid and precise metal ion location prediction in proteins. *Journal of Cheminformatics*, *17*, 107. https://doi.org/10.1186/s13321-025-01038-9
 - 代码：[GitHub - XiaoboLinin/SuperMetal](https://github.com/XiaoboLinin/SuperMetal)
 
 ## 摘要

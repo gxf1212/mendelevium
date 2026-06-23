@@ -15,13 +15,13 @@ lang: zh-CN
 ## 本文信息
 
 - **标题**：系统性多靶点QSAR基准测试：机器学习算法、分子描述符与验证策略
-- **作者**：Salah A. Alshehade, Ghazi Al Jabal, Iqbal H. Jebri
+- **作者**：Salah A. Alshehade, Ghazi Al Jabal, Iqbal H. Jebril
 - **发表期刊**：Journal of Chemical Information and Modeling
-- **发表时间**：2026年5月26日（Accepted）
+- **发表时间**：2026年（Received：2026年4月21日；Revised：2026年5月21日；Accepted：2026年5月26日）
 - **DOI**：https://doi.org/10.1021/acs.jcim.6c01237
-- **单位**：Universiti Sultan Zainal Abidin（马来西亚）、MAHSA University（马来西亚）、Al-Zaytoonah University of Jordan（约旦）
-- **引用格式**：Alshehade, S. A.; Al Jabal, G.; Jebri, I. H. Systematic Multi-Target QSAR Benchmarking: Machine Learning Algorithms, Molecular Descriptors, and Validation. *J. Chem. Inf. Model.* **2026**. https://doi.org/10.1021/acs.jcim.6c01237
-- **代码与数据**：https://github.com/salahash/ML_QSARx （v1.0 tagged release）
+- **单位**：Universiti Sultan Zainal Abidin（马来西亚）、MAHSA University（马来西亚）、Yarmouk Private University（叙利亚）、Al-Zaytoonah University of Jordan（约旦）
+- **引用格式**：Alshehade, S. A.; Al Jabal, G.; Jebril, I. H. Systematic Multi-Target QSAR Benchmarking: Machine Learning Algorithms, Molecular Descriptors, and Validation. *J. Chem. Inf. Model.* **2026**. https://doi.org/10.1021/acs.jcim.6c01237
+- **代码与数据**：https://github.com/salahalsh/ML_QSARX （v1.0 tagged release）；QSAR-X网页界面：https://insilicosigma.com/qsar-x/
 
 ## 摘要
 
@@ -74,7 +74,7 @@ lang: zh-CN
 ### 创新点
 
 - **四靶点统一流程基准测试**：在涵盖激酶、GPCR、蛋白酶、离子通道的四个靶点上使用完全一致的实验流程，排除了方法学差异带来的混淆因素
-- **多维度实验设计**：10个实验覆盖了算法比较、描述符比较、特征选择、划分策略、Y-scrambling验证、跨靶点一致性分析、超参数优化、GNN基线、适用域分析和活性悬崖分析
+- **多维度实验设计**：原文方法部分列出9类系统实验，结果部分进一步以Experiment 10展开活性悬崖分析，覆盖算法比较、描述符比较、特征选择、划分策略、Y-scrambling验证、跨靶点一致性分析、超参数优化、GNN基线、适用域分析和活性悬崖分析
 - **多随机种子验证与bootstrap置信区间**：使用5个随机种子和1000次bootstrap重采样，确保结论不依赖于特定的数据划分
 - **靶点依赖的泛化差距量化**：在多靶点框架下系统报告scaffold gap的变异范围（约2倍），为QSAR模型的泛化能力评估提供了新的参考基准
 
@@ -84,23 +84,23 @@ lang: zh-CN
 
 ### 数据集与方法
 
-研究通过ChEMBL REST API从ChEMBL 35数据库中提取了四个靶点的结合活性数据（IC$_{50}$或 $K_i$），并使用**自定义Python脚本**（RDKit 2025.03.6）进行统一的数据清洗流程：
+研究通过ChEMBL REST API从ChEMBL 35数据库中提取了四个靶点的结合活性数据（$\mathrm{IC}_{50}$或$K_i$），并使用**自定义Python脚本**（RDKit 2025.03.6）进行统一的数据清洗流程：
 
 - 有效性过滤：去除缺少SMILES或活性值为非正的记录
 - 去重：同一canonical SMILES对应多条测量值时取中位数
 - SMILES规范化：使用RDKit canonical SMILES标准化
 - 盐去除：去除含片段分隔符的SMILES
 - 分子量过滤：100–900 Da
-- 活性转换：IC$_{50}$（nM）转为pActivity（= −log$_{10}$(IC$_{50}$/M)）
+- 活性转换：$\mathrm{IC}_{50}$（nM）转为pActivity（= $-\log_{10}(\mathrm{IC}_{50}/\mathrm{M})$）
 
 最终获得33751个化合物，涵盖四个最重要的蛋白家族：
 
 | 靶点 | ChEMBL ID | 蛋白家族 | 活性类型 | 原始记录 | 最终数量 | pActivity范围 | 均值 ± SD |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| EGFR | CHEMBL203 | 激酶 | IC$_{50}$ | 17652 | 10036 | 3.05–11.52 | 6.90 ± 1.35 |
+| EGFR | CHEMBL203 | 激酶 | $\mathrm{IC}_{50}$ | 17652 | 10036 | 3.05–11.52 | 6.90 ± 1.35 |
 | DRD2 | CHEMBL217 | GPCR | $K_i$ | 13041 | 7558 | 3.07–11.52 | 6.77 ± 1.02 |
-| BACE-1 | CHEMBL4822 | 蛋白酶 | IC$_{50}$ | 14298 | 8080 | 3.86–12.00 | 6.68 ± 1.27 |
-| hERG | CHEMBL240 | 离子通道 | IC$_{50}$ | 12886 | 8077 | 3.00–9.80 | 5.43 ± 0.91 |
+| BACE-1 | CHEMBL4822 | 蛋白酶 | $\mathrm{IC}_{50}$ | 14298 | 8080 | 3.00–12.00 | 6.68 ± 1.27 |
+| hERG | CHEMBL240 | 离子通道 | $\mathrm{IC}_{50}$ | 12886 | 8077 | 3.00–9.85 | 5.43 ± 0.91 |
 
 ![fig1](qsar_bench_figs/fig1.png)
 
@@ -126,7 +126,7 @@ lang: zh-CN
 | K近邻（KNN） | 实例学习 | k=5, weights=distance |
 | Ridge | 正则化线性 | α=1.0 |
 | LASSO | 正则化线性 | α=0.01 |
-| 弹性网络（Elastic Net） | 正则化线性 | α=0.01, $l_1$_ratio=0.5 |
+| 弹性网络（Elastic Net） | 正则化线性 | α=0.01, `l1_ratio`=0.5 |
 | 多层感知器（MLP） | 深度学习 | layers=(256,128), relu, adam, lr=0.001 |
 
 ```mermaid
@@ -137,7 +137,7 @@ graph TB
         E1["1.算法比较：10种算法 × 5种描述符"]
         E2["2.描述符比较：RF × 5种描述符"]
         E3["3.特征选择：RDKit-2D逐步剪枝"]
-        E4["4.划分策略：随机 vs Scaffold"]
+        E4["4.划分策略：随机与Scaffold"]
         E5["5.Y-scrambling验证"]
         E6["6.跨靶点一致性：Spearman ρ"]
         E7["7.超参数优化：Optuna TPE"]
@@ -154,7 +154,7 @@ graph TB
 - **随机划分**：stratification-free随机采样，固定随机seed=42确保可复现性
 - **Scaffold划分**：使用RDKit的`MurckoScaffold.GetScaffoldForMol()`函数实现Bemis-Murcko scaffold划分
   - 提取每个分子的Bemis-Murcko骨架（环系统+连接链）
-  - 无环化合物归为单一"no-ring"组
+  - 无环化合物归为单一`no-ring`组
   - 相同scaffold的分子聚成cluster
   - 整个cluster只分配到训练集或测试集之一，确保scaffold不跨集
   - 所有唯一scaffold cluster随机打乱（seed=42），贪心累积到测试集直到约20%总化合物数，剩余进训练集
@@ -181,31 +181,31 @@ graph TB
 
 **RF以$R^2$ = 0.726排名第一**，且bootstrap 95%置信区间证实RF对所有竞争算法的优势均具有统计显著性（CI不包含零）。前5名算法的$R^2$集中在0.67–0.73区间内，而线性模型（Ridge、LASSO）和MLP则明显落后。
 
+![fig2](qsar_bench_figs/fig2.png)
+
+**图2：四个靶点上Top-5算法的测试集$R^2$比较**（ECFP4指纹，随机划分）。每个子图顶部标注了跨种子排名的Spearman $\rho$值（均 > 0.92），表明算法排名在不同随机种子间高度稳定。RF在所有靶点上均排名第一或接近第一，其误差棒（SD）也是最小的
+
 ![fig3](qsar_bench_figs/fig3.png)
 
-**图3**：EGFR上RF + ECFP4的预测值与观测值散点图。（a）训练集（$R^2$ = 0.942）：浅蓝色点沿红色虚线（完美预测线）紧密排列。（b）测试集（$R^2$ = 0.720）：数据点分散度增大，训练-测试差距为0.222，反映了RF在中等规模数据集上的典型过拟合程度。活性极端区域（pIC$_{50}$ < 5和 > 10）的偏差略有增大
+**图3**：EGFR上RF + ECFP4的预测值与观测值散点图。（a）训练集（$R^2$ = 0.942）：浅蓝色点沿红色虚线（完美预测线）紧密排列。（b）测试集（$R^2$ = 0.720）：数据点分散度增大，训练-测试差距为0.222，反映了RF在中等规模数据集上的典型过拟合程度。活性极端区域（$\mathrm{pIC}_{50} < 5$和$> 10$）的偏差略有增大
 
 ![fig4](qsar_bench_figs/fig4.png)
 
 **图4**：四个靶点上RF与Top竞争算法的$R^2$差异的bootstrap 95%置信区间（1000次重采样）。**绿色柱表示RF优势具有统计显著性（CI不包含零），灰色柱标注“n.s.”表示差异不显著**。RF在EGFR上对所有四个竞争算法均显著优于（绿色柱全为绿），在DRD2上对三个显著、对XGB不显著，在BACE-1上仅对SVR显著，在hERG上对所有算法均不显著
 
-![fig2](qsar_bench_figs/fig2.png)
-
-**图2：四个靶点上Top-5算法的测试集$R^2$比较**（ECFP4指纹，随机划分）。每个子图顶部标注了跨种子排名的Spearman $\rho$值（均 > 0.92），表明算法排名在不同随机种子间高度稳定。RF在所有靶点上均排名第一或接近第一，其误差棒（SD）也是最小的
-
-当将比较扩展到全部四个靶点时，这一模式高度一致：**RF在EGFR、BACE-1和DRD2上排名第一，在hERG上与XGB并列第一**。四个靶点的Top-5算法测试集$R^2$汇总如下（Table 4）：
+当将比较扩展到全部四个靶点时，这一模式高度一致：**RF在EGFR和DRD2上明确排名第一**；BACE-1上XGB以0.685略高于RF和LGBM（均为0.684），但bootstrap检验显示RF只显著优于SVR；hERG上RF和SVR同为0.578，所有Top算法差异均不显著。四个靶点的Top-5算法测试集$R^2$汇总如下（Table 4）：
 
 | 算法 | EGFR | DRD2 | BACE-1 | hERG |
 | --- | --- | --- | --- | --- |
-| RF | **0.726** | **0.654** | **0.684** | 0.578 |
-| XGB | 0.689 | 0.628 | 0.668 | **0.585** |
-| SVR | 0.692 | 0.610 | 0.636 | 0.578 |
-| LGBM | 0.674 | 0.611 | 0.655 | 0.556 |
-| GBR | 0.670 | 0.612 | 0.649 | 0.559 |
+| RF | **0.726** | **0.654** | 0.684 | **0.578** |
+| XGB | 0.689 | 0.629 | **0.685** | 0.576 |
+| SVR | 0.692 | 0.610 | 0.663 | **0.578** |
+| LGBM | 0.674 | 0.611 | 0.684 | 0.557 |
+| GBR | 0.670 | 0.612 | 0.673 | 0.559 |
 
 ![fig9](qsar_bench_figs/fig9.png)
 
-**图9：10种算法在4个靶点上的测试集$R^2$热力图**。颜色从深红（$R^2 \approx 0.3$）到深绿（$R^2 \approx 0.8$），清晰展示了树集成方法（RF、XGB、SVR、LGBM、GBR）的显著优势。线性模型（Ridge）在所有靶点上排名末位
+**图9：10种算法在4个靶点上的测试集$R^2$热力图**。颜色从深红（$R^2 \approx 0.3$）到深绿（$R^2 \approx 0.8$），清晰展示了树集成方法（RF、XGB、LGBM、GBR）和SVR等强基线的优势。线性模型（Ridge）在所有靶点上排名末位
 
 > 核心发现：**树集成方法在QSAR回归任务上的统治地位不是偶然的**。RF的内部特征bagging机制使其对高维稀疏特征（如2048位指纹）具有天然的鲁棒性，而梯度提升方法通过序列化学习也能有效处理这类数据。
 
@@ -217,15 +217,15 @@ graph TB
 | --- | --- | --- | --- | --- |
 | ECFP4 | **0.726** | **0.654** | **0.684** | 0.578 |
 | ECFP6 | 0.720 | 0.641 | 0.678 | 0.577 |
-| MACCS | 0.656 | 0.374 | 0.643 | 0.323 |
-| RDKit-2D | 0.570 | 0.577 | 0.650 | 0.564 |
+| MACCS | 0.656 | 0.574 | 0.643 | 0.523 |
+| RDKit-2D | 0.670 | 0.577 | 0.650 | 0.564 |
 | RDKit-2D+ECFP4 | 0.706 | 0.643 | 0.670 | **0.598** |
 
 ![fig5](qsar_bench_figs/fig5.png)
 
-**图5：5种描述符在4个靶点上的RF测试集$R^2$比较**。ECFP4在EGFR、DRD2和BACE-1上均表现最佳；仅在hERG上，组合描述符（RDKit-2D + ECFP4）以0.02的$R^2$优势略胜。MACCS在DRD2和hERG上表现极差（$R^2$分别为0.374和0.323），表明166位的结构键指纹对这两类靶点的分辨力不足
+**图5：5种描述符在4个靶点上的RF测试集$R^2$比较**。ECFP4在EGFR、DRD2和BACE-1上均表现最佳；仅在hERG上，组合描述符（RDKit-2D + ECFP4）以0.020的$R^2$优势略胜。MACCS在四个靶点上整体最弱，尤其低于ECFP类指纹，说明166位结构键对精细局部化学环境的分辨力不足
 
-**描述符层级的稳定性**值得注意：四个靶点上的描述符排名Spearman $\rho$均高于0.90，说明ECFP4 > ECFP6 > MACCS这一层级并非特定于某个靶点，而是反映了圆形指纹在编码局部化学环境方面的**固有信息优势**。hERG的例外（组合描述符略优）提示，全局理化性质（如logP、极性表面积）对hERG阻断的预测提供了额外的互补信息。
+**描述符层级的稳定性**值得注意：四个靶点上的描述符排名Spearman $\rho$均高于0.90，说明圆形指纹相对MACCS的优势并非特定于某个靶点，而是反映了ECFP在编码局部化学环境方面的**固有信息优势**。hERG的例外（组合描述符略优）提示，全局理化性质（如logP、极性表面积）对hERG阻断的预测提供了额外的互补信息。
 
 ### 实验3–4：特征选择与scaffold泛化差距
 
@@ -260,9 +260,9 @@ graph TB
 - 优化后排名可能改变：XGB在优化后在四个靶点中的三个跃升至第一位，但这依赖于单次测试集划分，结论需谨慎对待
 - 树方法收敛于狭窄的$R^2$区间：优化后，前5名算法的$R^2$差距不超过0.025，表明**描述符信息量才是性能天花板**
 
-![fig11](qsar_bench_figs/fig11.png)
+![fig10](qsar_bench_figs/fig10.png)
 
-**图11**：默认超参数 vs Optuna优化后的测试集 $R^2$（30次Optuna试验，5折交叉验证）。四个子图分别为EGFR、DRD2、BACE-1、hERG，浅色柱为默认参数，深色柱为优化后参数。每个柱顶标注了$\Delta R^2$值。梯度提升方法（XGB、LGBM）的提升幅度显著高于RF和SVR
+**图10**：默认超参数 vs Optuna优化后的测试集 $R^2$（30次Optuna试验，5折交叉验证）。四个子图分别为EGFR、DRD2、BACE-1、hERG，浅色柱为默认参数，深色柱为优化后参数。每个柱顶标注了$\Delta R^2$值。梯度提升方法（XGB、LGBM）的提升幅度显著高于RF和SVR
 
 ### 实验8：GNN基线——基础GCN不敌指纹
 
@@ -272,18 +272,18 @@ graph TB
 | --- | --- | --- | --- | --- |
 | EGFR | 随机 | 0.720 | 0.513 | −0.207 |
 | DRD2 | 随机 | 0.648 | 0.374 | −0.274 |
-| BACE-1 | 随机 | 0.680 | 0.156 | −0.524 |
-| hERG | 随机 | 0.580 | 0.292 | −0.288 |
+| BACE-1 | 随机 | 0.680 | 0.556 | −0.124 |
+| hERG | 随机 | 0.580 | 0.312 | −0.268 |
 | EGFR | Scaffold | 0.474 | 0.275 | −0.199 |
-| DRD2 | Scaffold | 0.427 | 0.206 | −0.221 |
-| BACE-1 | Scaffold | 0.599 | 0.515 | −0.084 |
-| hERG | Scaffold | 0.409 | 0.231 | −0.178 |
+| DRD2 | Scaffold | 0.541 | 0.321 | −0.221 |
+| BACE-1 | Scaffold | 0.632 | 0.548 | −0.084 |
+| hERG | Scaffold | 0.331 | 0.153 | −0.178 |
 
-![fig10](qsar_bench_figs/fig10.png)
+![fig11](qsar_bench_figs/fig11.png)
 
-**图10**：GCN vs RF + ECFP4在四个靶点上的 $R^2$ 对比。左图为随机划分，右图为scaffold划分。绿色柱为RF + ECFP4，紫色柱为3层GCN。红色数字标注了RF相对于GCN的优势（均为正值）。BACE-1在随机划分下差距最大（$\Delta R^2$ = −0.274）
+**图11**：GCN vs RF + ECFP4在四个靶点上的 $R^2$ 对比。左图为随机划分，右图为scaffold划分。绿色柱为RF + ECFP4，紫色柱为3层GCN。红色数字标注了RF相对于GCN的优势（均为正值）。随机划分下DRD2的差距最大（$\Delta R^2$ = −0.274），scaffold划分下DRD2的差距也最大（$\Delta R^2$ = −0.221）
 
-**GCN在随机划分下平均亏损0.218 $R^2$，在scaffold划分下平均亏损0.170 $R^2$**。这一差距在BACE-1上尤为惊人（随机划分下亏损0.524）。研究使用的GCN不含边特征和预训练，属于最基础的图架构，但即便如此，这一结果也提醒我们：**在中等规模的化学数据集（n < 10000）上，GNN的数据效率远不及精心构建的分子指纹**。
+**GCN在随机划分下平均亏损0.218 $R^2$，在scaffold划分下平均亏损0.170 $R^2$**。随机划分下差距最大的靶点是DRD2（亏损0.274），hERG也接近这一水平（亏损0.268）。研究使用的GCN不含边特征和预训练，属于最基础的图架构，但即便如此，这一结果也提醒我们：**在中等规模的化学数据集（约7500–10000个化合物）上，GNN的数据效率远不及精心构建的分子指纹**。
 
 ### 实验9：适用域——预测可靠性的量化
 
@@ -292,8 +292,8 @@ graph TB
 | 靶点 | AD阈值 | 域内占比 | $R^2$（域内） | $R^2$（域外） | $R^2$降幅 |
 | --- | --- | --- | --- | --- | --- |
 | EGFR | 0.475 | 92.7% | 0.738 | 0.369 | **−0.370** |
-| DRD2 | 0.488 | 92.0% | 0.671 | 0.322 | **−0.349** |
-| BACE-1 | 0.447 | 92.3% | 0.680 | 0.365 | **−0.315** |
+| DRD2 | 0.468 | 92.0% | 0.672 | 0.322 | **−0.350** |
+| BACE-1 | 0.447 | 92.3% | 0.680 | 0.366 | **−0.314** |
 | hERG | 0.590 | 87.4% | 0.620 | 0.108 | **−0.512** |
 
 ![fig12](qsar_bench_figs/fig12.png)
@@ -308,17 +308,17 @@ graph TB
 
 ### 实验10：活性悬崖——描述符的分辨力差异
 
-活性悬崖（Activity Cliff）是指结构高度相似但活性差异巨大的化合物对，是QSAR建模的“天敌”。研究定义cliff对的条件为ECFP4 Tanimoto ≥ 0.6且|ΔpActivity| ≥ 2.0：
+活性悬崖（Activity Cliff）是指结构高度相似但活性差异巨大的化合物对，是QSAR建模的“天敌”。研究定义cliff对的条件为ECFP4 Tanimoto $\ge 0.6$且$|\Delta \mathrm{pActivity}| \ge 2.0$：
 
-- **EGFR**的cliff密度最高（37.0%的测试化合物属于cliff），ECFP4的cliff化合物$R^2$为0.632，非cliff化合物为0.773
+- **BACE-1**的cliff密度最高（9531对，39.6%的化合物；测试集中38.2%的化合物属于cliff），其次是EGFR（8547对，37.0%）。EGFR上ECFP4的cliff化合物$R^2$为0.632，非cliff化合物为0.773
 - **hERG**的cliff密度最低（10.8%），且cliff与非cliff的$R^2$差距也最小（$\Delta = 0.100$），反映了hERG数据集较低的活性异质性
-- **MACCS的cliff预测能力最差**：在EGFR上仅$R^2$ = 0.497，因为166位结构键指纹无法区分仅差几个原子的cliff对
+- **MACCS的cliff预测能力最差**：四个靶点的MACCS cliff $R^2$均低于ECFP4和ECFP6，尤其在DRD2上仅为0.316，因为166位结构键指纹无法区分仅差几个原子的cliff对
 
 ![fig15](qsar_bench_figs/fig15.png)
 
-**图15**：描述符类型对活性悬崖化合物预测的影响（RF，随机划分，seed=42）。四个面板分别为EGFR、DRD2、BACE-1、hERG。每个面板中，蓝色柱为非cliff化合物的 $R^2$，灰色柱为全部测试化合物的 $R^2$，红色柱为cliff化合物的 $R^2$。Cliff对定义：ECFP4 Tanimoto ≥ 0.6且|ΔpActivity| ≥ 2.0。各面板上方标注了cliff和非cliff化合物的数量。ECFP4在所有靶点的cliff化合物预测上均表现最佳
+**图15**：描述符类型对活性悬崖化合物预测的影响（RF，随机划分，seed=42）。四个面板分别为EGFR、DRD2、BACE-1、hERG。每个面板中，蓝色柱为非cliff化合物的 $R^2$，灰色柱为全部测试化合物的 $R^2$，红色柱为cliff化合物的 $R^2$。Cliff对定义：ECFP4 Tanimoto $\ge 0.6$且$|\Delta \mathrm{pActivity}| \ge 2.0$。各面板上方标注了cliff和非cliff化合物的数量。ECFP4在EGFR、DRD2和BACE-1上给出最高cliff $R^2$，hERG上则是RDKit-2D + ECFP4略高
 
-残差分析（图14，见附录）证实了RF + ECFP4模型在EGFR上无系统性偏差，MAE = 0.520 pIC$_{50}$单位，残差分布近似对称。
+残差分析（图14，见附录）证实了RF + ECFP4模型在EGFR上无系统性偏差，MAE = 0.520 $\mathrm{pIC}_{50}$单位，残差分布近似对称。
 
 ## 关键结论与批判性总结
 
@@ -331,6 +331,8 @@ graph TB
 **存在的局限性**：
 
 - **特征选择仅在EGFR上进行了详细分析**，结论的跨靶点普适性有待验证
-- **GNN基线仅测试了最简单的GCN架构**，未包含GAT、AttentiveFP等更先进的图架构
-- **hERG数据集的pActivity分布较窄**（SD = 0.91），可能低估了模型在更宽活性范围内的预测能力
-- **未考虑多任务学习和迁移学习**等策略对跨靶点预测的潜在提升
+- **超参数优化只使用30次Optuna试验和单一测试划分**，优化后XGB排名上升这一现象仍需要多随机种子确认
+- **ECFP指纹折叠为2048位向量**，哈希折叠不可避免地带来一定bit collision风险
+- **GNN基线仅测试了最简单的GCN架构**，未包含边特征、attention、预训练或Chemprop、AttentiveFP、Uni-Mol等更强模型
+- **ChEMBL assay异质性仍然存在**，同一化合物多条记录取中位数只能部分缓解实验噪声
+- **本文限于二维描述符和四类靶点**，三维描述符、interaction fingerprint、physics-informed表示以及更多靶点类别仍需要进一步验证

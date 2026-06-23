@@ -18,7 +18,7 @@ lang: zh-CN
 - **作者**：Soumendranath Bhakat，Eva-Maria Strauch
 - **发表时间**：2026年2月21日（bioRxiv 预印本）
 - **单位**：AlloTec Bio Inc.；Washington University in St. Louis School of Medicine, Division of Infectious Diseases（美国密苏里州圣路易斯）
-- **引用格式**：Bhakat, S., & Strauch, E.-M. (2026). Accelerated sampling of protein dynamics using BioEmu augmented molecular simulation. *bioRxiv*. https://doi.org/10.64898/2026.01.07.698041
+- **引用格式**（不加粗）：Bhakat, S., & Strauch, E.-M. (2026). Accelerated sampling of protein dynamics using BioEmu augmented molecular simulation. *bioRxiv*. https://doi.org/10.64898/2026.01.07.698041
 - **源代码与相关工具**：
   - BioEmu：https://github.com/microsoft/bioemu
   - H-packer：https://github.com/gvisani/hpacker
