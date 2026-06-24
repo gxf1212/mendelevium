@@ -2,17 +2,6 @@
 
 本文件只做索引，不重复规则正文。执行任务时先按用户要求定位到对应 rule，再读取具体文件。
 
-## Skills可用性
-本项目配置了多个skills用于特定任务，当用户调用相关skill时会自动加载对应规则：
-- `blog` - 根据PDF论文生成科研博客文章，会自动引用格式规则
-- `format` - 检查和修复推送文章格式问题，会自动引用格式规范  
-- `literature-deepread` - 文献精读流程，会自动引用阅读和分析规则
-- `fix-ai-writing` - 修复AI写作特征，会自动引用 @.claude/skills/fix-ai-writing.md 去AI味规则
-- `adversarial-paper-reading` - 对抗式论文阅读，会自动引用审稿和批判性分析规则
-- 其他skills按需引用相关规则文件
-
-Skills会根据任务类型自动加载对应的rules文件，确保格式规范的一致性。
-
 ## Rule目录总览
 
 ### 01-project：项目结构和博客组织
@@ -88,3 +77,14 @@ Skills会根据任务类型自动加载对应的rules文件，确保格式规范
 ### “修公式/单位/化学式/SMILES”
 1. @.claude/rules/06-math-chemistry/01-formulas.md
 2. @.claude/rules/04-article-formatting/01-bold.md
+
+## Skills可用性
+本项目配置了多个skills用于特定任务，当用户调用相关skill时会自动加载对应规则：
+- `blog` - 根据PDF论文生成科研博客文章，会自动引用格式规则
+- `format` - 检查和修复推送文章格式问题，会自动引用格式规范  
+- `literature-deepread` - 文献精读流程，会自动引用阅读和分析规则
+- `fix-ai-writing` - 修复AI写作特征，会自动引用 @.claude/skills/fix-ai-writing.md 去AI味规则
+- `adversarial-paper-reading` - 对抗式论文阅读，会自动引用审稿和批判性分析规则
+- 其他skills按需引用相关规则文件
+
+Skills会根据任务类型自动加载对应的rules文件，确保格式规范的一致性。
