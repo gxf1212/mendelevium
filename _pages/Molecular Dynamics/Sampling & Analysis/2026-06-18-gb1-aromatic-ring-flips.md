@@ -20,6 +20,8 @@ lang: zh-CN
 - **发表时间**：2026年（Published online: 2026年6月17日）
 - **DOI**：https://doi.org/10.1038/s41557-026-02155-0
 - **单位**：奥地利因斯布鲁克大学分子结构生物学系、奥地利因斯布鲁克大学生物化学系、美国约翰霍普金斯大学化学与生物分子工程系等
+- **引用格式**：Becker, L. M.; Fu, H.; Tatman, B. P.; Ferrari, F.; O'Brien, C. M.; Tollinger, M.; Best, R. B. (2026). Aromatic ring flips reveal how protein dynamics are reshaped in crystals and complexes. *Nature Chemistry*. https://doi.org/10.1038/s41557-026-02155-0
+- **代码与数据**：本文使用的MD模拟和分析代码可在https://github.com/bestsellers-lab/获取，NMR原始数据可通过对应作者获取
 
 ## 摘要
 

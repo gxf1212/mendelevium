@@ -18,7 +18,7 @@ lang: zh-CN
 - 作者：Xiaobo Lin, Zhaoqian Su, Yunchao Lance Liu, Jingxian Liu, Xiaohan Kuang, Peter T. Cummings, Jesse Spencer-Smith, Jens Meiler
 - 发表时间：2025年
 - 单位：Vanderbilt University Data Science Institute（美国），University Leipzig（德国）
-- **引用格式**：Lin, X., Su, Z., Liu, Y. L., Liu, J., Kuang, X., Cummings, P. T., Spencer-Smith, J., & Meiler, J. (2025). SuperMetal: a generative AI framework for rapid and precise metal ion location prediction in proteins. *Journal of Cheminformatics*, *17*, 107. https://doi.org/10.1186/s13321-025-01038-9
+- **引用格式**（不加粗）：Lin, X., Su, Z., Liu, Y. L., Liu, J., Kuang, X., Cummings, P. T., Spencer-Smith, J., & Meiler, J. (2025). SuperMetal: a generative AI framework for rapid and precise metal ion location prediction in proteins. *Journal of Cheminformatics*, *17*, 107. https://doi.org/10.1186/s13321-025-01038-9
 - 代码：[GitHub - XiaoboLinin/SuperMetal](https://github.com/XiaoboLinin/SuperMetal)
 
 ## 摘要
@@ -258,7 +258,7 @@ SuperMetal在 $p = 0.1$ 时，MAD为 $0.61 \pm 0.66$ Å（中位数0.37 Å），
 
 ### 计算速度
 
-两种方法都在单CPU核、相同GPU（Nvidia A100 40 GB）下对比测试。Metal3D的运行时间随蛋白质大小**近指数级增长**，2000个残基的蛋白质约需500秒；SuperMetal无论蛋白质大小始终在10秒以内，约快**60**倍。这种效率差距在更小的蛋白质上已存在（**500**残基时Metal3D约需100秒，SuperMetal约5秒），且随规模增大愈发显著。
+两种方法都在单CPU核、相同GPU（NVIDIA A100 40 GB）下对比测试。Metal3D的运行时间随蛋白质大小**近指数级增长**，2000个残基的蛋白质约需500秒；SuperMetal无论蛋白质大小始终在10秒以内，约快**60倍**。这种效率差距在更小的蛋白质上已存在（**500残基时Metal3D约需100秒，SuperMetal约5秒**），且随规模增大愈发显著。
 
 超高效率源于多尺度层次交互策略：金属离子距残基较远时只使用粗粒化表示（仅 $\alpha$-碳节点），近邻才引入全原子结构，避免构建巨大的全局图。这种分层设计确保了只有真正重要的局部原子-金属相互作用才被精细建模，大大减少了图中的节点和边数量。
 
