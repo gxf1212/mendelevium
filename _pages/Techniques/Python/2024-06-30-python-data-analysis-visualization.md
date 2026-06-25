@@ -4,8 +4,8 @@ date: "2025-10-07"
 last_modified_at: "2025-10-07"
 description: "Python数据分析与可视化的完整技术指南。涵盖NumPy、SciPy、Matplotlib、Seaborn等核心库的使用技巧，包括数据处理、图表绘制和性能优化。"
 tags: [python, data-analysis, numpy, scipy, matplotlib, seaborn, pandas, visualization, performance, research]
-thumbnail: "/assets/img/thumbnail/profile2.webp"
-image: "/assets/img/thumbnail/profile2.webp"
+thumbnail: "/assets/img/profile2.webp"
+image: "/assets/img/profile2.webp"
 ---
 
 # 【笔记整理|2024年上半年】Python数据分析与可视化技术指南

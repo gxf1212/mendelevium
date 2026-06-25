@@ -1,11 +1,11 @@
 ---
-title: “MolAgent：智能体时代下的自动化分子性质预测系统”
-date: “2025-11-09”
-last_modified_at: “2025-11-09”
+title: "MolAgent：智能体时代下的自动化分子性质预测系统"
+date: "2025-11-09"
+last_modified_at: "2025-11-09"
 tags: [agentic-ai, molecular-property-estimation, llm, model-context-protocol, qsar, machine-learning, drug-discovery]
-description: “MolAgent是一个为agentic AI系统设计的端到端自动化分子性质建模框架，支持Model Context Protocol集成，实现高精度、无需人工干预的QSAR模型开发”
-image: “/assets/img/thumbnail/bricks.webp”
-thumbnail: “/assets/img/thumbnail/bricks.webp”
+description: "MolAgent是一个为agentic AI系统设计的端到端自动化分子性质建模框架，支持Model Context Protocol集成，实现高精度、无需人工干预的QSAR模型开发"
+image: "/assets/img/thumbnail/bricks.webp"
+thumbnail: "/assets/img/thumbnail/bricks.webp"
 author: Xufan Gao
 lang: zh-CN
 ---

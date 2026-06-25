@@ -4,8 +4,8 @@ date: "2026-06-16"
 last_modified_at: "2026-06-16"
 tags: [cation-pi-interaction, force-field, molecular-dynamics, 12-6-4-model, SAPT, sobEDA, biomolecular-recognition]
 description: "解读最新力场模型进展：12-6-4-NBFIX和ASPECT模型如何通过精确物理项和QM能量分解准确描述阳离子-π相互作用，解决传统12-6势能的根本缺陷"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/4K_1080P_compressed/065113uD0XV.jpg"
+thumbnail: "/assets/img/4K_1080P_compressed/065113uD0XV.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

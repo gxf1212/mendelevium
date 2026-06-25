@@ -48,7 +48,9 @@ def get_random_thumbnail():
 def print_random_thumbnail():
     """打印随机选择的缩略图路径"""
     thumbnail = get_random_thumbnail()
-    print(thumbnail)
+    # 输出完整路径，与frontmatter格式一致
+    full_path = f"/assets/{thumbnail}"
+    print(full_path)
 
 def generate_frontmatter_thumbnail():
     """生成用于frontmatter的缩略图配置"""
