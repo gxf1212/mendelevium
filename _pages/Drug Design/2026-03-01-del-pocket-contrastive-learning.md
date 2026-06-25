@@ -4,8 +4,8 @@ date: "2026-03-01"
 last_modified_at: "2026-03-01"
 tags: [DEL, contrastive-learning, pocket-representation, ESM-2, protein-language-model, drug-discovery, virtual-screening, AI]
 description: "利用ErePOC模型通过对比学习解析DNA编码库的蛋白质口袋特征，实现人类蛋白质组的DEL适配性预测"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/Wallpaper_compressed/wallhaven-q2d2oq.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-q2d2oq.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

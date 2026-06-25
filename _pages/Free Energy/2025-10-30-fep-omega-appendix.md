@@ -1,15 +1,15 @@
 ---
+
 title: "FEP Ω：从参数调优的困境中解脱【技术附录】"
 date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [FEP, 机器学习, 药物发现, 自由能微扰, 分子动力学, 高通量计算, 技术细节]
 description: "FEP Ω论文的深入技术讨论、Q&A、特征工程细节、迭代改进机制等补充内容"
 image: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
-thumbnail: "/assets/img/La-Mancha.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # FEP Ω：技术附录与深度讨论
 
 本文是主文章《从参数调优的困境中解脱：FEP Ω如何让药物分子动力学模拟「开箱即用」》的技术附录，包含详细的方法论讨论、常见问题解答、以及对原文未公开内容的深入分析。

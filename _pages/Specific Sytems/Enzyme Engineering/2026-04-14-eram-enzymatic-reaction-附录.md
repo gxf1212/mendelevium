@@ -1,13 +1,15 @@
 ---
+
 title: "ERAM框架技术附录"
 date: "2026-04-20"
 last_modified_at: "2026-04-20"
 tags: [enzyme-reaction, multimodal-learning, appendix]
 description: "ERAM框架的详细技术细节、完整实验结果和深入讨论"
+image: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # ERAM框架技术附录
 
 ## 本文信息

@@ -4,8 +4,8 @@ date: "2026-03-09"
 last_modified_at: "2026-03-09"
 tags: [分子动力学模拟, 抗菌肽, 成孔蛋白, 膜通透化, 综述, 粗粒化模拟, 增强采样]
 description: "全面综述抗菌肽和成孔蛋白诱导膜通透化的分子机制，以及分子动力学模拟在这一领域的应用进展与挑战（上篇：方法学与机制综述）"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail_mine/wh-l3m9lp.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-l3m9lp.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

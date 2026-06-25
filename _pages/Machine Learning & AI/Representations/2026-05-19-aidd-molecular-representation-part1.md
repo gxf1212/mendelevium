@@ -4,8 +4,8 @@ date: "2026-05-19"
 last_modified_at: "2026-05-19"
 tags: [molecular-representation, contrastive-learning, self-supervised-learning, graph-neural-networks, drug-discovery, deep-learning]
 description: "深入解析对比学习在小分子表征中的应用原理，从InfoNCE损失到数据增强策略，系统梳理MolCLR、iMolCLR等前沿方法"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/Wallpaper_compressed/wallhaven-q2r9rq.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-q2r9rq.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

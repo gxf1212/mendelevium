@@ -4,8 +4,8 @@ date: "2026-04-09"
 last_modified_at: "2026-04-09"
 tags: [rna-structure-prediction, secondary-structure, 3d-structure, bioinformatics, deep-learning, benchmark, computational-biology]
 description: "深入分析RNA二级结构预测准确性如何影响三维结构预测性能，以及三维建模过程中如何修改输入的碱基配对相互作用"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/4K_1080P_compressed/0735326zkFb.jpg"
+thumbnail: "/assets/img/4K_1080P_compressed/0735326zkFb.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -1,14 +1,15 @@
 ---
+
 title: "CDApol极化模型方法论详解：EEM动态电荷平衡的原理与实现"
 date: "2026-05-06"
 last_modified_at: "2026-05-06"
 tags: [metal-ions, force-field, molecular-dynamics, polarization, cationic-dummy-atom, EEM, AMBER, high-valent-ions, methods]
 description: "详解CDApol模型的电负性均衡方法（EEM）：动态电荷平衡的能量函数、约束求解、物理图像，以及双步参数化与热力学积分的技术细节"
 image: "/assets/img/thumbnail_mine/wh-g83qpe.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-g83qpe.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # CDApol极化模型方法详解：EEM动态电荷平衡的原理与实现
 
 对应正文见[固定电荷模型为何难以模拟高价金属离子？关键在于引入动态极化效应](./2026-05-06-polarizable-cationic-dummy-model)。

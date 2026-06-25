@@ -1,11 +1,13 @@
 ---
+
 title: "靶向分子动力学（TMD）：用RMSD约束引导蛋白质构象转变"
 date: "2025-10-11"
 last_modified_at: "2025-10-11"
 tags: [molecular-dynamics, enhanced-sampling, TMD, conformational-transition, protein-dynamics, RMSD-restraint]
 description: "深入理解TMD方法的物理原理、数学推导、长度尺度偏置问题及与其他增强采样方法的对比"
+image: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
 ---
-
 # 靶向分子动力学（TMD）：用RMSD约束引导蛋白质构象转变
 
 ## 一、TMD方法的基本思想

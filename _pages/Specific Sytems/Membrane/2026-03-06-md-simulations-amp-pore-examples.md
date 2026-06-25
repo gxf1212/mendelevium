@@ -4,8 +4,8 @@ date: "2026-03-06"
 last_modified_at: "2026-03-06"
 tags: [分子动力学模拟, 抗菌肽, 成孔蛋白, 膜通透化, 案例研究, Melittin, Pleurocidin, Maculatin, Aurein, ClyA, Gasdermin]
 description: "通过代表性案例解析抗菌肽与成孔蛋白诱导膜通透化的分子机制，重点覆盖Melittin、Pleurocidin、Maculatin 1.1、Aurein 1.2与多种PFTs的成孔路径。"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -1,15 +1,15 @@
 ---
+
 title: "数据分割的艺术：splito教程"
 date: "2025-11-14"
 last_modified_at: "2025-11-14"
 tags: [data-splitting, machine-learning, drug-discovery, splito, cheminformatics, tutorial]
 description: "深入解析splito库中的数据分割方法，包括基础分割、结构分割、多目标优化等在药物发现中的应用"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/La-Mancha.jpg"
+image: "/assets/img/Wallpaper_compressed/plumage-176723_1920.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/plumage-176723_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # 数据分割的艺术：splito教程
 
 > splito是一个专门为生命科学领域设计的机器学习数据分割库。本文深入探讨了splito库中各种数据分割方法的原理、应用场景和实现细节，包括基础的骨架分割、基于结构的分割、分子量分割、分层分布分割以及先进的多目标优化分割方法。通过详细的代码示例和实际应用案例，帮助研究人员在药物发现项目中选择合适的数据分割策略。

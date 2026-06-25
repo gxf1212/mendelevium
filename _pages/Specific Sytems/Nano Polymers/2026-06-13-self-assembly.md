@@ -434,6 +434,7 @@ $f_{LCC}$捕捉聚集程度，$R_g$表征整体尺寸，两者可区分紧密团
 
 #### 流程示意
 
+{% raw %}
 ```mermaid
 graph TB
     Traj([轨迹文件]) --> Pre{{预处理}}
@@ -451,6 +452,7 @@ graph TB
     Binbin --> FreeE["自由能计算$F=-k_BT\ln P$"]
     FreeE --> Plot[绘制二维等高或色图]
 ```
+{% endraw %}
 
 ### 五、评分函数与实现建议
 

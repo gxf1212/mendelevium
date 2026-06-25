@@ -1,13 +1,15 @@
 ---
+
 title: "RNA结构预测深度学习基准的方法学与数据分析"
 date: "2026-04-09"
 last_modified_at: "2026-04-09"
 tags: [rna-structure-prediction, secondary-structure, 3d-structure, bioinformatics, deep-learning, benchmark, computational-biology]
 description: "RNA二级结构与三维结构预测相互作用研究的附录，包含详细的方法描述、补充结果和分析"
+image: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # 【附录】RNA二级结构与三维结构预测的相互作用：一项全面研究
 
 ## 附录A：方法学详细描述

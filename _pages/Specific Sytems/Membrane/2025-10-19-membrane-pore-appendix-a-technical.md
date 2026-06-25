@@ -1,15 +1,15 @@
 ---
+
 title: "附录A：CV设计原理与PLUMED实现的技术细节"
 date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [membrane-pore, collective-variable, technical-details, plumed, enhanced-sampling, molecular-dynamics]
 description: "膜孔集体变量的物理原理、数学推导、PLUMED脚本实现及参数优化的深度技术解析"
 image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/La-Mancha.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # 附录A：CV设计原理与PLUMED实现的技术细节
 
 > 本文档是《破解膜孔之谜：双CV联手揭示从成核到扩展的完整能量图景》的技术附录A，专注于CV设计的物理原理、数学严谨性证明、PLUMED实现及参数优化。**力场选择、故障排查和实验对比请参阅[附录B](/pages/Specific%20Sytems/Membrane/2025-10-19-membrane-pore-appendix-b-practical)**。

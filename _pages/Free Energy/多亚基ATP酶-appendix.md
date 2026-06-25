@@ -1,15 +1,15 @@
 ---
+
 title: "多亚基ATP酶中核苷酸结合RBFE计算——技术细节与Rocklin修正深度解析"
 date: "2025-11-03"
 last_modified_at: "2025-11-03"
 tags: [alchemical-free-energy, RBFE, Rocklin-correction, central-substrate, computational-chemistry, molecular-dynamics]
 description: "中央底物的概念与作用机制、Rocklin电荷修正项的物理意义分解、量化示例与实际应用"
 image: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"
-thumbnail: "/assets/img/La-Mancha.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # 多亚基ATP酶中核苷酸结合RBFE计算——技术细节与Rocklin修正深度解析
 
 ## 本文信息

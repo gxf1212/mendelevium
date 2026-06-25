@@ -4,8 +4,8 @@ date: "2025-11-09"
 last_modified_at: "2025-11-09"
 tags: [DeepQSAR, QSAR, antimicrobial-peptides, deep-learning, antibiofilm, machine-learning, peptide-design]
 description: "利用Deep QSAR模型实现高精度预测，设计出同时具有增强抗菌和抗生物膜活性的短链肽，突破传统单一功能预测的局限"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/Wallpaper_compressed/wallhaven-q2zejd.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-q2zejd.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

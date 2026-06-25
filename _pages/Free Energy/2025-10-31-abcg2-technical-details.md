@@ -1,15 +1,15 @@
 ---
+
 title: "ABCG2电荷模型技术细节：附录"
 date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [ABCG2, BCC参数, 电荷模型, ACES方法, 模拟协议]
 description: "ABCG2电荷模型的ACES方法、模拟参数和验证协议详细技术附录"
 image: "/assets/img/thumbnail_mine/wh-m992d8.jpg"
-thumbnail: "/assets/img/La-Mancha.jpg"
+thumbnail: "/assets/img/thumbnail_mine/wh-m992d8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
-
 # ABCG2技术细节附录
 
 本文档为《优化单一性质≠改善相关性质：ABCG2电荷模型的启示》的技术附录，详细介绍ACES自由能计算方法、模拟参数设置和验证协议。

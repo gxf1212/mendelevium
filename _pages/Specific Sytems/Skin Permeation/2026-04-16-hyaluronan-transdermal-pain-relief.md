@@ -4,8 +4,8 @@ date: "2026-04-16"
 last_modified_at: "2026-04-16"
 tags: [透明质酸, 经皮给药, 促透剂, 疼痛治疗, 化疗周围神经病变, CD44受体]
 description: "透明质酸联合DMSO、鱼精蛋白或萜烯类促透剂外用可显著缓解炎症性和神经病理性疼痛，且效应持续时间更长"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "/assets/img/Wallpaper_compressed/wallhaven-dp6g8l.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-dp6g8l.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
