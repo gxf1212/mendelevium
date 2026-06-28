@@ -3,9 +3,9 @@ title: "DFT计算揭示PPM1A金属选择性：Mn位点易受攻击，Mg位点相
 date: "2026-06-16"
 last_modified_at: "2026-06-16"
 tags: [PPM1A, metal-selectivity, DFT, metalloprotein, metal-binding, computational-chemistry]
-description: "DFT计算揭示蛋白磷酸酶PPM1A的金属选择性：Mn位点易受$\ce{Fe^{2+}}$/$\ce{Zn^{2+}}$攻击，Mg位点更具抗性"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+description: "DFT计算揭示蛋白磷酸酶PPM1A的金属选择性：Mn位点易受Fe2+和Zn2+攻击，Mg位点更具抗性"
+image: "/assets/img/Wallpaper_compressed/hands-1150073_1920.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/hands-1150073_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
@@ -189,9 +189,7 @@ $$
 
 **图6：三核Mg位点的金属取代Gibbs自由能**。反应A-C对应$\ce{Mg^{2+}} \rightarrow \ce{Fe^{2+}}$取代，$\Delta G^4$和$\Delta G^{29}$约为5-8 kcal/mol，表明对$\ce{Fe^{2+}}$攻击有抵抗力。反应D-F对应$\ce{Mg^{2+}} \rightarrow \ce{Zn^{2+}}$取代，其中位点3（反应F）显示脆弱性，$\Delta G$为负值。结构机制在于位点3从六配位转为四配位，有利于Zn结合。
 
-### 热力学机制
-
-金属竞争主要由三个因素决定。
+### 热力学机制：金属竞争主要由三个因素决定
 
 - 首先，**阳离子的本征性质**在Irving-Williams序列中的位置决定了金属与配体的结合强度。
 - 其次，**溶剂化性质的差异**至关重要：不同金属离子的水合配合物具有不同的溶剂化自由能，这直接影响金属取代反应的热力学驱动。
