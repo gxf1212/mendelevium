@@ -23,6 +23,7 @@ tools/__pycache__/
 *.xlsx
 *.docx
 *.pdf
+_pages/**/*.txt
 reference-mcp
 *private
 
