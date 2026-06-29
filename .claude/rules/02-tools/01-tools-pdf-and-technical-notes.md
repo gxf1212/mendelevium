@@ -25,6 +25,8 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 ```
 必要的时候还是要直接读PDF全文
 
+**格式清理工具**：`tools/remove_extra_blank_lines.py` —— 清理多余空行，`tools/fix_all_punctuation.py` —— 标点符号修复，`tools/convert_quotes.py` —— 引号修复（支持`CHECK_QUOTES=1`环境变量检查引号配对问题）
+
 # 技术记录
 
 ### 技术记录
