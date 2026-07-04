@@ -1,5 +1,3 @@
-# JCTC 和 JCIM 新规来了，2026 年 5 月起原创计算化学论文需提交可复现所需数据与软件
-
 ---
 title: "JCTC 和 JCIM 新规来了，2026 年 5 月起原创计算化学论文需提交可复现所需数据与软件"
 date: "2026-05-03"
@@ -11,6 +9,8 @@ thumbnail: "/assets/img/thumbnail/bricks.webp"
 author: "Rommie E. Amaro et al."
 lang: zh-CN
 ---
+
+# JCTC 和 JCIM 新规来了，2026 年 5 月起原创计算化学论文需提交可复现所需数据与软件
 
 ## 本文信息
 

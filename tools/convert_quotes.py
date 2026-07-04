@@ -31,6 +31,112 @@ import re
 from pathlib import Path
 
 
+def fix_unpaired_quotes_by_position(content: str) -> str:
+    """
+    修复未配对的中文引号：奇数位置的引号改为左引号，偶数位置的改为右引号。
+    只处理有配对问题的行（左引号数≠右引号数）。
+
+    Args:
+        content: 文件内容（字符串）
+
+    Returns:
+        修复后的文件内容
+    """
+    LEFT_QUOTE = chr(0x201C)  # 左引号 "
+    RIGHT_QUOTE = chr(0x201D)  # 右引号 "
+
+    lines = content.split('\n')
+    fixed_lines = []
+
+    for line_num, line in enumerate(lines, 1):
+        # 跳过frontmatter（前15行）
+        if line_num <= 15 and line.startswith('---'):
+            fixed_lines.append(line)
+            continue
+
+        # 找出所有中文引号的位置和类型（用ord判断避免字面量问题）
+        left_positions = []
+        right_positions = []
+        for i, char in enumerate(line):
+            code = ord(char)
+            if code == 0x201C:  # 左引号
+                left_positions.append(i)
+            elif code == 0x201D:  # 右引号
+                right_positions.append(i)
+
+        total = len(left_positions) + len(right_positions)
+        if total <= 1:
+            # 引号少于2个，无需修复
+            fixed_lines.append(line)
+            continue
+
+        # 检查是否有配对问题
+        if len(left_positions) == len(right_positions):
+            # 配对正确，无需修复
+            fixed_lines.append(line)
+            continue
+
+        # 按出现顺序合并所有引号位置（保持原始顺序）
+        all_positions = []
+        for pos in left_positions:
+            all_positions.append((pos, LEFT_QUOTE))
+        for pos in right_positions:
+            all_positions.append((pos, RIGHT_QUOTE))
+        all_positions.sort(key=lambda x: x[0])
+
+        # 按奇偶位置重置引号：奇数位置为左，偶数位置为右
+        fixed_chars = list(line)
+        for idx, (pos, _) in enumerate(all_positions):
+            if idx % 2 == 0:  # 奇数位置
+                fixed_chars[pos] = LEFT_QUOTE
+            else:  # 偶数位置
+                fixed_chars[pos] = RIGHT_QUOTE
+        fixed_lines.append(''.join(fixed_chars))
+
+    return '\n'.join(fixed_lines)
+
+
+def check_quote_pairing(content: str, content_bytes: bytes) -> list:
+    """
+    检查中文引号是否配对，从未配对的引号中找出问题位置。
+
+    Args:
+        content: 文件内容（字符串）
+        content_bytes: 文件内容（字节，用于unicode级别检查）
+
+    Returns:
+        问题位置列表 [(line_num, context, issue_type), ...]
+    """
+    issues = []
+    lines = content.split('\n')
+
+    # 检查左引号 U+201C (0xE2 0x80 0x9C in UTF-8)
+    # 检查右引号 U+201D (0xE2 0x80 0x9D in UTF-8)
+    left_quote_bytes = b'\xe2\x80\x9c'
+    right_quote_bytes = b'\xe2\x80\x9d'
+
+    for line_num, line in enumerate(lines, 1):
+        # 跳过frontmatter（前10行通常是frontmatter）
+        if line_num <= 10:
+            continue
+
+        line_bytes = line.encode('utf-8')
+        left_count = line_bytes.count(left_quote_bytes)
+        right_count = line_bytes.count(right_quote_bytes)
+
+        # 检查是否未配对
+        if left_count != right_count:
+            # 生成问题上下文
+            preview = line.strip()[:100]
+            if left_count > right_count:
+                issue_type = f"多{left_count - right_count}个左引号"
+            else:
+                issue_type = f"多{right_count - left_count}个右引号"
+            issues.append((line_num, preview, issue_type))
+
+    return issues
+
+
 def convert_quotes_in_file(file_path: str) -> tuple[int, int]:
     """
     将文件中的英文双引号转换为中文引号，智能排除特殊情况。
@@ -82,6 +188,24 @@ def convert_quotes_in_file(file_path: str) -> tuple[int, int]:
 
     # 智能转换：排除特殊情况
     new_content = smart_convert_quotes(content)
+
+    # 修复未配对的引号（如果启用FIX_QUOTES环境变量）
+    import os
+    if os.environ.get('FIX_QUOTES'):
+        new_content = fix_unpaired_quotes_by_position(new_content)
+        print(f"✓ {file_path.name}: 已修复未配对的引号")
+
+    # 检查中文引号配对（仅在CHECK_QUOTES环境变量启用时）
+    import os
+    if os.environ.get('CHECK_QUOTES'):
+        new_bytes = new_content.encode('utf-8')
+        pairing_issues = check_quote_pairing(new_content, new_bytes)
+        if pairing_issues:
+            print(f"⚠️  发现 {len(pairing_issues)} 处引号配对问题：")
+            for line_num, preview, issue in pairing_issues:
+                print(f"   第{line_num}行: {preview}")
+                print(f"   问题: {issue}")
+            # 不阻止转换，只报告问题
 
     # DEBUG
     import os
@@ -256,6 +380,9 @@ def main():
         print("\n示例:")
         print("  python3 convert_quotes.py _pages/article.md")
         print("  python3 convert_quotes.py file1.md file2.md file3.md")
+        print("\n环境变量:")
+        print("  CHECK_QUOTES=1  检查引号配对问题（不修复）")
+        print("  FIX_QUOTES=1    修复未配对的引号（按奇偶位置重置）")
         sys.exit(1)
 
     file_paths = sys.argv[1:]
