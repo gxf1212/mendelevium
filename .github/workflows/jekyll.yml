@@ -37,6 +37,18 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Clean duplicated collection assets
+        run: |
+          find _site -type f -regextype posix-extended \
+            -regex '.*\.html\.(png|jpg|jpeg|webp|gif|svg|pdf|docx|pptx|xlsx|md|py|bib|bst|cls|tex|itp|sh|json|txt|ya?ml|toml)$' \
+            -delete
+          du -sh _site
+          site_size_mb=$(du -sm _site | cut -f1)
+          if [ "$site_size_mb" -gt 950 ]; then
+            echo "Pages artifact is still too large: ${site_size_mb} MB. Please compress images or remove large static files."
+            exit 1
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

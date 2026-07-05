@@ -27,7 +27,7 @@ lang: zh-CN
 
 ### 作者介绍
 
-![ming-lei](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\ming-lei.png)
+![ming-lei](pak1-allosteric-activators/ming-lei.png)
 
 **雷鸣教授**（Ming Lei）是牛津大学药理系Professor of Physiology and Pharmacology，也是Cardiac Signalling Group（https://www.pharm.ox.ac.uk/research/groups/lei-group ）的负责人。**课题组长期关注心脏电生理功能及其信号调控，尤其是PAK1在心脏保护、心律失常和心脏肥厚中的作用**。该组此前已经将Pak1确立为心脏疾病治疗的潜在新靶点，并开展了基于结构的PAK1激活剂理性设计工作。
 
@@ -35,7 +35,7 @@ lang: zh-CN
 
 > 激酶激活剂具有重要的治疗潜力，但其开发具有挑战性且鲜有成功。本文报道了利用理性的肽段引导策略发现心脏稳态关键调节因子**p21-活化激酶-1**（PAK1）的直接小分子激活剂。靶向PAK1的自抑制调控，本文识别出位于自调控区与激酶结构域之间的**一个此前未被识别的自抑制释放位点**。后续的高通量筛选和药物化学优化产生了具有**微摩尔级活性与亚型选择性的变构激活剂**。结构学和机制分析表明，这些激活剂通过破坏自抑制调控、促进向活性构象的局部和全局转换来发挥作用。在心脏细胞中确认了PAK1信号得到增强，并且在体研究显示**在遗传性和获得性心脏肥厚中均具有治疗效果**。综上，这些发现确立了**理性调控激酶自抑制机制可用于发现治疗性激酶激活剂**。
 
-![abs](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\abs.png)
+![abs](pak1-allosteric-activators/abs.png)
 
 ### 核心结论
 
@@ -55,7 +55,7 @@ lang: zh-CN
 
 > 激酶抑制剂和激活剂的根本差异：激酶抑制剂靶向**高度保守的激酶结构域**，而激酶激活剂则需要深入理解**每个激酶自身的调控机制**。绝大多数激酶的变构口袋要么不存在，要么结构未知。PAK1的自抑制结构域序列已知，**自抑制释放位点在物理上应该存在**，问题只是“有没有小分子能占上去”。
 
-![activation](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\activation.png)
+![activation](pak1-allosteric-activators/activation.png)
 
 PAK1是Group I PAKs的成员，属于丝氨酸/苏氨酸蛋白激酶家族，在维持细胞稳态和代谢中起关键作用，增强心肌细胞对压力的适应性。
 
@@ -68,7 +68,7 @@ PAK1是Group I PAKs的成员，属于丝氨酸/苏氨酸蛋白激酶家族，在
 
 > PAK1在心血管与肿瘤中的不同角色：**肿瘤里PAK1过激活，是促癌基因**，所以药企花了几十年做PAK1抑制剂。**心脏里PAK1活性要适度维持**——PAK1敲除小鼠在压力超载下心脏肥厚反而更严重，PAK1激活剂才符合心脏治疗的需求。
 
-![signaling1](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\signaling1.png)
+![signaling1](pak1-allosteric-activators/signaling1.png)
 
 PAK1在心脏里的作用可以理解成一个**压力状态下的信号调节器**，不是简单让细胞“长大”或“变强”。本文并不是凭空说“激活PAK1能治心脏肥厚”，而是接在一个已有的心脏保护通路背景上。相关综述可见：[The p21-activated kinase 1 signalling pathway in cardiac disease](https://pmc.ncbi.nlm.nih.gov/articles/PMC5867015/)和[PAK1 is a novel cardiac protective signaling molecule](https://www.pharm.ox.ac.uk/publications/605381)，雷鸣教授都有参与。如果把它拆成“从分子到表型”的链条，大概是这样：
 
@@ -179,7 +179,7 @@ graph TB
 
 - **PAK1在静息状态下处于自抑制状态**——其激酶抑制结构域中的**激酶抑制片段**（kinase inhibitory segment，KIS，aa 136-149）紧紧缠在催化口袋上，挡住了ATP和底物的入口，阻止PAK1工作。KIS中的关键残基Lys141与催化环Asp389、激活环Asp407形成氢键，物理性地占据ATP口袋，阻断αC螺旋Glu315与Lys299的盐桥形成——这就是“变构占位+活性位点占据”的双重抑制机制。
 
-![1F3M](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\1F3M.png)
+![1F3M](pak1-allosteric-activators/1F3M.png)
 
 **PDB 1F3M显示的PAK1自抑制结构（绿色：自抑制结构域，KIS位于末端；紫色：激酶结构域；橙色：不对称单体）**。从图可清晰看到KIS（自抑制结构域末端的红色片段）硬塞进ATP口袋（activation loop区域），活性中心部分序列因柔性未解析出电子密度——这是典型的自抑制构象。而C-terminal位于左下中部，接上PAP只能往后走了。
 
@@ -197,7 +197,7 @@ graph TB
 
 **承接问题**：能否证明PAK1的自抑制界面是外源分子可占据的？这是一切后续工作的概念前提。
 
-![fig1](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\fig1.png)
+![fig1](pak1-allosteric-activators/fig1.png)
 
 **图1：生物活性肽段引导识别PAK1自抑制释放位点**
 
@@ -232,7 +232,7 @@ graph TB
 
 > **RapidFire-MS如何读出激酶活性**：把化合物和PAK1蛋白、底物肽、ATP在384孔板里孵育几分钟，让激酶把底物磷酸化，然后用RapidFire-MS（一种快速固相萃取-质谱）直接读出**磷酸化底物/总底物**的比例作为活性读值。比传统ADP-Glo快、比放射性$^{33}$P便宜，适合做千~万级筛选。这里的MS只是检测产物，只是快速分离+质谱定量的技术组合。
 
-![si1](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\si\figS1.png)
+![si1](pak1-allosteric-activators/si/figS1.png)
 
 **补充图S1：PAK1激活剂的筛选流程与早期苗头JB01**
 
@@ -287,18 +287,18 @@ graph TB
 
 ##### 结果
 
-![fig2](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\fig2.png)
+![fig2](pak1-allosteric-activators/fig2.png)
 
 **图2：PAL-MS识别JB120结合PAK1的关键残基——从SAR优化到PAL探针设计，精确定位DEK位点**
 
 - **图2A：SAR优化过程**。为了定义JB79化学结构与生物活性的关系，作者进行了结构-活性关系（SAR）分析。SAR识别出三个关键基团：**R1**（m-carboxyphenyl）、**R2**（furan）、**R3**（m-nitrophenyl），以及连接这些基团的linker。将这三个基团用各种化学修饰替换，共合成**63个类似物，其中21个能激活PAK1，JB120活性最强**。
 - **图2B：PAL探针设计**。基于SAR研究的新见解，设计了JB120的PAL探针JB120-PAL，在JB120的**para位标记diazirine基团**，从而定位小分子的真实结合区域。作者还合成了JB120-PAL-2（在**meta位**标记diazirine）和JB120-PAL-3，并在RapidFire-MS激酶活性实验中验证了这些探针的结合亲和力和功能没有显著改变
 - **图2C-D：探针功能验证**。JB120和JB120-PAL仍能激活PAK1，说明引入光交联基团后分子功能没有完全坏掉，是合格的PAL探针
-- **图2E：PAL-MS定位DEK位点**。PAL-MS识别出的关键残基包括**Tyr131、Tyr142、Glu315、Asn383、Val318、Val385**，作者把它们命名的调控区域称为“**DEK motif**”（DFG-Glu315-KIS，组成见结果2开头）。PAL探针交联的关键残基正好位于激酶结构域和自抑制结构域之间的界面——这正是PAK1活性自抑制调控的地方
+- **图2E：PAL-MS定位DEK位点**。PAL-MS识别出的关键残基包括**Tyr131、Tyr142、Glu315、Asn383、Val318、Val385**，作者把它们命名的调控区域称为“**DEK motif**”（DFG-Glu315-KIS，组成见结果2开头）。PAL探针交联的**关键残基正好位于激酶结构域和自抑制结构域之间的界面**——这正是PAK1活性自抑制调控的地方
 
 > **结果2的核心结论**：这些数据collectively支持了一个模型——**JB120通过干扰激酶抑制结构域来破坏自抑制调控，从而激活PAK1**。作者不仅找到了能激活PAK1的小分子JB79，还通过SAR和PAL-MS证明，这类小分子确实在围绕PAK1自抑制释放位点发挥作用，精确定位了DEK motif的关键残基。JB系列化合物作为有价值的化学工具，在识别和表征自抑制释放位点方面发挥了重要作用。
 
-![si2](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\si\figS2.png)
+![si2](pak1-allosteric-activators/si/figS2.png)
 
 **补充图S2：PAL-MS识别PAK1激活剂结合的关键残基**
 
