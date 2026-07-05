@@ -1,6 +1,8 @@
 var baseurl = document.querySelector('meta[name="baseurl"]').content;
 
 document.addEventListener('DOMContentLoaded', function(){
+    fixPostImagePaths();
+
     // Init theme
     let currentTheme = localStorage.getItem('theme');
     let isDarkMode = false;
@@ -181,6 +183,89 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 });
+
+function fixPostImagePaths() {
+    const content = document.querySelector('main');
+    if (!content) return;
+
+    content.querySelectorAll('img').forEach((img) => {
+        const rawSrc = img.getAttribute('src');
+        const candidates = buildImageCandidates(rawSrc);
+        if (candidates.length === 0) return;
+
+        let index = 0;
+        img.onerror = function() {
+            index += 1;
+            if (index >= candidates.length) {
+                img.onerror = null;
+                return;
+            }
+            img.src = encodeImageUrl(candidates[index]);
+        };
+        img.src = encodeImageUrl(candidates[index]);
+    });
+}
+
+function buildImageCandidates(rawSrc) {
+    if (!rawSrc) return [];
+
+    const src = rawSrc.trim().replace(/\\/g, '/');
+    if (!src || isExternalImageUrl(src)) return [];
+    if (baseurl && src.indexOf(baseurl + '/') === 0) return [src];
+
+    if (src.indexOf('/assets/') === 0) return [withBaseurl(src)];
+    if (src.indexOf('assets/') === 0) return [withBaseurl('/' + src)];
+    if (src.charAt(0) === '/') return [withBaseurl(src)];
+
+    const pageDir = window.location.pathname.replace(/\/[^\/]*$/, '/');
+    const siteDir = stripBaseurl(pageDir);
+    const parts = siteDir.split('/').filter(Boolean);
+    const candidates = [];
+
+    // Try the normal Markdown-relative path first, then progressively climb
+    // parent folders. This keeps simple local Markdown image syntax usable on
+    // GitHub Pages even when the collection page is served under /baseurl/.
+    addCandidate(candidates, pageDir + src);
+    for (let depth = parts.length; depth >= 0; depth--) {
+        addCandidate(candidates, withBaseurl('/' + parts.slice(0, depth).join('/') + '/' + src));
+    }
+    addCandidate(candidates, withBaseurl('/' + src));
+
+    return candidates;
+}
+
+function isExternalImageUrl(src) {
+    return /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(src);
+}
+
+function stripBaseurl(path) {
+    if (baseurl && path.indexOf(baseurl + '/') === 0) {
+        return path.slice(baseurl.length);
+    }
+    return path;
+}
+
+function withBaseurl(path) {
+    let normalized = normalizePath(path);
+    if (baseurl && normalized.indexOf(baseurl + '/') === 0) return normalized;
+    if (normalized.charAt(0) !== '/') normalized = '/' + normalized;
+    return normalizePath(baseurl + normalized);
+}
+
+function normalizePath(path) {
+    return path.replace(/\/{2,}/g, '/');
+}
+
+function addCandidate(candidates, url) {
+    const normalized = normalizePath(url);
+    if (candidates.indexOf(normalized) === -1) {
+        candidates.push(normalized);
+    }
+}
+
+function encodeImageUrl(url) {
+    return encodeURI(url).replace(/%23/g, '#');
+}
 
 function searchPost(pages){
     document.getElementById('search-input').addEventListener('keyup', function() {
