@@ -25,7 +25,17 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 ```
 必要的时候还是要直接读PDF全文
 
-**格式清理工具**：`tools/remove_extra_blank_lines.py` —— 清理多余空行，`tools/fix_all_punctuation.py` —— 标点符号修复，`tools/convert_quotes.py` —— 引号修复（支持`CHECK_QUOTES=1`环境变量检查引号配对问题）
+**格式清理工具**：
+- `tools/remove_extra_blank_lines.py` —— 清理多余空行
+- `tools/fix_all_punctuation.py` —— 标点符号修复
+- `tools/convert_quotes.py` —— **引号修复（必须用）**
+  - 基本用法：`python3 tools/convert_quotes.py <文件.md>`
+  - 多文件：`python3 tools/convert_quotes.py file1.md file2.md`
+  - 环境变量选项：
+    - `CHECK_QUOTES=1` —— 检查引号配对问题，报告未配对位置但不修复
+    - `FIX_QUOTES=1` —— 自动修复未配对引号（按奇偶位置重置）
+    - `DEBUG_QUOTES=1` —— 调试模式，显示转换细节
+  - **每次修改引号后必须运行`CHECK_QUOTES=1`检查**，确保前引号"和后引号"数量相等
 
 # 技术记录
 

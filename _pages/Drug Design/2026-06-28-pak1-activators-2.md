@@ -1,5 +1,5 @@
 ---
-title: "肽段引导策略发现PAK1变构激活剂——附录"
+title: "肽段引导策略发现PAK1变构激活剂（（下）"
 date: "2026-06-28"
 last_modified_at: 2026-07-06
 tags: [PAK1, allosteric-activator, kinase-activator, cardiac-hypertrophy, peptide-guided-screening, drug-discovery]
@@ -42,9 +42,9 @@ lang: zh-CN
 > 激进观点：如上一篇Discussion中的猜测，第二次筛选才是正确的位点
 
 - **筛选对象**：DrugBank的6,252个已上市/实验性药物（包括ZINC15的FDA-approved drugs 1,615个）
-- **蛋白结构**：使用PDB 1F3M单体结构，但**移除了激酶抑制结构域**（aa 136-149），因为激酶抑制片段会占据PAK1激酶结构域内的活性位点（原文line 2718），移除后可确保其不会阻碍虚拟筛选时的活性结合位点；PAL-MS结果则表明激活剂通过解除KIS介导的自抑制起作用（原文line 386-387）
+- **蛋白结构**：使用PDB 1F3M单体结构，但**移除了激酶抑制结构域**（aa 136-149）。原因是：KIS在自抑制状态下占据ATP活性位点，移除KIS可确保其不会阻挡新配体接近激酶结构域内的DEK变构位点
 - **位点生成**：使用OpenEye的Make_Receptor工具，利用PAL-MS分析识别的关键结构元素生成精炼的活性结合位点。**对接工具**：FRED（OpenEye）
-- **物理筛选**：选取排名前25的化合物进行RapidFire-MS体外激酶活性测试，得到5个苗头
+- **物理筛选**：选取排名前25的化合物进行RapidFire-MS体外激酶活性测试，得到5个苗头化合物
 
 这次基于PAL-MS精炼位点的筛选成功发现了PAK1-A1（Eltrombopag）和PAK1-A2（TPO agonist 138）。Eltrombopag——FDA已批准用于治疗免疫性血小板减少症（ITP）的血小板生成素（TPO）受体激动剂，商品名Promacta。这一“老药新发现”具有重要的临床意义：
 
