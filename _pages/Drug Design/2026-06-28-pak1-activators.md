@@ -4,8 +4,8 @@ date: "2026-06-28"
 last_modified_at: 2026-06-28
 tags: [PAK1, allosteric-activator, kinase-activator, cardiac-hypertrophy, peptide-guided-screening, drug-discovery]
 description: "利用肽段引导策略发现PAK1变构激活剂，用于治疗心脏肥厚等心血管疾病"
-image: "/assets/img/4K_1080P_compressed/06423TB34A.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/06423TB34A.jpg"
+image: "/assets/img/4K_1080P_compressed/064423TB34A.jpg"
+thumbnail: "/assets/img/4K_1080P_compressed/064423TB34A.jpg"
 author: Xufan Gao
 lang: zh-CN
 
@@ -40,7 +40,7 @@ lang: zh-CN
 ### 核心结论
 
 - **肽段引导定位DEK位点**：用PAP肽段作为分子探针，把PAK1自抑制界面变成可被小分子靶向的口袋
-- **首批小分子激活剂**：从ZINC15/DrugBank中筛选得到JB系列和PAK1-A1（EC$_{50} = 1.6 \pm 0.23~\mu\mathrm{M}$）、PAK1-A2（EC$_{50} = 2.575 \pm 0.094~\mu\mathrm{M}$）
+- **首批小分子激活剂**：从ZINC15/DrugBank中筛选得到JB系列和PAK1-A1（$\mathrm{EC}_{50} = 1.6 \pm 0.23~\mu\mathrm{M}$）、PAK1-A2（$\mathrm{EC}_{50} = 2.575 \pm 0.094~\mu\mathrm{M}$）
 - **PAK1-A1就是Eltrombopag**：FDA已批准上市的TPO受体激动剂，安全性数据现成
 - **动物模型三种疾病都有改善**：ISO心肌细胞、Ang II+TAC小鼠、E99K遗传性HCM小鼠
 - **PKA验证肽段引导策略可推广**：在PKA上同样找到激活剂Cpd1/Cpd2
