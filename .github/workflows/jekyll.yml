@@ -50,7 +50,7 @@ jobs:
                 mv "$file" "$target"
               fi
             done
-          find _site -type f -iregex '.*\.\(pdf\|docx\|doc\|pptx\|ppt\|xlsx\|xls\)$' \
+          find _site -type f -iregex '.*\.\(pdf\|docx\|doc\|pptx\|ppt\|xlsx\|xls\|zip\|tar\|tar\.gz\|tgz\|gz\|bz2\|xz\|7z\|rar\|cif\|mmcif\|pdb\|pdbqt\|gro\|xtc\|trr\|dcd\|nc\|h5\|hdf5\|npy\|npz\)$' \
             -delete
           du -sh _site
           site_size_mb=$(du -sm _site | cut -f1)
