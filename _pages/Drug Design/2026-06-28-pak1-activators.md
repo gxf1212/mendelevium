@@ -9,6 +9,7 @@ thumbnail: "/assets/img/4K_1080P_compressed/06423TB34A.jpg"
 author: Xufan Gao
 lang: zh-CN
 
+
 ---
 
 # 肽段引导策略发现PAK1变构激活剂
@@ -26,7 +27,7 @@ lang: zh-CN
 
 ### 作者介绍
 
-![ming-lei](pak1-allosteric-activators/ming-lei.png)
+![ming-lei](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\ming-lei.png)
 
 **雷鸣教授**（Ming Lei）是牛津大学药理系Professor of Physiology and Pharmacology，也是Cardiac Signalling Group（https://www.pharm.ox.ac.uk/research/groups/lei-group ）的负责人。**课题组长期关注心脏电生理功能及其信号调控，尤其是PAK1在心脏保护、心律失常和心脏肥厚中的作用**。该组此前已经将Pak1确立为心脏疾病治疗的潜在新靶点，并开展了基于结构的PAK1激活剂理性设计工作。
 
@@ -34,7 +35,7 @@ lang: zh-CN
 
 > 激酶激活剂具有重要的治疗潜力，但其开发具有挑战性且鲜有成功。本文报道了利用理性的肽段引导策略发现心脏稳态关键调节因子**p21-活化激酶-1**（PAK1）的直接小分子激活剂。靶向PAK1的自抑制调控，本文识别出位于自调控区与激酶结构域之间的**一个此前未被识别的自抑制释放位点**。后续的高通量筛选和药物化学优化产生了具有**微摩尔级活性与亚型选择性的变构激活剂**。结构学和机制分析表明，这些激活剂通过破坏自抑制调控、促进向活性构象的局部和全局转换来发挥作用。在心脏细胞中确认了PAK1信号得到增强，并且在体研究显示**在遗传性和获得性心脏肥厚中均具有治疗效果**。综上，这些发现确立了**理性调控激酶自抑制机制可用于发现治疗性激酶激活剂**。
 
-![abs](pak1-allosteric-activators/abs.png)
+![abs](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\abs.png)
 
 ### 核心结论
 
@@ -54,7 +55,7 @@ lang: zh-CN
 
 > 激酶抑制剂和激活剂的根本差异：激酶抑制剂靶向**高度保守的激酶结构域**，而激酶激活剂则需要深入理解**每个激酶自身的调控机制**。绝大多数激酶的变构口袋要么不存在，要么结构未知。PAK1的自抑制结构域序列已知，**自抑制释放位点在物理上应该存在**，问题只是“有没有小分子能占上去”。
 
-![activation](pak1-allosteric-activators/activation.png)
+![activation](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\activation.png)
 
 PAK1是Group I PAKs的成员，属于丝氨酸/苏氨酸蛋白激酶家族，在维持细胞稳态和代谢中起关键作用，增强心肌细胞对压力的适应性。
 
@@ -67,7 +68,7 @@ PAK1是Group I PAKs的成员，属于丝氨酸/苏氨酸蛋白激酶家族，在
 
 > PAK1在心血管与肿瘤中的不同角色：**肿瘤里PAK1过激活，是促癌基因**，所以药企花了几十年做PAK1抑制剂。**心脏里PAK1活性要适度维持**——PAK1敲除小鼠在压力超载下心脏肥厚反而更严重，PAK1激活剂才符合心脏治疗的需求。
 
-![signaling1](pak1-allosteric-activators/signaling1.png)
+![signaling1](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\signaling1.png)
 
 PAK1在心脏里的作用可以理解成一个**压力状态下的信号调节器**，不是简单让细胞“长大”或“变强”。本文并不是凭空说“激活PAK1能治心脏肥厚”，而是接在一个已有的心脏保护通路背景上。相关综述可见：[The p21-activated kinase 1 signalling pathway in cardiac disease](https://pmc.ncbi.nlm.nih.gov/articles/PMC5867015/)和[PAK1 is a novel cardiac protective signaling molecule](https://www.pharm.ox.ac.uk/publications/605381)，雷鸣教授都有参与。如果把它拆成“从分子到表型”的链条，大概是这样：
 
@@ -132,7 +133,7 @@ graph TB
 
     subgraph R4["结果4：PAL-MS定位DEK位点"]
         D1["基于JB120设计光交联探针"]
-        D2["PAL-MS识别8个关键残基"]
+        D2["PAL-MS识别6个关键残基"]
         D3["3个致死突变证明位点核心"]
         D4["5个非致死突变区分激活剂/抑制剂"]
         D5["DEK位点存在细粒度分工"]
@@ -178,7 +179,7 @@ graph TB
 
 - **PAK1在静息状态下处于自抑制状态**——其激酶抑制结构域中的**激酶抑制片段**（kinase inhibitory segment，KIS，aa 136-149）紧紧缠在催化口袋上，挡住了ATP和底物的入口，阻止PAK1工作。KIS中的关键残基Lys141与催化环Asp389、激活环Asp407形成氢键，物理性地占据ATP口袋，阻断αC螺旋Glu315与Lys299的盐桥形成——这就是“变构占位+活性位点占据”的双重抑制机制。
 
-![1F3M](pak1-allosteric-activators/1F3M.png)
+![1F3M](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\1F3M.png)
 
 **PDB 1F3M显示的PAK1自抑制结构（绿色：自抑制结构域，KIS位于末端；紫色：激酶结构域；橙色：不对称单体）**。从图可清晰看到KIS（自抑制结构域末端的红色片段）硬塞进ATP口袋（activation loop区域），活性中心部分序列因柔性未解析出电子密度——这是典型的自抑制构象。而C-terminal位于左下中部，接上PAP只能往后走了。
 
@@ -196,7 +197,7 @@ graph TB
 
 **承接问题**：能否证明PAK1的自抑制界面是外源分子可占据的？这是一切后续工作的概念前提。
 
-![fig1](pak1-allosteric-activators/fig1.png)
+![fig1](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\fig1.png)
 
 **图1：生物活性肽段引导识别PAK1自抑制释放位点**
 
@@ -231,7 +232,7 @@ graph TB
 
 > **RapidFire-MS如何读出激酶活性**：把化合物和PAK1蛋白、底物肽、ATP在384孔板里孵育几分钟，让激酶把底物磷酸化，然后用RapidFire-MS（一种快速固相萃取-质谱）直接读出**磷酸化底物/总底物**的比例作为活性读值。比传统ADP-Glo快、比放射性$^{33}$P便宜，适合做千~万级筛选。这里的MS只是检测产物，只是快速分离+质谱定量的技术组合。
 
-![si1](pak1-allosteric-activators/si/figS1.png)
+![si1](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\si\figS1.png)
 
 **补充图S1：PAK1激活剂的筛选流程与早期苗头JB01**
 
@@ -286,7 +287,7 @@ graph TB
 
 ##### 结果
 
-![fig2](pak1-allosteric-activators/fig2.png)
+![fig2](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\fig2.png)
 
 **图2：PAL-MS识别JB120结合PAK1的关键残基——从SAR优化到PAL探针设计，精确定位DEK位点**
 
@@ -297,7 +298,7 @@ graph TB
 
 > **结果2的核心结论**：这些数据collectively支持了一个模型——**JB120通过干扰激酶抑制结构域来破坏自抑制调控，从而激活PAK1**。作者不仅找到了能激活PAK1的小分子JB79，还通过SAR和PAL-MS证明，这类小分子确实在围绕PAK1自抑制释放位点发挥作用，精确定位了DEK motif的关键残基。JB系列化合物作为有价值的化学工具，在识别和表征自抑制释放位点方面发挥了重要作用。
 
-![si2](pak1-allosteric-activators/si\figS2.png)
+![si2](C:\Users\Lenovo\AppData\Roaming\Typora\draftsRecover\pak1-allosteric-activators\si\figS2.png)
 
 **补充图S2：PAL-MS识别PAK1激活剂结合的关键残基**
 
@@ -307,29 +308,35 @@ graph TB
 
 ### 我的Discussion：AlphaFold2预测与PAL-MS验证的逻辑链条问题
 
-理想的验证链条应该是：①**复合物预测**（结构解析或准确预测，包括具体残基）→②**筛选得到苗头化合物**→③**实验定位结合位点**（如PAL-MS）→④**验证预测与实验的一致性**。但本文有个关键问题——**AlphaFold2预测的PAP结合位点具体包含哪些残基，原文从未明确说明**。方法部分只说”at the PAP binding site, predicted by AlphaFold2”，但没有任何残基列表。
+理想的验证链条应该是：①**复合物预测**（含具体残基）→②**筛选苗头**→③**实验定位结合位点**→④**验证预测与实验一致**。但本文有个关键缺口——**AlphaFold2预测的PAP结合位点具体包含哪些残基，原文从未列出**，方法部分只笼统说“at the PAP binding site, predicted by AlphaFold2”。**最自然的解释是AlphaFold2预测的位置偏了**（真实位点就是KIS天然结合在激酶结构域的位置，PAP设计初衷是模仿KIS理应落在类似位置），所以PAL-MS用JB120-PAL探针把位点纠正回来——这也是我对“为什么PAL-MS探针是JB120-PAL而不是JB79-PAL”的理解。
 
-这引发了一个关键疑问：**如果AlphaFold2预测真的准确，为什么还要PAL-MS重新精炼？为什么不说”AlphaFold2预测的残基包括XXX”？**
+#### 事实（原文明确说明的）
 
-> **”真实位点”的本质是KIS天然结合位点（小编的猜测）**
->
-> 这里需要理解一个关键洞察：所谓的”真实位点”其实就是**KIS（激酶抑制片段）天然结合在激酶结构域的位置**。PAP的设计初衷是”模仿KIS”，理应结合在类似位置。但AlphaFold2预测的PAP结合位置可能**偏了**，不在真正的KIS位点上。
+- **PAL-MS用JB120-PAL探针识别出6个关键残基** Tyr131、Tyr142、Glu315、Asn383、Val318、Val385，正好位于激酶结构域和自抑制结构域之间的界面（结果4图2E、S2G）
+- **两波筛选用了不同位点**：第一波用AlphaFold2预测的PAP位点（“at the PAP binding site, predicted by AlphaFold2”），第二波改用PAL-MS精炼位点（Make_Receptor基于PAL-MS残基定义）——**第二波原理上更正**
+- **MD模拟预测PAK1-A1结合残基Lys141、Glu315、Arg388、Phe408**（DEK位点疏水相互作用），**与PAL-MS位点一致**（原文line 510-514）——计算层面的内部自洽
+- **PAK1-A1浸泡实验未检测到配体密度**（结果4图注）——X-ray这条路走不通
+- **HDX-MS证实DEK位点发生构象变化**：肽段425-444变紧凑、肽段126-145变松散（结果5）
 
-**PAL-MS的作用是”回归真实”**：PAL-MS鉴定的8个残基（Tyr131、Tyr142、Glu315、Asn383、Val318、Val385）正好围绕在**KIS天然结合的区域**附近。这证明**JB120（SAR优化后的分子）实际上结合在KIS真实的结合界面**，而非AlphaFold2预测的偏移位置。
+#### 推测（小编的猜测）
 
-**关键问题是：JB79到底结合在哪？**原文图1F只展示”Predicted interaction of JB79”，没有PAL-MS或其他直接实验证据。所以我的推测是：
+- **JB79的“误打误撞”**：第一波从200万化合物里筛出JB79，原文只有“Predicted interaction”图（图1F），没有任何PAL-MS或共晶实验定位，唯一跟JB79直接相关的是RapidFire-MS活性曲线（功能验证而非位点验证）。**JB79的真实位点原文没说清**——可能碰巧结合在真实KIS位点附近，也可能落在AlphaFold2预测的偏移位点上，这是SAR优化前提是否成立的悬疑点
+- **MD为PAK1-A1提供部分计算结构证据**：PAK1-A1来自第二波DrugBank筛选本身就用PAL-MS精炼位点，MD预测的Lys141/Glu315/Arg388/Phe408与PAL-MS位点内部自洽，与抑制剂NVS-PAK1-1的DFG位点部分重叠且方向相反——不是单一证据孤证。**但仍需注意**：MD是计算不是实验，400 ns采样可能未覆盖完整构象空间、Vina打分有已知偏差、浸泡实验失败使X-ray走不通、PAL-MS测的是JB120-PAL（acrylonitrile-aryl骨架）不是PAK1-A1（Eltrombopag thiazole-aryl-hydrazide骨架）
 
-- AlphaFold2预测错了PAP应该结合的位置
-- 虚拟筛选从200万化合物中筛出的JB79**可能碰巧结合在真实KIS位点附近**——这是”误打误撞”，**原文没有实验证据说是结合在预测的位点还是KIS位点**
-- PAL-MS用的是JB120-PAL探针，测的是JB120的结合位点，不是JB79
-- PAL-MS纠正了AlphaFold2的错误，鉴定出的位点回归到KIS天然结合的真实区域
-- 第二波筛选用真实KIS位点，原理上就正确了
+#### 深层问题（逻辑gap）
 
-作者可能不想强调AlphaFold2的预测错误和JB79位点的不确定性，因为那样会弱化”理性设计”的故事线。
+- **JB79的位点无直接实验证据**：只有计算“Predicted interaction”，PAL-MS探针是JB120-PAL不是JB79-PAL——**所以我们不知道JB79是否真的结合在DEK位点**，SAR优化的前提存疑
+- **PAK1-A1没有X-ray/cryo-EM结构**：浸泡未检测到配体密度，MD残基是计算预测，化学交联质谱或HDX-MS对PAK1-A1本身也未见报道。PAL-MS测的是JB120不是PAK1-A1——化学骨架不同，结合细节不能直接套用
+- **MD不能独立验证位点**：能给出热力学合理性和内部一致性，但**最终仍需实验验证**（如对Lys141/Glu315/Arg388/Phe408做点突变，或HDX-MS、CXMS化学交联质谱、$\ce{^19F}$-NMR等独立方法交叉验证）
+- **Eltrombopag的TPO受体安全性不能外推到PAK1**：TPO受体是transmembrane cytokine receptor，**结合位点与PAK1的DEK位点完全无关**，不能从已知靶点推断PAK1的脱靶效应或组织分布
 
-**故事线仍然成立**：PAL-MS识别的DEK位点与AlphaFold2预测的PAP结合区域在宏观上基本吻合（都在autoinhibitory domain与kinase domain之间的界面），后续HDX-MS也证实了这个区域的构象变化。关键洞察是——**PAP/JB系列真正的作用机制是占据KIS天然结合的界面，把KIS推开，而非结合在AlphaFold2预测的偏移位置**。
+#### 但故事线是否成立？（小编的判断）
 
-> **整体逻辑链条**：结果1用PAP证明自抑制界面能被外源分子打开，结果2则用JB79证明小分子也能模拟这种打开动作、并用PAL-MS精确定位了结合位点；下一步的逻辑就很自然了——既然JB79只是苗头，能不能优化成更强、更像药的分子？
+- **PAK1-A1证据强度比之前认为的更高**：MD给出具体残基预测且与PAL-MS内部自洽，与抑制剂DFG位点部分重叠方向相反——构成**计算层面的内部自洽**，但仍非实验证据
+- **JB79故事线有未闭合gap**：“Predicted interaction”不是位点验证，PAL-MS是JB120不是JB79，“误打误撞”是猜测。最直接的闭合办法是**做JB79-PAL探针+同样的PAL-MS实验**，看识别残基是否与JB120-PAL一致
+- **整体证据链**（5环，每环有计算/生化证据但无复合物晶体）：①PAL-MS定位DEK位点 → ②第二波筛选用精炼位点从DrugBank找到PAK1-A1 → ③MD验证PAK1-A1结合在DEK位点且与PAL-MS一致 → ④HDX-MS证实DEK位点区域构象变化 → ⑤PAK1-A1与抑制剂共享关键残基但驱动相反构象
+- **治疗效应是真实的，本文最硬证据**：ISO心肌细胞、Ang II+TAC小鼠、Actc1 E99K遗传性HCM小鼠三种模型都显示PAK1-A1改善心脏肥厚——**功能验证比结构验证更重要**，动物疗效已把PAK1-A1从“概念验证”推到“候选药物”层级
+- **仍需补强**：①JB79的真实位点实验证据（JB79-PAL + PAL-MS）；②PAK1-A1的独立实验定位（mutagenesis验证Lys141/Glu315/Arg388/Phe408，或CXMS）；③PAK1-A1在DEK位点的完整结构生物学证据（cryo-EM或共晶条件优化）
 
 ---
 
