@@ -1,14 +1,13 @@
 ---
 title: "肽段引导策略发现PAK1变构激活剂"
 date: "2026-06-28"
-last_modified_at: 2026-06-28
+last_modified_at: 2026-07-06
 tags: [PAK1, allosteric-activator, kinase-activator, cardiac-hypertrophy, peptide-guided-screening, drug-discovery]
 description: "利用肽段引导策略发现PAK1变构激活剂，用于治疗心脏肥厚等心血管疾病"
 image: "/assets/img/4K_1080P_compressed/064423TB34A.jpg"
 thumbnail: "/assets/img/4K_1080P_compressed/064423TB34A.jpg"
 author: Xufan Gao
 lang: zh-CN
-
 
 ---
 
@@ -308,7 +307,9 @@ graph TB
 
 ### 我的Discussion：AlphaFold2预测与PAL-MS验证的逻辑链条问题
 
-理想的验证链条应该是：①**复合物预测**（含具体残基）→②**筛选苗头**→③**实验定位结合位点**→④**验证预测与实验一致**。但本文有个关键缺口——**AlphaFold2预测的PAP结合位点具体包含哪些残基，原文从未列出**，方法部分只笼统说“at the PAP binding site, predicted by AlphaFold2”。**最自然的解释是AlphaFold2预测的位置偏了**（真实位点就是KIS天然结合在激酶结构域的位置，PAP设计初衷是模仿KIS理应落在类似位置），所以PAL-MS用JB120-PAL探针把位点纠正回来——这也是我对“为什么PAL-MS探针是JB120-PAL而不是JB79-PAL”的理解。
+理想的验证链条应该是：①**复合物预测**（含具体残基）→②**筛选苗头**→③**实验定位结合位点**→④**验证预测与实验一致**。但本文有个关键缺口——**AlphaFold2预测的PAP结合位点具体包含哪些残基，原文从未列出**，方法部分只笼统说“at the PAP binding site, predicted by AlphaFold2”。
+
+**最自然的解释是AlphaFold2预测的位置偏了**（真实位点就是KIS天然结合在激酶结构域的位置，PAP设计初衷是模仿KIS理应落在类似位置），所以PAL-MS用JB120-PAL探针把位点纠正回来——这也是我对“为什么PAL-MS探针是JB120-PAL而不是JB79-PAL”的理解。
 
 #### 事实（原文明确说明的）
 
