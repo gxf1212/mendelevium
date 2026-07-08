@@ -3,6 +3,11 @@ title: "东山随笔#4"
 date: "2026-03-08"
 last_modified_at: "2026-03-08"
 tags: [diary, thoughts, research-philosophy, writing]
+description: "关于杂记、科研哲学和生活的思考"
+image: "/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
+thumbnail: "/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
+author: Xufan Gao
+lang: zh-CN
 ---
 
 # 【东山随笔#4】杂记
