@@ -1,11 +1,16 @@
 ---
-title: "东山随笔#3"
+title: "【东山随笔#3】云无心以出岫：科研孤独与闭门造车的慰藉"
 date: "2025-10-18"
 last_modified_at: "2025-10-18"
 tags: [diary, thoughts, research-philosophy, writing]
+description: "关于科研孤独、支持系统和写作的思考"
+image: "/assets/img/Wallpaper_compressed/cobweb-3725540_1920.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/cobweb-3725540_1920.jpg"
+author: Xufan Gao
+lang: zh-CN
 ---
 
-# 【东山随笔#3】
+# 【东山随笔#3】云无心以出岫：科研孤独与闭门造车的慰藉
 
 > 【东山月光下】主要还是会发文献分享，只是有时整理一下平常的思考。
 >

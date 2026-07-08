@@ -3,7 +3,13 @@ title: "【东山随笔】#1 残云收夏暑，新雨带秋岚"
 date: "2025-09-01"
 last_modified_at: "2025-09-01"
 tags: [diary, life, research, claude-code, phd-life, thoughts]
+description: "关于Claude Code使用体验、博士生多课题管理和生活思考的随笔"
+image: "/assets/img/Wallpaper_compressed/milky-way-1023340_1920.jpg"
+thumbnail: "/assets/img/Wallpaper_compressed/milky-way-1023340_1920.jpg"
+author: Xufan Gao
+lang: zh-CN
 ---
+
 # 【东山随笔】#1 残云收夏暑，新雨带秋岚
 
 > 【东山月光下】主要还是会发文献分享，只是最近集中力量于写代码，无心调研。

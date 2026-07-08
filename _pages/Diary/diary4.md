@@ -1,11 +1,16 @@
 ---
-title: "东山随笔#4"
+title: "【东山随笔#4】衣带渐宽终不悔：毕业论文、多个课题与生活支点"
 date: "2026-03-08"
 last_modified_at: "2026-03-08"
 tags: [diary, thoughts, research-philosophy, writing]
+description: "关于毕业论文规划、多课题管理和运动爱好的思考"
+image: "/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
+thumbnail: "/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
+author: Xufan Gao
+lang: zh-CN
 ---
 
-# 【东山随笔#4】杂记
+# 【东山随笔#4】衣带渐宽终不悔：毕业论文、多个课题与生活支点
 
 > 【东山月光下】主要还是会发文献分享，只是有时整理一下平常的思考。
 >
