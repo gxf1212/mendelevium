@@ -1,5 +1,5 @@
 ---
-title: "芳香环翻转揭示晶体和复合物中蛋白质动力学的改进"
+title: "芳香环翻转追踪晶体和复合物对蛋白质动力学的影响"
 date: "2026-06-18"
 last_modified_at: "2026-07-09"
 tags: [protein-dynamics, NMR, molecular-dynamics, enhanced-sampling, aromatic-ring-flips, GB1, crystal-packing, protein-complexes]
@@ -11,7 +11,7 @@ lang: zh-CN
 
 ---
 
-# 芳香环翻转如何探测晶体和复合物中的蛋白质动力学改进？
+# 芳香环翻转追踪晶体和复合物对蛋白质动力学的影响
 
 ## 本文信息
 
