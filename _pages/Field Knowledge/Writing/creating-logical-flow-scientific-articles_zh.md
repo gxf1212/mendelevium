@@ -98,42 +98,65 @@ lang: zh-CN
 
 ## Box 1：将冗长或不清晰句子改得更短、更清楚的例子
 
-| 领域 | 原句 | 更短、更清楚的句子 |
-| --- | --- | --- |
-| Respiratory medicine | A 55-year-old woman was admitted in a hospital complaining of experiencing 10 minutes of chest pain after smoking a cigarette. | A 55-year-old woman was admitted for chest pain she felt for 10 minutes after smoking. |
-| Cardiology | The coronary spasm is specifically an important differential diagnosis of the causes of the chest pain in patients. | Coronary spasm is an important differential diagnosis of chest pain. |
-| Oncology | Our progress of chemotherapy to the treatment of unresectable colorectal cancer has provided many patients with a prolonged survival period. | Progress in chemotherapy for unresectable colorectal cancer has prolonged patient survival. |
-| Pathology | The histological types were distributed and classified as adenocarcinoma in 51 cases, squamous cell carcinoma in 24 cases, large cell carcinoma in 15 cases, and carcinoid in 10 cases. | The histological types were adenocarcinoma（n = 51）, squamous cell carcinoma（n = 24）, large cell carcinoma（n = 15）, and carcinoid（n = 10）. |
-| Genetics | An abnormal noradrenaline transporter gene has been reported by other studies in a part of the disease, and the pathological conditions based in genetic abnormality are being suspected. | An abnormal noradrenaline transporter gene reportedly plays a role in the disease pathogenesis, thus genetic abnormality is suspected. |
-| Nursing | Among the factors which have effects on quality of life, the positive factors were Spousal Support and the negative factors were Distress and infertility period, and of those factors, the most influential negative factor on quality of life was Distress. | Among factors affecting quality of life, the positive factor was spousal support and the negative factors were distress and infertility period, with distress being the strongest factor. |
-| Nursing | A social support has been specifically described as having the very function of buffering life when there is a stressfull life events and is related to promoting our very well-being. | Social support has a buffering function against stressful life events and promotes our well-being. |
-| Science/medicine | It is a method that is often carried out. | This method is often performed. |
-| Science/medicine | This is a procedure that is recommended by the FDA. | This procedure is recommended by the FDA. |
-| Science/medicine | These data are preliminary in nature. | These data are preliminary. |
+### Respiratory medicine
+- **原句**: A 55-year-old woman was admitted in a hospital complaining of experiencing 10 minutes of chest pain after smoking a cigarette.
+- **更短、更清楚的句子**: A 55-year-old woman was admitted for chest pain she felt for 10 minutes after smoking.
+
+### Cardiology
+- **原句**: The coronary spasm is specifically an important differential diagnosis of the causes of the chest pain in patients.
+- **更短、更清楚的句子**: Coronary spasm is an important differential diagnosis of chest pain.
+
+### Oncology
+- **原句**: Our progress of chemotherapy to the treatment of unresectable colorectal cancer has provided many patients with a prolonged survival period.
+- **更短、更清楚的句子**: Progress in chemotherapy for unresectable colorectal cancer has prolonged patient survival.
+
+### Pathology
+- **原句**: The histological types were distributed and classified as adenocarcinoma in 51 cases, squamous cell carcinoma in 24 cases, large cell carcinoma in 15 cases, and carcinoid in 10 cases.
+- **更短、更清楚的句子**: The histological types were adenocarcinoma（n = 51）, squamous cell carcinoma（n = 24）, large cell carcinoma（n = 15）, and carcinoid（n = 10）.
+
+### Genetics
+- **原句**: An abnormal noradrenaline transporter gene has been reported by other studies in a part of the disease, and the pathological conditions based in genetic abnormality are being suspected.
+- **更短、更清楚的句子**: An abnormal noradrenaline transporter gene reportedly plays a role in the disease pathogenesis, thus genetic abnormality is suspected.
+
+### Nursing (1)
+- **原句**: Among the factors which have effects on quality of life, the positive factors were Spousal Support and the negative factors were Distress and infertility period, and of those factors, the most influential negative factor on quality of life was Distress.
+- **更短、更清楚的句子**: Among factors affecting quality of life, the positive factor was spousal support and the negative factors were distress and infertility period, with distress being the strongest factor.
+
+### Nursing (2)
+- **原句**: A social support has been specifically described as having the very function of buffering life when there is a stressfull life events and is related to promoting our very well-being.
+- **更短、更清楚的句子**: Social support has a buffering function against stressful life events and promotes our well-being.
+
+### Science/medicine (1)
+- **原句**: It is a method that is often carried out.
+- **更短、更清楚的句子**: This method is often performed.
+
+### Science/medicine (2)
+- **原句**: This is a procedure that is recommended by the FDA.
+- **更短、更清楚的句子**: This procedure is recommended by the FDA.
+
+### Science/medicine (3)
+- **原句**: These data are preliminary in nature.
+- **更短、更清楚的句子**: These data are preliminary.
 
 ### 构建结构良好的段落
 
 构建结构良好的段落，需要聚焦每段的主要思想，并确保该思想具有**统一性、连贯性和基于证据的解释**。
 
-段落第一句是"主题句"。它引入段落的主要思想，并提示段落内容及其解释方式。**写得好的"主题句"包含具体断言**。它为连接段落中的支撑性思想建立框架。
+- 段落第一句是主题句。它引入段落的主要思想，并提示段落内容及其解释方式。**写得好的主题句包含具体断言**。它为连接段落中的支撑性思想建立框架。
+- 段落中间的句子支持主题句中的主要思想。**这些句子提供解释、定义、评论、证据和例子**，用来说明重要观点。
+- 段落最后一句总结中间句子的信息。它重新强调主题句，**并充当通向下一段的过渡句**。
 
-段落中间的句子支持"主题句"中的主要思想。**这些句子提供解释、定义、评论、证据和例子**，用来说明重要观点。
-
-段落最后一句总结中间句子的信息。它重新强调"主题句"，**并充当通向下一段的"过渡句"**。
-
-写段落时，应写事实，避免冗长的泛泛而谈。最好将句子控制在约 20 个词，并使所有句子都与主要思想相关。每个句子都应从前一句自然推进，同时保持与"主题句"的连接。**应遵循"一段一个思想"的原则**，并基于演绎推理构建段落。为了实现线性逻辑，使用某种句式模式可能会有帮助，因为文本的一个重要特征就是论证的线性流动：前一句的主题会成为后一句的话题。
+写段落时，应写事实，避免冗长的泛泛而谈。最好将句子控制在约 20 个词，并使所有句子都与主要思想相关。每个句子都应从前一句自然推进，同时保持与主题句的连接。**应遵循“一段一个思想”原则**，并基于演绎推理构建段落。为了实现线性逻辑，使用某种句式模式可能会有帮助，因为文本的一个重要特征就是论证的线性流动：前一句的主题会成为后一句的话题。
 
 总体来看，段落中的成功流动取决于选择统一的思想来支持每段的主要思想，然后在段落之间建立有效连接。**段落中的这种顺序会构建出具有逻辑流的有说服力论证**。
 
-### 图 1：结构良好段落的构建
-
 ![fig1](creating-logical-flow-figs/fig1.png)
 
-**图1：结构良好段落的构建**。展示段落的三层结构："主题句"引入主要思想,中间句提供证据支持,最后一句总结并为下一段过渡。
+**图1：结构良好段落的构建**。展示段落的三层结构：主题句引入主要思想,中间句提供证据支持,最后一句总结并为下一段过渡。
 
 | 段落位置 | 功能 |
 | --- | --- |
-| 第一句"主题句" | 引入主要思想；提示内容 |
+| 第一句主题句 | 引入主要思想；提示内容 |
 | 中间支撑句 | 支持主要思想；用证据进行解释 |
 | 最后总结句 | 总结；重新强调主要思想；为下一段做准备 |
 
@@ -141,11 +164,23 @@ lang: zh-CN
 
 过渡表达是连接连续句子或段落的词、短语或句子，能让读者跟随信息的逻辑流。**根据过渡表达如何建立逻辑流，可以从语言形式、作用和功能三个大类来理解它们**。
 
-从语言形式看，Philbrook 将过渡表达分为"过渡词"、"过渡句"和"过渡段"。下面给出概述，并提供已发表论文中的例子。**"过渡词"表示每个思想之间的关系**，例如 additionally、as well as、conversely、otherwise。
+从语言形式看，Philbrook 将过渡表达分为过渡词、过渡句和过渡段。下面给出概述，并提供已发表论文中的例子。**过渡词表示每个思想之间的关系**，例如 additionally、as well as、conversely、otherwise。
 
 ## Box 2：已发表论文中过渡词的例子
 
-> COVID-19 最令人担忧的特征之一，是被称为“细胞因子风暴”的现象，即免疫系统的快速过度反应。此外，在重症 COVID-19 患者中也常观察到凝血异常、血小板减少，以及厌食、呕吐和腹泻等消化症状。
+**原文 (English)**:
+
+> “One of the most worrying features of COVID-19 is a phenomenon known as the 'cytokine storm', which is a rapid overreaction of the immune system. Additionally, coagulation abnormalities, thrombocytopenia and digestive symptoms, including anorexia, vomiting, and diarrhea, are often observed in critically ill patients with COVID-19.”
+
+> “We described the effectiveness of the measured indices and their potential bias, as well as the scientific methods used in this field.”
+
+> “While obesity has advantages in cold environments, conversely, it hinders heat dissipation, making obese individuals more susceptible to heat stress than lean individuals.”
+
+> “In several situations, remote physiotherapy may be an appropriate form of primary care, including early management of acute pain that otherwise might become chronic pain.”
+
+**中文翻译**：
+
+> COVID-19 最令人担忧的特征之一，是被称为细胞因子风暴的现象，即免疫系统的快速过度反应。此外，在重症 COVID-19 患者中也常观察到凝血异常、血小板减少，以及厌食、呕吐和腹泻等消化症状。
 
 > 我们描述了测量指标的有效性及其潜在偏倚，以及该领域使用的科学方法。
 
@@ -153,19 +188,45 @@ lang: zh-CN
 
 > 有几种情况下，远程物理治疗可能成为合适的初级护理形式，包括急性疼痛的早期管理，否则急性疼痛可能发展为慢性疼痛。
 
-"过渡句"连接一个段落和另一个段落。这些句子会提到前一段的话题，并在前一话题和下一话题之间建立连接。
+过渡句连接一个段落和另一个段落。这些句子会提到前一段的话题，并在前一话题和下一话题之间建立连接。
 
-## Box 3："过渡句"示例，乳腺癌领域
+## Box 3：过渡句示例，乳腺癌领域
 
-第一段的"主题句"谈论 HER2，并聚焦 HER2 异质性：
+**原文 (English)**:
+
+First paragraph topic sentence: “HER2 is also overexpressed in other types of cancer besides breast cancer. In patients with HER2-amplified esophageal adenocarcinomas, heterogeneous HER2 amplification was observed in 17%, and the presence of HER2 heterogeneity was independently associated with worse disease-specific survival and overall survival (OS).”
+
+Second paragraph transitional sentence: “However, it remains unknown why HER2 heterogeneity is associated with malignant potential. Molecular profiling classified breast cancer into 6 intrinsic subtypes. Estrogen receptor/progesterone receptor/HER2 positivity on IHC staining is thought to surrogate the intrinsic subtypes. However, different intrinsic subtypes are mixed in HER2-positive breast cancer, that is, 51% showed HER2-enriched type, 28% showed luminal type, and 21% showed the typical intrinsic subtypes for triple negative breast cancer such as basal type, claudin-low type, and normal-like type. This suggests that the triple negative features are present in some HER2-positive breast cancers, which may be associated with the malignant potential. In the present study, mice injected with heterogeneous-HER2 cells (HER2-60) showed a shorter survival than mice injected with triple negative cells (231-Luc). Taken together, the interaction between HER2-positive cells and HER2-negative cells appear to accelerate the malignant potential.”
+
+**中文翻译**：
+
+第一段的主题句谈论 HER2，并聚焦 HER2 异质性：
 
 > HER2 也在乳腺癌以外的其他癌症类型中过表达。在 HER2 扩增的食管腺癌患者中，17% 可观察到异质性 HER2 扩增，并且 HER2 异质性的存在与更差的疾病特异性生存和总体生存独立相关。
 
-第二段的过渡句将第一段连接到第二段：它提到第一段主题 HER2 异质性，并建立与下一主题“HER2 异质性和恶性潜能之间关系”的连接。
+第二段的过渡句将第一段连接到第二段：
+
+> 然而，为什么 HER2 异质性与恶性潜能相关仍然未知。分子分型将乳腺癌分为 6 种内在亚型。免疫组化染色中的雌激素受体、孕激素受体和 HER2 阳性被认为可以替代内在亚型。然而，在 HER2 阳性乳腺癌中，不同内在亚型混合存在，也就是说，51% 表现为 HER2-enriched 型，28% 表现为 luminal 型，21% 表现为三阴性乳腺癌典型内在亚型，例如 basal 型、claudin-low 型和 normal-like 型。这提示三阴性特征存在于部分 HER2 阳性乳腺癌中，可能与恶性潜能相关。在本研究中，注射异质性 HER2 细胞（HER2-60）的小鼠，比注射三阴性细胞（231-Luc）的小鼠生存期更短。综上，HER2 阳性细胞和 HER2 阴性细胞之间的相互作用似乎会加速恶性潜能。
+
+> HER2 也在乳腺癌以外的其他癌症类型中过表达。在 HER2 扩增的食管腺癌患者中，17% 可观察到异质性 HER2 扩增，并且 HER2 异质性的存在与更差的疾病特异性生存和总体生存独立相关。
+
+第二段的过渡句将第一段连接到第二段：它提到第一段主题 HER2 异质性，并建立与下一主题 HER2 异质性和恶性潜能之间关系的连接。
 
 > 然而，为什么 HER2 异质性与恶性潜能相关仍然未知。分子分型将乳腺癌分为 6 种内在亚型。免疫组化染色中的雌激素受体、孕激素受体和 HER2 阳性被认为可以替代内在亚型。然而，在 HER2 阳性乳腺癌中，不同内在亚型混合存在，也就是说，51% 表现为 HER2-enriched 型，28% 表现为 luminal 型，21% 表现为三阴性乳腺癌典型内在亚型，例如 basal 型、claudin-low 型和 normal-like 型。这提示三阴性特征存在于部分 HER2 阳性乳腺癌中，可能与恶性潜能相关。在本研究中，注射异质性 HER2 细胞（HER2-60）的小鼠，比注射三阴性细胞（231-Luc）的小鼠生存期更短。综上，HER2 阳性细胞和 HER2 阴性细胞之间的相互作用似乎会加速恶性潜能。
 
 ## Box 4：过渡句示例，心脏外科领域
+
+**原文 (English)**:
+
+First paragraph topic sentence focuses on cardiac tumors and composition (underlined):
+
+> “Primary cardiac tumors are rare; 75% of them are benign neoplasms, which may occur at any age and in any part of the heart. In particular, hemangiomas account for 5% to 10% of these benign tumors.”
+
+Second paragraph transitional sentence connects first paragraph to second paragraph by mentioning cardiac tumors, then elaborates that this patient's cardiac tumor was a benign hemangioma, and further discusses hemangiomas (underlined):
+
+> “In the patient described here, the cardiac tumor was initially thought to be a malignant metastatic tumor because of his history of lung metastasis from rectal cancer, which was treated by surgical resection. However, we definitively diagnosed the cardiac tumor as a benign cardiac hemangioma by histopathologic examination. Most hemangiomas are relatively small subendocardial nodules (2.0 to 3.5 cm), which may be mostly solitary. In our patient, however, the tumor was a continuous bilocular mass whose length reached up to 4.85 cm.”
+
+**中文翻译**：
 
 第一段的主题句聚焦心脏肿瘤及其组成：
 
@@ -178,6 +239,14 @@ lang: zh-CN
 过渡段作为引导性段落，用来描述大章节，并将读者带入新信息。
 
 ## Box 5：过渡段示例，胃肠病学领域
+
+**原文 (English)**:
+
+The first paragraph acts as a transitional paragraph, introducing the topic EUS-FNA and emphasizing the importance of acquiring large amount of core tissue and its histological assessment:
+
+> “EUS-FNA with cytology has been used as a safe and accurate procedure for establishing a pathological diagnosis of intraluminal or extraluminal lesions since the first report by Vilmann et al. in 1992. Although the high accuracy of EUS-FNA with cytology has been reported, it remains imperfect because of the limited pathological evaluation. Recently, the acquisition of a large amount of core tissue and its histological assessment has become increasingly important to further improve the diagnostic yield of EUS-FNA and to establish an accurate diagnosis with fewer FNA passes.”
+
+**中文翻译**：
 
 第一段作为过渡段，引入主题 EUS-FNA，并强调获得大量 core tissue 及其组织学评估的重要性：
 
@@ -196,11 +265,23 @@ lang: zh-CN
 
 ## Box 6：添加型过渡示例
 
+**原文 (English)**:
+
+> “Inflammatory markers have been proposed as prognostic markers for the development of type 2 diabetes and its complications. Furthermore, modulation of inflammatory processes may provide future therapeutic strategies for type 2 diabetes.”
+
+**中文翻译**：
+
 > 炎症标志物已被提出作为 2 型糖尿病及其并发症发展的预后标志物。此外，调节炎症过程可能为 2 型糖尿病提供未来治疗策略。
 
 转折型过渡通过对比和显示差异来区分事实、论点和其他信息，例如 however、on the other hand；区分或强调要点，例如 primarily、most importantly；让步，例如 nevertheless、in spite of；否定某个论点或断言，例如 regardless of、at any rate；以及表示替代方案，例如 instead of、at least。
 
 ## Box 7：转折型过渡示例
+
+**原文 (English)**:
+
+> “Evidence on the relationship between temperature during pregnancy and spontaneous abortion in humans is limited. Most importantly, the literature lacks causal estimates and also lacks studies on early pregnancy loss.”
+
+**中文翻译**：
 
 > 关于妊娠期间温度与人类胚胎死亡之间关系的证据有限。最重要的是，文献缺少因果估计，也缺少关于早期妊娠丢失的研究。
 
@@ -208,17 +289,35 @@ lang: zh-CN
 
 ## Box 8：因果型过渡示例
 
+**原文 (English)**:
+
+> “Due to advances in surgical techniques, immunosuppression, and antimicrobial prophylaxis, transplantation has become common, and patient and graft outcomes are excellent.”
+
+**中文翻译**：
+
 > 由于外科技术、免疫抑制和抗菌预防方面的进步，移植已经变得常见，并且患者和移植物结局优良。
 
 顺序型过渡通过数字组织信息，例如 firstly、first of all；表示思想或行动的延续，例如 subsequently、after this；指代前文信息，例如 summarizing、as mentioned above；表示离题，例如 incidentally、returning to the subject；以及作出结论，例如 overall、in conclusion。顺序型过渡能够创建结构，帮助读者理解方法、结果和分析的逻辑发展。
 
 ## Box 9：顺序型过渡示例
 
+**原文 (English)**:
+
+> “Serine/threonine protein phosphatase activity assay was employed to monitor PPs activity. Subsequently, flow cytometry was used to monitor chemokine levels in plasma samples from cognitively impaired individuals.”
+
+**中文翻译**：
+
 > 采用丝氨酸/苏氨酸蛋白磷酸酶活性检测来监测 PPs 活性。随后，使用流式细胞术监测认知障碍个体血浆样本中的趋化因子水平。
 
 从功能看，过渡表达可以用于表达一致或强化，例如 also、in the same way、likewise；表达替代方案或相反证据，例如 in contrast、on the contrary、in reality、although、instead、rather；呈现影响或后果，例如 as a result、for this reason、thus、consequently、therefore、accordingly；引入例子或强调重要性，例如 for example、for instance、to demonstrate、as an illustration、notably、namely、indeed、certainly、such as、in fact；作出结论、总结或重述观点，例如 all things considered、as shown、given these points、in short、to summarize、in essence、altogether、to sum up、in any case、ultimately；以及进行 hedging，例如 possibly、this suggests、it may seem、perhaps、we may conclude。
 
 ## Box 10：按功能使用过渡表达的示例
+
+**原文 (English)**:
+
+> “The elderly population and age-related diseases are increasing. In reality, aging research is technically difficult to conduct because it requires aged animals, and maintaining these animals requires significant effort and is expensive.”
+
+**中文翻译**：
 
 > 老年人口和年龄相关疾病正在增加。相反，衰老研究在技术上很难开展，因为它们需要老年动物，而维持这些动物需要大量努力且成本高昂。
 
@@ -242,7 +341,11 @@ lang: zh-CN
 
 ### 建立引言部分
 
-引言部分描述研究如何增加新知识，并回应一个重要问题。**可以通过三个段落在引言中建立逻辑流**。第一段描述所要解决问题的范围、性质或规模。第二段清楚说明为什么更好地理解这个问题有用，包括当前知识和既往研究的局限。第三段陈述研究目的，并简要说明本研究为科学知识基础增加了什么。
+引言部分描述研究如何增加新知识，并回应一个重要问题。**可以通过三个段落在引言中建立逻辑流**：
+
+- 第一段描述所要解决问题的范围、性质或规模
+- 第二段清楚说明为什么更好地理解这个问题有用，包括当前知识和既往研究的局限
+- 第三段陈述研究目的，并简要说明本研究为科学知识基础增加了什么
 
 ### 构建方法部分
 

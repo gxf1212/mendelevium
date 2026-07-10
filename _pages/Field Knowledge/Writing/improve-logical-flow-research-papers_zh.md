@@ -1,5 +1,5 @@
 ---
-title: "研究论文逻辑不清，再好的数据也可能被读者看丢"
+title: "从结构设计到段落衔接，建立清晰连贯的研究叙事"
 date: "2026-07-09"
 last_modified_at: "2026-07-09"
 tags: [writing, research-papers, logical-flow, academic-writing]
@@ -10,7 +10,7 @@ author: Xufan Gao
 lang: zh-CN
 ---
 
-# 研究论文逻辑不清，再好的数据也可能被读者看丢
+# 从结构设计到段落衔接，建立清晰连贯的研究叙事
 
 原文链接：[How to Improve Logical Flow in Research Papers](https://paperedit.org/how-to-improve-logical-flow-in-research-papers/)：https://paperedit.org/how-to-improve-logical-flow-in-research-papers/
 
