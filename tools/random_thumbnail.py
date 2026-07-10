@@ -29,11 +29,14 @@ def get_random_thumbnail():
     all_images = []
 
     # 遍历所有目录，收集图片文件
+    excluded = {"empty.jpg"}
     for dir_path in thumbnail_dirs:
         full_path = Path(dir_path)
         if full_path.exists():
             for file in full_path.iterdir():
                 if file.is_file() and file.suffix.lower() in image_extensions:
+                    if file.name in excluded:
+                        continue
                     # 返回相对于assets目录的路径
                     relative_path = str(file).replace("assets/", "")
                     all_images.append(relative_path)
