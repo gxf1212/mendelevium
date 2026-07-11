@@ -17,7 +17,7 @@ lang: zh-CN
 - **标题**：文献检索：面对未知的简单规则
 - **作者**：Ruchika Jha, Vishal Sondhi, Biju Vasudevan
 - **发表期刊**：Medical Journal Armed Forces India
-- **发表时间**：2022 年 8 月 30 日在线发表
+- **发表时间**：2022 年 8 月 30 日
 - **DOI**：https://doi.org/10.1016/j.mjafi.2022.07.009
 
 ## 摘要
@@ -40,15 +40,11 @@ David Sackett 及其在 McMaster University 的同事将循证医学（Evidence 
 
 ## 第一步：提出正确的问题
 
-开展任何文献检索的核心，是**定义检索问题**。这一点非常重要，因为问题的性质和需求类型将决定检索过程。
+开展任何文献检索的核心，是**定义检索问题**。这一点非常重要，因为问题的性质和需求类型将决定检索过程。例如，与某种疾病、障碍或药物相关的临床问题，可以在 Medscape、UpToDate 或 DynaMed 等来源中查找。
 
-例如，与某种疾病、障碍或药物相关的临床问题，可以在 Medscape、UpToDate 或 DynaMed 等来源中查找。
-
-Medscape：[Medscape](https://www.medscape.com)：https://www.medscape.com
-
-UpToDate：[UpToDate](https://www.uptodate.com)：https://www.uptodate.com
-
-DynaMed：[DynaMed](https://www.dynamed.com)：https://www.dynamed.com
+- [Medscape](https://www.medscape.com)：https://www.medscape.com
+- [UpToDate](https://www.uptodate.com)：https://www.uptodate.com
+- [DynaMed](https://www.dynamed.com)：https://www.dynamed.com
 
 然而，如果上述数据库无法回答临床问题，或者正在开展一个研究项目，就可能需要更全面的文献检索。这类详细检索通常会在 **PubMed、Embase、CINAHL、PsycINFO 或 Web of Science** 等数据库中进行。
 

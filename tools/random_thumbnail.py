@@ -42,8 +42,9 @@ def get_random_thumbnail():
                     all_images.append(relative_path)
 
     if not all_images:
-        # 如果没有找到图片，返回默认的empty.jpg
-        return "img/thumbnail/empty.jpg"
+        # 如果没有找到图片，报错并退出
+        print("错误：没有找到可用的缩略图文件", file=sys.stderr)
+        sys.exit(1)
 
     # 随机选择一个图片
     return random.choice(all_images)
