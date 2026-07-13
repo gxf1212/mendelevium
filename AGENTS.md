@@ -273,7 +273,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 - **标题**：[论文标题中文翻译，推文标题可以和这个不一样，但这里应该是严格翻译]
 - **作者**：[论文的主要作者，不要翻译人名为中文。]
 - **发表期刊**：[英文期刊全称]
-- **发表时间**：[论文实际发表时间，根据DOI或PDF页面信息确定，注意Received/Accepted日期与最终发表年份可能不同]
+- **发表时间**：[论文实际发表时间，注意Received/Accepted日期与最终发表年份可能不同，只写published时间，格式为**发表时间**：2025年9月25日，别的啥都不写]
 - **DOI**：[必须包含DOI链接，格式：https://doi.org/xxxxx]
 - **单位**：[如果可知，作者的主要单位，国家肯定是要标注的]
   - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成”浙江大学定量生物中心”，就是我们课题组

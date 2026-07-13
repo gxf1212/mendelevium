@@ -15,6 +15,7 @@ python3 tools/check_blog_quality.py <markdown_file>
 检查是否包含所有必需字段：
 - title
 - date
+- last_modified_at（**必须！**）
 - tags
 - description
 - image
@@ -26,6 +27,7 @@ python3 tools/check_blog_quality.py <markdown_file>
 - [ ] image和thumbnail是否一致
 - [ ] 是否使用了empty.jpg
 - [ ] date格式是否正确（YYYY-MM-DD）
+- [ ] last_modified_at字段是否存在（缺会导致sitemap显示错误的1900-01-01日期）
 
 ---
 
@@ -46,8 +48,10 @@ python3 tools/check_blog_quality.py <markdown_file>
 **本文信息检查**：
 - [ ] 标题
 - [ ] 作者
+- [ ] 发表期刊
 - [ ] 发表时间
 - [ ] 单位
+- [ ] DOI（必须！）
 - [ ] 引用格式
 
 ---
@@ -62,10 +66,16 @@ python3 tools/check_blog_quality.py <markdown_file>
 
 ### 4. 加粗格式检查
 
-- [ ] 是否有加粗包含标点符号
+- [ ] 是否有加粗包含标点符号（必须在句号前）
 - [ ] 是否有加粗包含百分号（`**24%**`）
 - [ ] 是否有加粗包含引号（`**"xxx"**`）
 - [ ] 是否有加粗包含括号（`**xxx（yyy）**`）
+- [ ] 是否有加粗包裹LaTeX公式（`**$\Delta G$**`）
+- [ ] 是否有加粗包裹化学式（`**$\ce{NaCl}$**`）
+- [ ] 是否有加粗包裹代码
+- [ ] 是否有过短加粗（单个数字、一个字）
+- [ ] 列表是否只在开头加粗（关键结论、细节punchline也要加粗）
+- [ ] 一大片内容是否完全没有加粗
 
 ---
 

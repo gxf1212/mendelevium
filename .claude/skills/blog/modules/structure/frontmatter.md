@@ -6,7 +6,7 @@
 ---
 title: "文章标题（中文，使用中文标点）"
 date: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期
-last_modified_at: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期
+last_modified_at: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期（必须！）
 tags: [tag1, tag2, tag3]  # 尽量复用已有tags
 description: "简短描述"
 image: "/assets/img/thumbnail/xxx.jpg"
@@ -35,18 +35,42 @@ title: "PETase酶的研究"  # 太笼统
 ```
 
 ### date
-- **必须是今天的日期**（博客创建日期）
+- **必须是今天的日期**（博客创建/初次写blog的日期）
 - **不是论文发表日期**
 - 格式：YYYY-MM-DD
+- **必须同时添加last_modified_at字段**（jekyll-sitemap插件只识别last_modified_at）
 
 **✅ 正确**：
 ```yaml
-date: "2025-11-22"  # 今天写博客的日期
+date: "2026-06-20"
+last_modified_at: "2026-06-20"  # 首次写和首次修改同一天
 ```
 
 **❌ 错误**：
 ```yaml
 date: "2021-09-03"  # 论文发表日期
+```
+（缺last_modified_at）
+```yaml
+date: "2026-06-20"
+# 缺last_modified_at字段 → sitemap显示错误的1900-01-01日期
+```
+
+### title 的中文标点
+- **必须使用中文标点**（包括引号、冒号等）
+- frontmatter中title值用英文引号包裹（YAML语法），但标题内容内部用中文标点
+- 标题里的内部引号用中文引号" "
+
+**✅ 正确**：
+```yaml
+title: "皮肤屏障的"水之道"：分子模拟揭示脂质相共存如何稳定间质水"
+```
+
+**❌ 错误**：
+```yaml
+title: "PETase酶的"研究"  # 内部引号用英文
+title: "颠覆性突破！革命性PETase研究震惊学术界"  # 标题党
+title: "PETase酶的研究"  # 太笼统
 ```
 
 ### tags

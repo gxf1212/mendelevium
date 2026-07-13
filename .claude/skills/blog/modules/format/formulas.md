@@ -43,8 +43,10 @@
 ### 分数
 
 ```markdown
-✅ $\frac{a}{b}$
-✅ $\frac{\Delta G}{RT}$
+✅ $\frac{a}{b}$  # 行内公式用\frac
+```
+
+**注意**：行间公式（$$...$$）使用`\dfrac`而不是`\frac`，以获得更好的大小。
 ```
 
 ### 求和、积分
@@ -182,6 +184,44 @@ $$
 **注意**：
 - 使用`&`对齐等号
 - 使用`\\`换行（行间公式中可以，行内不行）
+
+---
+
+## 连续行间公式规范
+
+### 错误做法 ❌
+
+```markdown
+$$
+\Delta G = -RT \ln K
+$$
+
+$$
+K = e^{-\Delta G / RT}
+$$
+```
+
+多个连续的$$环境，浪费token且影响渲染。
+
+### 正确做法 ✅
+
+**单个$$ + `\\` 分隔**：
+```markdown
+$$
+\Delta G = -RT \ln K \\
+K = e^{-\Delta G / RT}
+$$
+```
+
+**对齐等号用 `\begin{aligned}`**：
+```markdown
+$$
+\begin{aligned}
+\Delta G &= -RT \ln K \\
+K &= e^{-\Delta G / RT}
+\end{aligned}
+$$
+```
 
 ---
 
