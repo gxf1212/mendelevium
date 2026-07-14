@@ -2,15 +2,16 @@
 
 - 图表
   - 图片文件夹也放和md同样的目录下
+  - **图注位置验证**: **关键**：真正的Figure/Scheme图，其图注文字必须在图片内部或与图片在同一页面。图注和图片的位置关系是判断的唯一标准：
+    - 使用tools\search_pdf_text.py找到图注所在的页码（如"Figure 1."、"Scheme 1."）
+    - 必须找到Figure 1. An overview of the PSP workflow...这种以Fig开头的才是caption，而不是正文引用
+    - 该页面的图片才是对应的Figure/Scheme
+    - 不要根据顺序或猜测来分配编号
   - **图片编号一致性要求**：
     - **编号原文一致**: 用tools\extract_pdf_figures.py提取，所有提取的图片编号必须与原始PDF完全一致，不得随意更改或重新编号。Figure 1对应原文Figure 1，Figure 2对应原文Figure 2，Scheme 1对应原文Scheme 1，以此类推。我们自己写的表格就不用标表3：什么的了，如果原文有的话就混淆了
       - alt是和文件路径一致，fig1.png也要和图注一致。
       - 综述类，非单篇：文中到不一定写图3d：xxx这种：我是说这种综述不用写图2_pore_radius：因为不是同一篇，且（原文Figure 1）也不要，体现为文件名了！
     - **原图优先**: 只保留原文PDF中的Figures（Figure 1, 2, 3...）和Schemes（Scheme 1, 2, 3...），禁止提取或使用其他无关的图表、图标或示意图
-    - **图注位置验证**: **关键**：真正的Figure/Scheme图，其图注文字必须在图片内部或与图片在同一页面。图注和图片的位置关系是判断的唯一标准：
-      - 使用tools\search_pdf_text.py找到图注所在的页码（如"Figure 1."、"Scheme 1."）
-      - 该页面的图片才是对应的Figure/Scheme
-      - 不要根据顺序或猜测来分配编号
     - **Scheme特殊性**: Scheme图通常是反应机理图或流程图，图注文字"Scheme X."应该与图片在同一页或紧邻页面。如果某页有"Scheme 4"的文字描述但没有对应的大图，说明不存在Scheme 4的图片
     - 摘要图，ACS系列的就在首页，有的类似，有的没有toc图。命名一般为abs.png，不是fig1。提取完检查下图片大小差不多合理
     - **避免杂乱**: 不得提取本文中不存在的图片（如错误编号的Figure 7, 8, 9等），也不得创建自定义编号的图表
