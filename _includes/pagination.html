@@ -24,15 +24,19 @@
                             {% if check_localasset[0] == '' %}
                                 {%- assign thumbnail_url = thumbnail_url | prepend: site.baseurl -%}
                             {% endif %}
-                            <a href="{{ sub_page.url | prepend: site.baseurl }}" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('{{ thumbnail_url }}') !important"></a>
+                            <a href="{{ sub_page.url | prepend: site.baseurl }}" class="thumbnail_post" aria-label="thumbnail_post">
+                                <img src="{{ thumbnail_url }}" alt="" loading="lazy" decoding="async">
+                            </a>
                         {% else %}
-                            <a href="{{ sub_page.url | prepend: site.baseurl }}" class="thumbnail_post empty" loading="lazy" aria-label="thumbnail_post" style="background-image:url('{{ '/assets/img/thumbnail/empty.jpg' | prepend: site.baseurl }}') !important"></a>
+                            <a href="{{ sub_page.url | prepend: site.baseurl }}" class="thumbnail_post empty" aria-label="thumbnail_post">
+                                <img src="{{ '/assets/img/thumbnail/empty.jpg' | prepend: site.baseurl }}" alt="" loading="lazy" decoding="async">
+                            </a>
                         {% endif %}
                     </div>
                     <div class="box_contents">
                         <a href="{{ sub_page.url | prepend: site.baseurl }}"><h1 class="title_post">{{ sub_page.title }}</h1></a>
                         <a href="{{ sub_page.url | prepend: site.baseurl }}" class="txt_post">
-                            {{ sub_page.content | markdownify | strip_html }}
+                            {{ sub_page.description | default: sub_page.excerpt | strip_html | normalize_whitespace | truncate: 200 }}
                         </a>
                         <div class="info-post">
                             {%- assign sub_page_tree = sub_page.path | split: "/" -%}

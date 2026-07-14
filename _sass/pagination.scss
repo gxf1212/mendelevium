@@ -49,11 +49,18 @@
 
   .thumbnail_post {
     display:block;
-    background-size:cover;
-    background-position:50% 50%;
     width:100%;
     aspect-ratio:5/3;
     border-radius:0;
+    overflow:hidden;
+
+    img {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:50% 50%;
+    }
 
     &:hover { opacity:0.8; }
   }
@@ -182,6 +189,14 @@
     height:12.5rem;
     aspect-ratio:4/3;
     margin:auto;
+    overflow:hidden;
+
+    img {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
   }
 
   .box_contents {
@@ -223,7 +238,17 @@
 .paginated-item { height:15rem; }
 
 #article_content {
-  .thumbnail_post { height:15rem; }
+  .thumbnail_post {
+    height:15rem;
+    overflow:hidden;
+
+    img {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+  }
 
   .box_contents {
     margin-left:-6rem;

@@ -1,16 +1,21 @@
 document.addEventListener('DOMContentLoaded', function(){
-    // Loading page
-    window.addEventListener("load", () => {
-        var load_div = document.querySelector('#loading');
+    // Loading page - hide on DOMContentLoaded with 3s fallback timeout
+    var load_div = document.querySelector('#loading');
 
+    var hideLoading = function(){
         if(load_div != null){
             setTimeout(function(){
                 load_div.style.transition = '.75s';
                 load_div.style.opacity = '0';
                 load_div.style.visibility = 'hidden';
-            }, 800);
+            }, 100);
         }
-    });
+    };
+
+    if(load_div != null){
+        hideLoading();
+        window.setTimeout(hideLoading, 3000);
+    }
 
     // pagination
     const paginationNumbers = document.querySelector("#pagination-numbers");
