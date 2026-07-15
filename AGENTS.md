@@ -69,6 +69,7 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 - 把_pages\xxx.docx改写成Markdown，内容完全不变，保证参考文献链接仍然正确，即文内的引用标记要能对得上文末的list，得用这种吧：[^6]。
 - 写一篇【科研简讯】栏目的，200行左右，框架类似，内容精简，每一行内容可以多点。挑重点、关键方法和结果来写，太不符合逻辑主线可以不放了
 - 写一篇【科研快讯】栏目的，125行以内，超级精简版本，只保留最核心的内容
+- @CLAUDE.md 逐条检查要求，其他rules，每个subagent负责一条rules，并行检查
 
 ## 可复用工具（tools/）
 
