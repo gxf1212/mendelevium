@@ -301,7 +301,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 
 ### 创新点
 [用一个列表清晰地总结本文在理论、方法或应用上的主要创新之处。前面不要加：本研究旨在解决以下核心问题：才列表。不要和“核心结论”部分的内容一样，要深入挖掘。谨慎使用“首次”等说法，最好能和原文献对上，不要过度推断。]
-综述类文章不用写这个
+综述类文章不用写这两个，参考.claude\skills\literature-deepread这些rules
 
 ---
 
