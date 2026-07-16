@@ -10,6 +10,7 @@
     - $0.99$这种单个数字不要公式
     - **变量名 vs 数学表达式**：
       - 变量名用反引号：`p_hill`、`curve_class2`、`data0..data3`、`IC50_M`、`log_ac50`
+    - **基组名**：`6-31+G(3d,p)`、`def2-TZVP`、`cc-pVDZ` 等基组名称用反引号包裹，不要用公式
       - 数学表达式用LaTeX公式：`$r^2 \ge 0.9$`、`$\mathrm{IC50} \le 10~\mu\mathrm{M}$`、`$p_{\text{hill}} \ge 3$`
       - 不要用反引号包裹公式：禁止使用 `` `$R^2 \ge 0.9$` ``，而应直接用 `$R^2 \ge 0.9$`
       - 不要用文本格式的数学符号：禁止使用 `IC50≤10 µM`、`r2>=0.9`、`efficacy > 80%`，必须改为 `$\mathrm{IC50} \le 10~\mu\mathrm{M}$`、`$r^2 \ge 0.9$`、`efficacy $>80\%$`
