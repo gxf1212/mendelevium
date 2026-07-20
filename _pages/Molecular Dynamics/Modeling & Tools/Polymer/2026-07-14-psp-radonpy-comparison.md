@@ -164,10 +164,11 @@ RadonPy的设计哲学是**从SMILES一步到性质**。用户提供重复单元
 #### 分子建模
 
 1. **构象搜索**：RDKit ETKDG v2算法生成1000个初始构象 → MMFF94力场预筛选 → 基于RMSD的聚类分析选出最优4个构象 → **DFT优化**（`ωB97M-D3BJ/6-31G(d,p)`泛函）确定全局能量最低构象。DFT优化在Psi4中完成，单核约需数分钟到数十分钟，取决于分子大小
-2. **电子性质计算**：五种原子电荷方法可选——RESP（Restrained Electrostatic Potential，最精确但最慢）、ESP（Electrostatic Potential，较快）、Mulliken（最快但精度最低）、Löwdin、Gasteiger。还可以计算HOMO/LUMO能级、偶极矩、极化率等电子性质。RESP电荷在Psi4中通过`HF/6-31G*`计算ESP然后拟合得到，单链约需10-30分钟
+2. **电子性质计算**：五种原子电荷方法可选——RESP（Restrained Electrostatic Potential，最精确但最慢）、ESP（Electrostatic Potential，较快）、Mulliken（最快但精度最低）、Löwdin、Gasteiger。还可以计算HOMO/LUMO能级、偶极矩、极化率等电子性质。RESP电荷在Psi4中通过`HF/6-31G*`计算ESP然后拟合得到，单链约需10-30分钟。实操注意：含 `*` linker 位点的单体需先替换为 H 再传入 Psi4（RDKit 的 dummy 原子不被 Psi4 接受），否则报 `MoleculeFormatError`
 3. **聚合物链生成**：采用**自避随机游走算法**（Self-Avoiding Random Walk, SARW）构建聚合物链。算法从一个重复单元出发，逐步添加新的重复单元，每次添加时随机选择扭转角（-180°到+180°），同时检查新原子与已有原子之间的距离是否满足最小间距约束。
-   - 代码中`random_walk_polymerization`函数的关键参数：`dist_min=0.7` Å（最小原子间距，比1.5Å更小，因为后续还有PACKMOL填充），`retry=100`（添加重复单元时最大重试次数），`rollback=5`（连续失败时回退步数）。
+   - 代码中`random_walk_polymerization`函数的关键参数：`dist_min=0.7` Å（链生长阶段的最小原子间距，填充阶段另有 `amorphous_cell` 的 `threshold=2.0`），`retry=100`（添加重复单元时最大重试次数），`rollback=5`（连续失败时回退步数）。
    - 链长以约1000个原子为目标（约10条链/盒子，总计约10000原子）。**立构控制**是RadonPy的特色功能：聚合物主链上的手性中心可以朝同侧（**等规isotactic**）、交替朝侧（**间规syndiotactic**）或随机朝侧（**无规atactic**），**三种立构导致截然不同的结晶性和性能——等规和间规易结晶，无规则保持透明柔韧**，通过`tacticity`参数即可指定。默认`tacticity='atactic'`，`atac_ratio=0.5`（无规立构中两种构型的比例）
+   - **固定随机种子（`--seed`）**确保可复现性：同一单体、同一聚合度、同一seed下，生成的R/S手性序列完全一致，适合需要可重复研究结果的场景。**RadonPy按单体位置而非单体化学结构赋值手性**，因此不同单体的SMILES输入只要聚合度相同，传同样seed也会得到完全相同的立体化学排列——seed控制的是伪随机序列，与单体的化学结构无关
 
 #### 模拟与分析
 
@@ -210,8 +211,8 @@ RadonPy论文版本计算的15种性质包括：
 
 RadonPy当前版本支持多种力场（代码包`radonpy/ff/`目录下可验证），覆盖了从快速筛选到高精度计算的不同需求：
 
-- **GAFF/GAFF2/GAFF2_mod**（标准有机聚合物）：GAFF2是默认选择，对大多数有机分子参数化效果好；**GAFF2_mod通过Träg和Zahn修正参数解决含氟聚合物的高密度偏差问题**，缺少的键角参数按GAFF2类似规则**经验估计**（不是留空报错）
-- **Dreiding/Dreiding_UT**（通用力场）：Dreiding参数覆盖面广但精度较低，Dreiding_UT对扭转势能做了优化，**在构象能量计算上比标准Dreiding更准确**
+- **GAFF/GAFF2/GAFF2_mod**（标准有机聚合物）：GAFF2是默认选择，对大多数有机分子参数化效果好；**GAFF2_mod是GAFF2的含氟修正版，使用Träg和Zahn修正参数解决标准GAFF2在PVDF、PTFE等含氟聚合物上的高密度偏差问题**，缺少的键角参数按GAFF2类似规则**经验估计**（不是留空报错）
+- **Dreiding/Dreiding_UT**（通用力场）：Dreiding参数覆盖面广但精度较低，Dreiding_UT重新拟合了LJ参数以适配RESP电荷模型，**在RESP电荷体系下比标准Dreiding更准确**
 - **Amber（ff19SB）/GLYCAM_06j**（生物大分子）：ff19SB适用于蛋白质和多肽，GLYCAM_06j适用于多糖类聚合物，两者都可与TIP3P/TIP4P/TIP5P水模型配合使用，**用于需要显式溶剂的生物聚合物模拟**
 
 **电荷计算的精度梯度**：RadonPy在精度和自动化之间提供了多种精度档位的选择。从最快到最精确依次为：
@@ -257,7 +258,7 @@ RadonPy是三个工具中对共聚物支持最完整的。代码包（`radonpy/c
 | 原生GROMACS itp | **不支持**（LAMMPS格式为主） | **不支持**（LAMMPS格式） | **原生支持** |
 | MD引擎 | LAMMPS（PySIMM包装） | LAMMPS（直接调用） | GROMACS |
 | DFT引擎 | 无（结构优化用UFF/RDKit） | Psi4（DFT构象优化+RESP电荷） | Gaussian 16 |
-| **安装依赖** | PySIMM+LAMMPS+AmberTools+PACKMOL+LigParGen | 较短（Psi4+LAMMPS，PyPI包） | 中等（GROMACS+Gaussian 16） |
+| **安装依赖** | PySIMM+LAMMPS+AmberTools+PACKMOL+LigParGen | 中等（Psi4+RESP+DFTD3，注意 RESP 包名冲突和 MPI ABI 兼容性） | 中等（GROMACS+Gaussian 16） |
 | **计算资源** | 最低（笔记本几分钟完成百条寡聚物） | 最高（Fugaku超算7500+节点，单链数小时到数天） | 中等（服务器1-3天） |
 | 运行模式 | 本地/Colab | **超算/集群**（多节点并行） | 本地/集群 |
 | Python版本 | 2.7/3.x（老旧） | 3.9-3.13 | 3.x |
@@ -282,10 +283,11 @@ RDKit和Open Babel可以通过conda安装，但PySIMM和LigParGen的配置比较
 **RadonPy的安装相对简单**。根据README，主要依赖Psi4（DFT引擎）和LAMMPS（MD引擎），两者都有conda包。安装命令清晰：
 ```bash
 conda create -n radonpy python=3.11
-conda install -c conda-forge rdkit psi4 dftd3-python resp mdtraj psutil scipy pandas matplotlib
-conda install -c conda-forge lammps
+conda install -c conda-forge rdkit psi4 mdtraj psutil scipy pandas matplotlib
+conda install -c psi4 resp
+pip install radonpy-pypi dftd3
 ```
-Python版本要求3.9到3.13，覆盖较新环境。RadonPy已提供PyPI包（`pip install radonpy-pypi`），最小化安装只需一行命令。但RadonPy主要为**超算环境设计**，论文用Fugaku超算跑了1000+聚合物，单机跑同样规模不现实。
+`dftd3-python` 在 conda-forge 上无 py312 构建，`resp` 不在 conda-forge 上（需用 `-c psi4` 安装），Python 3.12+ 可参考：`conda install -c psi4 resp && pip install dftd3`。`lammps` 的 conda 和 pip 版本 MPI ABI 可能不兼容，注意检查 `libmpi.so` 版本。Python 版本要求 3.9 到 3.13。RadonPy 已提供 PyPI 包（`pip install radonpy-pypi`），最小化安装只需一行命令。但 RadonPy 主要为**超算环境设计**，论文用 Fugaku 超算跑了 1000+ 聚合物，单机跑同样规模不现实。
 
 ### 计算资源需求
 
