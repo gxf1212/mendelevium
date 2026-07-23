@@ -4,8 +4,8 @@ date: "2026-06-28"
 last_modified_at: 2026-07-06
 tags: [PAK1, allosteric-activator, kinase-activator, cardiac-hypertrophy, peptide-guided-screening, drug-discovery]
 description: "利用肽段引导策略发现PAK1变构激活剂，用于治疗心脏肥厚等心血管疾病"
-image: "/assets/img/4K_1080P_compressed/064423TB34A.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/064423TB34A.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/064423TB34A.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/064423TB34A.jpg"
 author: Xufan Gao
 lang: zh-CN
 

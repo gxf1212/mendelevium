@@ -4,8 +4,8 @@ date: "2026-06-11"
 last_modified_at: "2026-06-11"
 tags: [supramolecular-polymer, BTA, coarse-grained-simulation, MARTINI, self-assembly, cooperative-polymerization, molecular-dynamics]
 description: "基于MARTINI力场的BTA水溶性超分子聚合物粗粒化模型，揭示了从快速疏水聚集到有序纤维生长的逐步合作聚合机制"
-thumbnail: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"
-image: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-e7z65r.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-e7z65r.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

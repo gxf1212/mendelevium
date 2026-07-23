@@ -5,8 +5,8 @@ last_modified_at: "2026-06-16"
 tags: [scaffold-analysis, chemical-space, amide-motifs, polypharmacology, scaffold-hopping, drug-design, cheminformatics]
 description: "酰胺基团是药物化学中最常见的结构单元之一，但从骨架层面系统分析其组织结构的工作仍然很少。这项研究从近290万个化合物中提炼出1.7万个不同的C(=O)N骨架，构建了酰胺骨架化学空间图谱，揭示了其靶标分布规律和多靶点设计潜力。"
 author: Xufan Gao
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 lang: zh-CN
 ---
 

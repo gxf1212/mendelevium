@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'lipidome', 'coarse-grained', 'lipid-bilayer']
 description: "* **提出了全新的Martini 3脂质映射方案**：通过引入小尺寸珠子，新方案能够区分长度仅相差2个碳原子的脂质尾链（例如16C vs 18C），极大地提升了模型的化学分辨率。"
-image: "/assets/img/thumbnail/nightgardenflower.jpg"
-thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2026-05-06"
 last_modified_at: "2026-05-06"
 tags: [metal-ions, force-field, molecular-dynamics, lennard-jones, parameterization, amber, metalloprotein]
 description: "合并解读金属-咪唑和金属-醋酸盐相互作用的两篇论文，系统阐述12-6-4 Lennard-Jones非键模型的参数化策略与验证结果"
-image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

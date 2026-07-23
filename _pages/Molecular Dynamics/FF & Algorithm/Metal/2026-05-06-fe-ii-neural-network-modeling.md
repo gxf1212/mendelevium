@@ -4,8 +4,8 @@ date: "2026-05-06"
 last_modified_at: "2026-05-06"
 tags: [neural-network, metal-complexes, spin-crossover, machine-learning, DFT, fe-ii, quantum-chemistry]
 description: "使用神经网络模型预测Fe(II)有机金属复合物的能量和自旋态分裂，通过缩放电子embedding方法实现MAE仅0.037 eV的高精度"
-image: "/assets/img/thumbnail_mine/img-01.jpg"
-thumbnail: "/assets/img/thumbnail_mine/img-01.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/img-01.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/img-01.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

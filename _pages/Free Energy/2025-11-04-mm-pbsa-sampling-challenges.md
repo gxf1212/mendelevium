@@ -4,8 +4,8 @@ date: "2025-11-06"
 last_modified_at: "2025-11-06"
 tags: [mm-pbsa, molecular-dynamics, sampling, convergence, binding-free-energy, enhanced-sampling]
 description: "揭示为什么短期分子动力学模拟会给出看似收敛但实际上误导的结合自由能结果，以及如何确保足够的采样"
-image: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-o3x38m.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-o3x38m.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

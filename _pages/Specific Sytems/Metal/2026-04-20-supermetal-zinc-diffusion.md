@@ -4,8 +4,8 @@ date: "2026-04-20"
 last_modified_at: "2026-04-20"
 tags: [diffusion-model, metal-binding, protein-structure, generative-ai, graph-neural-network, zinc, metalloprotein, machine-learning]
 description: "SuperMetal利用基于得分函数的扩散模型与SE(3)-等变图神经网络，在不需要预知金属离子数量的前提下，以亚埃精度预测蛋白质中的锌离子结合位点，速度比Metal3D快约60倍"
-image: "/assets/img/thumbnail/nightgardenflower.jpg"
-thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
@@ -262,7 +262,7 @@ SuperMetal在 $p = 0.1$ 时，MAD为 $0.61 \pm 0.66$ Å（中位数0.37 Å），
 
 超高效率源于多尺度层次交互策略：金属离子距残基较远时只使用粗粒化表示（仅 $\alpha$-碳节点），近邻才引入全原子结构，避免构建巨大的全局图。这种分层设计确保了只有真正重要的局部原子-金属相互作用才被精细建模，大大减少了图中的节点和边数量。
 
-相比之下，Metal3D的体素化方案将复杂度与体素数量三次方挂钩，体素分辨率越高（如从0.5 Å提升至0.25 Å），计算量增加**8**倍，随蛋白质增大必然急剧升高。此外，SuperMetal支持将特别大的蛋白质分段预测再合并结果，使得原则上没有规模限制（前提是内存充足）。
+相比之下，Metal3D的体素化方案将复杂度与体素数量三次方挂钩，**体素分辨率越高（如从0.5 Å提升至0.25 Å），计算量增加8倍**，随蛋白质增大必然急剧升高。此外，SuperMetal支持将特别大的蛋白质分段预测再合并结果，使得原则上没有规模限制（前提是内存充足）。
 
 ![fig4](supermetal_figs/fig4.png)
 

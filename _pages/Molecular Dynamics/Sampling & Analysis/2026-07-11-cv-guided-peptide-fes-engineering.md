@@ -4,8 +4,8 @@ date: "2026-07-11"
 last_modified_at: "2026-07-14"
 tags: [collective-variables, free-energy-surface, peptide-engineering, HLDA, REMD, mutation-stability, CV-FEST]
 description: "CV-FEST框架结合HLDA分析，用集体变量特征值变化预测小肽突变对热力学稳定性的影响"
-image: "/assets/img/Wallpaper_compressed/giraffe-614141_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/giraffe-614141_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/giraffe-614141_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/giraffe-614141_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

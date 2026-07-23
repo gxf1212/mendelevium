@@ -4,8 +4,8 @@ date: "2025-12-08"
 last_modified_at: "2025-12-08"
 tags: [enzyme-engineering, MD-simulation, rational-design, SDR, enantioselectivity, protein-engineering, biocatalysis]
 description: "附录：完整实验数据、动力学参数、亲和力测定及方法细节"
-image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

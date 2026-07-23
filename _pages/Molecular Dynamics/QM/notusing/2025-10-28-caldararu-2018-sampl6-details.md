@@ -5,9 +5,9 @@ date: "2025-11-04"
 last_modified_at: "2025-11-04"
 tags: [SAMPL6, blind-challenge, QM-MM-FEP, PM6-DH+, TPSS-D3, COSMO-RS, octa-acid, host-guest, method-validation]
 description: "深入解析Caldararu等人在SAMPL6挑战赛中的工作：MM-FEP, QM/MM-FEP和纯QM方法在八酸主客体系统上的表现对比"
-image: "/assets/img/thumbnail_mine/img-01.jpg"
-image: "/assets/img/thumbnail_mine/img-01.jpg"
-thumbnail: "/assets/img/thumbnail_mine/img-01.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/img-01.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/img-01.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/img-01.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

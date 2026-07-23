@@ -4,8 +4,8 @@ date: "2026-07-09"
 last_modified_at: "2026-07-09"
 tags: [writing, scientific-writing, logical-flow, academic-writing, transitions]
 description: "建立逻辑流是科学论文写作的关键。本文从词句段落入手,讲解如何在IMRAD结构的各章节中实现清晰连贯的论证"
-image: "/assets/img/4K_1080P_compressed/074512TMI3d.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/074512TMI3d.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/074512TMI3d.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/074512TMI3d.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2025-11-17"
 last_modified_at: "2025-11-17"
 tags: [AI-driven-drug-discovery, machine-learning-potential, generative-AI, active-learning, committor-theory, free-energy-calculation, enhanced-sampling, molecular-dynamics]
 description: "从ML/MM混合势的精确自由能计算，到生成式主动学习的化学空间探索，再到Gen-COMPAS的罕见事件采样，三篇研究展示机器学习如何在保持物理严格性下提升计算效率"
-image: "/assets/img/thumbnail/sample.png"
-thumbnail: "/assets/img/thumbnail/sample.png"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
 author: Xufan Gao
 lang: zh-CN
 ---

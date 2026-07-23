@@ -4,8 +4,8 @@ date: "2026-03-03"
 last_modified_at: "2026-03-03"
 tags: [QSAR, data-partitioning, cross-validation, model-validation, machine-learning, cheminformatics, random-split, similarity-based-split]
 description: "系统评估随机划分和相似性划分对QSAR模型性能的影响，揭示内部测试性能的不可靠性"
-image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

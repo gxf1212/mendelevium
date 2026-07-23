@@ -4,8 +4,8 @@ date: "2025-08-15"
 last_modified_at: "2025-08-15"
 tags: [vmd, packmol-gui, molecular-packing, software-tools, molecular-modeling, gui, system-building]
 description: "PACKMOL-GUI为VMD提供一站式分子装箱界面，降低复杂分子体系构建、几何约束设置和可视化检查的门槛"
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 ---
 
 # VMD再添利器！PACKMOL-GUI：一站式搞定复杂分子体系的“搭积木”难题

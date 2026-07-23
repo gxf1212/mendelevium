@@ -4,8 +4,8 @@ date: "2026-03-08"
 last_modified_at: "2026-03-08"
 tags: [active-learning, generative-ai, reinforcement-learning, binding-free-energy, drug-discovery, molecular-design, REINVENT, ESMACS]
 description: "结合生成式AI和物理精算的主动学习框架，在超算Frontier上实现大规模化学空间探索，为现代药物发现提供全新范式"
-image: "/assets/img/Wallpaper_compressed/wallhaven-o3x38m.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-o3x38m.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-o3x38m.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-o3x38m.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2025-10-18"
 last_modified_at: "2025-10-18"
 tags: [diary, thoughts, research-philosophy, writing]
 description: "关于科研孤独、支持系统和写作的思考"
-image: "/assets/img/Wallpaper_compressed/cobweb-3725540_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/cobweb-3725540_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/cobweb-3725540_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/cobweb-3725540_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

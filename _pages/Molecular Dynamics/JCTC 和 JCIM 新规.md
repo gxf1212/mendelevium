@@ -4,8 +4,8 @@ date: "2026-05-03"
 last_modified_at: "2026-05-03"
 tags: [reproducibility, data-sharing, JCTC, JCIM, open-science]
 description: "解读 JCTC 与 JCIM 联合社论，说明从 2026-05-01 起对数据、代码与软件可获得性的要求与建议"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
 author: "Rommie E. Amaro et al."
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2025-11-16"
 last_modified_at: "2025-11-16"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'carbohydrate', 'coarse-grained', 'hyaluronic-acid', 'NAG', 'GlcA']
 description: "透明质酸（玻尿酸）及其单糖单元N-乙酰葡萄糖胺（NAG）和葡萄糖醛酸（GlcA）在Martini 3力场中的参数化方法、建模策略和验证方法"
-image: "/assets/img/thumbnail/book.jpg"
-thumbnail: "/assets/img/thumbnail/book.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -5,9 +5,9 @@ date: "2025-11-04"
 last_modified_at: "2025-11-04"
 tags: [RPQS-MSS, multiple-short-simulations, QM-MM-FEP, efficiency, convergence, parallel-computing, PM6-DH+, equilibration]
 description: "深入解析Steinmann等人的RPQS-MSS方法:如何通过多条短QM/MM MD模拟将计算效率提升4倍,同时保持与传统方法相当的精度"
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

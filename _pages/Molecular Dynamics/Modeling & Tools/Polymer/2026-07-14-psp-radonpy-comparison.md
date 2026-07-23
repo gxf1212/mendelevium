@@ -4,8 +4,8 @@ date: "2026-07-14"
 last_modified_at: "2026-07-14"
 tags: [PSP, RadonPy, polymer-modeling, high-throughput, force-field, GAFF2, OPLS-AA, automated-simulation, polymer-informatics]
 description: "对比分析Polymer Structure Predictor (PSP)和RadonPy两种开源聚合物高通量建模工具的功能边界、力场支持、链长控制和实际使用体验"
-thumbnail: "/assets/img/Wallpaper_compressed/andromeda-galaxy-755442.jpg"
-image: "/assets/img/Wallpaper_compressed/andromeda-galaxy-755442.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/andromeda-galaxy-755442.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/andromeda-galaxy-755442.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

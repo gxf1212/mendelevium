@@ -4,8 +4,8 @@ date: "2025-10-11"
 last_modified_at: "2025-10-11"
 tags: [linux, hpc, slurm, system-administration, ssh, cloud-computing, technical-notes]
 description: "详细整理Linux系统管理和HPC集群运维的关键知识，涵盖用户组管理、SSH配置、SLURM作业调度、性能监控等技术要点，为计算科学工作者提供实用运维指南"
-thumbnail: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
-image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 ---
 
 # 【笔记整理|2024-07】Linux系统管理与HPC集群运维：从基础命令到SLURM作业调度

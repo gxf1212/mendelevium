@@ -4,8 +4,8 @@ date: "2026-01-01"
 last_modified_at: "2026-01-01"
 tags: [cambridge, computational-biology, biophysics, research-groups]
 description: "剑桥大学在计算生物与生物物理方向的核心课题组、研究方法与代表性工作概览"
-image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

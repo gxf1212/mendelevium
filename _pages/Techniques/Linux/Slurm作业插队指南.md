@@ -4,8 +4,8 @@ date: "2025-12-02"
 last_modified_at: "2025-12-02"
 tags: [linux, slurm, qos, hpc, scheduler, technical-notes]
 description: "基于真实集群经验的 Slurm QOS 配置指南，涵盖核心概念、快速配置流程和常见问题"
-thumbnail: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
-image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
 lang: zh-CN
 ---
 

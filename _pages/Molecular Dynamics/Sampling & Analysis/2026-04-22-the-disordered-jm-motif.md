@@ -4,8 +4,8 @@ date: "2026-04-22"
 last_modified_at: "2026-04-22"
 tags: [molecular-dynamics, rtks, allostery, inhibitor-design, kinase-conformation, dfg-motif]
 description: "揭示受体酪氨酸激酶中无序JM基序通过动态效应调控DFG<sub>out</sub>构象的分子机制，为别构抑制剂设计提供新思路"
-image: "/assets/img/thumbnail/nightgardenflower.jpg"
-thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2026-05-31"
 last_modified_at: "2026-05-31"
 tags: [GNN, geometric-GNN, graph-neural-networks, molecular-property-prediction, message-passing, equivariant, SchNet, DimeNet]
 description: "深入解析图神经网络的信息处理机制，从消息传递到最前沿的等变几何图神经网络"
-image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

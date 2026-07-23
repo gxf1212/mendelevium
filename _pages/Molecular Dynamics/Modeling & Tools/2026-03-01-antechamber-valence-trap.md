@@ -4,8 +4,8 @@ date: "2026-03-01"
 last_modified_at: "2026-03-01"
 tags: [molecular-dynamics, ambertools, antechamber, gaff, mol2, forcefield]
 description: "记录一次 antechamber 报 Weird atomic valence 的排查过程，根因是中间文件丢失双键"
-image: "/assets/img/thumbnail/nightgardenflower.jpg"
-thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

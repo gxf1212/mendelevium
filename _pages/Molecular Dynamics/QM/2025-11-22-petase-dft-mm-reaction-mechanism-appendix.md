@@ -4,8 +4,8 @@ date: "2025-11-23"
 last_modified_at: "2025-11-23"
 tags: [petase, dft-mm, qm-mm, umbrella-sampling, serine-hydrolase, pet-degradation, supplementary-information]
 description: "PETase降解PET机理研究的技术细节、补充数据和计算方法参数"
-image: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

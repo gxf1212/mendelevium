@@ -4,8 +4,8 @@ date: "2026-05-28"
 last_modified_at: "2026-05-28"
 tags: [QSAR, automated-workflow, molecular-property-prediction, AutoML, drug-discovery, deep-learning]
 description: "Uni-QSAR通过多表示学习与自动化工作流，减少分子性质预测中的手动调参与模型选择"
-image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2026-06-18"
 last_modified_at: "2026-07-12"
 tags: [protein-dynamics, NMR, molecular-dynamics, enhanced-sampling, aromatic-ring-flips, GB1, crystal-packing, protein-complexes]
 description: "通过定量NMR和增强采样MD模拟，揭示GB1蛋白芳香环在晶体、复合物和溶液中的动力学差异，发现晶体使埋藏Tyr翻转速率降低约三个数量级"
-image: "/assets/img/Wallpaper_compressed/abstract-21851_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/abstract-21851_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/abstract-21851_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/abstract-21851_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 

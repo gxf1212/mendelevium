@@ -4,8 +4,8 @@ date: "2026-07-15"
 last_modified_at: "2026-07-22"
 tags: [copper-complexes, protein-scaffold, coordination-chemistry, Jahn-Teller-distortion, Cu(I)-octahedral, entatic-state, bipyridine, JDFT, redox-potential, JACS, 2026]
 description: "JACS 2026：利用蛋白质支架预组织联吡啶-丙氨酸非天然氨基酸，实现对铜配合物经典配位偏好的系统性重写，获得前所未有的八面体Cu(I)和显著抑制的Jahn-Teller畸变"
-image: "/assets/img/Wallpaper_compressed/wallhaven-o3gk17.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-o3gk17.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-o3gk17.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-o3gk17.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
@@ -100,7 +100,7 @@ lang: zh-CN
 
 ### 四个蛋白质设计的详细参数
 
-基于对Cβ-Cβ距离的结构分析，研究者构建了四个bpy-Ala变体，分别采用具有不同对称性和配体间距的寡聚蛋白质骨架：其中DP代表dimeric（二聚体）变体，TP代表trimeric（三聚体）变体，数字代表突变位点编号。
+基于对Cβ-Cβ距离的结构分析，研究者构建了四个bpy-Ala变体，分别采用具有不同对称性和配体间距的寡聚蛋白质骨架：其中**DP代表dimeric（二聚体）变体，TP代表trimeric（三聚体）变体**，数字代表突变位点编号。
 
 **二聚体（C<sub>2</sub>对称性）**：
 | 蛋白质 | 母体蛋白质 | 突变位点 | Cβ-Cβ距离 |

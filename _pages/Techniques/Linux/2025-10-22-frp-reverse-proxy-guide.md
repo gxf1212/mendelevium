@@ -4,8 +4,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [frp, reverse-proxy, network, devops, systemd, security, nginx, internal-network]
 description: "完整的 frp 内网穿透部署指南，包含云服务器配置、Token 认证、HTTP 密码保护、WebSocket 支持等实战经验，适合科研开发和远程协作场景"
-thumbnail: "/assets/img/thumbnail_mine/wh-l3971q.jpg"
-image: "/assets/img/thumbnail_mine/wh-l3971q.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-l3971q.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-l3971q.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

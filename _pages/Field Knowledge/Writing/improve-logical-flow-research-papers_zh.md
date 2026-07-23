@@ -4,8 +4,8 @@ date: "2026-07-09"
 last_modified_at: "2026-07-09"
 tags: [writing, research-papers, logical-flow, academic-writing]
 description: "研究论文的逻辑流畅度决定了审稿人和读者能否理解你的论证。本文拆解建立清晰、连贯研究叙事的实用策略，从整体结构设计到段落内部衔接"
-image: "/assets/img/4K_1080P_compressed/073610KH2QH.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/073610KH2QH.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/073610KH2QH.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/073610KH2QH.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

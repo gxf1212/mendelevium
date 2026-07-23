@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [FEP, 机器学习, 药物发现, 自由能微扰, 分子动力学, 高通量计算]
 description: "FEP Ω通过消除传统自由能微扰中的参数调优，实现了标准化工作流和机器学习后处理的结合，让精准的自由能预测变得快速、可靠且普遍适用"
-image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

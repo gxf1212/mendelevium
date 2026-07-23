@@ -4,8 +4,8 @@ date: "2026-06-23"
 last_modified_at: "2026-07-07"
 tags: [heavy-metal-detoxification, metal-binding-proteins, metallothioneins, phytochelatins, plant-defense, molecular-mechanism, environmental-stress]
 description: "深入解析植物如何利用金属硫蛋白和植物螯合肽构建重金属解毒的分子防线，通过螯合、区隔化和转运机制保护细胞免受重金属毒性"
-image: "/assets/img/Wallpaper_compressed/starry-night-1149815_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/starry-night-1149815_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/starry-night-1149815_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/starry-night-1149815_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

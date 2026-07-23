@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [machine-learning, drug-discovery, molecular-dynamics, data-management, force-field, interpretability, SHAP, dpdata, gmx-ffconv]
 description: "介绍四项最新机器学习与计算化学工具：dpdata数据管理、gmx_ffconv力场转换、SHAP模型解释优化、图论机器学习预测抗病毒药物性质"
-image: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-e7z65r.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-e7z65r.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-e7z65r.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

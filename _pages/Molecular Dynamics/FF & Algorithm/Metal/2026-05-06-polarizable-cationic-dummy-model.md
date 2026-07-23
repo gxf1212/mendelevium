@@ -5,8 +5,8 @@ date: "2026-05-06"
 last_modified_at: "2026-05-06"
 tags: [metal-ions, force-field, molecular-dynamics, polarization, cationic-dummy-atom, EEM, AMBER, high-valent-ions]
 description: "解读CDApol模型：通过电负性均衡方法（Electronegativity Equalization Method，EEM）在阳离子虚拟原子模型中引入动态极化，解决固定电荷模型无法适应局部溶剂结构的难题"
-image: "/assets/img/thumbnail_mine/wh-g83qpe.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-g83qpe.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g83qpe.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g83qpe.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

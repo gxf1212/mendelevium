@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: ['tutorial', 'ai-tools', 'mcp', 'playwright', 'browser-automation', 'claude']
 description: "想让 AI 直接帮你操作浏览器吗？**Model Context Protocol (MCP)** 让这一切成为现实。通过 MCP 服务器，Claude Code 可以像人类一样浏览网页、填写表单、截图、抓取数据，甚至生成自动化测试代码。"
-image: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rddgwm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rddgwm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

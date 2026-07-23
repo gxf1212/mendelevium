@@ -4,8 +4,8 @@ date: "2026-05-22"
 last_modified_at: "2026-05-22"
 tags: [enzyme-design, metalloenzyme, ketoreductase, RFdiffusion, protein-design, asymmetric-synthesis, biocatalysis]
 description: "使用深度学习从头设计锌基金属酮还原酶，实现非天然锌氢机制的不对称酮还原，并兼具高热稳定性和高对映选择性"
-image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

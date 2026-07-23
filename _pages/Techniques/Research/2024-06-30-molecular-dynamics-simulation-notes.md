@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [molecular-dynamics, gromacs, namd, plumed, umbrella-sampling, pmf, martini, simulation]
 description: "分子动力学模拟的实用技巧与经验，涵盖GROMACS和NAMD轨迹处理、PLUMED增强采样、伞形采样PMF计算、Martini粗粒化力场应用等关键技术"
-thumbnail: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
-image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 ---
 
 # 【笔记整理|2024年上半年】分子动力学模拟实用技巧与经验总结

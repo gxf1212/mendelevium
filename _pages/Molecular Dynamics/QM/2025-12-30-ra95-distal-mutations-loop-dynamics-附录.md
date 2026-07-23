@@ -4,8 +4,8 @@ date: "2025-12-30"
 last_modified_at: "2025-12-30"
 tags: [enzyme-design, directed-evolution, retro-aldolase, distal-mutations, loop-dynamics, molecular-dynamics, electrostatics, QM-MM]
 description: "RA95逆醛缩酶远端突变研究的详细技术方法、完整数据表格和深度Q&A解析"
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2025-11-16"
 last_modified_at: "2025-11-16"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'polymer', 'coarse-grained', 'algorithm']
 description: "Polyply软件的技术实现细节、算法参数推导、扩展验证案例和性能优化策略"
-image: "/assets/img/thumbnail/book.jpg"
-thumbnail: "/assets/img/thumbnail/book.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

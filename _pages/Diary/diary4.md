@@ -4,8 +4,8 @@ date: "2026-03-08"
 last_modified_at: "2026-03-08"
 tags: [diary, thoughts, research-philosophy, writing]
 description: "关于毕业论文规划、多课题管理和运动爱好的思考"
-image: "/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/073056q6vrr.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

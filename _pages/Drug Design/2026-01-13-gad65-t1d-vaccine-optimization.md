@@ -4,8 +4,8 @@ date: "2026-01-13"
 last_modified_at: "2026-01-13"
 tags: [type-1-diabetes, autoantigen, GAD65, molecular-dynamics, free-energy-perturbation, HLA-A0201, vaccine-design, immunotherapy]
 description: "通过分子动力学和自由能微扰计算优化GAD65<sub>114-122</sub>自身抗原，识别关键突变位点以增强HLA-A*02:01结合亲和力，为1型糖尿病抗原特异性免疫疗法提供合理设计策略"
-image: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

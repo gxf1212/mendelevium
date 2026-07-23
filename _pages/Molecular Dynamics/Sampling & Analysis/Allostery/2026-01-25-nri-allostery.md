@@ -4,8 +4,8 @@ date: "2026-01-25"
 last_modified_at: "2026-01-25"
 tags: [neural-relational-inference, deep-learning, allostery, molecular-dynamics, graph-neural-network, protein-dynamics, machine-learning]
 description: "Zhu等人提出基于图神经网络的NRI模型，从MD轨迹中推断蛋白质变构通信的残基间相互作用网络，揭示长程变构机制"
-image: "/assets/img/thumbnail_mine/wh-m992d8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-m992d8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-m992d8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-m992d8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

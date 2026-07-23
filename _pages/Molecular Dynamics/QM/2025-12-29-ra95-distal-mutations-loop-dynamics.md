@@ -4,8 +4,8 @@ date: "2025-12-29"
 last_modified_at: "2025-12-29"
 tags: [enzyme-design, directed-evolution, retro-aldolase, distal-mutations, loop-dynamics, molecular-dynamics, electrostatics, QM-MM]
 description: "深入解析远端突变如何通过调控环动力学和局部电场，在设计逆醛缩酶RA95中实现速率限制步骤转移并提高催化效率6倍"
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

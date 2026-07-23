@@ -4,8 +4,8 @@ date: "2026-05-19"
 last_modified_at: "2026-05-19"
 tags: [artificial-metalloenzyme, de-novo-design, photocatalysis, enantioselectivity, protein-design, Rosetta, ruthenium, iridium]
 description: "David Baker和Jared Lewis团队通过从头蛋白设计与定向进化，构建了可实现高对映选择性[2+2]光环化的人工金属酶光催化剂"
-image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

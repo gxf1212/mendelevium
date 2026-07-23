@@ -4,8 +4,8 @@ date: "2026-05-28"
 last_modified_at: "2026-05-28"
 tags: [interaction-fingerprints, machine-learning, drug-discovery, molecular-recognition, SBDD, PLIP, SIFt, virtual-screening]
 description: "系统综述相互作用指纹在机器学习驱动的药物发现中的应用，从SIFt到PLIP的各类方法解析"
-image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

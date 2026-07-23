@@ -4,8 +4,8 @@ date: "2026-03-19"
 last_modified_at: "2026-03-19"
 tags: [membrane, orientation, tilt-angle, hydrophobic-matching, transmembrane-potential, PPM-model]
 description: "疏水匹配、能量分化和静电调控三大定律决定了膜相关螺旋的最优倾斜角"
-image: "/assets/img/Wallpaper_compressed/wallhaven-8o3o7k.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-8o3o7k.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-8o3o7k.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-8o3o7k.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

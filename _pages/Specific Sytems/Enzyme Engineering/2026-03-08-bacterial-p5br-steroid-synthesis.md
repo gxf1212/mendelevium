@@ -4,8 +4,8 @@ date: "2026-03-08"
 last_modified_at: "2026-03-08"
 tags: [enzyme-engineering, steroid-synthesis, biocatalysis, rational-design, molecular-dynamics, substrate-specificity, p5br, gene-mining]
 description: "沈阳药科大学团队首次挖掘细菌来源的孕酮5β-还原酶，通过理性设计实现底物选择性精准调控，最优突变体催化效率提升700倍，为5β-二氢类固醇的工业化绿色合成提供了新途径"
-image: "/assets/img/thumbnail_mine/wh-x88lko.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-x88lko.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-x88lko.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-x88lko.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

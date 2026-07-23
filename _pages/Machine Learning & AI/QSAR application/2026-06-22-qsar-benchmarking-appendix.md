@@ -4,8 +4,8 @@ date: "2026-06-22"
 last_modified_at: 2026-06-22
 tags: [qsar, machine-learning, molecular-descriptors, benchmarking, supplementary]
 description: "Y-scrambling验证、bootstrap置信区间、scaffold划分统计量、适用域敏感性分析、残差分析和活性悬崖完整描述符对比"
-image: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

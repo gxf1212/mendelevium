@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [machine-learning, graph-theory, topological-indices, antiviral-drugs, QSPR, random-forest, neural-network, drug-discovery]
 description: "介绍一种两阶段机器学习框架，通过拓扑指数预测抗病毒药物的理化性质，实现高精度的定量构效关系建模"
-image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

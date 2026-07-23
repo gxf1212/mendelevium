@@ -4,8 +4,8 @@ date: "2026-07-08"
 last_modified_at: "2026-07-08"
 tags: [diary, 思考, 成长, 学术, 心态]
 description: "关于科研、人生和自我成长的思考记录"
-image: "/assets/img/Wallpaper_compressed/wallhaven-9m2rk1.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-9m2rk1.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-9m2rk1.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-9m2rk1.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

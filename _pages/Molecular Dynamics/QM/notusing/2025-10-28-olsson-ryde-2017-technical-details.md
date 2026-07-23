@@ -5,9 +5,9 @@ date: "2025-11-04"
 last_modified_at: "2025-11-04"
 tags: [QM-MM-FEP, reference-potential, thermodynamic-cycle, MBAR, BAR, PM6-DH+, convergence, overlap-measures]
 description: "深入解读Olsson & Ryde 2017年的开创性工作：如何用参考势方法将QM/MM自由能计算成本降至1/3,同时保持精度"
-image: "/assets/img/thumbnail/nightgardenflower.jpg"
-image: "/assets/img/thumbnail/nightgardenflower.jpg"
-thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

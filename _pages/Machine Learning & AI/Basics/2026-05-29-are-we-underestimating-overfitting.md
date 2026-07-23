@@ -5,8 +5,8 @@ last_modified_at: "2026-05-29"
 tags: [qsar, machine-learning, deep-learning, overfitting, double-descent, model-complexity]
 description: "传统的QSAR建模强调控制参数避免过拟合，但近年表明过度参数化的深度学习模型也能展现出极强的泛化能力。我们是否该拥抱“良性过拟合”？"
 author: Xufan Gao
-image: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
 lang: zh-CN
 ---
 

@@ -4,8 +4,8 @@ date: "2026-01-16"
 last_modified_at: "2026-01-16"
 tags: [molecular-dynamics, allostery, protein-dynamics, conformational-entropy, computational-method, network-analysis, lsp-md, thermal-vibrations]
 description: "Kornev提出LSP-MD方法，通过皮秒时间尺度的热振动分析捕获蛋白质变构信号，为熵驱动的变构调节提供高效计算工具"
-image: "/assets/img/thumbnail_mine/wh-x88lko.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-x88lko.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-x88lko.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-x88lko.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2025-11-04"
 last_modified_at: "2025-11-04"
 tags: [cd47, sirpa, macrophage, phagocytosis, immunotherapy, drug-delivery, cell-biology]
 description: "CD47及其相关肽既可抑制也可增强巨噬细胞吞噬，为免疫逃逸、药物递送和细胞清除策略提供可调控的分子工具"
-image: "/assets/img/thumbnail_mine/wh-dpepjo.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-dpepjo.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpepjo.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpepjo.jpg"
 ---
 # **『"别吃我" vs "吃我"』：细胞世界的攻防战，CD47的双重妙用**
 

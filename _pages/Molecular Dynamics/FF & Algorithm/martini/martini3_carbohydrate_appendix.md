@@ -4,8 +4,8 @@ date: "2025-11-16"
 last_modified_at: "2025-11-16"
 tags: ['molecular-dynamics', 'force-field', 'martini', 'carbohydrate', 'validation', 'application']
 description: "Martini 3碳水化合物力场的详细验证方法（SASA、转移自由能、渗透压）和应用案例（葡聚糖、蛋白质-糖脂识别等）"
-image: "/assets/img/thumbnail_mine/wh-6oqzgq.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6oqzgq.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6oqzgq.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6oqzgq.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

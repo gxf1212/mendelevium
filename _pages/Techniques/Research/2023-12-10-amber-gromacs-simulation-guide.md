@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [amber, gromacs, namd, molecular-dynamics, force-field, membrane-simulation, amber-tools]
 description: "全面总结Amber、GROMACS和NAMD分子动力学模拟软件的实用技巧，涵盖AmberTools参数化、GROMACS性能优化、膜蛋白建模和轨迹分析等核心技能"
-thumbnail: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
-image: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
 ---
 
 # 【笔记整理|2023-09】Amber和GROMACS分子动力学模拟实用指南

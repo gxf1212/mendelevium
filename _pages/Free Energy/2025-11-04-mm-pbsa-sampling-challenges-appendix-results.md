@@ -4,8 +4,8 @@ date: "2025-11-06"
 last_modified_at: "2025-11-06"
 tags: [mm-pbsa, appendix, data, qa]
 description: "完整的结果数据表、PCA统计、相互作用分析、常见问题解答、局限性分析"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
 author: Xufan Gao
 lang: zh-CN
 ---

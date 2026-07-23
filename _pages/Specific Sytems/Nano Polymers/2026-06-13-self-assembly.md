@@ -4,8 +4,8 @@ date: "2026-06-11"
 last_modified_at: "2026-06-11"
 tags: [self-assembly, free-energy-surface, molecular-dynamics, metadynamics, polymer-nanoparticle, umbrella-sampling, coarse-grained, review]
 description: "系统综述构建聚合物自组装体系自由能面所需的指标选取、坐标组合、采样方法与可视化策略，涵盖二维FES、PMF计算与多维景观的最新文献进展"
-thumbnail: "/assets/img/thumbnail_mine/wh-1kxerg.jpg"
-image: "/assets/img/thumbnail_mine/wh-1kxerg.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kxerg.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kxerg.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

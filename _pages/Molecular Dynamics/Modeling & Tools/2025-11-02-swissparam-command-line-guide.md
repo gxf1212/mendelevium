@@ -4,8 +4,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 description: "详细介绍SwissParam命令行工具的使用方法，包括服务器状态检查、小分子参数化、共价小分子处理、作业状态查询和结果下载等完整操作流程。"
 tags: [swissparam, force-field, parameterization, molecular-modeling, command-line, charmm, md-simulation]
-thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
-image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

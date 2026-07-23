@@ -4,8 +4,8 @@ date: "2026-07-13"
 last_modified_at: 2026-07-13
 tags: [qsar, machine-learning, web-platform, drug-discovery, cheminformatics, molecular-descriptors, workflow]
 description: "PoseidonQ整合了22种机器学习算法、17种分子指纹和208个RDKit描述符，提供一站式QSAR建模、验证和部署解决方案"
-image: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

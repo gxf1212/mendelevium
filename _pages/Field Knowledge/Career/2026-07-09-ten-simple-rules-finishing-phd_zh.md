@@ -4,8 +4,8 @@ date: "2026-07-09"
 last_modified_at: "2026-07-09"
 tags: [career, phd, graduation, career-development, academic-writing]
 description: "完成博士论文的最后阶段最关键的时间管理、写作和人脉建议。覆盖规划、优先事项、软件工具、答辩准备与职业发展等10条规则"
-image: "/assets/img/Wallpaper_compressed/snow-3193865_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/snow-3193865_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/snow-3193865_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/snow-3193865_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

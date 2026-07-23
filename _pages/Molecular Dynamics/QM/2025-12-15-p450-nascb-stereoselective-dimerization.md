@@ -4,8 +4,8 @@ date: "2026-03-17"
 last_modified_at: "2026-03-17"
 tags: [cytochrome-p450, qm-mm, molecular-dynamics, dimerization, stereoselectivity, enzyme-catalysis, diketopiperazine]
 description: "通过MD模拟和QM/MM计算揭示P450 NascB催化二聚化反应的分子机制，发现底物自由基的Re-face到Si-face构象转换是控制立体选择性的关键"
-image: "/assets/img/thumbnail/sample.png"
-thumbnail: "/assets/img/thumbnail/sample.png"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
 author: Xufan Gao
 lang: zh-CN
 ---

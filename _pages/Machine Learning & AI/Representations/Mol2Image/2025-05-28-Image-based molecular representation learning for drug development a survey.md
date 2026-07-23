@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [image-based-ml, molecular-representation, drug-development, computer-vision, ai-drug-discovery, survey, mol2image]
 description: "Briefings in Bioinformatics综述系统梳理AI“看脸识药”新范式，从分子指纹、NLP、GNN到图像表征的演进，讨论药物发现视觉化表征的机会与边界"
-thumbnail: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
-image: "/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dp5x3l.jpg"
 ---
 
 

@@ -4,8 +4,8 @@ date: "2026-07-10"
 last_modified_at: "2026-07-10"
 tags: [literature-search, evidence-based-medicine, PubMed, EMBASE, Web-of-Science, systematic-review]
 description: "面对未知的研究问题时，如何通过PICO框架、数据库选择、检索策略一步步找到可靠证据。本文以PubMed、EMBASE、Web of Science为例，给出系统化的检索入门指南"
-image: "/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

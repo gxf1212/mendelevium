@@ -4,8 +4,8 @@ date: "2026-03-04"
 last_modified_at: "2026-03-04"
 tags: [multi-agent-system, molecular-optimization, drug-discovery, LLM, docking, cheminformatics, AI-agent, workflow-automation]
 description: "分层多智能体框架自动化药物分子优化，对比5个大语言模型在AKT1靶点上的表现"
-image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

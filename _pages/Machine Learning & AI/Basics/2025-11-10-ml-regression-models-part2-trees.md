@@ -4,8 +4,8 @@ date: "2025-11-10"
 last_modified_at: "2025-11-10"
 tags: [machine-learning, regression, decision-tree, random-forest, xgboost, lightgbm, gradient-boosting]
 description: "系列第二篇：详解决策树、随机森林、梯度提升家族（XGBoost/LightGBM/CatBoost等），实战中最常用的竞赛级回归模型"
-thumbnail: "/assets/img/4K_1080P_compressed/070601kQFOg.jpg"
-image: "/assets/img/4K_1080P_compressed/070601kQFOg.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/070601kQFOg.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/070601kQFOg.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

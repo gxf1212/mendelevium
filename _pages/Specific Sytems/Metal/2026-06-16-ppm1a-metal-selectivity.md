@@ -4,8 +4,8 @@ date: "2026-06-16"
 last_modified_at: "2026-07-16"
 tags: [PPM1A, metal-selectivity, DFT, metalloprotein, metal-binding, computational-chemistry]
 description: "DFT计算揭示蛋白磷酸酶PPM1A的金属选择性：Mn位点易受Fe2+和Zn2+攻击，Mg位点更具抗性"
-image: "/assets/img/Wallpaper_compressed/hands-1150073_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/hands-1150073_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/hands-1150073_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/hands-1150073_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

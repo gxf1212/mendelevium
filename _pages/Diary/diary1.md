@@ -4,8 +4,8 @@ date: "2025-09-01"
 last_modified_at: "2025-09-01"
 tags: [diary, life, research, claude-code, phd-life, thoughts]
 description: "关于Claude Code使用体验、博士生多课题管理和生活思考的随笔"
-image: "/assets/img/Wallpaper_compressed/milky-way-1023340_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/milky-way-1023340_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/milky-way-1023340_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/milky-way-1023340_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

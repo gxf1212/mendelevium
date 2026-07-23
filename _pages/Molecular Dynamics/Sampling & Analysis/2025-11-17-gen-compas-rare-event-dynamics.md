@@ -4,8 +4,8 @@ date: "2025-11-17"
 last_modified_at: "2025-11-17"
 tags: [rare-events, molecular-dynamics, diffusion-model, committor, enhanced-sampling, machine-learning, protein-folding, free-energy-landscape]
 description: "Gen-COMPAS框架将扩散生成模型与committor引导的路径采样结合，无需预定义集合变量即可高效重构罕见事件的转变路径和自由能景观，采样效率提升数百倍"
-image: "/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

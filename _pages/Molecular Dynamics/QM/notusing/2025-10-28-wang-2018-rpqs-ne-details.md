@@ -5,9 +5,9 @@ date: "2025-11-04"
 last_modified_at: "2025-11-04"
 tags: [RPQS-NE, nonequilibrium, Jarzynski-equality, QM-MM-FEP, fast-switching, work-distribution, convergence, efficiency-comparison]
 description: "深入解析Wang等人的RPQS-NE方法:非平衡快速切换能否加速QM/MM自由能计算?答案令人意外——比RPQS-MSS慢1.5倍"
-image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
-image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

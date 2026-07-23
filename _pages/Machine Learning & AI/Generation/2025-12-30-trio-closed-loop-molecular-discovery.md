@@ -4,8 +4,8 @@ date: "2026-01-01"
 last_modified_at: "2026-01-01"
 tags: [molecular-generation, language-model, monte-carlo-tree-search, drug-discovery, reinforcement-learning, fragment-based, docking, multi-objective-optimization]
 description: "深圳大学等机构提出Trio框架，整合片段分子语言模型、强化学习和蒙特卡洛树搜索，实现可解释的闭环靶向分子设计，在结合亲和力、类药性和合成可及性上全面超越现有方法"
-image: "/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8yjqy.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

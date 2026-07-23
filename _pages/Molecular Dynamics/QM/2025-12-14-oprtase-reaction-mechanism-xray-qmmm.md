@@ -4,8 +4,8 @@ date: "2025-12-14"
 last_modified_at: "2025-12-14"
 tags: [oprtase, qm-mm, reaction-mechanism, x-ray-crystallography, enzyme-catalysis, pyrimidine-biosynthesis, transition-state, free-energy-calculation]
 description: "结合高分辨率X射线晶体学与QM/MM自由能计算，揭示OPRTase催化嘧啶核苷酸生物合成的详细反应机制，为抗疟疾、抗结核和抗癌药物设计提供关键的过渡态信息"
-image: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8odwg.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8odwg.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

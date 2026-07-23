@@ -4,8 +4,8 @@ date: "2026-05-27"
 last_modified_at: "2026-05-27"
 tags: [QuantumPDB, QM-cluster, technical-details, appendix]
 description: QuantumPDB技术细节附录，包含完整的模块架构、金属酶处理、挑战解决方案等详细内容
-image: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6o2m9q.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

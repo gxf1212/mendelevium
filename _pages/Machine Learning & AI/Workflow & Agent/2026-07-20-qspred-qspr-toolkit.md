@@ -4,8 +4,8 @@ date: "2026-07-20"
 last_modified_at: 2026-07-21
 tags: [qspr, qsar, machine-learning, python, open-source, cheminformatics, data-science]
 description: "QSPRpred是莱顿大学推出的开源QSPR建模工具包，支持数据准备到模型部署全流程，提供丰富的描述符、模型和数据划分方法"
-image: "/assets/img/Wallpaper_compressed/fantasy-2861107_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/fantasy-2861107_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/fantasy-2861107_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/fantasy-2861107_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

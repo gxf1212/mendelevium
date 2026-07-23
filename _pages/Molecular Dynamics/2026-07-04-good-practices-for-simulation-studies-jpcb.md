@@ -4,8 +4,8 @@ date: "2026-07-04"
 last_modified_at: "2026-07-04"
 tags: [editorial, molecular-dynamics, journal-guidelines, best-practices, peer-review, JPC-B, simulation-methodology, free-energy-calculations]
 description: "JPCB期刊对依赖分子动力学模拟及相关技术的稿件的期望和要求，强调科学研究严谨性、物理基础和结果可解释性"
-image: "/assets/img/4K_1080P_compressed/073557XRoUg.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/073557XRoUg.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/073557XRoUg.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/073557XRoUg.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2025-11-25"
 last_modified_at: "2025-11-25"
 tags: [glycoside-phosphorylase, cryo-EM, beta-glucan, GH161, enzyme-structure, conformational-dynamics, carbohydrate-active-enzyme]
 description: "通过冷冻电镜解析GH161家族磷酸化酶的结构，揭示gate loop动力学如何调控β-1,3-葡聚糖的合成"
-image: "/assets/img/thumbnail_mine/wh-8oev1j.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-8oev1j.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-8oev1j.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-8oev1j.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

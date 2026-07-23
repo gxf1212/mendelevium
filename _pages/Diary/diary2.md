@@ -4,8 +4,8 @@ date: "2025-09-03"
 last_modified_at: "2025-09-03"
 tags: [diary, research, ai4s, media, thoughts, academic-life]
 description: "关于AI4S会议、媒体研究和学术生活的思考"
-image: "/assets/img/4K_1080P_compressed/07443867SBA.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/07443867SBA.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/07443867SBA.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/07443867SBA.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

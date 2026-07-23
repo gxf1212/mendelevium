@@ -4,8 +4,8 @@ date: "2025-10-07"
 last_modified_at: "2025-10-07"
 description: "基于AI的帕金森病药物发现：通过迭代式机器学习方法，发现高效抑制α-突触核蛋白聚集的潜在药物分子，为神经退行性疾病治疗开辟新路径。"
 tags: [machine-learning, parkinsons, alpha-synuclein, drug-discovery, active-learning, iterative-optimization]
-thumbnail: "/assets/img/thumbnail/nightgardenflower.jpg"
-image: "/assets/img/thumbnail/nightgardenflower.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/nightgardenflower.jpg"
 ---
 
 # AI炼丹新范式：用迭代式机器学习发现帕金森病α-突触核蛋白的高效抑制剂

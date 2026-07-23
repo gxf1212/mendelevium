@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [ABCG2, 力场参数, 电荷模型, 结合自由能, FEP, 分子动力学, 水化自由能]
 description: "ABCG2电荷模型在水化自由能计算中性能优异，但在蛋白-配体相互作用环境中未能带来改进，揭示力场优化的系统特异性"
-image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

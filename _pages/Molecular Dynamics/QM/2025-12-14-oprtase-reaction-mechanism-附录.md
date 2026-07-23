@@ -4,8 +4,8 @@ date: "2025-12-14"
 last_modified_at: "2025-12-14"
 tags: [oprtase, qm-mm, reaction-mechanism, x-ray-crystallography, computational-chemistry, fep, transition-state, enzyme-catalysis, pyrimidine-biosynthesis]
 description: "OPRTase反应机制研究的计算化学技术细节、方法学补充和Supporting Information解读"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
 author: Xufan Gao
 lang: zh-CN
 

@@ -4,8 +4,8 @@ date: "2026-03-08"
 last_modified_at: "2026-03-08"
 tags: [membrane, orientation, tilt-angle, S-state, T-state, I-state, deuterium-nmr, molecular-dynamics]
 description: "分子主轴相对膜法向的倾斜角可作为区分非结合、表面吸附和跨膜插入三种状态的定量判据"
-image: "/assets/img/Wallpaper_compressed/sunset-3689760_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/sunset-3689760_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/sunset-3689760_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/sunset-3689760_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

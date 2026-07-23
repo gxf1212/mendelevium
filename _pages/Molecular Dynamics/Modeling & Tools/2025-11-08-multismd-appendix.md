@@ -4,8 +4,8 @@ date: "2025-11-08"
 last_modified_at: "2025-11-08"
 tags: [分子动力学, SMD, 附录, 技术细节, ATP通道, 无序区域]
 description: "multiSMD工具的技术实现细节、案例研究II和III的完整分析、计算成本评估"
-image: "/assets/img/thumbnail/book.jpg"
-thumbnail: "/assets/img/thumbnail/book.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

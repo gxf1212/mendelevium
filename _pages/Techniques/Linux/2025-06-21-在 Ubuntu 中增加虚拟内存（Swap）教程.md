@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [ubuntu, swap, virtual-memory, system-administration, memory-management, server-management]
 description: "详细Ubuntu系统虚拟内存(Swap)配置教程，涵盖交换空间检查、文件创建、启用挂载等完整步骤，为内存不足服务器提供性能优化方案"
-thumbnail: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
-image: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g78rle.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g78rle.jpg"
 ---
 # 在 Ubuntu 中增加虚拟内存（Swap）教程
 

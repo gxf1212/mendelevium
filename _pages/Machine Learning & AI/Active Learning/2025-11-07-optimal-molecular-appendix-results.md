@@ -4,8 +4,8 @@ date: "2025-11-07"
 last_modified_at: "2025-11-07"
 tags: [active-learning, generative-ai, reinforcement-learning, binding-free-energy, drug-discovery, molecular-design]
 description: "TNKS2靶点详细结果、图表说明和补充分析"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
 author: Xufan Gao
 lang: zh-CN
 ---

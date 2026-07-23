@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 description: "ChemXploreML 是一款开箱即用的机器学习桌面软件，让分子属性预测变得简单易用。无需编程知识即可构建ML模型，推动计算化学民主化。"
 tags: [machine-learning-and-ai, chemoinformatics, molecular-properties, ml-software, desktop-application]
-thumbnail: "/assets/img/thumbnail/book.jpg"
-image: "/assets/img/thumbnail/book.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
 ---
 # ChemXploreML：一款“开箱即用”的桌面软件，让分子属性预测迈向自动化与平民化
 

@@ -4,8 +4,8 @@ date: "2025-11-08"
 last_modified_at: "2025-11-08"
 tags: [分子动力学, SMD, 力学性质, 蛋白质相互作用, 计算工具, Python, 各向异性]
 description: "multiSMD工具通过自动化多方向力学探测，揭示传统单向拉伸隐藏的分子力学各向异性现象"
-image: "/assets/img/thumbnail/book.jpg"
-thumbnail: "/assets/img/thumbnail/book.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/book.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

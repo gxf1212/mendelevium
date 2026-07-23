@@ -4,8 +4,8 @@ date: "2026-04-08"
 last_modified_at: "2026-04-08"
 tags: [methacrylate-polymers, bacterial-outer-membrane, coarse-grained-md, martini3, lps, umbrella-sampling, polymer-membrane]
 description: "基于 MARTINI 3 粗粒化模拟，系统比较四类甲基丙烯酸酯聚合物与革兰阴性菌外膜的黏附与渗入行为，量化静电作用、水合作用与自由能势垒的协同关系。"
-image: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

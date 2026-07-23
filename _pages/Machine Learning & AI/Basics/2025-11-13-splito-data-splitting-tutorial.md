@@ -5,8 +5,8 @@ date: "2025-11-14"
 last_modified_at: "2025-11-14"
 tags: [data-splitting, machine-learning, drug-discovery, splito, cheminformatics, tutorial]
 description: "深入解析splito库中的数据分割方法，包括基础分割、结构分割、多目标优化等在药物发现中的应用"
-image: "/assets/img/Wallpaper_compressed/plumage-176723_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/plumage-176723_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/plumage-176723_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/plumage-176723_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

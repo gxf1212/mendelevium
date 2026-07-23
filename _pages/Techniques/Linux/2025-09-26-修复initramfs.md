@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [techniques, linux]
 description: "详细复盘Linux系统因NVIDIA驱动安装中断导致的引导失败问题，深入讲解UEFI、LUKS加密、LVM、initramfs启动机制，提供Live USB环境下的完整修复流程"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
-image: "/assets/img/thumbnail_mine/wh-z8odwg.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8odwg.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8odwg.jpg"
 ---
 好的，遵照您的要求，我们对推文进行最后的更新和完善。
 

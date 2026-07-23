@@ -4,8 +4,8 @@ date: "2025-12-22"
 last_modified_at: "2025-12-22"
 tags: [enzyme-engineering, protein-design, Riff-Diff, computational-biology, retro-aldolase, MBH-reaction, biocatalysis, machine-learning]
 description: "附录：详细图解Riff-Diff方法的催化基序支架策略、反醛缩酶和MBH酶设计、实验验证数据及晶体结构分析"
-image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

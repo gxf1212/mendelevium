@@ -4,8 +4,8 @@ date: "2026-01-11"
 last_modified_at: "2026-01-11"
 tags: [graph-neural-networks, interpretability, xai, molecular-property, fingerprints, pooling, attribution]
 description: "JCIM发表于2025年12月的TradePool提出双阶段子结构池化与映射框架，将PubChem指纹权重映射为原子归因，显著提升芳香性、LogP、TPSA任务的Pearson相关"
-thumbnail: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
-image: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
 ---
 
 # TradePool：用PubChem指纹子结构池化与映射，给GNN分子性质预测提供可量化的原子归因

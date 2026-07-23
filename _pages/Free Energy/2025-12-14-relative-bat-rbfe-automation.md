@@ -4,8 +4,8 @@ date: "2025-12-14"
 last_modified_at: "2025-12-14"
 tags: [free-energy, rbfe, batpy, amber, openmm]
 description: "Relative BAT 在SepTop热力学框架下统一AMBER与OpenMM，相对结合自由能预测与实验、ABFE和传统RBFE都实现对齐"
-thumbnail: "/assets/img/thumbnail_mine/wh-g75zg3.jpg"
-image: "/assets/img/thumbnail_mine/wh-g75zg3.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g75zg3.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g75zg3.jpg"
 lang: zh-CN
 ---
 

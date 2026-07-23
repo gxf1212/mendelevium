@@ -4,8 +4,8 @@ date: "2026-05-20"
 last_modified_at: "2026-05-20"
 tags: [molecular-representation, generative-learning, self-supervised-learning, graph-neural-networks, masked-autoencoders, drug-discovery]
 description: "深入解析生成式自监督学习在小分子表征中的应用，从GraphMAE到多模态融合，系统梳理masked预测、图重构等核心技术"
-image: "/assets/img/Wallpaper_compressed/wallhaven-rdqw1m.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-rdqw1m.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-rdqw1m.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-rdqw1m.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

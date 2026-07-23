@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [membrane-pore, collective-variable, technical-details, plumed, enhanced-sampling, molecular-dynamics]
 description: "膜孔集体变量的物理原理、数学推导、PLUMED脚本实现及参数优化的深度技术解析"
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

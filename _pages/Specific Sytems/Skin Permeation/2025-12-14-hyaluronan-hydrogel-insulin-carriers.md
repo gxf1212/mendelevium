@@ -4,8 +4,8 @@ date: "2025-12-14"
 last_modified_at: "2025-12-14"
 tags: [hydrogel, insulin, hyaluronan, alginate, HPMC, wound-healing, drug-delivery, rheology]
 description: "详细解析基于透明质酸的混合水凝胶胰岛素载体系统，通过流变学和质构分析评估其作为慢性伤口敷料的应用潜力"
-image: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

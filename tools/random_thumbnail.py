@@ -1,68 +1,62 @@
 #!/usr/bin/env python3
 """
 随机选择缩略图脚本
-用于为新的博客文章随机选择缩略图
+用于为新的博客文章随机选择缩略图，输出 GitHub raw CDN URL
 """
 
 import random
 import sys
 from pathlib import Path
 
+# GitHub raw CDN 基础 URL（仓库公开，可直接访问）
+RAW_BASE = "https://raw.githubusercontent.com/gxf1212/mendelevium/main"
+
+# 缩略图目录（相对于仓库根目录）
+THUMBNAIL_DIRS = [
+    "assets/img/thumbnail",
+    "assets/img/thumbnail_mine",
+    "assets/img/Wallpaper_compressed",
+    "assets/img/4K_1080P_compressed"
+]
+
+IMAGE_EXTS = {'.jpg', '.jpeg', '.png', '.webp'}
+EXCLUDED = {"empty.jpg"}
+
+
 def get_random_thumbnail():
     """
-    从assets/img/thumbnail和assets/img/thumbnail_mine目录中随机选择一个缩略图
+    从所有缩略图目录中随机选择一个图片
 
     Returns:
-        str: 随机选择的缩略图路径（相对于assets目录）
+        str: GitHub raw CDN URL（可直接用于 frontmatter 的 image/thumbnail 字段）
     """
-    # 定义缩略图目录
-    thumbnail_dirs = [
-        "assets/img/thumbnail",
-        "assets/img/thumbnail_mine",
-        "assets/img/Wallpaper_compressed",
-        "assets/img/4K_1080P_compressed"
-    ]
-
-    # 支持的图片扩展名
-    image_extensions = {'.jpg', '.jpeg', '.png', '.webp'}
-
     all_images = []
-
-    # 遍历所有目录，收集图片文件
-    excluded = {"empty.jpg"}
-    for dir_path in thumbnail_dirs:
-        full_path = Path(dir_path)
-        if full_path.exists():
-            for file in full_path.iterdir():
-                if file.is_file() and file.suffix.lower() in image_extensions:
-                    if file.name in excluded:
-                        continue
-                    # 返回相对于assets目录的路径
-                    relative_path = str(file).replace("assets/", "")
-                    all_images.append(relative_path)
+    for dir_path in THUMBNAIL_DIRS:
+        p = Path(dir_path)
+        if p.exists():
+            for f in p.iterdir():
+                if f.is_file() and f.suffix.lower() in IMAGE_EXTS and f.name not in EXCLUDED:
+                    all_images.append(str(f))  # 保持完整路径如 assets/img/xxx/yyy.jpg
 
     if not all_images:
-        # 如果没有找到图片，报错并退出
         print("错误：没有找到可用的缩略图文件", file=sys.stderr)
         sys.exit(1)
 
-    # 随机选择一个图片
-    return random.choice(all_images)
+    chosen = random.choice(all_images)
+    return f"{RAW_BASE}/{chosen}"
+
 
 def print_random_thumbnail():
-    """打印随机选择的缩略图路径"""
-    thumbnail = get_random_thumbnail()
-    # 输出完整路径，与frontmatter格式一致
-    full_path = f"/assets/{thumbnail}"
-    print(full_path)
+    """打印随机选择的缩略图（GitHub raw CDN URL）"""
+    print(get_random_thumbnail())
+
 
 def generate_frontmatter_thumbnail():
-    """生成用于frontmatter的缩略图配置"""
-    thumbnail = get_random_thumbnail()
-    full_path = f"/assets/{thumbnail}"
+    """生成用于 frontmatter 的缩略图配置"""
+    url = get_random_thumbnail()
+    print(f'  thumbnail: "{url}"')
+    print(f'  image: "{url}"')
 
-    print(f'  thumbnail: "{full_path}"')
-    print(f'  image: "{full_path}"')
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -70,9 +64,9 @@ if __name__ == "__main__":
             generate_frontmatter_thumbnail()
         elif sys.argv[1] == "--help":
             print("用法:")
-            print("  python random_thumbnail.py              # 随机选择缩略图路径")
-            print("  python random_thumbnail.py --frontmatter  # 生成frontmatter格式")
-            print("  python random_thumbnail.py --help       # 显示帮助")
+            print("  python random_thumbnail.py              # 随机缩略图URL")
+            print("  python random_thumbnail.py --frontmatter  # frontmatter格式")
+            print("  python random_thumbnail.py --help       # 帮助")
         else:
             print("未知参数。使用 --help 查看帮助。")
     else:

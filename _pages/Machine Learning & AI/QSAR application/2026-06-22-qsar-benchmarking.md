@@ -4,8 +4,8 @@ date: "2026-06-22"
 last_modified_at: 2026-06-22
 tags: [qsar, machine-learning, molecular-descriptors, random-forest, scaffold-split, applicability-domain, drug-discovery, benchmarking]
 description: "在EGFR、DRD2、BACE-1和hERG四个靶点上系统评估10种机器学习算法和5种分子描述符，揭示算法排名的高度一致性、scaffold泛化差距的靶点依赖性以及适用域报告的必要性"
-image: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-6k9j8x.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

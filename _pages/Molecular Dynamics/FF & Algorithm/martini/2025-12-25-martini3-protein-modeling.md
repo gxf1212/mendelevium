@@ -5,8 +5,8 @@ date: "2025-12-25"
 last_modified_at: "2025-12-25"
 tags: [Martini, coarse-grained, molecular-dynamics, protein-modeling, martinize2, elastic-network, GoMartini, force-field]
 description: "深入浅出地介绍Martini 3粗粒化蛋白质建模的全流程，重点讲解弹性网络、Gō-Martini和OLIVES三种结构约束方法，帮助新手避免蛋白质'散架'等常见问题"
-image: "/assets/img/Wallpaper_compressed/wallhaven-l3zyg2.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-l3zyg2.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-l3zyg2.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-l3zyg2.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

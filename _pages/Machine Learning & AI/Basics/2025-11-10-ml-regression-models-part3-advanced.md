@@ -4,8 +4,8 @@ date: "2025-11-15"
 last_modified_at: "2025-11-15"
 tags: [machine-learning, regression, neural-network, gaussian-process, vae, model-selection]
 description: "系列第三篇：介绍神经网络、概率模型、深度生成模型（VAE），以及完整的模型选择指南，帮助你在实际项目中做出最佳选择"
-thumbnail: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
-image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

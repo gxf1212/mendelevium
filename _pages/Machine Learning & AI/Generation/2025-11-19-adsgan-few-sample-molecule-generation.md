@@ -4,8 +4,8 @@ date: "2025-11-19"
 last_modified_at: "2025-11-19"
 tags: ['generative-model', 'GAN', 'molecular-generation', 'few-shot-learning', 'SMILES', 'drug-discovery', 'deep-learning']
 description: "整合随机森林辅助判别器与SeqGAN框架，解决小样本数据集下的分子生成挑战，在核酸结合剂、CNS药物和CB1配体设计中展现优异性能"
-image: "/assets/img/Wallpaper_compressed/fisherman-2739115_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/fisherman-2739115_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/fisherman-2739115_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/fisherman-2739115_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

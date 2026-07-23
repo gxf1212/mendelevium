@@ -5,8 +5,8 @@ date: "2025-11-07"
 last_modified_at: "2025-11-07"
 tags: [artificial-intelligence, scientific-method, machine-learning, ethics, reproducibility, transparency, causality]
 description: "深入探讨AI与科学方法的兼容性，分析当前AI在可重复性、透明性、客观性和机制理解方面的局限，提出与科学方法完全兼容的AI发展方向"
-image: "/assets/img/4K_1080P_compressed/072814CEIG6.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/072814CEIG6.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/072814CEIG6.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/072814CEIG6.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

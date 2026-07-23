@@ -5,8 +5,8 @@ last_modified_at: "2026-05-31"
 tags: [interpretability, drug-synergy, graphlet-fingerprints, deep-learning, xai, anticancer]
 description: "药物协同预测有个老毛病，模型分数不错但说不清看中了分子的哪一块。GraFSyn用graphlet指纹把子结构直接送进深度模型，既保住了分数又能说清楚原因。"
 author: Xufan Gao
-image: "/assets/img/thumbnail_mine/wh-1kxerg.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-1kxerg.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kxerg.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kxerg.jpg"
 lang: zh-CN
 ---
 

@@ -4,15 +4,15 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [parmed, gromacs, amber, namd, file-conversion, molecular-dynamics]
 description: "详细教程展示如何使用ParmEd工具包实现主流分子动力学软件间的文件转换，让研究者无需重新搭建即可在不同模拟软件间自由切换"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
-image: "/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7lv3.jpg"
 ---
 title: "File Conversion Among MD Simulation Engines Using ParmEd"
 date: "2024-05-06"
 description: "使用 ParmEd 工具实现 Gromacs、Amber、NAMD 等主流分子动力学模拟引擎之间的文件转换。详细教程展示如何无痛切换不同的模拟软件包。"
 tags: [md-simulation, parmed, gromacs, amber, namd, modeling, python]
-thumbnail: "/assets/img/thumbnail/example.jpg"
-image: "/assets/img/thumbnail/example.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/example.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/example.jpg"
 ---
 
 # File Conversion Among MD Simulation Engines Using ParmEd

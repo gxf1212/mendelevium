@@ -4,8 +4,8 @@ date: "2026-03-16"
 last_modified_at: "2026-03-16"
 tags: [PLP酶, 生物催化, 3+2环化, VGQ中间体, 定向进化, 酶工程]
 description: "通过重新编程PLP依赖酶SphA，利用罕见的乙烯基甘氨酸醌式中间体(VGQ)实现脱羧[3+2]环化反应，为构建复杂碳环氨基酸提供了新策略"
-image: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-r2k9mw.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

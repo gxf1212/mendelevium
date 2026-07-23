@@ -4,15 +4,15 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [gromacs, topology, nonbond-params, comb-rule, force-field, parameters]
 description: "深入解析GROMACS拓扑文件defaults指令下的组合规则和非键参数，理解力场参数设置，为分子动力学模拟配置和参数优化提供完整指南"
-thumbnail: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
-image: "/assets/img/thumbnail_mine/wh-rddgwm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rddgwm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rddgwm.jpg"
 ---
 title: "GROMACS Defaults in Topology Files: Understanding comb-rule and nonbond_params"
 date: "2025-05-31"
 description: "详细解析 GROMACS 拓扑文件中 defaults 指令下的组合规则和非键参数。深入理解分子动力学力场参数，为模拟配置和参数优化提供完整指南。"
 tags: [gromacs, topology, nonbond-params, comb-rule, force-field, molecular-dynamics, parameters]
-thumbnail: "/assets/img/thumbnail/dsygx.png"
-image: "/assets/img/thumbnail/dsygx.png"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/dsygx.png"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/dsygx.png"
 ---
 # GROMACS 中 comb-rule 与 [nonbond_params] 参数解析
 

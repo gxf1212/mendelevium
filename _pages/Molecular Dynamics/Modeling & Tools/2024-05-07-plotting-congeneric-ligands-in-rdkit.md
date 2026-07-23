@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [rdkit, molecular-visualization, congeneric-ligands, scaffold-alignment, structural-comparison]
 description: "详细讲解使用RDKit对共轭配体系列进行二维可视化和分子对齐的技术方法，通过最大共同子结构自动对齐分子骨架，快速识别结构差异的Python实用指南"
-thumbnail: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
-image: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g78rle.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g78rle.jpg"
 ---
 >In RDKit, adjusting the figure size of individual images can help control the relative size of the annotations. If the molecules are large, consider increasing the figure size to ensure details are visible.
 

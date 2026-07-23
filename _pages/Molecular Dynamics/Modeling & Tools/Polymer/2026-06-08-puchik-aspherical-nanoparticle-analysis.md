@@ -4,8 +4,8 @@ date: "2026-06-08"
 last_modified_at: "2026-06-08"
 tags: [puchik, nanoparticle, aspherical, interface-analysis, molecular-dynamics, alpha-shape, convex-hull, software-tools]
 description: "PUCHIK为非球形纳米粒子MD模拟提供界面表征、密度计算和体积分析，支持alpha shape和convex hull两种方法，适用于胶囊状、棒状等复杂形貌"
-thumbnail: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
-image: "/assets/img/thumbnail_mine/wh-72j52o.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-72j52o.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

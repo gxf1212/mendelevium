@@ -4,8 +4,8 @@ date: "2026-04-17"
 last_modified_at: "2026-04-17"
 tags: [hyaluronic-acid, sulfation, skin-permeation, molecular-dynamics, conformation, franz-diffusion-cell, CLSM, transcellular-pathway]
 description: "透明质酸硫酸化如何影响皮肤渗透？MD模拟揭示构象是关键——1%硫酸化使链伸展柔性，渗透量提升5倍"
-image: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-o3x38m.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-o3x38m.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-o3x38m.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

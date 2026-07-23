@@ -5,8 +5,8 @@ date: "2025-11-15"
 last_modified_at: "2025-11-15"
 tags: [ML/MM, 机器学习势, 自由能计算, 热力学积分, AMBER, 多尺度模拟]
 description: "通过将机器学习原子间势与分子力学力场结合，实现接近量子力学精度、接近分子力学效率的自由能计算新方法"
-image: "/assets/img/Wallpaper_compressed/photographer-407068_1920.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/photographer-407068_1920.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/photographer-407068_1920.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/photographer-407068_1920.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2026-03-22"
 last_modified_at: "2026-03-22"
 tags: [qHTS, QSAR, GPCR, hERG, cardiotoxicity, machine-learning, drug-discovery, virtual-screening]
 description: "整合定量高通量筛选与机器学习QSAR模型，筛选hERG风险较低的GPCR靶向先导化合物，为药物研发提供更稳妥的早期筛选策略"
-image: "/assets/img/thumbnail/sample.png"
-thumbnail: "/assets/img/thumbnail/sample.png"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
 author: Xufan Gao
 lang: zh-CN
 ---

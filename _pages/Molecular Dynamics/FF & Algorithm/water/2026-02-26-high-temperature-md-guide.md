@@ -4,8 +4,8 @@ date: "2026-02-26"
 last_modified_at: "2026-02-26"
 tags: [molecular-dynamics, water-model, OPC, OPC3, high-temperature, NVT, NPT, force-field, amber, metal-ions, 12-6-4-model]
 description: "深入探讨高温MD模拟的水模型选择、450 K下的构象采样策略，以及三价/四价金属离子的12-6-4模型参数化与蛋白应用验证"
-image: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-rd32x7.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

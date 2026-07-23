@@ -4,8 +4,8 @@ date: "2025-12-22"
 last_modified_at: "2025-12-22"
 tags: [hydrogel, insulin, hyaluronan, rheology, kinetics, mathematical-modeling]
 description: "详细的动力学模型、流变学数学建模、实验方法和补充数据"
-image: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-8o3ypo.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

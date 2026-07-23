@@ -5,8 +5,8 @@ date: "2025-10-09"
 last_modified_at: "2025-10-09"
 tags: [molecular-dynamics, enhanced-sampling, free-energy, ABF, PMF, collective-variables]
 description: "ABF方法的理论基础、实现细节、窗口策略及在主流MD软件中的使用"
-image: "/assets/img/thumbnail/sample.png"
-thumbnail: "/assets/img/thumbnail/sample.png"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
 ---
 # 自适应偏置力（ABF）方法详解
 

@@ -4,8 +4,8 @@ date: "2025-10-08"
 last_modified_at: "2025-10-08"
 tags: [fe-toolkit, free-energy, alchemical, thermodynamic-networks, software, analysis, umbrella-sampling]
 description: "全面介绍FE-ToolKit软件生态系统，涵盖ndfes进行自由能表面构建、edgembar执行炼金术网络计算、fetkutils辅助工具集，为酶设计和药物发现提供模块化工作流解决方案"
-thumbnail: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
-image: "/assets/img/thumbnail_mine/wh-g78rle.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g78rle.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-g78rle.jpg"
 ---
 # FE-ToolKit：一个用于分析高维自由能表面和炼金术自由能网络的多功能软件套件
 

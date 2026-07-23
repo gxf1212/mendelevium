@@ -5,8 +5,8 @@ date: "2025-11-02"
 last_modified_at: "2025-11-02"
 tags: [peptide-self-assembly, beta-sheet, fibril, nanostructure, molecular-modeling, python, cryo-em, molecular-dynamics]
 description: "深入解析FibrilGen Python工具包，如何实现肽β折叠纳米结构的原子级建模，以及如何通过分子动力学模拟验证结构稳定性"
-image: "/assets/img/thumbnail/sample.png"
-thumbnail: "/assets/img/thumbnail/sample.png"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/sample.png"
 author: Xufan Gao
 lang: zh-CN
 ---

@@ -4,8 +4,8 @@ date: "2025-11-04"
 last_modified_at: "2025-11-04"
 tags: [QM-MM-FEP, reference-potential, RPQS, RPQS-MSS, RPQS-NE, SAMPL6, efficiency, binding-affinity, PM6-DH+]
 description: "跟随Ryde课题组2017-2018年的系列工作，看QM/MM自由能微扰方法如何从理论走向实用，实现12倍加速的同时保持高精度"
-image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

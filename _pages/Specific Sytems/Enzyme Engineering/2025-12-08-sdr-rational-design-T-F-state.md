@@ -4,8 +4,8 @@ date: "2025-12-14"
 last_modified_at: "2025-12-14"
 tags: [enzyme-engineering, MD-simulation, rational-design, SDR, enantioselectivity, protein-engineering, biocatalysis]
 description: "通过比较预反应态（T态）与自由态（F态）的分子动力学模拟，定位酶改造热点残基，理性设计短链脱氢酶/还原酶实现大位阻芳香酮的高效不对称还原"
-image: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-dpe6lm.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

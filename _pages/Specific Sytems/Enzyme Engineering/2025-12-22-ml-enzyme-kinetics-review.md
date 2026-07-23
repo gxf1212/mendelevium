@@ -4,8 +4,8 @@ date: "2025-12-22"
 last_modified_at: "2025-12-22"
 tags: [machine-learning, enzyme-kinetics, kcat, Km, deep-learning, protein-engineering, metabolic-modeling, enzyme-mining]
 description: "系统综述机器学习模型在预测酶动力学参数方面的最新进展，涵盖全局模型、局部模型、应用场景以及未来发展方向"
-image: "/assets/img/Wallpaper_compressed/wallhaven-1kjp71.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-1kjp71.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-1kjp71.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-1kjp71.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

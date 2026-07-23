@@ -4,8 +4,8 @@ date: "2025-11-23"
 last_modified_at: "2025-11-23"
 tags: [petase, dft-mm, qm-mm, umbrella-sampling, serine-hydrolase, pet-degradation, enzymatic-catalysis, reaction-mechanism, biocatalysis, molecular-dynamics, enzyme-design, protein-engineering, computational-design, rfdiffusion]
 description: "从DFT/MM机理研究到Baker的从头酶设计——深度解析PETase催化PET降解的原子细节，揭示机理理解如何指导酶工程，探讨计算酶学从表征自然到创造未来的范式转变"
-image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
