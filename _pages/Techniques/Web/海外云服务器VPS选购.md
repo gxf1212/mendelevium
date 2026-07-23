@@ -4,8 +4,8 @@ date: "2026-07-23"
 last_modified_at: 2026-07-23
 tags: [vps, cloud, server, oracle-cloud, google-cloud, linode, aws-lightsail, digitalocean, hetzner, web-techniques]
 description: "海外云服务器VPS选购指南：Oracle免费方案、Google e2-micro、Akamai/Linode等主流方案对比，附配置推荐与安全设置"
-image: "/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
-thumbnail: "/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
@@ -52,20 +52,9 @@ Ubuntu ARM64
 北美区域
 ```
 
-**优点**：
+**优点**：长期费用为零；12–24 GB 内存足够 VS Code Remote、Codex、Node、Python；ARM64 上普通 Python、Node.js、Git、Docker 基本都能用；适合长期挂 SSH、代理、博客构建和轻量开发。
 
-- 长期费用为零；
-- 12–24 GB 内存足够 VS Code Remote、Codex、Node、Python；
-- ARM64 上普通 Python、Node.js、Git、Docker 基本都能用；
-- 适合长期挂 SSH、代理、博客构建和轻量开发。
-
-**缺点**：
-
-- 注册时经常要求真实银行卡；
-- 免费 A1 实例有时显示容量不足（特别是热门区域）；
-- Home Region 创建后不能更换；
-- 免费账户如果长期极低负载，存在资源回收或账户审核风险；
-- 某些仅提供 x86_64 二进制的软件在 ARM 上不能直接运行。
+**缺点**：注册时经常要求真实银行卡；免费 A1 实例有时显示容量不足（特别是热门区域）；Home Region 创建后不能更换；免费账户如果长期极低负载，存在资源回收或账户审核风险；某些仅提供 x86_64 二进制的软件在 ARM 上不能直接运行。
 
 **建议**：选美国西部或东部区域，创建 **1 OCPU + 6 GB RAM**——这已经足够，给免费额度留有余量。
 
@@ -73,12 +62,7 @@ Ubuntu ARM64
 
 ## 第二推荐：Google Cloud Free Tier
 
-Google Cloud 免费层目前包括：
-
-- 每月一台非抢占式 `e2-micro`
-- 可选美国俄勒冈 `us-west1`、爱荷华 `us-central1`、南卡罗来纳 `us-east1`
-- 30 GB 标准持久磁盘
-- 每月 1 GB **从北美区域传出**的免费出站流量；前往中国和澳大利亚不计入这项免费范围。详见 [Google Cloud Free Tier 文档](https://docs.cloud.google.com/free/docs/free-cloud-features)
+Google Cloud 免费层每月提供一台非抢占式 `e2-micro`，可选美国俄勒冈 `us-west1`、爱荷华 `us-central1`、南卡罗来纳 `us-east1` 三个区域，附带 30 GB 标准持久磁盘，以及每月 1 GB **从北美区域传出**的免费出站流量；前往中国和澳大利亚不计入这项免费范围。详见 [Google Cloud Free Tier 文档](https://docs.cloud.google.com/free/docs/free-cloud-features)。
 
 它更适合：
 
@@ -123,14 +107,7 @@ Billing alert：50%、90%、100%
 
 Akamai Cloud（原 Linode）的 Shared CPU 最低档官方标价为 **$5/月起**，资源采用固定月价，CPU、RAM、存储和传输通常打包计费。详见 [Akamai Shared CPU 页面](https://www.linode.com/products/shared/)。
 
-**优点**：
-
-- 正规大厂，长期价格比较稳定；
-- 后台和文档比廉价年付 VPS 完善；
-- 美国节点多；
-- 不容易出现"促销到期后翻几倍"的情况；
-- 支持快照、防火墙、反向 DNS；
-- 删除机器后计费容易理解。
+**优点**：正规大厂，长期价格比较稳定；后台和文档比廉价年付 VPS 完善；美国节点多；不容易出现"促销到期后翻几倍"的情况；支持快照、防火墙、反向 DNS；删除机器后计费容易理解。
 
 若最低档仍是 1 GB，建议先买最低档试用并加 swap：
 
@@ -166,9 +143,13 @@ DigitalOcean 的 Basic Droplet 是典型的学生/开发者入门 VPS。Droplet 
 
 AWS Lightsail 当前官方 Linux 公网 IPv4 套餐：
 
-- 0.5 GB：$5/月
-- 1 GB：$7/月，2 vCPU、40 GB 磁盘、2 TB 流量
-- 2 GB：$12/月。详见 [AWS Lightsail 文档](https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html)
+| 套餐 | 月费 | 配置 |
+| --- | --- | --- |
+| 0.5 GB | $5/月 | 0.5 GB RAM、40 GB 磁盘、2 TB 流量 |
+| 1 GB | $7/月 | 2 vCPU、40 GB 磁盘、2 TB 流量 |
+| 2 GB | $12/月 | 2 vCPU、80 GB 磁盘、5 TB 流量 |
+
+详见 [AWS Lightsail 文档](https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html)。
 
 不要为了省 $2 选 0.5 GB：
 
@@ -184,10 +165,7 @@ AWS Lightsail 当前官方 Linux 公网 IPv4 套餐：
 
 ## Hetzner 是否值得选
 
-Hetzner 在美国有：
-
-- Ashburn, Virginia
-- Hillsboro, Oregon。详见 [Hetzner 区域文档](https://docs.hetzner.com/cloud/general/locations/)
+Hetzner 在美国有 Ashburn, Virginia 和 Hillsboro, Oregon 两个节点。详见 [Hetzner 区域文档](https://docs.hetzner.com/cloud/general/locations/)。
 
 欧洲区的成本优化型配置很强，例如 2 vCPU、4 GB、40 GB 的入门档。官方当前页面显示成本优化系列约 €5.99/月起，但这类资源容量有限，且具体型号是否能在美国区创建需要以控制台为准。详见 [Hetzner 成本优化页面](https://www.hetzner.com/cloud/cost-optimized)。
 
@@ -207,15 +185,7 @@ Hetzner 在美国有：
 
 折合可能只有每月 $1–2。
 
-**但我不建议把它作为唯一长期环境**，原因是：
-
-- CPU 严重超售；
-- 磁盘 I/O 波动；
-- IP 段信誉可能较差；
-- 云厂商共享 IP 段可能被 GitHub / OpenAI / Google 风控；
-- 年付退款困难；
-- 商家或套餐可能消失；
-- 备份、快照、救援系统不完善。
+**但我不建议把它作为唯一长期环境**，原因是：CPU 严重超售、磁盘 I/O 波动、IP 段信誉可能较差、云厂商共享 IP 段可能被 GitHub / OpenAI / Google 风控、年付退款困难、商家或套餐可能消失、备份和快照系统不完善。
 
 用来做临时 SSH 跳板可以；存放唯一代码、密钥和研究数据不合适。
 

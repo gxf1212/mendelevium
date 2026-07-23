@@ -4,8 +4,8 @@ date: "2026-03-10"
 last_modified_at: "2026-03-10"
 tags: [AI-agent, internet-access, MCP, tool-integration, Claude]
 description: "只需一句话，让Claude等AI助手获得GitHub、YouTube、Twitter等平台的访问能力"
-image: "/assets/img/Wallpaper_compressed/wallhaven-l3k33y.jpg"
-thumbnail: "/assets/img/Wallpaper_compressed/wallhaven-l3k33y.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-l3k33y.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-l3k33y.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
