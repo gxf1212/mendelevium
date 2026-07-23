@@ -113,11 +113,24 @@ $$
 - **端基反平行项**（$\alpha$接近180°为最优）：强制链两端的连接矢量近似反平行，这是周期性边界条件下形成无限链的几何要求
 - $E_{\text{connectivity}}$：连接正确性罚项，确保相邻重复单元之间的化学连接正确
 
-模拟退火过程通过旋转单体内部的可旋转键来探索构象空间。代码参数`Steps=20`（共20个退火周期），`Substeps=10`（每周期10次扭转角随机尝试）。**接受概率**从$p_1=0.3$衰减至$p_{50}=0.001$，对应**初始温度**$t_1=-1/\ln(0.3)$，**最终温度**$t_{50}=-1/\ln(0.001)$，**指数冷却**：$t_{i+1}=t_i \times (t_{50}/t_1)^{1/(n-1)}$。每个周期内，随机选择可旋转键和扭转角作为新构象，若新能量更低则直接接受，否则以概率$p=\exp(-\Delta E/(\Delta E_{\text{avg}} \times t))$接受，其中$\Delta E_{\text{avg}}$是迄今为止接受解的平均能量变化。**早停判据**：连续3个周期的能量完全相同时提前终止。
+模拟退火过程通过旋转单体内部的可旋转键来探索构象空间，具体参数如下：
 
-PSP还提供`Method='Dimer'`选项，用二聚体替代单体作为构建单元，增加骨架柔性。参数`IntraChainCorr=1`控制链内相互作用权重，`Inter_Chain_Dis=12` Å为链间最小间距阈值。`Tol_ChainCorr=50`是链构象容忍度阈值，超过该值的候选构象会被丢弃。
+- **周期与子步**（Steps=20、Substeps=10）：共20个退火周期，每周期10次扭转角随机尝试
+- **接受概率**：从$p_1=0.3$衰减至$p_{50}=0.001$，对应初始温度$t_1=-1/\ln(0.3)$，最终温度$t_{50}=-1/\ln(0.001)$，采用指数冷却：$t_{i+1}=t_i \times (t_{50}/t_1)^{1/(n-1)}$
+- **Metropolis准则**：新能量更低则直接接受，否则以概率$p=\exp(-\Delta E/(\Delta E_{\text{avg}} \times t))$接受，其中$\Delta E_{\text{avg}}$是迄今为止接受解的平均能量变化
+- **早停判据**：连续3个周期能量完全相同时提前终止
 
-**扭转角采样表**：模拟退火中每步随机选取的扭转角来自代码预设的两张角度表（`MonomerAng`和`DimerAng`），控制每次旋转的角度范围。`low`表（9个值）：`[0, 45, -45, 60, -60, 90, 120, -120, 180]`度；`medium`表（15个值）：`[0, 30, -30, 45, -45, 60, -60, 90, 120, -120, 135, -135, 150, -150, 180]`度。默认`MonomerAng='medium'`、`DimerAng='low'`，即用更密集的角度表搜索单体构象，用更稀疏的表搜索二聚体。
+PSP还提供`Method='Dimer'`选项，用二聚体替代单体作为构建单元以增加骨架柔性。关键参数：
+
+- **IntraChainCorr=1**：链内相互作用权重
+- **Inter_Chain_Dis=12 Å**：链间最小间距阈值
+- **Tol_ChainCorr=50**：链构象容忍度阈值，超过该值的候选构象会被丢弃
+
+**扭转角采样表**（`MonomerAng`/`DimerAng`）：模拟退火中每步随机选取的扭转角来自代码预设的两张角度表，控制每次旋转的角度范围：
+
+- **low表**（9个值）：`[0, 45, -45, 60, -60, 90, 120, -120, 180]`度
+- **medium表**（15个值）：`[0, 30, -30, 45, -45, 60, -60, 90, 120, -120, 135, -135, 150, -150, 180]`度
+- 默认`MonomerAng='medium'`、`DimerAng='low'`，即单体用更密集的角度表搜索构象，二聚体用更稀疏的表
 
 **关键限制**：对于骨架中有双键的聚合物（如聚乙炔），ChainBuilder无法生成寡聚物（因为氢原子不能饱和连接位点的价态）。用户需要改写SMILES，让连接位点用单键连接。
 
@@ -164,15 +177,20 @@ RadonPy的设计哲学是**从SMILES一步到性质**。用户提供重复单元
 #### 分子建模
 
 1. **构象搜索**：RDKit ETKDG v2算法生成1000个初始构象 → MMFF94力场预筛选 → 基于RMSD的聚类分析选出最优4个构象 → **DFT优化**（`ωB97M-D3BJ/6-31G(d,p)`泛函）确定全局能量最低构象。DFT优化在Psi4中完成，单核约需数分钟到数十分钟，取决于分子大小
-2. **电子性质计算**：五种原子电荷方法可选——RESP（Restrained Electrostatic Potential，最精确但最慢）、ESP（Electrostatic Potential，较快）、Mulliken（最快但精度最低）、Löwdin、Gasteiger。还可以计算HOMO/LUMO能级、偶极矩、极化率等电子性质。RESP电荷在Psi4中通过`HF/6-31G*`计算ESP然后拟合得到，单链约需10-30分钟。实操注意：含 `*` linker 位点的单体需先替换为 H 再传入 Psi4（RDKit 的 dummy 原子不被 Psi4 接受），否则报 `MoleculeFormatError`
+2. **电子性质计算**：五种原子电荷方法可选——RESP（Restrained Electrostatic Potential，最精确但最慢）、ESP（Electrostatic Potential，较快）、Mulliken（最快但精度最低）、Löwdin、Gasteiger。
+   - 还可以计算HOMO/LUMO能级、偶极矩、极化率等电子性质。RESP电荷在Psi4中通过`HF/6-31G*`计算ESP然后拟合得到，单链约需10-30分钟。
+   - 实操注意：含 `*` linker 位点的单体需先替换为 H 再传入 Psi4（RDKit 的 dummy 原子不被 Psi4 接受），否则报 `MoleculeFormatError`
 3. **聚合物链生成**：采用**自避随机游走算法**（Self-Avoiding Random Walk, SARW）构建聚合物链。算法从一个重复单元出发，逐步添加新的重复单元，每次添加时随机选择扭转角（-180°到+180°），同时检查新原子与已有原子之间的距离是否满足最小间距约束。
    - 代码中`random_walk_polymerization`函数的关键参数：`dist_min=0.7` Å（链生长阶段的最小原子间距，填充阶段另有 `amorphous_cell` 的 `threshold=2.0`），`retry=100`（添加重复单元时最大重试次数），`rollback=5`（连续失败时回退步数）。
-   - 链长以约1000个原子为目标（约10条链/盒子，总计约10000原子）。**立构控制**是RadonPy的特色功能：聚合物主链上的手性中心可以朝同侧（**等规isotactic**）、交替朝侧（**间规syndiotactic**）或随机朝侧（**无规atactic**），**三种立构导致截然不同的结晶性和性能——等规和间规易结晶，无规则保持透明柔韧**，通过`tacticity`参数即可指定。默认`tacticity='atactic'`，`atac_ratio=0.5`（无规立构中两种构型的比例）
-   - **固定随机种子（`--seed`）**确保可复现性：同一单体、同一聚合度、同一seed下，生成的R/S手性序列完全一致，适合需要可重复研究结果的场景。**RadonPy按单体位置而非单体化学结构赋值手性**，因此不同单体的SMILES输入只要聚合度相同，传同样seed也会得到完全相同的立体化学排列——seed控制的是伪随机序列，与单体的化学结构无关
+   - 链长以约1000个原子为目标（约10条链/盒子，总计约10000原子）。
+   - **立构控制**是RadonPy的特色功能：聚合物主链上的手性中心可以朝同侧（**等规isotactic**）、交替朝侧（**间规syndiotactic**）或随机朝侧（**无规atactic**），**三种立构导致截然不同的结晶性和性能——等规和间规易结晶，无规则保持透明柔韧**，通过`tacticity`参数即可指定。默认`tacticity='atactic'`，`atac_ratio=0.5`（无规立构中两种构型的比例）
+   - **固定随机种子**（`--seed`）确保可复现性：同一单体、同一聚合度、同一seed下，生成的R/S手性序列完全一致，适合需要可重复研究结果的场景。**RadonPy按单体位置而非单体化学结构赋值手性**，因此不同单体的SMILES输入只要聚合度相同，传同样seed也会得到完全相同的立体化学排列——seed控制的是伪随机序列，与单体的化学结构无关
 
 #### 模拟与分析
 
-1. **填充分子**：10条链随机放置于模拟盒子中，初始密度极低，然后通过填充模拟逐步压缩到目标密度。代码中`amorphous_cell`函数参数：`density=0.1` g/cm<sup>3</sup>（初始密度），`threshold=2.0` Å（原子间距阈值，低于该值则重试），`retry=20`（最大重试次数），`dec_rate=0.8`（重试时密度衰减率，每次失败将初始密度乘以0.8再试），`check_bond_ring_intersection=False`（是否检查键-环交叉，默认关闭以提升速度）
+1. **填充分子**：10条链随机放置于模拟盒子中，初始密度极低，然后通过填充模拟逐步压缩到目标密度。代码中`amorphous_cell`函数参数：
+   - `density=0.1` g/cm<sup>3</sup>（初始密度），`threshold=2.0` Å（原子间距阈值，低于该值则重试）
+   - `retry=20`（最大重试次数），`dec_rate=0.8`（重试时密度衰减率，每次失败将初始密度乘以0.8再试），`check_bond_ring_intersection=False`（是否检查键-环交叉，默认关闭以提升速度）
 
    > **核心逻辑是用极低密度起步避免链间碰撞，再逐步加压至目标密度**
 
@@ -183,7 +201,7 @@ RadonPy的设计哲学是**从SMILES一步到性质**。用户提供重复单元
    - 高温高压步骤帮助体系越过局部能量极小值，快速松弛不合理的构象
    - 最后在300K、1 atm下做NpT模拟，获得最终的平衡态
 
-3. **自动平衡判定**：每5ns检查三个关键指标的相对标准偏差（RSD）——总能量、密度、回旋半径。如果三个指标都低于阈值（能量<1%、密度<2$\%、回旋半径<3%），判定为平衡；否则继续模拟，最长等待50ns，**自动判断避免了人工判断平衡的主观性**
+3. **自动平衡判定**：每5ns检查三个关键指标的相对标准偏差（RSD）——总能量、密度、回旋半径。如果三个指标都低于阈值（能量<1%、密度$\mathrm{<2\%}$、回旋半径<3%），判定为平衡；否则继续模拟，最长等待50ns，**自动判断避免了人工判断平衡的主观性**
 
 4. **NEMD计算热导率**：采用Müller-Plathe反向非平衡分子动力学（Non-Equilibrium Molecular Dynamics，NEMD）方法，在模拟盒子中间设置热流交换面，通过交换最热和最冷原子的动能来产生温度梯度，**由温度梯度经傅里叶定律反推热导率**，热扩散率也同时输出
 
@@ -203,9 +221,11 @@ RadonPy论文版本计算的15种性质包括：
 
 **图5：识别出的高导热性无定形聚合物的重复单元结构**。化合物标识符对应计算数据集中的聚合物ID。论文通过重复计算（标准差$SD<0.05\,\mathrm{W\cdot m^{-1}\cdot K^{-1}}$）验证了热导率计算的可靠性，并对聚乙烯（PI1）和聚乙烯醇（PI241）等聚合物与PoLyInfo数据库的实验值进行了对比。
 
-**代码架构与PoLyInfo分类**：RadonPy代码包内置了PoLyInfo数据库的21个聚合物主链类别（PHYC碳氢链、PSTR杂原子链、PVNL含腈链、PACR含酯链等），用于自动识别重复单元类型并匹配力场参数。
+#### 代码架构与PoLyInfo分类
 
-代码还提供了11种细胞生成函数（`amorphous_cell`无定形、`nematic_cell`向列相、`crystal_cell`晶体、`polymerize_cell`一步到位等），支持不同相态的模拟盒子构建。`polymerize_cell`是最简化的接口，输入重复单元SMILES即可直接生成完整的模拟盒子，跳过中间步骤。此外还支持`mol_from_amino_residues`函数处理氨基酸残基序列，以及`calc_n_from_num_atoms`和`calc_n_from_mol_weight`根据目标原子数或分子量反推聚合度。
+- RadonPy代码包内置了PoLyInfo数据库的21个聚合物主链类别（PHYC碳氢链、PSTR杂原子链、PVNL含腈链、PACR含酯链等），用于自动识别重复单元类型并匹配力场参数。
+- 代码还提供了11种细胞生成函数（`amorphous_cell`无定形、`nematic_cell`向列相、`crystal_cell`晶体、`polymerize_cell`一步到位等），支持不同相态的模拟盒子构建。`polymerize_cell`是最简化的接口，输入重复单元SMILES即可直接生成完整的模拟盒子，跳过中间步骤。
+- 此外还支持`mol_from_amino_residues`函数处理氨基酸残基序列，以及`calc_n_from_num_atoms`和`calc_n_from_mol_weight`根据目标原子数或分子量反推聚合度。
 
 ### 力场与参数化
 
@@ -287,7 +307,10 @@ conda install -c conda-forge rdkit psi4 mdtraj psutil scipy pandas matplotlib
 conda install -c psi4 resp
 pip install radonpy-pypi dftd3
 ```
-`dftd3-python` 在 conda-forge 上无 py312 构建，`resp` 不在 conda-forge 上（需用 `-c psi4` 安装），Python 3.12+ 可参考：`conda install -c psi4 resp && pip install dftd3`。`lammps` 的 conda 和 pip 版本 MPI ABI 可能不兼容，注意检查 `libmpi.so` 版本。Python 版本要求 3.9 到 3.13。RadonPy 已提供 PyPI 包（`pip install radonpy-pypi`），最小化安装只需一行命令。但 RadonPy 主要为**超算环境设计**，论文用 Fugaku 超算跑了 1000+ 聚合物，单机跑同样规模不现实。
+
+- `dftd3-python` 在 conda-forge 上无 py312 构建，`resp` 不在 conda-forge 上（需用 `-c psi4` 安装），Python 3.12+ 可参考：`conda install -c psi4 resp && pip install dftd3`。
+- `lammps` 的 conda 和 pip 版本 MPI ABI 可能不兼容，注意检查 `libmpi.so` 版本。Python 版本要求 3.9 到 3.13。
+- RadonPy 已提供 PyPI 包（`pip install radonpy-pypi`），最小化安装只需一行命令。但 RadonPy 主要为**超算环境设计**，论文用 Fugaku 超算跑了 1000+ 聚合物，单机跑同样规模不现实。
 
 ### 计算资源需求
 
