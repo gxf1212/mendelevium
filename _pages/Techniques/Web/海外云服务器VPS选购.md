@@ -1,7 +1,7 @@
 ---
 title: "【笔记整理|2026-07】VPS——海外便宜云服务器怎么选"
 date: "2026-07-23"
-last_modified_at: 2026-07-23
+last_modified_at: 2026-07-25
 tags: [vps, cloud, server, oracle-cloud, google-cloud, linode, aws-lightsail, digitalocean, hetzner, web-techniques]
 description: "海外云服务器VPS选购指南：Oracle免费方案、Google e2-micro、Akamai/Linode等主流方案对比，附配置推荐与安全设置"
 image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/074906xF9k4.jpg"
@@ -29,8 +29,8 @@ lang: zh-CN
 
 | 方案 | 大致配置 | 长期费用 | 北美节点 | 适合程度 | 主要问题 |
 | --- | --- | --- | --- | --- | --- |
-| Oracle Cloud Always Free A1 | ARM，免费额度等效 4 OCPU、24 GB RAM（2025 年后已升级） | **$0** | 有美国区域 | **最推荐** | 注册、容量和账户风控较严格 |
-| Google Cloud Free Tier | e2-micro，共享核、约 1 GB RAM、30 GB 磁盘 | **$0** | 美国 3 个区域 | 推荐作备用 | 内存偏紧，免费出站流量仅 1 GB/月 |
+| Oracle Cloud Always Free A1 | ARM Ampere A1，2 OCPU、12 GB RAM（可配置为 1–2 台 VM）；外加 2 台 AMD 小实例 | **$0** | 有美国区域 | **最推荐** | 注册、容量和账户风控较严格 |
+| Google Cloud Free Tier | e2-micro，2 vCPU、约 1 GB RAM、30 GB 磁盘 | **$0**（免费额度内） | 美国 3 个区域 | 推荐作备用 | 内存偏紧，免费出站流量仅 1 GB/月；超出免费额度约 $6.11/月 |
 | Akamai Cloud / Linode | Shared CPU，最低约 1 GB RAM | **$5/月起** | 美国、加拿大 | **最推荐付费** | 1 GB 跑 VS Code 偏紧 |
 | DigitalOcean | Basic Droplet，1 vCPU、1 GB RAM | 通常约 **$6/月** | 美国、加拿大 | 简单省心 | 性价比一般 |
 | AWS Lightsail | 2 vCPU、1 GB RAM、40 GB 磁盘、2 TB 流量 | **$7/月** | 多个美国区域 | 稳定易用 | 比同配置小厂贵 |
@@ -40,19 +40,21 @@ lang: zh-CN
 
 ## 第一推荐：Oracle Cloud Always Free
 
-> Oracle 在 **2025 年中**对 Always Free 额度进行了升级，A1 Ampere 免费额度从原来的 2 OCPU / 12 GB RAM 提升至 **4 OCPU / 24 GB RAM**（对应 3,000 OCPU-hours + 18,000 GB-hours）。此外仍提供最多两台 AMD `VM.Standard.E2.1.Micro` 免费实例。详见 [Oracle Always Free 官方文档](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)。
+> Oracle 官方文档显示，Always Free 的 Ampere A1 免费额度为每月 **1,500 OCPU-hours 和 9,000 GB-hours**，等效于持续运行 **2 OCPU + 12 GB RAM**，可配置为 1 台或 2 台 VM。此外还提供最多两台 AMD `VM.Standard.E2.1.Micro` 免费实例（每台 1/8 OCPU + 1 GB 内存）。总磁盘空间 200 GB，月出流量 10 TB。详见 [Oracle Always Free 官方文档](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)。
 
-对于 Codex 跳板用途，这个免费资源完全足够：
+> Oracle 另外提供 **300 美元 Free Trial credit**，30 天内可以体验所有 Oracle 云服务，但这个和永久免费的 Always Free 是两套独立资源。详见 [Oracle Free FAQ](https://www.oracle.com/cloud/free/faq/)。
+
+对于 Codex 跳板用途，这个免费资源完全足够。推荐配置（只占一半额度，留有余量）：
 
 ```text
 VM.Standard.A1.Flex
-1–2 OCPU（4 个额度中只用 1–2 个）
-6–12 GB RAM
+1 OCPU（额度中只用 1 个）
+6 GB RAM
 Ubuntu ARM64
-北美区域
+北美区域（Phoenix 等热门地区配额充足）
 ```
 
-**优点**：长期费用为零；12–24 GB 内存足够 VS Code Remote、Codex、Node、Python；ARM64 上普通 Python、Node.js、Git、Docker 基本都能用；适合长期挂 SSH、代理、博客构建和轻量开发。
+**优点**：长期费用为零；12 GB 内存足够 VS Code Remote、Codex、Node、Python；ARM64 上普通 Python、Node.js、Git、Docker 基本都能用；适合长期挂 SSH、代理、博客构建和轻量开发。
 
 **缺点**：注册时经常要求真实银行卡；免费 A1 实例有时显示容量不足（特别是热门区域）；Home Region 创建后不能更换；免费账户如果长期极低负载，存在资源回收或账户审核风险；某些仅提供 x86_64 二进制的软件在 ARM 上不能直接运行。
 
@@ -60,29 +62,21 @@ Ubuntu ARM64
 
 > Oracle 免费额度官方仍标为无限期可用的 Always Free 资源，而不是仅 30 天试用。30 天 / $300 是另一套 [Free Trial credit](https://www.oracle.com/cloud/free/faq/)，不要混淆。
 
+**注册注意事项**：Oracle 免费实例需要保活，否则可能被释放（释放后对应区域无配额就尴尬了）。Oracle 也随时可能 ban 号（俗称"杀龟"），有时候新号活不过一个月，有时候几年的老号突然就没了。建议只当测试机，不要投放生产环境。注册时不需要代理，地址建议与信用卡账单地址一致，推荐手机 + 5G + Chrome 无痕模式 + 全中文地址。信用卡验证会扣几毛钱然后冲正，二次验证也类似，需要留几块钱。
+
 ## 第二推荐：Google Cloud Free Tier
 
-Google Cloud 免费层每月提供一台非抢占式 `e2-micro`，可选美国俄勒冈 `us-west1`、爱荷华 `us-central1`、南卡罗来纳 `us-east1` 三个区域，附带 30 GB 标准持久磁盘，以及每月 1 GB **从北美区域传出**的免费出站流量；前往中国和澳大利亚不计入这项免费范围。详见 [Google Cloud Free Tier 文档](https://docs.cloud.google.com/free/docs/free-cloud-features)。
+Google Cloud 免费层每月提供一台非抢占式 `e2-micro`，可选美国俄勒冈 `us-west1`、爱荷华 `us-central1`、南卡罗来纳 `us-east1` 三个区域，附带 30 GB 标准持久磁盘，以及每月 1 GB **从北美传出**的免费出站流量（不计入中国和澳大利亚）。详见 [Google Cloud Free Tier 文档](https://docs.cloud.google.com/free/docs/free-cloud-features)。
 
-它更适合：
+**免费时长限制**：每月 744 小时（约等于整月不停机），受时长上限而非实例数量上限约束。所有区域合并计算，不超过 744 小时，整月持续运行一台 `e2-micro` 完全没问题。
 
-```text
-纯 SSH
-Codex CLI
-Git
-简单脚本
-轻量反向代理
-```
+**出站流量才是真正的限制**。1 GB/月 ≈ 每天 33 MB，跑一个代理或 SOCKS 跳板，一个用户刷个网页就爆了。所以 e2-micro 作为中转站或代理用不了——不是性能不够，是流量额度太小。这点对"用量较大"的用户尤其要避开。
 
-不太适合：
+它更适合：纯 SSH、Codex CLI、Git、简单脚本。
 
-```text
-VS Code Remote + Python language server + Node language server
-大型 Jekyll build
-Docker 多容器
-```
+不太适合：VS Code Remote + Python language server + Node language server、大型 Jekyll build、Docker 多容器、任何需要大量出站流量的场景。
 
-因为 e2-micro 是共享核且只有约 1 GB 内存。创建后立即加 2 GB swap：
+因为 e2-micro 只有约 1 GB 内存，CPU 为 2 vCPU，性能偏低。创建后立即加 2 GB swap：
 
 ```bash
 sudo fallocate -l 2G /swapfile
@@ -92,8 +86,6 @@ sudo swapon /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 
-Google 的免费额度足以让一台 e2-micro 整月持续运行。详见 [Sustained Use Discounts 文档](https://docs.cloud.google.com/compute/docs/sustained-use-discounts)。
-
 **需要注意**：Google Cloud 必须绑定付款方式，免费额度外的磁盘、快照、静态公网 IPv4 或额外流量可能产生费用。建议设置：
 
 ```text
@@ -102,6 +94,8 @@ Billing alert：50%、90%、100%
 ```
 
 预算提醒通常不会自动停机，只负责通知。
+
+> **超出免费额度后的费用**：e2-micro 按需定价约 **$6.11/月**（2 vCPU、1 GB RAM）。3 年 CUD 约 $3.30/月。所以免费额度外的磁盘、静态公网 IPv4 或额外流量才是真正产生费用的部分——e2-micro 本身在免费额度内是 $0，但一旦超出就要按这个价格计费。详见 [Google Compute Engine 定价](https://cloud.google.com/products/compute/pricing/general-purpose#e2-shared-core-machine-types)。
 
 ## 最推荐的付费方案：Akamai Cloud / Linode
 
@@ -193,25 +187,18 @@ Hetzner 在美国有 Ashburn, Virginia 和 Hillsboro, Oregon 两个节点。详�
 
 ### 完全不想花钱
 
-先试：
+[Oracle 免费套餐申请](https://www.oracle.com/cn/cloud/free/)（https://www.oracle.com/cn/cloud/free/）：
 
-```text
-Oracle Cloud Always Free
-美国区域
-A1 Flex
-1 OCPU + 6 GB RAM
-Ubuntu 24.04 ARM64
-```
+| 项目 | Oracle Cloud Always Free | Google Cloud e2-micro |
+| --- | --- | --- |
+| **配置** | 1 OCPU + 6 GB RAM（ARM Ampere A1） | 2 vCPU + 1 GB RAM + 30 GB 磁盘 |
+| **区域** | 美国区域（Phoenix 等热门地区配额充足） | `us-west1` / `us-central1` / `us-east1` |
+| **系统** | Ubuntu 24.04 ARM64 | Ubuntu 24.04 x86_64 |
+| **额外** | 2 台 AMD 小实例（1/8 OCPU + 1 GB RAM）；总磁盘 200 GB；月出流量 10 TB | 需手动加 2 GB swap |
+| **注册要求** | 外币信用卡（Master/VISA）、邮箱、手机号；需过风控 | 信用卡或借记卡即可 |
+| **稳定性** | 可能随时被 ban（俗称"杀龟"），建议当测试机 | 相对稳定，绑定付款后长期可用 |
 
-注册或容量失败，再用：
-
-```text
-Google Cloud e2-micro
-us-west1 / us-central1 / us-east1
-Ubuntu 24.04
-30 GB standard disk
-2 GB swap
-```
+Oracle 注册成功率取决于信用卡信息、网络环境（不要用代理）、地址与信用卡账单地址一致等。推荐手机 + 5G + Chrome 无痕模式 + 全中文地址。
 
 ### 愿意每月付 5 美元
 
