@@ -20,7 +20,7 @@ Claude Relay Service已经迁移，不好一键安装了。Sub2API 就是继承�
 
 ## 这篇教程覆盖什么
 
-具体配置（包括上游账号如何接入、各模型分组怎么分配）可以参考这篇教程：https://x.com/akokoi1/article/2041464436876345524。
+具体配置（包括上游账号如何接入、各模型分组怎么分配）可以参考这篇教程：[https://x.com/akokoi1/article/2041464436876345524](https://x.com/akokoi1/article/2041464436876345524)。
 
 下面按 Sub2API 官方文档和新手指引走一遍：先在 Linux 服务器上部署 Sub2API，启动后会引导到 Web 界面配置上游账号和 API Key；过程中需要先安装 PostgreSQL 和 Redis 两个依赖；账号、渠道、Key 这些配置都按新手指引填就行。下面把容易卡住的几步单独拎出来，补一些命令，别的教程可能没写的。
 
@@ -113,10 +113,8 @@ Sub2API 是 Vue 3 + Go 后端的 Web 应用，登录方式目前只有注册邮�
 
 ## 常见问题：管理员账号余额不足
 
-刚开始还说`"code":"INSUFFICIENT_BALANCE","message":"Insufficient account balance"}`，更新不太及时啊。。crs都好了。
+如果一切配置都正常，但调用时仍然返回 `"code":"INSUFFICIENT_BALANCE","message":"Insufficient account balance"}`，可能是管理员账号本身没有分配足够的余额或订阅。
 
-如果一切配置都正常，但调用时仍然返回 `INSUFFICIENT_BALANCE`，可能是管理员账号本身没有分配足够的余额或订阅。
+这个问题在 Sub2API 的 issue 里有人提过（https://github.com/Wei-Shaw/sub2api/issues/203）：**如果你的分组不是订阅类型，需要给自己的管理员账户充一些余额；如果是订阅类型，需要给自己账户分配订阅**。
 
-这个问题在 Sub2API 的 issue 里有人提过（https://github.com/Wei-Shaw/sub2api/issues/203）：**如果你的分组不是订阅类型，需要给自己的管理员账户充一些余额；如果是订阅类型，需要给自己账户分配订阅。**
-
-解决方法很简单，在 `/admin/users` 页面找到自己的账号，点击 **更多 → 充值**，充上一些余额或者分配订阅就可以了。
+解决方法：在 `/admin/users` 页面找到自己的账号，点击 **更多 → 充值**，充上一些余额或者分配订阅就可以了。

@@ -14,8 +14,6 @@
 
 ## 推文
 
-现在有了一个方便的工具来快速搜索PDF内容。我已经为你准备好了：
-
 使用方式：`python3 tools/search_pdf_text.py <pdf_file> <keyword> [context_lines]`
 
   例子：
@@ -23,7 +21,16 @@
 # 搜索"MCS"，显示前后3行上下文
 python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tuning.pdf" "MCS" 3
 ```
-必要的时候还是要直接读PDF全文
+
+- **底层**：pymupdf逐页`get_text()`，按行号-页码映射，每页插入`=== PAGE N ===`分隔符，小写子串匹配后输出前后`context_lines`行
+- **典型用例**：
+  - 找Figure/Table/Section在PDF的页码：`search_pdf_text.py paper.pdf "Figure 3."` → 看`Page 5, line 541`
+  - 找方法名、PDB ID、探针名首次出现位置：`search_pdf_text.py paper.pdf "MxMD"` `search_pdf_text.py paper.pdf "7C40"`
+  - 找引用：`search_pdf_text.py paper.pdf "Koseki"`
+- **已知限制**：
+  - 双栏PDF：按流顺序提取，跨栏上下文可能错乱；错乱时用`pdftoppm`渲染整页看
+  - 表格内文字常被压成一行（如`inFigureS2intheSupportingInformation,withanaverageof`），需二次解析
+  - 必要的时候还是要直接读PDF全文
 
 **格式清理工具**：
 - `tools/remove_extra_blank_lines.py` —— 清理多余空行
