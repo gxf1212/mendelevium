@@ -158,13 +158,17 @@ class BlogQualityChecker:
         if formula_bold:
             self.errors.append(f"❌ 发现加粗包含LaTeX公式，禁止在加粗内使用公式")
 
-        # 检查加粗包含代码
-        code_bold = re.findall(r'\*\*[^*]*?`[^`]+`[^*]*?\*\*', self.body)
-        if code_bold:
-            self.errors.append(f"❌ 发现加粗包含代码，禁止在加粗内使用代码")
+        # 检查加粗包含代码（限制在同一行，避免跨列表项误匹配）
+        for line in self.body.split("\n"):
+            if re.search(r'\*\*[^*\n]*?`[^`]+`[^*\n]*?\*\*', line):
+                self.errors.append(f"❌ 发现加粗包含代码，禁止在加粗内使用代码")
+                break
 
         # 检查过短的加粗（1-2个字符）
+        # 排除本文信息模板字段：标题、作者、发表期刊、发表时间、DOI、单位、引用格式、代码与数据
+        _template_fields = {"标题", "作者", "发表期刊", "发表时间", "DOI", "单位", "引用格式", "代码与数据"}
         short_bold = re.findall(r'\*\*([一-鿿]{1,2})\*\*', self.body)
+        short_bold = [m for m in short_bold if m not in _template_fields]
         if short_bold:
             for match in short_bold[:3]:
                 self.warnings.append(f"⚠️ 发现过短的加粗: **{match}**，建议扩展加粗内容或删除加粗")

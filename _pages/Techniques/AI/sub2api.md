@@ -1,5 +1,5 @@
 ---
-title: "【笔记整理|2026-07】Sub2API：让 Claude Code、Codex CLI 都用一个中转 API"
+title: "Sub2API：让 Claude Code、Codex CLI 都用一个中转 API"
 date: "2026-07-25"
 last_modified_at: 2026-07-26
 tags: [sub2api, Claude-Code, Codex-CLI, API-gateway, Anthropic, OpenAI, technical-notes]
@@ -10,7 +10,7 @@ author: Xufan Gao
 lang: zh-CN
 ---
 
-# 【笔记整理|2026-07】Sub2API：让 Claude Code、Codex CLI 都用一个中转 API
+# Sub2API：让 Claude Code、Codex CLI 都用一个中转 API
 
 白嫖了一台 Linode VPS，自带命令行真的巨难用，直到直接关掉防火墙了，ssh才能用了（）。
 
@@ -20,11 +20,13 @@ Claude Relay Service已经迁移，不好一键安装了。Sub2API 就是继承�
 
 ## 这篇教程覆盖什么
 
+具体配置（包括上游账号如何接入、各模型分组怎么分配）可以参考这篇教程：https://x.com/akokoi1/article/2041464436876345524。
+
 下面按 Sub2API 官方文档和新手指引走一遍：先在 Linux 服务器上部署 Sub2API，启动后会引导到 Web 界面配置上游账号和 API Key；过程中需要先安装 PostgreSQL 和 Redis 两个依赖；账号、渠道、Key 这些配置都按新手指引填就行。下面把容易卡住的几步单独拎出来，补一些命令，别的教程可能没写的。
 
 ## Sub2API 是什么
 
-Sub2API（[GitHub 仓库](https://github.com/Wei-Shaw/sub2api)）是一个一站式开源中转服务，把 Claude、OpenAI、Gemini、Grok 的订阅统一接入，支持拼车共享，原生工具能无缝使用。
+Sub2API（https://github.com/Wei-Shaw/sub2api）是一个一站式开源中转服务，把 Claude、OpenAI、Gemini、Grok 的订阅统一接入，支持拼车共享，原生工具能无缝使用。
 
 对 Claude Code 和 Codex CLI 用户来说，它解决了一个真实存在的痛点：Claude Code 用 Anthropic Messages API，Codex CLI 用 OpenAI Responses API，路径在 `/v1/responses`，两边要分别配 `ANTHROPIC_BASE_URL` 和 `OPENAI_BASE_URL`，维护起来麻烦。Sub2API 把这两套 API 都封装到同一个 `http://xxx:8080` 后面，客户端只需要改一个基础地址。
 
@@ -72,6 +74,10 @@ sudo -u postgres psql
 
 > 如果 Sub2API 和 PostgreSQL 都在同一台服务器上，保持 PostgreSQL 只监听本机回环即可，不要为了应用连接直接开放公网 5432 端口。
 
+然后填入
+
+![](sub2api/image.png)
+
 ## API 端点
 
 Sub2API 当前兼容以下等价入口，客户端任选一个就行：
@@ -103,14 +109,14 @@ export OPENAI_BASE_URL="http://你的服务器IP:8080"
 
 Sub2API 是 Vue 3 + Go 后端的 Web 应用，登录方式目前只有注册邮箱验证。首页显示各模型（Claude、OpenAI、Gemini、Grok）的可用状态和延迟。
 
-账号、渠道、Key 这些步骤直接跟着新手指引填就行。具体配置（包括上游账号如何接入、各模型分组怎么分配）可以参考这篇教程：[akokoi 的 Sub2API 配置教程](https://x.com/akokoi1/article/2041464436876345524)（https://x.com/akokoi1/article/2041464436876345524）。
+账号、渠道、Key 这些步骤直接跟着新手指引填就行。
 
-## 小结
+## 常见问题：管理员账号余额不足
 
-- **Sub2API**（[GitHub](https://github.com/Wei-Shaw/sub2api)）一站式中转 Claude、OpenAI、Gemini、Grok 订阅，34k stars，issue 响应比较快
-- **部署**走官方安装脚本，一行命令带上开机自启，端口 8080 验证是否启动
-- **依赖**PostgreSQL 和 Redis 都需要装，postgres 用户设密码，数据库保持本机回环访问
-- **Claude Code** 设 `ANTHROPIC_BASE_URL` 指向 `http://xxx:8080`，自动追加 `/v1/messages`
-- **Codex CLI** 设 `OPENAI_BASE_URL` 指向 `http://xxx:8080`，自动追加 `/v1/responses`
-- **账号配置**按新手指引填即可，详细步骤参考 akokoi 那篇教程
+刚开始还说`"code":"INSUFFICIENT_BALANCE","message":"Insufficient account balance"}`，更新不太及时啊。。crs都好了。
 
+如果一切配置都正常，但调用时仍然返回 `INSUFFICIENT_BALANCE`，可能是管理员账号本身没有分配足够的余额或订阅。
+
+这个问题在 Sub2API 的 issue 里有人提过（https://github.com/Wei-Shaw/sub2api/issues/203）：**如果你的分组不是订阅类型，需要给自己的管理员账户充一些余额；如果是订阅类型，需要给自己账户分配订阅。**
+
+解决方法很简单，在 `/admin/users` 页面找到自己的账号，点击 **更多 → 充值**，充上一些余额或者分配订阅就可以了。

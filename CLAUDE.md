@@ -23,7 +23,7 @@
 - @.claude/rules/04-article-formatting/02-punctuation-headings-abbreviations.md
 - @.claude/rules/04-article-formatting/03-markdown-lists.md
 - @.claude/rules/04-article-formatting/04-ai-writing-and-quote-blocks.md
-- @.claude/skills/fix-ai-writing.md,fix-ai-writing2.md
+- @.claude/rules/fix-ai-writing/00-overview.md（去AI味规则总览，子文件见该目录）
 
 ### 05-visual-elements：可视化元素
 处理Mermaid、图、表、图片提取、图注、图文融合时，必须读这些：
@@ -88,7 +88,7 @@
 - `blog` - 根据PDF论文生成科研博客文章，会自动引用格式规则
 - `format` - 检查和修复推送文章格式问题，会自动引用格式规范  
 - `literature-deepread` - 文献精读流程，会自动引用阅读和分析规则
-- `fix-ai-writing` - 修复AI写作特征，会自动引用 @.claude/skills/fix-ai-writing.md 去AI味规则
+- `fix-ai-writing` - 修复AI写作特征，去AI味规则现位于 @.claude/rules/fix-ai-writing/ 目录下，由 00-overview.md 索引
 - `adversarial-paper-reading` - 对抗式论文阅读，会自动引用审稿和批判性分析规则
 - 其他skills按需引用相关规则文件
 

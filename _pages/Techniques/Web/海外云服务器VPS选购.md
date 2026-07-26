@@ -1,5 +1,5 @@
 ---
-title: "【笔记整理|2026-07】VPS——海外便宜云服务器怎么选"
+title: "VPS——海外便宜云服务器怎么选"
 date: "2026-07-23"
 last_modified_at: 2026-07-25
 tags: [vps, cloud, server, oracle-cloud, google-cloud, linode, aws-lightsail, digitalocean, hetzner, web-techniques]
@@ -10,7 +10,7 @@ author: Xufan Gao
 lang: zh-CN
 ---
 
-# 【笔记整理|2026-07】VPS——海外便宜云服务器怎么选
+# VPS——海外便宜云服务器怎么选
 
 > **使用场景**：找一个海外云服务器，北美节点，能访问 Codex，配置尽量低（1 核 1 G Linux 档），长期使用。CPU 要求很低，本质上是**长期在线的 Linux 跳板/开发机**，用 SSH、VS Code Remote、Codex CLI，不跑重计算。但 **1 GB 内存只够纯终端；同时跑 VS Code Server、Codex、Node/Python 和语言服务器时容易 OOM**。建议至少 2 GB；坚持 1 GB 就配 2–4 GB swap。
 
@@ -46,13 +46,13 @@ lang: zh-CN
 
 对于 Codex 跳板用途，这个免费资源完全足够。推荐配置（只占一半额度，留有余量）：
 
-```text
-VM.Standard.A1.Flex
-1 OCPU（额度中只用 1 个）
-6 GB RAM
-Ubuntu ARM64
-北美区域（Phoenix 等热门地区配额充足）
-```
+| 项目 | 配置 |
+| --- | --- |
+| 实例类型 | VM.Standard.A1.Flex |
+| OCPU | 1（额度中只用 1 个） |
+| RAM | 6 GB |
+| 系统 | Ubuntu ARM64 |
+| 区域 | 北美区域（Phoenix 等热门地区配额充足） |
 
 **优点**：长期费用为零；12 GB 内存足够 VS Code Remote、Codex、Node、Python；ARM64 上普通 Python、Node.js、Git、Docker 基本都能用；适合长期挂 SSH、代理、博客构建和轻量开发。
 
@@ -112,20 +112,19 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 ```
 
-如果 VS Code 经常卡死或 language server 被杀，再升到 2 GB。
+按内存档位的实际体验：
+
+| 内存档位 | 适合的场景 | 主要问题 |
+| --- | --- | --- |
+| 1 GB | 纯 SSH、Codex CLI、Git、简单脚本 | 跑 VS Code Server 偏紧，需要 swap |
+| 2 GB | VS Code Remote + Python/Node language server、Jekyll build | 性价比最高的档位 |
+| 4 GB+ | Docker 多容器、跑多个服务、长时编译 | 价格明显上升 |
 
 ## DigitalOcean：最简单，但不是最低价
 
 DigitalOcean 的 Basic Droplet 是典型的学生/开发者入门 VPS。Droplet 支持按秒计费，存在月度价格上限；**关闭机器但不销毁仍继续收费**，因为资源仍被保留。详见 [DigitalOcean 定价文档](https://docs.digitalocean.com/products/droplets/details/pricing/)。
 
-常见最低可用档：
-
-```text
-1 vCPU
-1 GB RAM
-约 25 GB SSD
-约 $6/月
-```
+常见最低档是 **1 vCPU、1 GB RAM、约 25 GB SSD、约 $6/月**。
 
 北美有纽约、旧金山、多伦多、亚特兰大等区域。详见 [DigitalOcean 区域文档](https://docs.digitalocean.com/products/droplets/details/availability/)。
 
@@ -145,17 +144,9 @@ AWS Lightsail 当前官方 Linux 公网 IPv4 套餐：
 
 详见 [AWS Lightsail 文档](https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html)。
 
-不要为了省 $2 选 0.5 GB：
-
-```text
-0.5 GB：基本不适合 VS Code Server
-1 GB：勉强可用，需要 swap
-2 GB：比较舒服
-```
-
 **优势**：AWS 网络与账户体系成熟、静态 IP/快照/防火墙操作简单、北美区域充足、价格固定（账单比直接用 EC2 容易理解）。
 
-但对学生党来说，$7/月并不算特别便宜。IPv6-only 版 1 GB 是 $5/月，但不建议作为第一台服务器——本地网络、学校网络和某些服务对纯 IPv6 的支持可能不完整。
+但对学生党来说，\$7/月并不算特别便宜。IPv6-only 版 1 GB 是 $5/月，但不建议作为第一台服务器——本地网络、学校网络和某些服务对纯 IPv6 的支持可能不完整。
 
 ## Hetzner 是否值得选
 
@@ -167,71 +158,119 @@ Hetzner 在美国有 Ashburn, Virginia 和 Hillsboro, Oregon 两个节点。详�
 
 但如果你只需要一个 1 GB Codex 跳板，它不一定是最便宜的北美选项。
 
-## 不太建议的"超低价年付 VPS"
+## $4/月以内的低价 VPS 候选
 
-确实有一些 LowEndTalk、RackNerd、ColoCrossing 系商家会提供：
+下面这份清单来自 ChatGPT 联网查询的整理，截到 **2026 年 7 月**。低价套餐库存、续费价格和地区经常变化，下单页仍需再确认一次。
 
-```text
-1 GB RAM
-15–25 GB SSD
-年付 $10–25
-```
+| 服务商 | 折算月费 | 付款方式 | 主要配置 | IPv4 | 主要限制 |
+| --- | --- | --- | --- | --- | --- |
+| **GreenCloud Budget KVM** | **$2.08/月** | $25/年 | 2 vCPU、4 GB RAM、35 GB SSD/NVMe、4 TB 流量 | 有 | 年付；无退款；部分地区缺货 |
+| **CloudCone SSD VPS 3** | **$1.79/月** | $21.59/年 | 3 vCPU、3 GB RAM、41 GB SSD、3 TB 流量 | 有 | 年付；目前页面显示 Missouri |
+| **RackNerd Specials** | **$3.00/月** | $35.99/年 | 2 vCPU、2 GB RAM、35 GB SSD、5 TB 流量 | 有 | 年付；共享 CPU，地区取决于库存 |
+| **IONOS 入门 VPS** | **$2/月** | 3 年合同 | 1 vCPU、1 GB RAM、10 GB NVMe | 有 | 需要较长合同，资源较小 |
+| **ServerHost** | **$3/月起** | 月付 | 官网称 VPS 从 $3/月起，流量不计量 | 需在订单页确认 | 官网公开搜索结果未完整列出入门配置 |
+| **Vultr Cloud Compute** | **$3.50/月左右** | 按小时/月付 | 入门共享 CPU 实例 | $3.50 档通常有；$2.50 档仅 IPv6 | 低配内存较小；$2.50 套餐限 IPv6 |
+| **AWS Lightsail** | **$3.50/月** | 按小时，月费封顶 | 2 vCPU、512 MB RAM、20 GB SSD、1 TB 流量 | **无，仅 IPv6** | 512 MB 很小；有 IPv4 的版本超过 $4 |
+| **DigitalOcean** | **$4/月起** | 按小时/月付 | 基础 Droplet | 通常有 | 卡在预算上限，入门资源较少 |
 
-折合可能只有每月 $1–2。
+### GreenCloud：性价比最高，但要挑有货地区
 
-**但我不建议把它作为唯一长期环境**，原因是：CPU 严重超售、磁盘 I/O 波动、IP 段信誉可能较差、云厂商共享 IP 段可能被 GitHub / OpenAI / Google 风控、年付退款困难、商家或套餐可能消失、备份和快照系统不完善。
+GreenCloud 的 Budget KVM 页面目前显示 **4 GB RAM、2 核、35 GB SSD/NVMe、4 TB 月流量、1 个 IPv4**，年付 $25 折合约 $2.08/月。详见 [GreenCloud 购物车](https://greencloudvps.com/billing/cart.php)。
 
-用来做临时 SSH 跳板可以；存放唯一代码、密钥和研究数据不合适。
+当前 Jacksonville、Kansas City、Buffalo、Coventry、Amsterdam、Frankfurt 等部分 4 GB 或 8 GB 套餐仍显示有库存；洛杉矶、圣何塞和一些亚洲节点的低价档经常缺货。该系列明确写着**不退款**。
+
+对部署 **Sub2API + PostgreSQL + Redis** 的场景来说，这一档配置比较合适——4 GB RAM 够 Nginx、Sub2API、PostgreSQL、Redis、Docker、少量日志和监控同时运行。但低价共享 CPU 的持续性能可能波动，不适合重型数据库或高并发 API。
+
+### CloudCone：纸面性价比高，先验证库存和续费
+
+CloudCone 的 [SSD VPS 3](https://cloudcone.com/vps/) 当前列出 **3 vCPU、3 GB RAM、41 GB SSD、3 TB 月流量、1 IPv4**，年付 $21.59 折合约 $1.79/月，地区 Missouri。
+
+下单前需要确认：
+
+- 是否真的可以直接购买，而不是旧套餐页面；
+- 次年是否仍按相同价格续费；
+- IPv4 是否包含在最终订单中；
+- 是否有备份、快照额外费用。
+
+如果续费同价，它比 VoyraCloud $4.50/月便宜很多。
+
+### RackNerd：配置和稳定性之间较均衡
+
+[RackNerd Specials](https://www.racknerd.com/specials/) 页面当前有 **2 GB RAM、2 vCPU、35 GB SSD、5 TB 月流量、1 IPv4**，年付 $35.99 折合约 $3/月。另有 1 GB 套餐年付 $21.99。
+
+RackNerd 还会不定期推出更低的活动套餐，例如 2026 年促销曾出现约 $10–19/年的 1–2.5 GB 套餐，但这类活动库存和入口不稳定，不能当作长期固定价格。详见 [LowEndBox 报道](https://lowendbox.com/blog/racknerd-ranks-90-on-2026-inc-regionals-pacific-list-3-years-in-a-row-check-out-their-latest-vps-deals/)。
+
+相对而言，官网 Specials 的 $35.99/年更适合作为长期预算依据。
+
+### IONOS：正规大厂，但 $2 套餐要签三年
+
+[IONOS 官网](https://www.ionos.com/servers/cheap-vps) 目前宣传的 $2/月 VPS 是 **1 vCPU、1 GB RAM、10 GB NVMe，需要 3 年期限**。
+
+**优点**：大型服务商，基础设施和账号体系比 LowEnd 商家规范，独立 IPv4 适合轻量反代、VPN、监控和小型静态服务。
+
+**缺点**：三年合同，10 GB 磁盘很小，1 GB 内存不适合同时跑 PostgreSQL、Redis 和多个 Docker 容器，促销套餐与续费套餐需要区分。
+
+IONOS 的另一类 [Cloud VPS 页面](https://www.ionos.com/servers/cloud-vps) 存在 "$2/月，前三个月" 的促销，但之后恢复到 $5/月，因此不能算长期不超过 $4。
+
+### ServerHost：真正的 $3 月付候选
+
+[ServerHost 官网](https://serverhost.com/) 表示 VPS 从 **$3/月**起，标注所有套餐提供不计量流量。
+
+这类月付套餐的优势是不需要一次付一年、不满意时迁移成本低、适合短期测试。
+
+但官网搜索结果没有完整展示 $3 套餐的 RAM、磁盘和 IPv4 条件。下单前必须核对是否包含独立 IPv4、实际端口速率、CPU 是否严重限频、可用地区、是否有安装费、是否允许 Docker、代理或 API 服务。
+
+### Vultr：$3.50 可能有 IPv4，使用灵活
+
+[Vultr FAQ](https://www.vultr.com/resources/faq/) 说明 **$2.50 套餐是 IPv6-only sandbox**，每个账户最多创建两个；$3.50 套餐与其类似但定位更接近正常入门实例。
+
+Vultr 优点是按小时计费、地区多、API 成熟、快照/重装/防火墙方便。但这一档通常只有约 512 MB RAM，跑 Sub2API 全套服务不现实。更适合 Nginx 反代、WireGuard、frp、简单探针、极轻量网页这类场景。
+
+### AWS Lightsail：$3.50 但仅 IPv6
+
+[AWS Lightsail $3.50/月](https://aws.amazon.com/lightsail/pricing/) 的 Linux 套餐是 **512 MB RAM、2 vCPU、20 GB SSD、1 TB 流量，仅 IPv6**。
+
+带公网 IPv4 的 Lightsail Linux 套餐目前从约 $5/月开始，超过 $4 预算。如果客户端、域名解析、反向代理或上游 API 仍依赖 IPv4，不建议购买这档。可用 [Lightsail 定价计算器](https://cloudburn.io/tools/amazon-lightsail-pricing-calculator) 复核。
+
+### DigitalOcean：正好 $4，但性能价格比一般
+
+[DigitalOcean 官网](https://www.digitalocean.com/solutions/vps-hosting) 仍标注 VPS/Droplet 从 **$4/月**起。优势是平台成熟、文档多、按小时计费；但 $4 预算下资源明显少于 GreenCloud、CloudCone 或 RackNerd。买它更多是为**平台可靠性、API、网络、文档、快照和生态**付费，而不是 RAM/价格比。
+
+### VoyraCloud 是否偏贵
+
+[VoyraCloud Cloud VPS](https://www.voyracloud.com/pricing) 当前最低是 **$4.50/月**，超预算 $0.50，纸面配置和同价位几家比没有明显优势。页面还列出 Residential IP VPS 从 $9/月、Windows VPS 从 $12/月、更换 IPv4 需要 $5/次。
+
+如果需要香港、日本、新加坡或特定网络质量，$4.50 未必绝对不合理；如果只是部署美国节点的普通 API 服务，则没有明显购买理由。
+
+### 按 Sub2API 用途的推荐
+
+前面已经部署了 PostgreSQL、Redis 和 Sub2API，对内存和磁盘有最低要求：
+
+| 要求 | 说明 |
+| --- | --- |
+| RAM | 2 GB 起步，推荐 4 GB |
+| 磁盘 | 20 GB 起步，推荐 35 GB 以上 |
+| IPv4 | 必须有 |
+| 虚拟化 | KVM |
+| 系统 | Ubuntu 22.04/24.04 |
+
+按这个门槛筛选的优先级：
+
+1. **GreenCloud 4 GB / $25 年付**：配置最匹配，确认地区、库存和不退款条款
+2. **CloudCone 3 GB / $21.59 年付**：最便宜，先确认订单和续费价
+3. **RackNerd 2 GB / $35.99 年付**：更保守，配置够用，但 PostgreSQL 内存要调小
+4. **ServerHost $3 月付**：不想年付时值得测试
+5. **IONOS $2**：适合长期轻量服务，但 1 GB 和三年合同限制较大
+
+不建议用于 Sub2API 全套部署：**AWS Lightsail $3.50** 仅 IPv6 且只有 512 MB；**Vultr $2.50** 仅 IPv6；**DigitalOcean $4** 资源太少；**VoyraCloud $4.50** 超预算且纸面性价比一般。
+
+购买年付 LowEnd VPS 前，最好先查清楚**续费是否同价、是否允许退款、IPv4 是否包含、服务器地区以及商家是否允许代理/API 转发业务**。这些因素比宣传的 vCPU 数量更重要。
 
 ## 最适合你的选择
 
-### 完全不想花钱
-
-[Oracle 免费套餐申请](https://www.oracle.com/cn/cloud/free/)（https://www.oracle.com/cn/cloud/free/）：
-
-| 项目 | Oracle Cloud Always Free | Google Cloud e2-micro |
-| --- | --- | --- |
-| **配置** | 1 OCPU + 6 GB RAM（ARM Ampere A1） | 2 vCPU + 1 GB RAM + 30 GB 磁盘 |
-| **区域** | 美国区域（Phoenix 等热门地区配额充足） | `us-west1` / `us-central1` / `us-east1` |
-| **系统** | Ubuntu 24.04 ARM64 | Ubuntu 24.04 x86_64 |
-| **额外** | 2 台 AMD 小实例（1/8 OCPU + 1 GB RAM）；总磁盘 200 GB；月出流量 10 TB | 需手动加 2 GB swap |
-| **注册要求** | 外币信用卡（Master/VISA）、邮箱、手机号；需过风控 | 信用卡或借记卡即可 |
-| **稳定性** | 可能随时被 ban（俗称"杀龟"），建议当测试机 | 相对稳定，绑定付款后长期可用 |
+[Oracle 免费套餐申请](https://www.oracle.com/cn/cloud/free/)（https://www.oracle.com/cn/cloud/free/）。
 
 Oracle 注册成功率取决于信用卡信息、网络环境（不要用代理）、地址与信用卡账单地址一致等。推荐手机 + 5G + Chrome 无痕模式 + 全中文地址。
-
-### 愿意每月付 5 美元
-
-选：
-
-```text
-Akamai Cloud / Linode
-美国西海岸或东海岸
-最低 Shared CPU
-Ubuntu 24.04
-```
-
-这是我认为**价格、稳定性、长期可用性最均衡**的方案。
-
-### 需要 VS Code 使用舒服
-
-不要买 1 GB，直接找：
-
-```text
-2 vCPU
-2–4 GB RAM
-30–50 GB SSD
-```
-
-优先级：
-
-```text
-Oracle Free A1
-Hetzner 4 GB
-Akamai 2 GB
-Lightsail 2 GB
-DigitalOcean 2 GB
-```
 
 ## 创建后最小安全配置
 
