@@ -20,15 +20,17 @@ lang: zh-CN
 
 按学生党长期使用的优先级：
 
-1. **Oracle Cloud Always Free A1：首选免费方案**
-2. **Google Cloud e2-micro：最适合免费备用机**
-3. **Akamai Cloud / Linode：最推荐的廉价付费方案，约 $5/月**
-4. **DigitalOcean：约 $6/月，简单稳定**
-5. **AWS Lightsail：1 GB 公网 IPv4 约 $7/月**
-6. **Hetzner：性价比高，但美国节点价格通常不如欧洲节点便宜**
+1. **AWS 12 个月 Free Tier（t2.micro）：现有账号优先用完**
+2. **Oracle Cloud Always Free A1：首选长期免费方案**
+3. **Google Cloud e2-micro：最适合免费备用机**
+4. **Akamai Cloud / Linode：最推荐的廉价付费方案，约 $5/月**
+5. **DigitalOcean：约 $6/月，简单稳定**
+6. **AWS Lightsail：1 GB 公网 IPv4 约 $7/月**
+7. **Hetzner：性价比高，但美国节点价格通常不如欧洲节点便宜**
 
 | 方案 | 大致配置 | 长期费用 | 北美节点 | 适合程度 | 主要问题 |
 | --- | --- | --- | --- | --- | --- |
+| **AWS Free Tier（t2.micro）** | t2.micro，1 vCPU、1 GB RAM、8 GB EBS、30 GB 磁盘、15 GB 出流量（12 个月免费） | **$0**（12 个月内） | 全球多个区域 | **现有账号优先用完** | 12 个月后按量计费；t2.micro 性能偏低；免费仅 t2.micro 实例类型 |
 | Oracle Cloud Always Free A1 | ARM Ampere A1，2 OCPU、12 GB RAM（可配置为 1–2 台 VM）；外加 2 台 AMD 小实例 | **$0** | 有美国区域 | **最推荐** | 注册、容量和账户风控较严格 |
 | Google Cloud Free Tier | e2-micro，2 vCPU、约 1 GB RAM、30 GB 磁盘 | **$0**（免费额度内） | 美国 3 个区域 | 推荐作备用 | 内存偏紧，免费出站流量仅 1 GB/月；超出免费额度约 $6.11/月 |
 | Akamai Cloud / Linode | Shared CPU，最低约 1 GB RAM | **$5/月起** | 美国、加拿大 | **最推荐付费** | 1 GB 跑 VS Code 偏紧 |
@@ -36,7 +38,110 @@ lang: zh-CN
 | AWS Lightsail | 2 vCPU、1 GB RAM、40 GB 磁盘、2 TB 流量 | **$7/月** | 多个美国区域 | 稳定易用 | 比同配置小厂贵 |
 | Hetzner Cloud | 通常从 2 vCPU、4 GB RAM 起 | 欧洲低价档约 €5.99 起；美国需看控制台 | 弗吉尼亚、俄勒冈 | 需要更多内存时划算 | 美国配置/价格与欧洲不同 |
 
-> **重要提示**：价格、资源和免费政策都会变化，实际下单时应以控制台为准。以下信息截至 2026 年 7 月。
+## AWS 12 个月 Free Tier：现有账号先用完
+
+AWS 免费套餐每月提供 **t2.micro 实例（1 vCPU、1 GB RAM、8 GB EBS）** 共 750 小时，外加 30 GB 标准 EBS 磁盘、15 GB 出流量，**免费 12 个月**。详见 [AWS Free Tier 文档](https://aws.amazon.com/cn/free/)。
+
+t2.micro 性能偏低，跑 VS Code Remote + Codex 会明显局促，但当纯 SSH 跳板或 Codex CLI 跳板完全够用。如果你的 AWS 账号还在免费期内，**先把它用完**——这是零成本的现成资源，不用白不用。
+
+### 查看 Free Tier 剩余时间
+
+AWS 没有公开的 API 直接返回 Free Tier 到期日期，需要从控制台或通过 Cost Explorer 估算。
+
+**方法一：控制台直接查看（最准确）**
+
+登录 AWS Console，进入 **Billing and Cost Management** → **Free Tier** 页面，可以查看各项服务剩余免费额度：
+
+- 找到 **Amazon Elastic Compute Cloud**，看 `BoxUsage:freetier.micro` 的当前使用量和总免费量
+- **EC2** 的 750 小时/月是从账号激活起连续 12 个月；750 小时/月 ≈ 整月运行（30 天 × 24 小时 = 720 小时，留 30 小时余量）
+- **EBS 磁盘**：30 GB-Mo（12 个月内累计）
+- **出流量**：15 GB/月
+
+**方法二：通过 AWS CLI 查询**
+
+```bash
+# 查询当前账号的 Free Tier 使用情况（需 cost-explorer 权限）
+aws ce get-cost-and-usage \
+  --time-period Start=$(date -u +%Y-%m-01),End=$(date -u +%F) \
+  --granularity MONTHLY \
+  --metrics UnblendedCost \
+  --query 'ResultsByTime[0].Total.UnblendedCost' \
+  --output table
+```
+
+返回结果中 `Estimated: True` 说明是估算值，实际金额可能有延迟。如果本月费用接近 0，说明 Free Tier 还在抵扣。
+
+```bash
+# 查看每日成本明细
+aws ce get-cost-and-usage \
+  --time-period Start=2026-07-25,End=2026-07-26 \
+  --granularity DAILY \
+  --metrics UnblendedCost \
+  --group-by Type=DIMENSION,Key=SERVICE \
+  --output table
+```
+
+返回结果中 `Amazon Elastic Compute Cloud - Compute` 为 0 说明 EC2 费用在免费额度内。
+
+```bash
+# 查看账号创建时间
+aws account get-account-information \
+  --region us-east-2 \
+  --query 'AccountInformation[0].{Name:AccountName,Created:AccountCreatedDate,State:AccountState}' \
+  --output table
+```
+
+**方法三：根据账号创建时间估算**
+
+AWS 账号创建时间从 `AccountCreatedDate` 获取（UTC）。12 个月免费期从账号激活之日起计算。例如：
+
+```text
+AccountCreatedDate = 2025-07-07T16:40:48+00:00
+→ 12 个月免费期截止约 2026-07-08（UTC）
+```
+
+注意：**账号创建日期 ≠ 实际激活日期**，实际 Free Tier 开始时间可能略晚 1-2 天。
+
+### Free Tier 到期后会发生什么
+
+12 个月免费期结束后，继续使用 t2.micro 实例将按标准费率计费（约 **$0.0116/小时 ≈ $8.50/月**）。
+
+**到期前建议的操作**：
+
+- 在免费期结束前 1-2 个月主动关闭或销毁实例，避免意外计费
+- 或提前迁移到 Oracle Always Free、Akamai / Linode 等免费或低价方案
+- 关闭实例后记得删除 EBS 快照和弹性 IP，否则可能产生额外费用
+
+### AWS Free Tier 版本差异
+
+> **注意**：2025 年 7 月 15 日之后注册的 AWS 账号使用的是新版 Free Tier，免费额度和使用规则与旧版不同。旧版账号（2025-07-15 之前注册）仍适用 12 个月 t2.micro 免费规则；新版账号免费额度通过积分（credits）方式分配，规则略有不同。详见 [AWS Free Tier FAQ](https://aws.amazon.com/cn/free/faq/)。
+
+旧版账号可以通过 AWS CLI 确认：
+
+```bash
+# 新版账号有 account-plan 数据；旧版账号返回 ResourceNotFoundException 是正常的
+aws freetier get-account-plan-state \
+  --region us-east-1 \
+  --query '{Plan:accountPlanType, Status:accountPlanStatus, Expires:accountPlanExpirationDate}' \
+  --output table
+```
+
+### 当前使用量示例
+
+以下是某账号 2026 年 7 月 27 日的 Free Tier 使用情况截图：
+
+> Amazon Virtual Private Cloud：750 小时，已用 621 小时（约 82.8%）
+> Amazon Elastic Compute Cloud（t2.micro）：750 小时，已用 620 小时（约 82.6%）
+> EBS 磁盘：30 GB-Mo，已用 7 GB-Mo
+> 出流量：100 GB，已用 4 GB
+
+该账号创建于 2025-07-07，Free Tier 理论上已于 2026-07-08 左右到期。当前账单仍显示 USD 0.00 可能是因为：
+
+1. AWS 账单有延迟，Cost Explorer 中的数据可能标注 `Estimated: True`，实际费用需要 1-2 天才完全生成；
+2. Free Tier 在部分结算周期内仍被计算为"有效"，直到月底才最终应用；
+3. 账号实际激活时间可能晚于 `AccountCreatedDate` 1-2 天。
+
+**最安全的做法**：假设免费期已到期，当前显示 0 美元不证明接下来不会产生费用。建议在免费期结束前主动关闭实例。
 
 ## 第一推荐：Oracle Cloud Always Free
 
@@ -183,9 +288,7 @@ GreenCloud 的 Budget KVM 页面目前显示 **4 GB RAM、2 核、35 GB SSD/NVMe
 
 ### CloudCone：纸面性价比高，先验证库存和续费
 
-CloudCone 的 [SSD VPS 3](https://cloudcone.com/vps/) 当前列出 **3 vCPU、3 GB RAM、41 GB SSD、3 TB 月流量、1 IPv4**，年付 $21.59 折合约 $1.79/月，地区 Missouri。
-
-下单前需要确认：
+CloudCone 的 [SSD VPS 3](https://cloudcone.com/vps/) 当前列出 **3 vCPU、3 GB RAM、41 GB SSD、3 TB 月流量、1 IPv4**，年付 $21.59 折合约 $1.79/月，地区 Missouri。下单前需要确认：
 
 - 是否真的可以直接购买，而不是旧套餐页面；
 - 次年是否仍按相同价格续费；
