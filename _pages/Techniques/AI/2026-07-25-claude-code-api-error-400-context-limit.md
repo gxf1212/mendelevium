@@ -1,5 +1,5 @@
 ---
-title: "【笔记整理|2026-07】Claude Code 用第三方模型爆 API Error 400：上下文超限怎么办"
+title: "Claude Code 用第三方模型爆 API Error 400：上下文超限怎么办"
 date: "2026-07-24"
 last_modified_at: 2026-07-24
 tags: [Claude-Code, API-error, context-limit, third-party-model, compact, technical-notes]
@@ -10,7 +10,7 @@ author: Xufan Gao
 lang: zh-CN
 ---
 
-# 【笔记整理|2026-07】Claude Code 用第三方模型爆 API Error 400，上下文超限怎么办
+# Claude Code 用第三方模型爆 API Error 400，上下文超限怎么办
 
 前几天用 SenseNova 的 `sensenova-6.7-flash-lite` 跑一个长任务，突然弹出一个错误：
 
@@ -79,9 +79,7 @@ export CLAUDE_CODE_MAX_CONTEXT_TOKENS="262144"
 export CLAUDE_CODE_MAX_CONTEXT_TOKENS="262144"
 ```
 
-然后关闭并重新打开终端及 Claude Code。
-
-不同 Claude Code 版本对该变量的支持可能有差异。设置后通过以下命令确认 Claude Code 显示的上下文上限：
+然后关闭并重新打开终端及 Claude Code。不同 Claude Code 版本对该变量的支持可能有差异。设置后通过以下命令确认 Claude Code 显示的上下文上限：
 
 ```text
 /context
