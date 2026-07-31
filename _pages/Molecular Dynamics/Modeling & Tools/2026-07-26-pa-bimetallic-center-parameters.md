@@ -2,8 +2,8 @@
 title: "PA核酸内切酶双金属中心的参数化挑战：流感Baloxavir耐药突变如何改写蛋白动力学"
 date: "2026-07-26"
 last_modified_at: "2026-07-26"
-tags: [metal-parametrization, bimetallic-center, pa-endonuclease, baloxavir-resistance, md-simulation, amber, force-field, 12-6-nonbonded, bonded-model, jctc, 2026]
-description: "JCTC：系统比较非键、键合、杂化三类双$\mathrm{Mn^{2+}}$参数化策略在PAN活性位点的稳定性，并通过500 ns MD揭示I38T/F/M、A36V、E23K五种Baloxavir耐药突变如何改变构象景观"
+tags: [metal-parametrization, bimetallic-center, pa-endonuclease, baloxavir-resistance, md-simulation, amber, force-field, jctc]
+description: "JCTC：系统比较非键、键合、杂化三类双Mn2+参数化策略在PAN活性位点的稳定性，并通过500 ns MD揭示I38T/F/M、A36V、E23K五种Baloxavir耐药突变如何改变构象景观"
 thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/forest-3833973_1920.jpg"
 image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/forest-3833973_1920.jpg"
 author: Xufan Gao
@@ -15,22 +15,19 @@ lang: zh-CN
 ## 本文信息
 
 - **标题**：PA核酸内切酶双金属中心的参数化揭示临床相关突变的动力学特征
-- **作者**：Luxuan Wang、Pengfei Li、Terra Sztain
+- **作者**：Luxuan Wang, Pengfei Li, Terra Sztain（*通讯作者）
 - **发表期刊**：Journal of Chemical Theory and Computation（JCTC）
-- **发表时间**：2026年
+- **发表时间**：2026年7月13日
 - **DOI**：https://doi.org/10.1021/acs.jctc.6c01092
-- **单位**：University of Michigan（密歇根大学），USA；Loyola University Chicago（芝加哥洛约拉大学），USA
-- **引用格式**：Wang, L., Li, P., & Sztain, T. (2026). Parameterization of the PA Endonuclease Bimetallic Center Reveals the Dynamics of Clinically Relevant Mutations. *J. Chem. Theory Comput.* Advance Article. https://doi.org/10.1021/acs.jctc.6c01092
-- **代码与数据**：https://github.com/SztainLab/PAN_parameters
+- **单位**：University of Michigan（Department of Medicinal Chemistry & Department of Biophysics），USA；Loyola University Chicago（Department of Chemistry and Biochemistry），USA
+- **引用格式**：Wang, L., Li, P., & Sztain, T. (2026). Parameterization of the PA Endonuclease Bimetallic Center Reveals the Dynamics of Clinically Relevant Mutations. *J. Chem. Theory Comput.* https://doi.org/10.1021/acs.jctc.6c01092
+- **代码与数据**：https://github.com/SztainLab/PAN_parameters（含输入结构、代表性结构和金属建模脚本）
 
-![abs](2026-07-22-pa-bimetallic-center-parameters/abs.png)
-
-**摘要图：PA核酸内切酶（PAN）双金属中心与耐药突变位点全景**。
-左侧为PAN整体结构，标出临床耐药突变位点E23K、A36V、I38T/F/M的空间分布（彩色球，各自靠近活性中心但位于不同二级结构上）；右侧虚线框放大双金属活性中心，粉色棒状为BXA，两个 $\mathrm{Mn^{2+}}$ 离子（紫色球标M）由Glu80、His41、Asp108、Ile120、Glu119配位，绿色球为水分子。
+![abs](2026-07-26-pa-bimetallic-center-parameters/abs.png)
 
 ## 摘要
 
-> 甲型流感病毒（IAV）通过季节性流行和大流行持续造成全球健康和经济负担。Baloxavir marboxil（BXM）作为最新加入的抗流感药物，靶向高度保守的PA N端核酸内切酶结构域（PAN），阻断病毒转录起始所必需的cap-snatching过程。然而，耐药突变的快速出现降低了BXM的敏感性，也让PAN活性位点双金属中心的MD参数化更难处理。本研究比较了分子动力学（MD）模拟中三种金属参数化策略（非键、键合、杂化模型）在WT PAN的apo和药物结合态上的表现。基于这套参数化方案，作者对五种临床相关突变（I38T/F/M、A36V和E23K）进行了MD模拟，并分析它们如何改变构象采样和药物结合模式。这些结果可以直接用于这类双金属位点的建模，也能支撑后续的突变机制分析。
+> 甲型流感病毒（IAV）通过季节性流行和大流行持续造成全球健康和经济负担，**亟需持续开发抗病毒药物**。Baloxavir marboxil（BXM）作为抗流感治疗的新成员，靶向高度保守的PA N端核酸内切酶结构域（PAN），阻断病毒转录起始所必需的cap-snatching过程。然而，**耐药突变的快速出现显著降低了BXM敏感性**，削弱了其临床疗效。通过计算建模理解耐药背后的动力学机制，**长期以来被PAN活性位点双金属催化中心的复杂电子特性所阻碍**，准确参数化一直是难题。为此，本研究系统评估了MD模拟中三种金属参数化策略（非键模型、键合模型和杂化模型），在WT PAN的apo态和药物结合态上进行基准测试。**识别出可靠的参数化方案后，进一步对五种临床相关突变体（I38T/F/M、A36V和E23K）进行MD模拟**，揭示各自如何改变构象景观以调节药物结合模式。这些结果为**金属酶复杂位点的建模提供了可行路径**，也为针对PAN脆弱性的机制分析提供了基础，有望指导下一代抑制剂的基于结构的优化。
 
 ### 核心结论
 
@@ -50,15 +47,15 @@ lang: zh-CN
 - **神经氨酸酶抑制剂（NAIs）**虽持续改进，但仍遭遇零星耐药株
 - **Baloxavir marboxil（BXM）**作为新型cap依赖性核酸内切酶抑制剂（ceni），单剂即可实现与奥司他韦相当的症状缓解并显著降低病毒载量，但其耐药突变已迅速出现
 
-临床监测显示**PA亚基第38位氨基酸替换**（I38T/F/L/M/N/S/V）是BXM耐药的关键决定因素，其中**I38T最为严重**，可使病毒复制 $\mathrm{EC50}$ 升高约11至124倍。其他位点（E23K/G、A36V、A37T、E199G）也有报道，但出现频率较低，仅带来温和的敏感性降低。
+临床监测显示**聚合酶酸性蛋白（PA）亚基第38位氨基酸替换**（I38T/F/L/M/N/S/V）是BXM耐药的关键决定因素，其中**I38T最为严重**，可使病毒复制 $\mathrm{EC50}$ 升高约11至124倍。其他位点（E23K/G、A36V、A37T、E199G）也有报道，但出现频率较低，仅带来温和的敏感性降低。
 
 ### PA N端核酸内切酶结构域（PAN）的催化机制
 
-PAN位于病毒RNA依赖性RNA聚合酶（RdRp，由PA、PB1、PB2组成的异源三聚体）内，通过独特的**cap-snatching机制**启动转录：PB2结合宿主pre-mRNA的5′ m7G帽，**金属离子依赖的PAN**在下游约10至13个核苷酸处切割，产生用于PB1介导mRNA合成的加帽引物。BXM的活性形式baloxavir acid（BXA）通过靶向PAN，从源头阻断引物生成。
+PAN位于病毒RNA依赖性RNA聚合酶（RdRp，由聚合酶酸性蛋白PA、PB1、PB2组成的异源三聚体）内，通过独特的**cap-snatching机制**启动转录：PB2结合宿主pre-mRNA的5′ m7G帽，**金属离子依赖的PAN**在下游约10至13个核苷酸处切割，产生用于PB1介导mRNA合成的加帽引物。BXM的活性形式baloxavir acid（BXA）通过靶向PAN，从源头阻断引物生成。
 
 PAN双金属活性中心包含两个 $\mathrm{Mn^{2+}}$ 离子（生理条件下也可由 $\mathrm{Mg^{2+}}$ 替代），由来自Glu80、Asp108、His41、Ile120、Glu119等残基的氧/氮原子配位，形成八面体配位几何。在apo态下，两个水分子和一个桥联氢氧根离子参与配位；BXA结合时，其三齿螯合结构取代桥联氢氧根和两个配位水分子，但**保持整体八面体框架**。
 
-![fig1](2026-07-22-pa-bimetallic-center-parameters/fig1.png)
+![fig1](2026-07-26-pa-bimetallic-center-parameters/fig1.png)
 
 **图1：apo态与BXA结合态下PAN双金属活性中心的配位几何**。左图A为apo态活性位点（PDB ID：8T5Z），两个 $\mathrm{Mn^{2+}}$ 离子（标记M1、M2，紫色球）由Glu80、Asp108、His41、Ile120、Glu119配位，绿色球为参与配位的水分子/氢氧根，黄色虚线表示配位键。右图B为BXA结合态活性位点（PDB ID：7K0W），BXA（粉色棒状结构）以三齿螯合方式取代桥联氢氧根和配位水，直接协调两个金属离子。对比两图可见BXA结合如何改变第一配位层。
 
@@ -161,7 +158,7 @@ PAN双金属中心的参数化不是一个“挑一个最好”的问题，而�
 - 99.61%（M1）和100%（M2）的模拟时间内保持完整六配位
 - 移除晶体水后，溶剂水分子在前几纳秒内自发重新配位，恢复完整配位环境
 
-![fig2](2026-07-22-pa-bimetallic-center-parameters/fig2.png)
+![fig2](2026-07-26-pa-bimetallic-center-parameters/fig2.png)
 
 **图2：apo PAN在12-6非键模型下500 ns模拟的稳定性与双金属配位几何**。
 - (A) 全蛋白骨架、排除loop骨架、loop骨架、两个$\mathrm{Mn^{2+}}$的RMSD。所有轨迹先按排除loop区域对齐
@@ -183,7 +180,7 @@ PAN双金属中心的参数化不是一个“挑一个最好”的问题，而�
 - 配位原子被溶剂水或邻近残基替换
 - 每个$\mathrm{Mn^{2+}}$仍大体维持六配位几何，但**配位对象已完全改变**
 
-![fig3](2026-07-22-pa-bimetallic-center-parameters/fig3.png)
+![fig3](2026-07-26-pa-bimetallic-center-parameters/fig3.png)
 
 **图3：BXA结合PAN活性位点不同金属建模策略的表现**。
 - (A, B) `12-6`和`12-6-4`非键模型分别在100 ns和30 ns的快照。两个策略均无法维持原生BXA结合配位几何。原生配位水以柠檬色显示，新配位水以麦色显示
@@ -214,7 +211,7 @@ PAN双金属中心的参数化不是一个“挑一个最好”的问题，而�
 - 两个$\mathrm{Mn^{2+}}$保持稳定八面体配位
 - BXA在结合态下保持“蝴蝶状”构象，oxazino-pyrimidinone和difluorinated aromatic wings分别锚定于金属域和特异性域
 
-![fig4](2026-07-22-pa-bimetallic-center-parameters/fig4.png)
+![fig4](2026-07-26-pa-bimetallic-center-parameters/fig4.png)
 
 **图4：WT PAN在apo和BXA结合态下的动力学与相互作用网络**。
 - (A) WT PAN apo（上）和BXA结合（下）系统的loop backbone RMSD和重原子BXA RMSD
@@ -250,7 +247,7 @@ Ile38是BXA的主要疏水锚，其替换是最常见的耐药相关变化。三
 
 三种突变都削弱了Ile38-BXA锚网络的“持久锁定”特征，将其转化为更动态、可交换的接触模式，导致BXA疏水wing在口袋内采样多个局部微构象，整体RMSF升高。SI中的apo态对比显示，I38T/F/M与WT的骨架RMSD和RMSF基本一致（Figure S4）。这些突变的效应出现在药物结合态，而非蛋白整体折叠层面。耐药机制的核心在于改变结合界面。
 
-![fig5](2026-07-22-pa-bimetallic-center-parameters/fig5.png)
+![fig5](2026-07-26-pa-bimetallic-center-parameters/fig5.png)
 
 **图5：I38变体中BXA结合动力学和相互作用谱总结**。
 - (A) WT与I38T、F、M变体的BXA RMSD曲线，实线为三个独立副本的平均
@@ -276,7 +273,7 @@ A36V不与BXA直接相互作用，但其影响在 apo 态更为显著。**A36V�
 
 这一结果与实验观察一致：A36V显著降低apo PAN稳定性（熔解温度比WT低近10 °C），但BXA结合的A36V产生WT-like热位移，且其晶体结构未显示BXA结合构象变化。**A36V的耐药机制源于apo态不稳定和预结合构象采样改变，而非结合态的不利特性**。
 
-![fig6](2026-07-22-pa-bimetallic-center-parameters/fig6.png)
+![fig6](2026-07-26-pa-bimetallic-center-parameters/fig6.png)
 
 **图6：A36V PAN的apo态模拟揭示局部去稳定和改变的构象**。
 - (A) WT和A36V apo系统的loop-excluded骨架RMSD
@@ -286,9 +283,7 @@ A36V不与BXA直接相互作用，但其影响在 apo 态更为显著。**A36V�
 
 ### 结果七：E23K通过α2静电重布线削弱BXA specificity wing
 
-E23K也位于α2螺旋上，不与BXA直接相互作用。其在apo态与WT基本类似，**主要动力学改变出现在BXA结合态**：
-
-**loop动力学改变**：
+E23K也位于α2螺旋上，不与BXA直接相互作用。其在apo态与WT基本类似，**主要动力学改变出现在BXA结合态**。首先是**loop动力学改变**：
 
 - 排除loop时，骨架RMSD与WT相当——结构核心稳定
 - 包含loop时，RMSD和RMSF显示loop区域出现大幅副本间波动
@@ -308,7 +303,7 @@ E23K也位于α2螺旋上，不与BXA直接相互作用。其在apo态与WT基�
 
 **机制起源在于α2静电网络重布线**：WT中Glu23通过氢键（73.8%）和阴离子相互作用（57.9%）与Arg84形成持续网络。Lys23替换Glu23后，**这一原生相互作用被完全消除**，取而代之的是Lys23与Asp83之间的阳离子和氢键相互作用（77.0%和64.2%）。这种局部静电重布线通过α2螺旋传播，**间接削弱了BXA specificity wing在Met21、Tyr24、Phe105等远端位点的稳定性**。
 
-![fig7](2026-07-22-pa-bimetallic-center-parameters/fig7.png)
+![fig7](2026-07-26-pa-bimetallic-center-parameters/fig7.png)
 
 **图7：E23K BXA结合系统中loop动力学和BXA结合相互作用总结**。
 - (A) BXA结合WT和E23K系统的loop backbone和非氢BXA RMSD

@@ -26,6 +26,7 @@ tools/__pycache__/
 _pages/**/*.txt
 reference-mcp
 *private
+.workbuddy
 
 # FECR1 iron sensor materials
 _pages/Specific Sytems/Metal/fecr1_fe_sensor/
@@ -46,3 +47,5 @@ _pages/Field Knowledge/Writing/creating-logical-flow-no-sentence.md
 _pages/Molecular Dynamics/Modeling & Tools/Polymer/PEMD/
 _pages/Molecular Dynamics/Modeling & Tools/Polymer/PSP/
 _pages/Molecular Dynamics/Modeling & Tools/Polymer/RadonPy
+_pages/Techniques/AI/context.md
+

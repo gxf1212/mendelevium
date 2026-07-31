@@ -32,6 +32,17 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - 表格内文字常被压成一行（如`inFigureS2intheSupportingInformation,withanaverageof`），需二次解析
   - 必要的时候还是要直接读PDF全文
 
+- **通用PDF读取/搜索**：`tools/read_pdf.py`
+  - 用途：比`search_pdf_text.py`功能更全，支持看单页、看范围、正则搜索、带行号显示
+  - 用法示例：
+    - `python3 tools/read_pdf.py paper.pdf "keyword" -C 3` → 搜关键词，带3行上下文
+    - `python3 tools/read_pdf.py paper.pdf "TP6.*asym" -r` → 正则搜索
+    - `python3 tools/read_pdf.py paper.pdf -p 8` → 看第8页全文
+    - `python3 tools/read_pdf.py paper.pdf -P 3-5` → 看第3-5页
+    - `python3 tools/read_pdf.py paper.pdf -l 50` → 看前50行
+    - `python3 tools/read_pdf.py paper.pdf "keyword" --page-num` → 每行带页码
+  - **替代旧写法**：替代`python3 -c "import fitz; doc = fitz.open(...); ..."`这类临时代码，直接用脚本即可
+
 **格式清理工具**：
 - `tools/remove_extra_blank_lines.py` —— 清理多余空行
 - `tools/fix_all_punctuation.py` —— 标点符号修复
