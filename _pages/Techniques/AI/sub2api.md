@@ -4,8 +4,8 @@ date: "2026-07-25"
 last_modified_at: 2026-07-26
 tags: [sub2api, Claude-Code, Codex-CLI, API-gateway, Anthropic, OpenAI, technical-notes]
 description: "Sub2API 一站式开源中转服务，34k stars。用一台 Linode 服务器搭好中转 API，Claude Code 和 Codex CLI 都能直接连，拼车共享还能摊薄订阅成本。附完整配置教程"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-3zz55d.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/wallhaven-3zz55d.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

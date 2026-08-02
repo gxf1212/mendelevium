@@ -4,8 +4,8 @@ description: "在SE(3)等变骨架生成中注入底物条件和功能位点约�
 date: "2025-11-05"
 last_modified_at: "2025-11-05"
 tags: [enzyme-design, deep-learning, se3-equivariance, flow-matching, attention-mechanism, protein-generation, functional-control, substrate-specificity]
-image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
-thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/072615k8r1b.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/072615k8r1b.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

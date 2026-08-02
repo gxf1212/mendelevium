@@ -4,8 +4,8 @@ date: "2025-11-09"
 last_modified_at: "2025-11-09"
 tags: [DeepQSAR, QSAR, antimicrobial-peptides, technical-appendix, molecular-dynamics]
 description: "完整的方法细节、Top 10肽列表、与其他工具的对比、毒性数据和MD模拟结果"
-image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
-thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/082835Grt5U.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/082835Grt5U.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

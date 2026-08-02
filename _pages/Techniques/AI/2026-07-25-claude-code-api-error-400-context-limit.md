@@ -4,8 +4,8 @@ date: "2026-07-24"
 last_modified_at: 2026-07-24
 tags: [Claude-Code, API-error, context-limit, third-party-model, compact, technical-notes]
 description: "Claude Code用SenseNova等第三方模型时，上下文超过模型上限，自动compact没触发，报API Error 400。分析原因，给出手动compact、环境变量配置和模型切换的完整方案"
-image: "/assets/img/thumbnail/bricks.webp"
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/082251PH3hW.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/082251PH3hW.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

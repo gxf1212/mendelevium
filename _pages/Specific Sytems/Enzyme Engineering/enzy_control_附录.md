@@ -4,8 +4,8 @@ description: "EnzyControl论文的技术附录，详细阐述完整的数据流�
 date: "2025-11-05"
 last_modified_at: "2025-11-05"
 tags: [enzyme-design, deep-learning, se3-equivariance, flow-matching, attention-mechanism, protein-generation]
-image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
-thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/bricks.webp"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/070724N7B7f.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/070724N7B7f.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
