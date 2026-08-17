@@ -79,6 +79,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules/
+  - job-search-doc/
   - "*.gemspec"
   - README.md
   - LICENSE

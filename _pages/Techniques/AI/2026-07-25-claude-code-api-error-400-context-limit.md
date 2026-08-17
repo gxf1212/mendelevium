@@ -117,7 +117,7 @@ export ANTHROPIC_MODEL="sensenova-6.7-flash-lite"
 
 Claude Code 可能按照"Claude Sonnet"的能力估计上下文，但服务端实际运行的是一个 256,000 token 模型。需要检查第三方服务的实际模型名称、上下文窗口、最大输出 token、Anthropic-compatible 接口如何映射 `max_tokens`、是否向 Claude Code 暴露模型能力、是否有网关侧自动截断或压缩功能。
 
-不要只看 Claude Code 中的显示名称。
+> 不要只看 Claude Code 中的显示名称。
 
 ### 方法四：更新 Claude Code
 
@@ -199,3 +199,8 @@ env | grep -E 'ANTHROPIC|CLAUDE_CODE'
 - **日常习惯**：`/context` 随时看占用，`/clear` 切任务，`@文件` 改用路径按需读取。
 
 [Claude Code 环境变量文档](https://code.claude.com/docs/en/env-vars)：https://code.claude.com/docs/en/env-vars
+
+https://docs.bigmodel.cn/cn/coding-plan/latest-model
+https://platform.sensenova.cn/docs
+https://platform.minimaxi.com/docs/token-plan/claude-code
+
