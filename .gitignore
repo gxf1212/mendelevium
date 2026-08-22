@@ -50,3 +50,4 @@ _pages/Molecular Dynamics/Modeling & Tools/Polymer/RadonPy
 _pages/Techniques/AI/context.md
 
 job-search-doc/
+*__pycache__/
