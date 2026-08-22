@@ -11,6 +11,7 @@ Archive
 _pages/archive
 *py
 !tools/*.py
+!tools/wechat_html/*.py
 tools/*.json
 tools/*.txt
 tools/__pycache__/
