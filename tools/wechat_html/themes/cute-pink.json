@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "name": "萌粉",
+    "desc": "温柔粉 · 樱花系，生活分享、随笔"
+  },
+  "styles": {
+    "heading": {
+      "default": "plain",
+      "choices": [
+        "plain",
+        "pill",
+        "number",
+        "bar"
+      ]
+    },
+    "list": {
+      "default": "plain",
+      "choices": [
+        "plain",
+        "circle",
+        "square"
+      ]
+    },
+    "quote": {
+      "default": "bar",
+      "choices": [
+        "bar",
+        "quote"
+      ]
+    }
+  },
+  "font": {
+    "stack": "-apple-system,'Segoe UI','Microsoft YaHei',sans-serif",
+    "mono": "Consolas,'Courier New',monospace",
+    "base_size": 16,
+    "line_height": 1.75
+  },
+  "colors": {
+    "blue": "#D977A8",
+    "blue_d": "#B85A8A",
+    "coral": "#9B6DB6",
+    "blue_bg": "#FCEFF5",
+    "ink": "#4A4148",
+    "ink_d": "#3A3038",
+    "ink_h3": "#B85A8A",
+    "ink_h4": "#C0809E",
+    "ink_h5": "#D0A2B8",
+    "ink_h6": "#DDBEC8",
+    "gray": "#9A8F94",
+    "border": "#F0DDE6",
+    "quote_bg": "#FDF3F8",
+    "code_bg": "#3A3038",
+    "code_fg": "#F5EDF1",
+    "code_inline_bg": "#FCEFF5",
+    "code_inline_fg": "#B85A8A",
+    "link": "#D977A8",
+    "link_border": "#F0D2E0",
+    "hr": "#F0DDE6",
+    "img_border": "#F2E3EA",
+    "strong": "#3A3038",
+    "em": "#C0809E",
+    "sup": "#D977A8",
+    "bullet": "#B85A8A",
+    "footnote": "#9A8F94",
+    "footer_top": "#3A3038",
+    "footer_bottom": "#D977A8",
+    "footer_text": "#ffffff",
+    "footer_sub": "#F5DEE8"
+  },
+  "headings": {
+    "h1": {
+      "size": 22,
+      "color": "#3A3038",
+      "weight": "bold",
+      "border_bottom": "3px solid #D977A8",
+      "padding_bottom": "10px",
+      "margin": "18px 0 14px"
+    },
+    "h2": {
+      "size": 19,
+      "color": "#3A3038",
+      "weight": "bold",
+      "border_left": "4px solid #D977A8",
+      "padding_left": "10px",
+      "margin": "26px 0 12px"
+    },
+    "h3": {
+      "size": 17,
+      "color": "#B85A8A",
+      "weight": "bold",
+      "margin": "22px 0 10px"
+    },
+    "h4": {
+      "size": 16,
+      "color": "#C0809E",
+      "weight": "bold",
+      "margin": "16px 0 8px"
+    },
+    "h5": {
+      "size": 16,
+      "color": "#D0A2B8",
+      "weight": "bold",
+      "margin": "14px 0 6px"
+    },
+    "h6": {
+      "size": 16,
+      "color": "#DDBEC8",
+      "weight": "bold",
+      "margin": "12px 0 6px"
+    }
+  },
+  "body": {
+    "color": "#4A4148",
+    "size": 16,
+    "line_height": 1.75,
+    "margin": "12px 0"
+  },
+  "blockquote": {
+    "bg": "#FDF3F8",
+    "border_left": "4px solid #D977A8",
+    "color": "#C0809E",
+    "padding": "12px 16px",
+    "radius": "0 8px 8px 0",
+    "margin": "14px 0",
+    "size": 16,
+    "line_height": 1.75
+  },
+  "list": {
+    "margin": "6px 0",
+    "indent_per_level": 4,
+    "bullet_symbol": "•",
+    "bullet_size": 20,
+    "ordered_size": 18,
+    "bullet_color": "#B85A8A",
+    "bullet_weight": "bold"
+  },
+  "table": {
+    "header_bg": "#D977A8",
+    "header_fg": "#ffffff",
+    "border": "#F0DDE6",
+    "zebra_bg": "#FCEFF5",
+    "cell_padding": "8px 8px",
+    "header_padding": "9px 8px",
+    "cell_size": 16,
+    "cell_line_height": 1.6,
+    "margin": "14px 0"
+  },
+  "code": {
+    "block_bg": "#3A3038",
+    "block_fg": "#F5EDF1",
+    "block_size": 13,
+    "block_line_height": 1.6,
+    "block_padding": "12px 14px",
+    "block_radius": "8px",
+    "block_margin": "12px 0",
+    "inline_bg": "#FCEFF5",
+    "inline_fg": "#B85A8A",
+    "inline_size": 13,
+    "inline_padding": "1px 5px",
+    "inline_radius": "4px"
+  },
+  "image": {
+    "border": "1px solid #F2E3EA",
+    "radius": "6px",
+    "max_width": "96%",
+    "caption_size": 13,
+    "caption_color": "#9A8F94"
+  },
+  "layout": {
+    "max_width": 680,
+    "outer_padding": "0 8px"
+  }
+}
