@@ -12,8 +12,8 @@
   date: "2025-08-22"
   tags: [random-forest, enhanced-sampling, alchemical-free-energy, gamd, error-analysis, machine-learning, molecular-dynamics]
   description: "深入分析 Boltz-2 AI 模型在配体亲和力预测中的表现，与 FEP 方法的对比，以及两者如何协同工作"
-  image: "/assets/img/thumbnail/bricks.webp"
-  thumbnail: "/assets/img/La-Mancha.jpg"
+  image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/0811543rNDz.jpg"
+  thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/0811543rNDz.jpg"
   author: Xufan Gao
   lang: zh-CN
   ---
@@ -26,7 +26,7 @@
   last_modified_at: 2026-06-20
   ---
   ```
-- 能不能随机替换assets\img\thumbnail、assets\img\thumbnail_mine下的文件，雨露均沾，创建新文件的时候随机选取。**随机缩略图选择**: 已创建工具脚本来自动随机选择缩略图，避免过度使用bricks.webp。`tools/random_thumbnail.py`: 随机选择缩略图。image和thumbnail这俩参数得一样啊。
+- **随机缩略图选择**：已创建工具脚本 `tools/random_thumbnail.py` 自动随机选择缩略图，避免过度使用 bricks.webp。创建新文件时运行 `python3 tools/random_thumbnail.py --frontmatter`，把输出的 `image` 和 `thumbnail` 两个字段**原样**写入 frontmatter（均为 GitHub raw CDN URL，如 `https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/.../xxx.jpg`）。注意：输出的是 GitHub raw URL，**不是本地路径**；`image` 和 `thumbnail` 必须完全一致（用同一个 URL）。脚本输出偶尔带 Windows 反斜杠，需手动改为正斜杠再写入。
 
 # 常见要求
 

@@ -43,6 +43,8 @@ def get_random_thumbnail():
         sys.exit(1)
 
     chosen = random.choice(all_images)
+    # 统一为正斜杠，避免 Windows 路径分隔符进入 GitHub raw URL 导致链接失效
+    chosen = chosen.replace("\\", "/")
     return f"{RAW_BASE}/{chosen}"
 
 

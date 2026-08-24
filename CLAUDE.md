@@ -75,6 +75,9 @@
 1. .claude/skills/literature-deepread
 2. .claude/skills/adversarial-paper-reading
 
+### “出公众号版/微信版/转成能粘进草稿的 HTML”，必须读
+1. @.workbuddy/skills/wechat-html
+
 ### “处理图表/重新提取fig/scheme/检查图片编号”，必须读
 1. @.claude/rules/05-visual-elements/02-figures-tables.md
 2. @.claude/rules/02-tools/01-tools-pdf-and-technical-notes.md
@@ -90,6 +93,7 @@
 - `literature-deepread` - 文献精读流程，会自动引用阅读和分析规则
 - `fix-ai-writing` - 修复AI写作特征，去AI味规则现位于 @.claude/rules/fix-ai-writing/ 目录下，由 00-overview.md 索引
 - `adversarial-paper-reading` - 对抗式论文阅读，会自动引用审稿和批判性分析规则
+- `wechat-html` - 将博客 Markdown 转成「公众号粘贴版」HTML（多主题 + 样式变体），出微信版/公众号版时自动加载
 - 其他skills按需引用相关规则文件
 
 Skills会根据任务类型自动加载对应的rules文件，确保格式规范的一致性。
