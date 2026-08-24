@@ -88,8 +88,8 @@ date: "YYYY-MM-DD"  # 今天的日期！
 last_modified_at: "YYYY-MM-DD"  # 今天的日期！
 tags: [tag1, tag2, tag3]
 description: "简短描述"
-image: "/assets/img/thumbnail/xxx.jpg"
-thumbnail: "/assets/img/thumbnail/xxx.jpg"  # 必须与image一致！
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/xxx.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/xxx.jpg"  # 必须与image一致！（均为 GitHub raw URL）
 author: Xufan Gao
 lang: zh-CN
 ---

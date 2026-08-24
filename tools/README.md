@@ -2,16 +2,26 @@
 
 本目录包含自动化工具，用于博客文章生成和质量控制。
 
+> **目录说明**：低频 / 辅助脚本已分到子目录——
+> - `others/`：写作与格式修复类（引号、括号、标点、列表格式、日期、frontmatter 等）
+> - `figures/`：PDF 与图片处理类（页面/图提取、图片验证、Scheme 校验、白边裁剪等）
+>
+> 常用核心脚本（如 `convert_quotes.py`、`search_pdf_text.py`、`extract_pdf_figures.py`、
+> `random_thumbnail.py`、`check_blog_quality.py`、`compress.py`、`read_pdf.py`、
+> `wechat_html/`）仍留在 `tools/` 根目录。
+
 ## 📋 工具列表
 
 ### 格式修复工具
 
 | 工具 | 功能 | 主要用途 |
 |-----|------|---------|
-| `fix_markdown.py` | **综合格式修复** | 一键修复所有格式问题（推荐使用） |
+| `fix_markdown.py` | **综合格式修复** | 一键修复所有格式问题（⚠️ 见下方注意事项） |
 | `convert_quotes.py` | 引号修复 | 英文引号 → 中文引号 |
-| `fix_parentheses.py` | 括号修复 | 英文括号 → 中文括号（智能识别） |
-| `fix_format.sh` | 快速修复 | Shell脚本快速修复 |
+| `others/fix_parentheses.py` | 括号修复 | 英文括号 → 中文括号（智能识别） |
+| `others/fix_format.sh` | 快速修复 | Shell脚本快速修复 |
+| `others/fix_all_punctuation.py` | 标点修复 | 全套中文标点修复 |
+| `others/remove_extra_blank_lines.py` | 空行清理 | 清理多余空行 |
 
 ### 内容生成工具
 
@@ -26,9 +36,9 @@
 | 工具 | 功能 | 主要用途 |
 |-----|------|---------|
 | `check_blog_quality.py` | 质量检查 | 11项自动化质量检查 |
-| `verify_blog_figures.py` | 图片验证 | **最终验证**：检查图片编号、文件和图注 |
-| `verify_scheme_in_image.py` | Scheme验证 | OCR验证图片内是否包含Scheme文字 |
-| `update_frontmatter_dates.py` | 日期更新 | 批量更新frontmatter日期 |
+| `figures/verify_blog_figures.py` | 图片验证 | **最终验证**：检查图片编号、文件和图注 |
+| `figures/verify_scheme_in_image.py` | Scheme验证 | OCR验证图片内是否包含Scheme文字 |
+| `others/update_frontmatter_dates.py` | 日期更新 | 批量更新frontmatter日期 |
 
 ## 🚀 快速开始
 
@@ -45,14 +55,14 @@ python3 tools/random_thumbnail.py --frontmatter
 
 # 3. 格式修复（按顺序）
 python3 tools/convert_quotes.py article.md
-python3 tools/fix_parentheses.py article.md
-bash tools/fix_format.sh article.md
+python3 tools/others/fix_parentheses.py article.md
+bash tools/others/fix_format.sh article.md
 
 # 4. 质量检查
 python3 tools/check_blog_quality.py article.md
 
 # 5. 最终验证（必须执行）
-python3 tools/verify_blog_figures.py article.md
+python3 tools/figures/verify_blog_figures.py article.md
 ```
 
 ### 批量处理多个文件
@@ -60,8 +70,8 @@ python3 tools/verify_blog_figures.py article.md
 ```bash
 for file in main.md appendix.md; do
     python3 tools/convert_quotes.py "$file"
-    python3 tools/fix_parentheses.py "$file"
-    bash tools/fix_format.sh "$file"
+    python3 tools/others/fix_parentheses.py "$file"
+    bash tools/others/fix_format.sh "$file"
     python3 tools/check_blog_quality.py "$file"
 done
 ```
@@ -110,7 +120,7 @@ python3 tools/random_thumbnail.py --frontmatter
 python3 tools/convert_quotes.py article.md
 
 # 括号
-python3 tools/fix_parentheses.py article.md
+python3 tools/others/fix_parentheses.py article.md
 ```
 
 ### 5. 质量检查
@@ -122,10 +132,10 @@ python3 tools/check_blog_quality.py article.md
 ### 6. 图片验证（最终步骤）
 ```bash
 # 验证所有图片编号、文件和图注
-python3 tools/verify_blog_figures.py article.md
+python3 tools/figures/verify_blog_figures.py article.md
 
 # 可选：验证Scheme图片内容
-python3 tools/verify_scheme_in_image.py paper.pdf
+python3 tools/figures/verify_scheme_in_image.py paper.pdf
 ```
 
 ## ⚠️ 注意事项
@@ -133,8 +143,10 @@ python3 tools/verify_scheme_in_image.py paper.pdf
 1. **工作目录**: `random_thumbnail.py` 必须在项目根目录运行
 2. **执行顺序**: 格式修复工具应按 引号 → 括号 → 其他格式 的顺序执行
 3. **质量检查**: 在格式修复完成后再运行质量检查
-4. **最终验证**: **必须**在完成文章后运行 `verify_blog_figures.py` 验证所有图片
+4. **最终验证**: **必须**在完成文章后运行 `figures/verify_blog_figures.py` 验证所有图片
 5. **文件编码**: 所有工具均使用 UTF-8 编码
+6. **禁止使用 `fix_markdown.py`**: 该脚本的自动修复可能破坏格式、误改内容，
+   格式修复应通过 Read/Edit 手动完成（与 `.claude/rules` 中「不要使用 fix_markdown.py」一致）。
 
 ## 🔗 相关资源
 

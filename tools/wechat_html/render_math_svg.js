@@ -8,15 +8,19 @@ const TeX = require('mathjax-full/js/input/tex.js').TeX;
 const SVG = require('mathjax-full/js/output/svg.js').SVG;
 const liteAdaptor = require('mathjax-full/js/adaptors/liteAdaptor.js').liteAdaptor;
 const RegisterHTMLHandler = require('mathjax-full/js/handlers/html.js').RegisterHTMLHandler;
-// 显式加载 mhchem 配置，否则 packages:['mhchem'] 不会自动注册 \ce / \pu 宏
+// 显式加载各包配置，否则 packages 里列了也不会自动注册对应宏：
+// 之前漏了 ams，导致 \dfrac / \genfrac / \substack 等报 Undefined control sequence。
+require('mathjax-full/js/input/tex/ams/AmsConfiguration.js');
 require('mathjax-full/js/input/tex/mhchem/MhchemConfiguration.js');
+require('mathjax-full/js/input/tex/boldsymbol/BoldsymbolConfiguration.js');
+require('mathjax-full/js/input/tex/newcommand/NewcommandConfiguration.js');
 
 const COLOR = '#33312e'; // 与正文同色的深炭灰，写死（微信会丢 currentColor 继承）
 
 const adaptor = liteAdaptor();
 RegisterHTMLHandler(adaptor);
 
-const tex = new TeX({ packages: ['base', 'ams', 'mhchem'] });
+const tex = new TeX({ packages: ['base', 'ams', 'mhchem', 'boldsymbol', 'newcommand'] });
 const svgOut = new SVG({ fontCache: 'none' });
 const doc = mathjax.document('', { InputJax: tex, OutputJax: svgOut });
 

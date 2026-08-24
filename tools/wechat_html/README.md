@@ -33,7 +33,7 @@ cd E:/GitHub-repo/mendelevium/tools/wechat_html
 | `--banner` | 渲染顶部横版 banner 图（默认关闭） |
 | `--subtitle "文字"` | banner 副标题（默认「东山月光下 · 科研精读」） |
 | `--no-footer` | 不渲染文末「关注」引导卡 |
-| `--math svg` | 公式改矢量内联 SVG（默认 `png` 栅格图，更稳妥） |
+| `--math svg` | 公式渲染方式（默认 `svg` 矢量内联，清晰不糊；`--math png` 则栅格图兜底） |
 | `--quality 82` | 图片 JPEG 质量（默认 82） |
 | `--max-img-w 920` | 图片最大宽度（默认 920） |
 | `--diagram a.png b.png` | 按顺序替换文中的 ```mermaid 块（无需此参数时自动渲染） |
@@ -73,7 +73,7 @@ cd E:/GitHub-repo/mendelevium/tools/wechat_html
 
 | 组件 | 参数 | 可选值 |
 |---|---|---|
-| 标题 h2/h3 | `--heading-style` | `plain`（纯色/底部细条）· `bar`（左色块+浅底） · `pill`（圆角胶囊） · `number`（01/02 编号） |
+| 标题 h2/h3 | `--heading-style` | `plain` · `bar` · `pill` · `number`（h2 与 h3 各自渲染、层级已拉开：bar 下 h2 粗块+满宽底 / h3 细条无底；pill 下 h2 深底白字 / h3 浅底小标签；number 下 h2 深底大徽章 / h3 浅底小徽章） |
 | 有序列表 | `--list-style` | `plain`（裸 `N.`）· `circle`（圆形徽章） · `square`（圆角方块徽章） |
 | 引用块 | `--quote-style` | `bar`（左竖线+浅底） · `quote`（大引号「"」装饰） |
 

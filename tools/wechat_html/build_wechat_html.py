@@ -283,6 +283,55 @@ def try_mmdc(content, workdir):
     return None
 
 
+# ===== mermaid 官方引擎渲染（mermaid.js + puppeteer-core + 系统 Chrome）=====
+# 与内置 Pillow 渲染器的区别：官方引擎就是 mermaid.ai 用的那个，原生支持
+# <br/> 换行、subgraph、各种节点形状、官方主题，样式更精致；主色可映射到博客主题。
+_NODE = shutil.which("node")
+if not _NODE:
+    _NODE = r"C:\Users\Lenovo\.workbuddy\binaries\node\versions\22.22.2\node.exe"
+_NODE_PATH = r"C:\Users\Lenovo\.workbuddy\binaries\node\workspace\node_modules"
+_MERMAID_NODE_SCRIPT = os.path.join(_SCRIPT_DIR, "render_mermaid_node.js")
+
+
+def try_mermaid_node(content, theme):
+    """用 mermaid.js 官方引擎渲染为 PNG，返回 (b64, note) 或 (None, None)。
+    失败（无 node/依赖未装/渲染报错）返回 (None, None)，由上层回退 Pillow/占位图。"""
+    if not (os.path.exists(_NODE) and os.path.exists(_MERMAID_NODE_SCRIPT)
+            and os.path.exists(os.path.join(_NODE_PATH, "mermaid"))
+            and os.path.exists(os.path.join(_NODE_PATH, "puppeteer-core"))):
+        return None, None
+    col = theme["colors"]
+    item = {
+        "id": "0",
+        "code": content,
+        "theme": "default",
+        # 主色映射到博客主题：浅底做节点填充、主色做边框/连线
+        "primaryColor": col.get("blue_bg", "#ecf3ff"),
+        "primaryBorderColor": col.get("blue", "#5b8def"),
+        "primaryTextColor": col.get("ink_d", col.get("ink", "#333333")),
+        "lineColor": col.get("blue", "#5b8def"),
+        "fontFamily": '"Microsoft YaHei","PingFang SC",sans-serif',
+        "fontSize": "15px",
+    }
+    payload = {"items": [item]}
+    try:
+        env = dict(os.environ)
+        env["NODE_PATH"] = _NODE_PATH
+        p = subprocess.run([_NODE, _MERMAID_NODE_SCRIPT],
+                           input=json.dumps(payload),
+                           capture_output=True, text=True, timeout=180, env=env)
+        if p.returncode != 0:
+            sys.stderr.write("[mermaid-node] %s\n" % p.stderr[:300])
+            return None, None
+        out = json.loads(p.stdout)
+        b64 = out.get("0")
+        if b64:
+            return b64, ""
+    except Exception as e:
+        sys.stderr.write("[mermaid-node] %s\n" % e)
+    return None, None
+
+
 # ===== frontmatter 解析 =====
 def parse_frontmatter(text):
     if not text.startswith("---"):
@@ -324,9 +373,8 @@ def stash_math(body):
     # 其余一律当作数学公式渲染（含 $>0.4$、单一变量 $x$ 等）。
     def inl(m):
         tex = m.group(1).strip()
-        # 明显是货币/纯数字（如 $5、$1,200）才跳过，避免把金额当公式
-        if re.fullmatch(r"[0-9][0-9,\. ]*", tex):
-            return m.group(0)
+        # 成对 $...$ 一律当数学公式（含 $0.003$ 这类纯数字），
+        # 货币是单个 $ 前缀（如 $5），本就不会被成对正则匹配到，无需在此跳过。
         key = "@@MATHI%d@@" % len(token_map)
         token_map[key] = (tex, False, m.group(0).strip())
         return key
@@ -475,6 +523,7 @@ def render_mermaid(html, base_dir, diagrams, quality, theme=None):
         # 渲染前必须还原；但替换回 HTML 时要用原始的转义字符串，否则 replace 匹配不上。
         content = html_mod.unescape(raw_content)
         b64 = None
+        mime = "image/jpeg"
         note = ""
         # 1) 显式 --diagram 覆盖
         if i < len(diagrams) and diagrams[i] and os.path.exists(diagrams[i]):
@@ -484,14 +533,19 @@ def render_mermaid(html, base_dir, diagrams, quality, theme=None):
             png = try_mmdc(content, base_dir)
             if png:
                 b64 = img_to_b64(png, quality=quality)
-        # 3) 内置 Pillow 渲染器
+        # 3) mermaid.js 官方引擎（mermaid.ai 同款，支持 <br/>/subgraph/官方主题/主色映射）
+        if b64 is None:
+            b64, note = try_mermaid_node(content, theme)
+            if b64:
+                mime = "image/png"
+        # 4) 内置 Pillow 渲染器
         if b64 is None and render_mermaid_png:
             b64, _note = render_mermaid_png(content, quality=quality)
-        # 4) 占位图
+        # 5) 占位图
         if b64 is None:
             b64 = render_placeholder("流程图（Mermaid）请预渲染为图片后插入")
         repl = (f'<p style="text-align:center;margin:6px 0 2px;">'
-                f'<img src="data:image/jpeg;base64,{b64}" '
+                f'<img src="data:{mime};base64,{b64}" '
                 f'style="max-width:{img_cfg["max_width"]};display:block;'
                 f'margin:0 auto;border:{img_cfg["border"]};'
                 f'border-radius:{img_cfg["radius"]};"></p>'
@@ -580,34 +634,49 @@ def apply_inline_styles(html, theme=None, heading_style="plain", quote_style="ba
                 f'border-radius:6px;padding:2px 8px;'
                 f'font-size:14px;margin-right:8px;">{n:02d}</span>')
 
+    # h2（大节）与 h3（小节）刻意做出层级区分：同一样式下两者用不同参数，
+    # 避免「色块+底色」完全一致导致视觉拉不开层级。
     if heading_style == "pill":
-        html = re.sub(r'<h2>', (f'<h2 style="{h2_base}background:{col["blue_bg"]};'
-                                f'padding:8px 14px;border-radius:8px;'
+        # h2：左右大 padding 的满宽胶囊；h3：仅左 padding 的「标签」感小胶囊
+        html = re.sub(r'<h2>', (f'<h2 style="{h2_base}background:{col["blue"]};'
+                                f'color:#ffffff;padding:8px 16px;border-radius:8px;'
                                 f'display:inline-block;">'), html)
         html = re.sub(r'<h3>', (f'<h3 style="{h3_base}background:{col["blue_bg"]};'
-                                f'padding:6px 14px;border-radius:8px;'
+                                f'padding:4px 10px 4px 4px;border-radius:6px;'
                                 f'display:inline-block;">'), html)
     elif heading_style == "bar":
+        # h2：粗色块(6px)+满宽浅底；h3：细色条(3px)+无底色，靠底色有无+粗细区分
         html = re.sub(r'<h2>', (f'<h2 style="{h2_base}border-left:6px solid {col["blue"]};'
-                                f'background:{bq["bg"]};padding:8px 12px;'
+                                f'background:{bq["bg"]};padding:9px 14px;'
                                 f'border-radius:0 8px 8px 0;">'), html)
-        html = re.sub(r'<h3>', (f'<h3 style="{h3_base}border-left:6px solid {col["blue"]};'
-                                f'background:{bq["bg"]};padding:8px 12px;'
-                                f'border-radius:0 8px 8px 0;">'), html)
+        html = re.sub(r'<h3>', (f'<h3 style="{h3_base}border-left:3px solid {col["blue"]};'
+                                f'padding:2px 0 2px 10px;'
+                                f'border-radius:0;">'), html)
     elif heading_style == "number":
         c2 = [0]
         c3 = [0]
 
         def _num2(m):
             c2[0] += 1
-            return f'<h2 style="{h2_base}">{_badge(c2[0])}'
+            # h2：深底白字大徽章
+            return (f'<h2 style="{h2_base}">'
+                    f'<span style="display:inline-block;background:{col["blue"]};'
+                    f'color:#ffffff;border-radius:6px;padding:3px 10px;'
+                    f'font-size:15px;margin-right:8px;font-weight:bold;">'
+                    f'{c2[0]:02d}</span>')
 
         def _num3(m):
             c3[0] += 1
-            return f'<h3 style="{h3_base}">{_badge(c3[0])}'
+            # h3：浅底深字小徽章（与 h2 深浅反转，拉开层级）
+            return (f'<h3 style="{h3_base}">'
+                    f'<span style="display:inline-block;background:{col["blue_bg"]};'
+                    f'color:{col["blue"]};border-radius:6px;padding:1px 8px;'
+                    f'font-size:13px;margin-right:8px;font-weight:bold;">'
+                    f'{c3[0]:02d}</span>')
         html = re.sub(r'<h2>', _num2, html)
         html = re.sub(r'<h3>', _num3, html)
     else:  # plain
+        # h2：底部粗色条；h3：纯色无装饰（本就区分明显）
         html = re.sub(r'<h2>', (f'<h2 style="{h2_base}'
                                 f'border-bottom:2px solid {col["blue"]};'
                                 f'padding-bottom:6px;">'), html)
@@ -828,9 +897,9 @@ def main():
                     help="不渲染文末「关注」引导卡")
     ap.add_argument("--quality", type=int, default=82, help="图片 JPEG 质量")
     ap.add_argument("--max-img-w", type=int, default=920, help="图片最大宽度")
-    ap.add_argument("--math", choices=["png", "svg"], default="png",
-                    help="公式渲染方式：png=栅格图（默认，稳妥）；"
-                         "svg=矢量内联 SVG（与正文同字号、可缩放不糊，微信可能再次包裹）")
+    ap.add_argument("--math", choices=["png", "svg"], default="svg",
+                    help="公式渲染方式：svg=矢量内联 SVG（默认，与正文同字号、清晰不糊）；"
+                         "png=栅格图（单条 SVG 失败时兜底，或显式指定）")
     ap.add_argument("--theme", default=None,
                     help="主题 JSON 路径（默认 themes/default.json）。"
                          "可指定其他主题，如 themes/dreamy.json")

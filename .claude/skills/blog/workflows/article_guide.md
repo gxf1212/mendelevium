@@ -128,8 +128,8 @@ date: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期
 last_modified_at: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期
 tags: [tag1, tag2, tag3]  # 尽量复用已有tags
 description: "简短描述"
-image: "/assets/img/thumbnail/xxx.jpg"
-thumbnail: "/assets/img/thumbnail/xxx.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/xxx.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/xxx.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

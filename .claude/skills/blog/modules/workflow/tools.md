@@ -142,14 +142,14 @@ python3 tools/random_thumbnail.py --frontmatter
 
 **输出示例**：
 ```
-  thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
-  image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+  thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+  image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 ```
 
 **注意**：
 - 必须在项目根目录运行（/mnt/e/GitHub-repo/mendelevium）
-- image和thumbnail会自动一致
-- 从`assets/img/thumbnail/`和`assets/img/thumbnail_mine/`中随机选择
+- image和thumbnail会自动一致（两者完全相同）
+- 从`assets/img/thumbnail/`、`assets/img/thumbnail_mine/`、`assets/img/Wallpaper_compressed/`、`assets/img/4K_1080P_compressed/`中随机选择，**输出的是 GitHub raw CDN URL**（如 `https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/xxx.jpg`），不是本地路径，原样写入 frontmatter 即可
 
 ---
 

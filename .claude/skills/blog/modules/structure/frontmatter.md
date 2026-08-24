@@ -9,8 +9,8 @@ date: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期
 last_modified_at: "YYYY-MM-DD"  # 博客创建/修改日期，非论文发表日期（必须！）
 tags: [tag1, tag2, tag3]  # 尽量复用已有tags
 description: "简短描述"
-image: "/assets/img/thumbnail/xxx.jpg"
-thumbnail: "/assets/img/thumbnail/xxx.jpg"  # 必须与image一致
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/xxx.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/xxx.jpg"  # 必须与image一致（均为 GitHub raw URL）
 author: Xufan Gao
 lang: zh-CN
 ---
@@ -99,14 +99,14 @@ tags: [PETase, DFT/MM, 伞形采样]  # 大写、斜杠、中文
 
 **✅ 正确**：
 ```yaml
-image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 ```
 
 **❌ 错误**：
 ```yaml
-image: "/assets/img/thumbnail/empty.jpg"  # 使用empty.jpg
-thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"  # 不一致
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail/empty.jpg"  # 使用empty.jpg（禁止！）
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"  # 不一致
 ```
 
 ### author
@@ -126,8 +126,8 @@ python3 tools/random_thumbnail.py --frontmatter
 ### 2. 复制输出并填充其他字段
 工具会输出：
 ```
-  thumbnail: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
-  image: "/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+  thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
+  image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-z8p9rj.jpg"
 ```
 
 ### 3. 手动填充其他字段
