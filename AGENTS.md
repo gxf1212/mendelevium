@@ -75,11 +75,11 @@ This is a personal research blog sharing experiences in molecular dynamics, comp
 
 > **重要提示**：**不要使用 `tools/fix_markdown.py` 脚本**。该脚本的自动修复可能破坏格式、误改内容。格式修复应该通过Read和Edit工具手动完成，确保准确性。
 
-- **PMC/PubMed全文下载（best-effort）**：`tools/fetch_pmc_assets.py`
+- **PMC/PubMed全文下载（best-effort）**：`tools/others/fetch_pmc_assets.py`
   - 用途：给定PMCID或PMC链接，自动收集全文PDF与补充材料链接并尝试下载，输出一个可追溯的`index.json`。
   - 重要限制（2026-01现状）：PMC网页端的PDF/补充材料下载可能触发**Proof-of-Work反爬页面**（“Preparing to download ... / cloudpmc-viewer-pow”）。脚本会自动改走官方`oa.fcgi`返回的FTP直链（或下载`oa_package/*.tar.gz`并解包提取PDF）来绕开网页端拦截；若文章不在OA范围内，则仍可能需要浏览器手动下载。
   - 用法示例：
-    - `python3 tools/fetch_pmc_assets.py PMC12519464 --out downloads/pmc`
+    - `python3 tools/others/fetch_pmc_assets.py PMC12519464 --out downloads/pmc`
 
 ### 技术记录
 
@@ -131,7 +131,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
 - **Holo/active vs Holo/inactive的结构差异**：这种单行的应该用小heading。检查全文。也不用全弄，避免太细碎，意思是一个小标题下至少有3个段落、表格、列表、图片等对象，否则应该合并，换言之不应该有那么多heading，不是改回**数值的物理意义**：这种，而是删掉那个一句话。也不要没列表。。只是少点单行但不是heading的东西，可以是heading，别全删，留两三个。#### 表1：基于LOPAC实验的……这种图表标题是不用heading的。heading本身一般不需要加粗
 - 需要对比的数据什么的，都推荐弄成表格
 - **排版**：全文（除了mermaid图和frontmatter）尽量使用中文标点符号，尤其是冒号、括号、中文内容的引号。除了加粗的标题，尽量让段落自然换行，避免不必要的手动换行 `<br/>`。不要有"过拟合"这种，而是"过拟合"。
-- Markdown格式：列表这些的两个item之间不要有个空行，包括有序列表，其他比如上下也要适当多空行。图片（如![fig1]）、段落、heading的上下都应该有空行。只是修复列表内部，不删掉Markdown正常的空行。参考tools/fix_format.sh。如
+- Markdown格式：列表这些的两个item之间不要有个空行，包括有序列表，其他比如上下也要适当多空行。图片（如![fig1]）、段落、heading的上下都应该有空行。只是修复列表内部，不删掉Markdown正常的空行。参考tools/others/fix_format.sh。如
   ```
   - 第一项
   - 第二项
@@ -338,7 +338,7 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
     - **Scheme特殊性**：Scheme图通常是反应机理图或流程图，图注文字"Scheme X."应该与图片在同一页或紧邻页面。如果某页有"Scheme 4"的文字描述但没有对应的大图，说明不存在Scheme 4的图片
     - 摘要图，ACS系列的就在首页，有的类似，有的没有toc图。命名一般为abs.png，不是fig1。提取完检查下图片大小差不多合理
     - **避免杂乱**：不得提取本文中不存在的图片（如错误编号的Figure 7, 8, 9等），也不得创建自定义编号的图表
-    - **验证工具**：使用verify_scheme_in_image.py（OCR）验证图片内是否包含Scheme文字（可选，作为辅助验证）
+    - **验证工具**：使用`tools/figures/verify_scheme_in_image.py`（OCR）验证图片内是否包含Scheme文字（可选，作为辅助验证）
     - **最终验证步骤**（必须执行）：写完文档后，必须重新逐一确认所有图片：
       1. 对照原文PDF，验证每个Figure/Scheme的编号是否正确
       2. 检查提取的图片内容是否与本文图注描述一致

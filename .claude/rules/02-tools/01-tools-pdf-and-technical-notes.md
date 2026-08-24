@@ -4,11 +4,11 @@
 
 > **重要提示**：**不要使用 `tools/fix_markdown.py` 脚本**。该脚本的自动修复可能破坏格式、误改内容。格式修复应该通过Read和Edit工具手动完成，确保准确性。
 
-- **PMC/PubMed全文下载（best-effort）**：`tools/fetch_pmc_assets.py`
+- **PMC/PubMed全文下载（best-effort）**：`tools/others/fetch_pmc_assets.py`
   - 用途：给定PMCID或PMC链接，自动收集全文PDF与补充材料链接并尝试下载，输出一个可追溯的`index.json`。
   - 重要限制（2026-01现状）：PMC网页端的PDF/补充材料下载可能触发**Proof-of-Work反爬页面**（“Preparing to download ... / cloudpmc-viewer-pow”）。脚本会自动改走官方`oa.fcgi`返回的FTP直链（或下载`oa_package/*.tar.gz`并解包提取PDF）来绕开网页端拦截；若文章不在OA范围内，则仍可能需要浏览器手动下载。
   - 用法示例：
-    - `python3 tools/fetch_pmc_assets.py PMC12519464 --out downloads/pmc`
+    - `python3 tools/others/fetch_pmc_assets.py PMC12519464 --out downloads/pmc`
 
 # PDF搜索工具
 
@@ -44,8 +44,8 @@ python3 tools/search_pdf_text.py "_pages/Free Energy/fep-the-end-of-parameter-tu
   - **替代旧写法**：替代`python3 -c "import fitz; doc = fitz.open(...); ..."`这类临时代码，直接用脚本即可
 
 **格式清理工具**：
-- `tools/remove_extra_blank_lines.py` —— 清理多余空行
-- `tools/fix_all_punctuation.py` —— 标点符号修复
+- `tools/others/remove_extra_blank_lines.py` —— 清理多余空行
+- `tools/others/fix_all_punctuation.py` —— 标点符号修复
 - `tools/convert_quotes.py` —— **引号修复（配对尽量用脚本自动fix）**
   - 基本用法：`python3 tools/convert_quotes.py <文件.md>`
   - 多文件：`python3 tools/convert_quotes.py file1.md file2.md`

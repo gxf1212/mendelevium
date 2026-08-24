@@ -22,8 +22,8 @@ cd E:/GitHub-repo/mendelevium/tools/wechat_html
 "$PY" build_wechat_html.py "E:/GitHub-repo/mendelevium/_pages/.../2026-07-22-xxx.md"
 ```
 
-- 默认输出：与 md 同目录同名 `xxx.wechat.html`
-- 用 `--out 路径` 指定输出位置
+- 默认输出：`tools/wechat_html/wechat_preview/xxx.wechat.html`（脚本同级目录，已 git 忽略，不误提交）
+- 用 `--out 路径` 指定输出位置（如临时对比多版时）
 - 生成后用浏览器打开，全选 → 复制 → 粘进公众号编辑器即可
 
 ### 常用开关

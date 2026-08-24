@@ -1,6 +1,6 @@
 # Markdown列表和转义
 
-- Markdown格式：列表这些的两个item之间不要有个空行，包括有序列表，其他比如上下也要适当多空行。图片（如![fig1]）、段落、heading的上下都应该有空行。只是修复列表内部，不删掉Markdown正常的空行。参考tools/fix_format.sh。如
+- Markdown格式：列表这些的两个item之间不要有个空行，包括有序列表，其他比如上下也要适当多空行。图片（如![fig1]）、段落、heading的上下都应该有空行。只是修复列表内部，不删掉Markdown正常的空行。参考tools/others/fix_format.sh。如
   ```
   - 第一项
   - 第二项

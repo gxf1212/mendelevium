@@ -818,7 +818,7 @@ def build_doc(banner_b64, body_html, footer_b64, no_banner, no_footer, theme=Non
 def main():
     ap = argparse.ArgumentParser(description="博客 MD → 公众号粘贴版 HTML")
     ap.add_argument("md", help="博客 Markdown 文件路径")
-    ap.add_argument("--out", help="输出 HTML 路径（默认与 md 同目录同名 .wechat.html）")
+    ap.add_argument("--out", help="输出 HTML 路径（默认 tools/wechat_html/wechat_preview/<同名>.html）")
     ap.add_argument("--subtitle", default="东山月光下 · 科研精读", help="banner 副标题")
     ap.add_argument("--diagram", nargs="*", default=[],
                     help="预渲染的 mermaid 图 PNG，按顺序替换 ```mermaid 块")
@@ -906,9 +906,16 @@ def main():
     doc = build_doc(banner_b64, html, footer_b64, not args.banner,
                     args.no_footer, theme)
 
-    out = args.out or os.path.join(base_dir,
-                                   os.path.splitext(os.path.basename(md_path))[0]
-                                   + ".wechat.html")
+    if args.out:
+        out = args.out
+    else:
+        # 默认输出到脚本同级的 wechat_preview/ 目录（仓库内，便于 git 忽略/管理）
+        preview_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                   "wechat_preview")
+        os.makedirs(preview_dir, exist_ok=True)
+        out = os.path.join(preview_dir,
+                           os.path.splitext(os.path.basename(md_path))[0]
+                           + ".wechat.html")
     with open(out, "w", encoding="utf-8") as f:
         f.write(doc)
     print(f"written: {out}")
