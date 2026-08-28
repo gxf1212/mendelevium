@@ -219,9 +219,14 @@ def convert_quotes_in_file(file_path: str) -> tuple[int, int]:
         print(f"DEBUG: 转换后左引号数={new_bytes.count(left_q)}")
         print(f"DEBUG: 转换后右引号数={new_bytes.count(right_q)}")
 
-    # 写回文件
+    # 无改动则不写回，避免无谓的重新编码/行尾变化
+    if new_content == content:
+        print(f"✓ {file_path.name}: 内容无变化，跳过写回")
+        return english_quote_count, 0
+
+    # 写回文件（newline='' 保留原始行尾，不额外转换）
     try:
-        with open(file_path, "w", encoding="utf-8") as f:
+        with open(file_path, "w", encoding="utf-8", newline='') as f:
             f.write(new_content)
     except Exception as e:
         print(f"❌ 写入文件失败: {file_path}")
@@ -261,16 +266,15 @@ def smart_convert_quotes(content: str) -> str:
         (r'!\[[^\]]*\]\([^)]*"[^)]*\)', re.MULTILINE),
     ]
 
-    # 特殊处理：Frontmatter只匹配文件开头的
-    if content.startswith('---\n') or content.startswith('---\r\n'):
-        # 找到第二个 ---
-        second_dash = content.find('\n---\n', 4)
-        if second_dash == -1:
-            second_dash = content.find('\n---\r\n', 4)
-        if second_dash != -1:
-            exclude_regions = [(0, second_dash + 5)]  # 包括 \n---\n
+    # 特殊处理：Frontmatter只匹配文件开头的（兼容 LF / CRLF）
+    if content.startswith('---'):
+        # 跳过第一行 ---，找下一个独立的 --- 行（任意行尾）
+        m = re.search(r'\r?\n---\r?\n', content[3:])
+        if m:
+            fm_end = 3 + m.end()  # 包含闭合的 --- 行及其换行
+            exclude_regions = [(0, fm_end)]
             if debug:
-                print(f"DEBUG: Frontmatter排除区域 0-{second_dash + 5}")
+                print(f"DEBUG: Frontmatter排除区域 0-{fm_end}")
         else:
             exclude_regions = []
     else:
