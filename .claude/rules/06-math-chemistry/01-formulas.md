@@ -62,6 +62,7 @@
   - ❌ "descriptor" → ✅ "描述符"（如"单描述符模型""经验描述符"）
   - ❌ "electrostatic"（英文混入） → ✅ "静电"或"高度静电"
   - ❌ "抓"（动词） → ✅ "配位"（学术语境）
+  - ❌ "trajectory / sign error / blindly / mediocre / standard error" 等散装英文 → ✅ "轨迹 / 符号预测错误 / 盲目 / 平庸（或改写） / 标准误"（专有协议名如 single-trajectory、方法名如 ab initio 可保留）
 - **写完后必须用以下脚本扫一遍**，确认无上述错误：
   ```bash
   F:/Anaconda/envs/download/python.exe -c "
@@ -71,6 +72,13 @@
       (r'\\b协调\\b', '协调→配位'),
       (r'\\boverbind\\b', 'overbind→过强结合'),
       (r'\\b抓\\b钙离子|\\b抓\\b钙', '抓钙离子→配位钙离子'),
+      (r'\\bdescriptor\\b', 'descriptor→描述符'),
+      (r'\\belectrostatic\\b', 'electrostatic→静电'),
+      (r'(?<!single-)\\btrajectory\\b', 'trajectory→轨迹（single-trajectory 协议名除外）'),
+      (r'\\bsign error\\b', 'sign error→符号预测错误'),
+      (r'\\bblindly\\b', 'blindly→盲目'),
+      (r'\\bmediocre\\b', 'mediocre→改写'),
+      (r'\\bstandard error\\b', 'standard error→标准误'),
   ]
   for f in files:
       text = open(f, encoding='utf-8').read()
