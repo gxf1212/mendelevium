@@ -1,13 +1,5 @@
 ---
-title: "用电荷缩放把钙离子过强静电降下来钙调蛋白结合自由能怎么快速算"
-date: "2026-09-02"
-last_modified_at: 2026-09-02
-tags: [calmodulin, calcium, ECCR, charge-scaling, MM-PBSA, binding-free-energy, force-field, molecular-dynamics]
-description: "Basit 等 2022 年用平均场电荷缩放 ECCR 把钙离子电荷从 +2e 缩到 +1.5e，再对 EF-hand 邻近氧原子做局部补偿，配合 MM-PBSA 和多重短轨迹预测钙调蛋白 17 个突变体的钙离子结合亲和力，原始相对亲和力 RMSE 约 1.15 kcal/mol，回归校准后约 0.3 kcal/mol。"
-author: Xufan Gao
-lang: zh-CN
-image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/cyber-3400789_1920.jpg"
-thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/cyber-3400789_1920.jpg"
+title: 用电荷缩放把钙离子过强静电降下来钙调蛋白结合自由能怎么快速算
 ---
 
 # 用电荷缩放把钙离子过强静电降下来钙调蛋白结合自由能怎么快速算
@@ -18,10 +10,9 @@ thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/im
 - **作者**：Abdul Basit、Ajeet Kumar Yadav、Pradipta Bandyopadhyay
 - **发表期刊**：Journal of Chemical Information and Modeling
 - **发表时间**：2022 年 5 月 24 日（62 卷，2821–2834 页）
-- **DOI**：https://doi.org/10.1021/acs.jcim.2c00428
+- **DOI**：<https://doi.org/10.1021/acs.jcim.2c00428>
 - **单位**：Jawaharlal Nehru University，新德里
-- **引用格式**：Basit, A.；Yadav, A. K.；Bandyopadhyay, P. Calcium Ion Binding to the Mutants of Calmodulin：A Structure-Based Computational Predictive Model of Binding Affinity Using a Charge Scaling Approach in Molecular Dynamics Simulation. *J. Chem. Inf. Model.* **2022**, *62*, 2821–2834. https://doi.org/10.1021/acs.jcim.2c00428
-- **数据**：SI 提供完整的电荷表 Table S1 S2、各体系 MM-PBSA 组分分解 S3 到 S6、全量结合自由能 S7 S8、回归分解 S9 与统计检验 S10。
+- **引用格式**：Basit, A.；Yadav, A. K.；Bandyopadhyay, P. Calcium Ion Binding to the Mutants of Calmodulin：A Structure-Based Computational Predictive Model of Binding Affinity Using a Charge Scaling Approach in Molecular Dynamics Simulation. *J. Chem. Inf. Model.* **2022**, *62*, 2821–2834. <https://doi.org/10.1021/acs.jcim.2c00428>
 
 ## 摘要
 
@@ -64,6 +55,7 @@ thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/im
 - 绝对结合自由能本身也还有约 1 kcal/mol 的系统偏差，直接对 SI Table S7 统计，绝对 ΔG 的 MAE 约 1.20 kcal/mol、RMSE 约 1.42 kcal/mol、平均 bias 约 −1.09 kcal/mol，整体仍偏 overbind。
 - 论文里那个很漂亮的 0.3 kcal/mol 来自回归拟合而非力场本身，把 MM-PBSA 的各能量组分对实验 ΔΔG 做线性回归后，最终单描述符模型只剩范德华项，形式为 ΔΔG_model = 0.9863 − 0.3083 × ΔΔE_vdW，交叉验证 RMSE 约 0.34 kcal/mol、相关系数约 0.80，但这本质是经验校准而非力场本身准确。
 
+
 ## 方法要点
 
 - **体系与起始结构**：人源钙调蛋白钙饱和晶体结构 PDB 1CLL，分辨率 1.70 Å；所有 17 个突变体由同一结构直接点突变得来；质子化状态由 PDB2PQR 在中性 pH 下确定；蛋白带 −2e 净电荷，与实验体系一致。
@@ -79,42 +71,46 @@ thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/im
 
 ![ECCR 条件下四种 site-specific 过程的自由能分解示意](./Basit-2022-ECCR-MM-PBSA_figs/fig6.png)
 
-**图 6：ECCR 力场下四种 site-specific 过程的结合自由能分解**。柱状图展示了 WT 和突变体 N97S、F141L 在 loop-3、loop-3*、loop-4、loop-4* 四个位点的自由能分解，包括 ΔE_vdW（范德华）、ΔE_el（气相静电）、ΔG_PB（极化溶剂化）、ΔG_cavitation（空腔）和 ΔG_dispersion（色散）。可以看到 loop-4 的静电贡献 ΔE_el 在突变时变化更显著，而 loop-3 的变化相对平缓。这与实验观察到的 loop-4 对突变更敏感的结论一致，也说明 ECCR 对 loop-4 的改善更明显。
+**图 6：ECCR 力场下四种 site-specific 过程的结合自由能分解**。柱状图展示了 WT 和突变体 N97S、F141L 在 loop-3、loop-&#x33;*、loop-4、loop-4* 四个位点的自由能分解，包括 ΔE_vdW（范德华）、ΔE_el（气相静电）、ΔG_PB（极化溶剂化）、ΔG_cavitation（空腔）和 ΔG_dispersion（色散）。可以看到 loop-4 的静电贡献 ΔE_el 在突变时变化更显著，而 loop-3 的变化相对平缓。这与实验观察到的 loop-4 对突变更敏感的结论一致，也说明 ECCR 对 loop-4 的改善更明显。
 
 ## 研究结果与分析
+
 
 ### 标准力场 vs ECCR 的直接对照
 
 以 10 条 2 ns 轨迹结果为例，几个代表体系的绝对结合自由能如下表所示，单位 kcal/mol，越负表示结合越强：
 
-| 系统 | STD ff14SB | ECCR | 实验 |
-|---|---:|---:|---:|
-| WT | −11.04 | −8.10 | −7.64 |
-| N97S | −9.90 | −8.46 | −6.81 |
-| F141L | −11.61 | −8.19 | −6.62 |
-| D95V | −8.52 | −6.14 | −6.09 |
-| G113R | −8.15 | −7.28 | −6.95 |
-| D131E | −12.03 | −8.77 | −5.89 |
-| Q135P | −11.80 | −9.25 | −6.58 |
-| E140K | −7.10 | −4.61 | −5.62 |
+| 系统    | STD ff14SB |  ECCR |    实验 |
+| ----- | ---------: | ----: | ----: |
+| WT    |     −11.04 | −8.10 | −7.64 |
+| N97S  |      −9.90 | −8.46 | −6.81 |
+| F141L |     −11.61 | −8.19 | −6.62 |
+| D95V  |      −8.52 | −6.14 | −6.09 |
+| G113R |      −8.15 | −7.28 | −6.95 |
+| D131E |     −12.03 | −8.77 | −5.89 |
+| Q135P |     −11.80 | −9.25 | −6.58 |
+| E140K |      −7.10 | −4.61 | −5.62 |
 
 - 标准 +2e 模型系统性 overbind，ECCR 把结合自由能显著拉向实验值，说明钙离子的过强静电确实是 ff14SB 搭配 TIP3P 水模型的主要误差来源，而平均场电荷缩放能有效缓解这一问题，改善幅度在 2 到 4 kcal/mol 之间。
 - 但真正关心的是突变导致的亲和力改变 ΔΔG = ΔG_mutant − ΔG_WT。图 9 原始 ECCR 加 MM-PBSA 结果只有 RMSE 1.15 kcal/mol、r 约 0.5，且 17 个突变中有 4 个连 ΔΔG 正负号都预测错了，作者自己也称此时相关性只是 moderate。
 
+> **核心发现**：ECCR 把绝对 ΔG 从系统性 overbind 拉回实验方向，但对突变体相对亲和力的预测仍有较大 scatter——RMSE 1.15、r 约 0.5，远不够直接用于定量预测。
+
 ![C-lobe 两个 EF-hand 结合位点的残基排布与电荷补偿氧原子示意](./Basit-2022-ECCR-MM-PBSA_figs/fig5.png)
 
 **图 5：钙调蛋白 C-lobe 两个 EF-hand 结合位点的残基排布示意**。左图为 loop-3，右图为 loop-4，单字母缩写加残基编号标注各配位残基。图中显示直接配位钙离子的氧原子包括 Asp 和 Glu 的羧酸氧、Asn 和 Gln 的酰胺氧、Tyr 和 Thr 的酚羟基或醇羟基氧。ECCR 电荷补偿即对这些预先指定的氧原子统一施加 +0.0556e 到 +0.0625e 的小增量，使蛋白总电荷保持整数不变。Asp/Glu 的两个羧酸氧都修改，并不只修改晶体结构中直接朝向钙离子的那个氧。
+
 
 ### 从原始结果到回归模型的跃升
 
 - 五描述符多元回归把相关性提到 Spearman 0.82、Pearson 0.84，但除截距外所有描述符系数都不显著，作者明确说这不能作为 predictive model。逐步削减描述符后最终只剩范德华变化 ΔΔE_vdW，得到单描述符模型 ΔΔG_model = 0.9863 − 0.3083 × ΔΔE_vdW，RMSE 约 0.34 kcal/mol、r 约 0.80；SI 多描述符版本甚至到 0.31 kcal/mol。
 - 交叉验证 leave-3/4/5-out 结果如下表所示，测试集 RMSE 稳定在 0.32 到 0.33 kcal/mol，Spearman 和 Pearson 相关系数在 0.69 到 0.75 之间，说明回归模型在训练集内部有一定泛化能力，但测试集仍较小且均来自同一批钙调蛋白点突变。
 
-| CV 方案 | 训练 RMSE | 测试 RMSE | 测试 Spearman | 测试 Pearson |
-|---|---:|---:|---:|---:|
-| leave-5-out | 0.33 | 0.33 | 0.75 | 0.75 |
-| leave-4-out | 0.34 | 0.32 | 0.73 | 0.72 |
-| leave-3-out | 0.34 | 0.32 | 0.70 | 0.69 |
+| CV 方案       | 训练 RMSE | 测试 RMSE | 测试 Spearman | 测试 Pearson |
+| ----------- | ------: | ------: | ----------: | ---------: |
+| leave-5-out |    0.33 |    0.33 |        0.75 |       0.75 |
+| leave-4-out |    0.34 |    0.32 |        0.73 |       0.72 |
+| leave-3-out |    0.34 |    0.32 |        0.70 |       0.69 |
 
 ![原始 ECCR MM-PBSA 结果与实验数据的散点图及回归校准后结果对比](./Basit-2022-ECCR-MM-PBSA_figs/fig9.png)
 
@@ -124,11 +120,20 @@ thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/im
 
 **图 11：回归校准后的单描述符模型预测结果与实验结合自由能的散点对比**。横轴为实验 ΔΔG，纵轴为模型预测值。实线为最佳线性拟合线，图中标注了 RMSE 约 0.34 kcal/mol、Pearson r 约 0.80。与图 9 对比可以清晰看到，经过实验数据回归校准后模型的预测精度显著提升，但这个提升来自经验拟合而非力场本身精度的改善。
 
+> **跃升的本质**：五个能量组分里挑出一个最稳的（ΔΔE_vdW），再拿实验数据线性校准——这本质是 QSAR，不是力场变准了。
+
+
 ### 残基层面的自由能分解
 
 ![重要残基对结合自由能的贡献分解示意](./Basit-2022-ECCR-MM-PBSA_figs/fig7.png)
 
 **图 7：重要残基对结合自由能的贡献分解示意**。上方面板为标准 ff14SB 力场，下方面板为 ECCR 力场。每个子图分为左右两部分：左侧为 loop-3 或 loop-4 另一位点为空时的残基贡献，右侧为另一位点已被钙离子占据时的残基贡献。选取了贡献绝对值超过 1.5 kcal/mol 的残基，横轴表示该残基对结合自由能的贡献值（正值表示不利于结合，负值表示有利于结合）。STD 和 ECCR 两种力场下，GLU140 的贡献呈现出有趣的趋势反转：STD 力场下突变体的 GLU140 贡献比 WT 更大，而 ECCR 力场下恰恰相反。ASP133 和 ASP131 也呈现类似趋势。这说明 ECCR 电荷缩放不仅改变了整体静电强度，还改变了不同残基之间静电相互作用的相对权重，使得突变导致的静电变化方向与标准力场相反。这是 ECCR 能够改善相对亲和力预测的一个重要机制。
+
+> **核心机制**：ECCR 不只是整体压低静电——它改变了 GLU140、ASP133、ASP131 等关键残基的贡献方向，使得突变导致的静电变化在 STD 和 ECCR 下符号相反，这才是改善相对亲和力预测的根本原因。
+
+![所有体系 ECCR 计算值与实验值的柱状对比示意](./Basit-2022-ECCR-MM-PBSA_figs/fig8.png)
+
+**图 8：所有 18 个体系（WT + 17 个突变体）的 ECCR 计算值与实验值柱状对比**。蓝色柱为计算值，红色柱为实验值（单位 kcal/mol），横轴按突变体排列。整体可见 ECCR 把大多数体系的绝对结合自由能往实验方向拉，但 D131E、Q135P、E140K 等少数几个偏差仍然显著，说明单一电荷缩放对某些特殊突变无能为力。
 
 - 图 6 展示了四种 site-specific 过程的自由能分解，可以看到 loop-4 的静电贡献 ΔE_el 在突变时变化更显著，而 loop-3 的变化相对平缓。这与实验观察到的 loop-4 对突变更敏感的结论一致，也说明 ECCR 对 loop-4 的改善更明显。
 - 图 8 汇总了所有 18 个体系（WT 加 17 个突变体）的 ECCR 计算结果与实验值的对比柱状图。蓝色柱为计算值，红色柱为实验值。可以看到 ECCR 整体向实验方向移动，但 D131E、Q135P、E140K 等少数突变体的偏差仍然较大。
@@ -143,6 +148,8 @@ thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/im
 - **D131H 和 D131V 也是偏差较大的突变体**，D131H 算 −5.90 实验 −5.12、D131V 算 −7.68 实验 −5.23，两者都涉及 131 位 Asp 的替换，说明 131 位附近的静电环境对突变非常敏感。
 - 把这些个体误差摊平后绝对 ΔG 的 MAE 约 1.2 kcal/mol、RMSE 约 1.4 kcal/mol，意味着平均可用个别危险，这正是后面需要拿实验数据做回归来「修」的原因。
 
+> **易错点**：D131E 偏差最大（2.9 kcal/mol）是因为引入了额外负电荷，单一电荷缩放无法精确补偿局部静电重排；Q135P 偏差约 2.7 kcal/mol 则是 Pro 的构象刚性超出了静电模型的捕捉范围。
+
 ### 复现这篇时最该盯住的点
 
 如果你想把 ECCR 思路用到自己的体系下面这些细节决定成败：
@@ -151,6 +158,8 @@ thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/im
 - **ε_in = 8 是钙调蛋白专用校准值**不是通用 PB 默认，换到其他蛋白别直接复用，这个值来自作者既往钙调蛋白工作比较后的最佳选择。
 - **采样长度 2 ns 仍不捕捉慢构象**，他们用 10 条 2 ns 是因为比较过 20 ns 和 200 ns 均值接近，但 2 ns 仍不能充分描述钙调蛋白的构象涨落，换构象敏感的体系要小心。
 - **single-trajectory 假设只适用于从同一 holo 起始结构出发比较相近突变的场景**，apo-holo 平衡差异大的体系会踩坑，因为受体和复合物的构象分布可能完全不同。
+
+> **复现时最该盯住的细节**：电荷补偿方案（哪些氧进补偿组、每个补多少）比把钙设成 +1.5 本身更关键，而且 ε_in = 8 是钙调蛋白专用校准值，换到其他蛋白别直接复用。
 
 ## 值得注意的限制
 

@@ -1,16 +1,8 @@
 ---
-title: "Basit 2022：ECCR 电荷缩放 + MM-PBSA 计算钙调蛋白 Ca²⁺ 结合亲和力（技术细节）"
-date: "2026-09-02"
-last_modified_at: 2026-09-02
-tags: [calmodulin, calcium, ECCR, charge-scaling, MM-PBSA, binding-free-energy, force-field, EF-hand, method-details]
-description: "Basit 等（2022）用平均场电荷缩放（ECCR）引入极化、配合 MM-PBSA 与多重短轨迹预测钙调蛋白 17 个突变体的 Ca²⁺ 结合亲和力。本文逐节拆解其方法细节、电荷补偿规则、MM-PBSA 协议与结果，并对照 SI 核实关键数字。"
-author: Xufan Gao
-lang: zh-CN
-image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/cyber-3400789_1920.jpg"
-thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/Wallpaper_compressed/cyber-3400789_1920.jpg"
+title: "Basit 2022：ECCR 电荷缩放 + MM-PBSA 计算钙调蛋白 Ca²⁺ 结合亲和力——技术细节"
 ---
 
-# Basit 2022：ECCR 电荷缩放 + MM-PBSA 计算钙调蛋白 Ca²⁺ 结合亲和力（技术细节）
+# Basit 2022：ECCR 电荷缩放 + MM-PBSA 计算钙调蛋白 Ca²⁺ 结合亲和力——技术细节
 
 ## 方法概括
 
@@ -20,21 +12,23 @@ Basit 等 2022 年的目标不是用严格的 ABFE 直接计算 $\ce{Ca^{2+}}$ �
 
 以下参数来自正文 Section 2 和 SI Table S2，已核对完整：
 
-| 参数项 | 具体设置 |
-|---|---|
-| 软件 | AMBER 16 |
-| 蛋白力场 | ff14SB |
-| 水模型 | TIP3P |
-| 水盒边界 | 10 Å |
-| 盐浓度 | 0.15 M KCl |
-| K⁺/Cl⁻ 参数 | Joung–Cheatham |
-| $\ce{Ca^{2+}}$ LJ 参数 | Li–Merz 2013（Table S2） |
-| 温度 | 298 K，Langevin thermostat，碰撞频率 2 ps⁻¹ |
-| 压力 | Berendsen barostat，1 bar |
-| 长程静电 | PME |
-| 约束 | SHAKE 约束含 H 键，时间步长 2 fs |
+| 参数项    | 具体设置      |
+| -------------------- | ------------------------------------- |
+| 软件     | AMBER 16  |
+| 蛋白力场   | ff14SB    |
+| 水模型    | TIP3P     |
+| 水盒边界   | 10 Å      |
+| 盐浓度    | 0.15 M KCl|
+| K⁺/Cl⁻ 参数            | Joung–Cheatham          |
+| $\ce{Ca^{2+}}$ LJ 参数 | Li–Merz 2013（Table S2）  |
+| 温度     | 298 K，Langevin thermostat，碰撞频率 2 ps⁻¹ |
+| 压力     | Berendsen barostat，1 bar|
+| 长程静电   | PME       |
+| 约束     | SHAKE 约束含 H 键，时间步长 2 fs |
 
 采样策略比较：作者最初对 WT、N97S、F141L 跑了 200 ns 轨迹并分析后 100 ns，随后发现 10 条 20 ns 与 10 条 2 ns 轨迹的平均 MM-PBSA 结果接近，因此最终 17 个突变体主要采用**10 条独立 2 ns 轨迹**。这个设计本质是 multiple short replicas，目的是降低平均值的 standard error，而非充分探索 CaM 的慢构象变化。作者自己也承认 2 ns 不能充分描述 CaM 构象涨落。
+
+> **采样策略的本质**：10 × 2 ns ≠ 20 ns 充分采样。前者是压低均值标准误，后者才能真正捕捉慢构象转换。两者不可混淆。
 
 ---
 
@@ -44,11 +38,11 @@ Basit 等 2022 年的目标不是用严格的 ABFE 直接计算 $\ce{Ca^{2+}}$ �
 
 **Table 1：ECCR 电荷缩放规则（SI Table S2）**
 
-| 离子 | 标准电荷 | ECCR |
-|---|---:|---:|
+| 离子             |  标准电荷 |  ECCR |
+| -------------- | ----: | ----: |
 | $\ce{Ca^{2+}}$ | +2.00 | +1.50 |
-| $\ce{K^{+}}$ | +1.00 | +0.75 |
-| $\ce{Cl^{-}}$ | −1.00 | −0.75 |
+| $\ce{K^{+}}$   | +1.00 | +0.75 |
+| $\ce{Cl^{-}}$  | −1.00 | −0.75 |
 
 即统一乘 0.75，用平均场方式近似电子极化，缩放因子来自 $\sqrt{\varepsilon_\text{el}} \approx 0.75$。
 
@@ -63,9 +57,11 @@ Asp/Glu 的**两个羧酸 O 都修改**，并不只修改晶体结构中直接�
 
 ![图5 loop-3 与 loop-4 结合位点的残基示意](./Basit-2022-ECCR-MM-PBSA_figs/fig5.png)
 
-**表 5：loop-3 与 loop-4 结合位点残基排布与电荷补偿氧原子**。左图为 loop-3，右图为 loop-4，单字母缩写加残基编号标注各配位残基。图中显示直接配位 $\ce{Ca^{2+}}$ 的氧原子包括 Asp/Glu 的羧酸氧、Asn/Gln 的酰胺氧、Tyr/Thr 的酚羟基或醇羟基氧。ECCR 电荷补偿即对这些预先指定的氧原子统一施加 +0.0556e 到 +0.0625e 的小增量，使蛋白总电荷保持整数不变。
+**图 5：loop-3 与 loop-4 结合位点残基排布与电荷补偿氧原子**。左图为 loop-3，右图为 loop-4，单字母缩写加残基编号标注各配位残基。图中显示直接配位 $\ce{Ca^{2+}}$ 的氧原子包括 Asp/Glu 的羧酸氧、Asn/Gln 的酰胺氧、Tyr/Thr 的酚羟基或醇羟基氧。ECCR 电荷补偿即对这些预先指定的氧原子统一施加 +0.0556e 到 +0.0625e 的小增量，使蛋白总电荷保持整数不变。
 
 这点对你的体系很重要：它不是一个通用「看到 Ca 附近多少个 O 就自动重新拟合」的算法，而是人为定义一组 EF-hand 邻近 O，然后做总电荷补偿。
+
+> **复现时最该盯住的细节**：ECCR 的电荷补偿是人为指定的，不是自动算法。每个 EF-hand 第一配位层附近的氧原子具体补偿方式，比把钙设成 +1.5 本身更值得谨慎复现。
 
 ---
 
@@ -91,11 +87,11 @@ $$
 
 PB 计算参数如下：
 
-| 参数 | 数值 |
-|---|---|
-| 离子强度 | 0.15 M |
-| 溶剂介电常数 | 78.35 |
-| 溶质内介电常数 $\varepsilon_\text{in}$ | 8 |
+| 参数  | 数值     |
+| ------------------------------- | ------ |
+| 离子强度| 0.15 M |
+| 溶剂介电常数            | 78.35  |
+| 溶质内介电常数 $\varepsilon_\text{in}$ | 8      |
 
 其中 $\varepsilon_\text{in} = 8$ 不是无先验选择。作者明确说，他们在之前的 CaM 工作中比较后发现 8 效果最好，所以本论文沿用 8。因此这套 protocol 已经包含了一项针对 CaM 体系的经验校准。
 
@@ -105,11 +101,11 @@ PB 计算参数如下：
 
 实验给的是 CaM C-lobe 两个位点的 macroscopic binding affinity。作者分别计算四种 site-specific 过程：
 
-| 符号 | 含义 |
-|---|---|
-| $\Delta G_3$ | loop-4 为空时，$\ce{Ca^{2+}}$ 结合 loop-3 |
+| 符号 | 含义        |
+| ---------------- | --------------------------------------------------- |
+| $\Delta G_3$     | loop-4 为空时，$\ce{Ca^{2+}}$ 结合 loop-3   |
 | $\Delta G_{4,3}$ | loop-3 已有 $\ce{Ca^{2+}}$ 时，$\ce{Ca^{2+}}$ 结合 loop-4 |
-| $\Delta G_4$ | loop-3 为空时，$\ce{Ca^{2+}}$ 结合 loop-4 |
+| $\Delta G_4$     | loop-3 为空时，$\ce{Ca^{2+}}$ 结合 loop-4   |
 | $\Delta G_{3,4}$ | loop-4 已有 $\ce{Ca^{2+}}$ 时，$\ce{Ca^{2+}}$ 结合 loop-3 |
 
 最终按以下公式平均：
@@ -120,11 +116,11 @@ $$
 
 得到每个位点平均的宏观结合自由能（即论文里的 $\Delta G_\text{bind}/2$，与实验报告的每位点平均值 −7.64 kcal/mol 直接可比；论文的 $\Delta G_\text{bind}$ 全量是它的两倍）。SI Figure S1 给出了完整的计算流程。
 
-![图2 钙调蛋白 C-lobe 两个 EF-hand 的两步 $\ce{Ca^{2+}}$ 结合自由能定义](./Basit-2022-ECCR-MM-PBSA_figs/fig2.png)
+![图2 钙调蛋白 C-lobe 两个 EF-hand 的两步 \ce{Ca^{2+}} 结合自由能定义](./Basit-2022-ECCR-MM-PBSA_figs/fig2.png)
 
 **图 2：钙调蛋白 C-lobe 两个 EF-hand 的两步 $\ce{Ca^{2+}}$ 结合自由能定义**。白色圆圈为空位点（左为 loop-3），红色圆圈为已结合 $\ce{Ca^{2+}}$ 的位点；$\Delta G_{x,y}$ 表示当位点 y 已被占据时 $\ce{Ca^{2+}}$ 结合位点 x 的自由能变化。
 
-![图S1 钙调蛋白 $\ce{Ca^{2+}}$ 结合自由能计算流程图](./Basit-2022-ECCR-MM-PBSA_figs/si_figure_s1.jpeg)
+![图S1 钙调蛋白 \ce{Ca^{2+}} 结合自由能计算流程图](./Basit-2022-ECCR-MM-PBSA_figs/si_figure_s1.jpeg)
 
 **图 S1（论文 Supporting Information Figure S1）**：从复合物轨迹提取受体与配体、四种 site-specific 过程到宏观结合自由能的完整流程。
 
@@ -138,23 +134,29 @@ $$
 
 以 10 × 2 ns 结果为例：
 
-| 系统 | STD ff14SB | ECCR | 实验 |
-|---|---:|---:|---:|
-| WT | −11.04 | **−8.10** | −7.64 |
-| N97S | −9.90 | **−8.46** | −6.81 |
-| F141L | −11.61 | **−8.19** | −6.62 |
+| 系统    | STD ff14SB |      ECCR |    实验 |
+| ----- | ---------: | --------: | ----: |
+| WT    |     −11.04 | **−8.10** | −7.64 |
+| N97S  |      −9.90 | **−8.46** | −6.81 |
+| F141L |     −11.61 | **−8.19** | −6.62 |
 
 单位均为 kcal/mol。所以对这几个体系，标准 +2e $\ce{Ca^{2+}}$ 明显 overbind；简单 charge scaling 确实把结果往实验方向拉了很多。
 
+![STD 力场下 WT 和两个突变体 N97S / F141L 的四种 site-specific 自由能分解](./Basit-2022-ECCR-MM-PBSA_figs/fig4.png)
+
+**图 4（论文 Figure 4）**：标准 ff14SB 力场下 WT、N97S、F141L 在 loop-3 / loop-3* / loop-4 / loop-4* 四个位点的结合自由能分解柱状图。ΔE_vdW（范德华）、ΔE_el（气相静电）、ΔG_PB（极化溶剂化）、ΔG_cavitation（空腔）和 ΔG_dispersion（色散）。与 ECCR 下的图 6 对照可见，STD 力场下 ΔE_el 的量级显著更大（绝对值），且突变引起的 ΔE_el 变化方向与 ECCR 下相反——这正是 ECCR 改善相对亲和力预测的核心机制之一。
+
 SI Table S7 给出了全部体系的 ECCR 结果。我直接根据 Table S7 重新统计全部 WT + 17 mutants，**在任何后续回归拟合之前**：
 
-| 统计量 | 数值 |
-|---|---|
-| absolute $\Delta G$ MAE | **1.20 kcal/mol** |
-| absolute $\Delta G$ RMSE | **1.42 kcal/mol** |
-| 平均 bias | **−1.09 kcal/mol** |
+| 统计量        | 数值   |
+| ------------------------ | ------------------ |
+| absolute $\Delta G$ MAE  | **1.20 kcal/mol**  |
+| absolute $\Delta G$ RMSE | **1.42 kcal/mol**  |
+| 平均 bias    | **−1.09 kcal/mol** |
 
 也就是说，ECCR + MM-PBSA 本身其实已经不算差，但整体仍有约 1 kcal/mol 的 overbind，而且 D131E、Q135P、D131V 等有 2–3 kcal/mol 的大误差。
+
+> **关键数字**：ECCR + MM-PBSA 本身的绝对 ΔG MAE 约 1.20 kcal/mol、RMSE 约 1.42 kcal/mol，整体 bias 约 −1.09 kcal/mol（系统性 overbind）。这不是一个无参数就能拿到 0.3 kcal/mol 准的方法。
 
 ### 2. 真正比较突变效应时，原始结果没有图上那么漂亮
 
@@ -166,26 +168,28 @@ $$
 
 因为实验主要研究突变导致的亲和力改变。**拟合之前**，Figure 9 的原始 ECCR + MM-PBSA 结果是：
 
-| 指标 | 数值 |
-|---|---|
-| RMSE | **1.15 kcal/mol** |
-| Pearson $r$ | **0.51** |
-| Spearman $r$ | **0.55** |
-| 17 个突变中符号预测错误的数量 | **4 个** |
+| 指标 | 数值  |
+| ---------------- | ----------------- |
+| RMSE             | **1.15 kcal/mol** |
+| Pearson $r$      | **0.51**          |
+| Spearman $r$     | **0.55**          |
+| 17 个突变中符号预测错误的数量 | **4 个**           |
 
 作者自己也明确称此时相关性只是 moderate。所以如果你看到后面的 RMSE ≈ 0.3 kcal/mol、$r \approx 0.8$，那已经不是原始 MM-PBSA 结果。
+
+> **核心区分**：图 9 那个 r ≈ 0.51、RMSE 1.15 才是原始 ECCR + MM-PBSA 的真实预测能力；后面那个漂亮的 0.3 kcal/mol 是实验数据回归后的校准误差，两者不是一回事。
 
 ### 3. 后面确实拟合了，而且拟合得相当明显
 
 作者把 MM-PBSA 分解得到的五个能量组分拿去对实验 $\Delta\Delta G$ 做**多元线性回归**：
 
-| 描述符 | 含义 |
-|---|---|
-| $\Delta\Delta E_\text{vdW}$ | 范德华能量变化 |
-| $\Delta\Delta E_\text{el}$ | 气相静电能量变化 |
-| $\Delta\Delta G_\text{PB}$ | 极化溶剂化自由能变化 |
-| $\Delta\Delta G_\text{cavitation}$ | 空腔自由能变化 |
-| $\Delta\Delta G_\text{dispersion}$ | 色散自由能变化 |
+| 描述符    | 含义         |
+| ---------------------------------- | ---------- |
+| $\Delta\Delta E_\text{vdW}$        | 范德华能量变化    |
+| $\Delta\Delta E_\text{el}$         | 气相静电能量变化   |
+| $\Delta\Delta G_\text{PB}$         | 极化溶剂化自由能变化 |
+| $\Delta\Delta G_\text{cavitation}$ | 空腔自由能变化    |
+| $\Delta\Delta G_\text{dispersion}$ | 色散自由能变化    |
 
 五描述符模型的相关性一下提高到 Spearman $r = 0.82$、Pearson $r = 0.84$，但作者自己检查后发现，除了截距外，五个 descriptor 的系数都不显著（$p > 0.05$），因此明确说这个模型**不能作为 predictive model**。
 
@@ -203,11 +207,11 @@ $$
 
 作者也做了 leave-3/4/5-out cross-validation：
 
-| CV 方案 | 训练 RMSE | 测试 RMSE | 测试 Spearman | 测试 Pearson |
-|---|---:|---:|---:|---:|
-| leave-5-out | 0.33 | 0.33 | 0.75 | 0.75 |
-| leave-4-out | 0.34 | 0.32 | 0.73 | 0.72 |
-| leave-3-out | 0.34 | 0.32 | 0.70 | 0.69 |
+| CV 方案       | 训练 RMSE | 测试 RMSE | 测试 Spearman | 测试 Pearson |
+| ----------- | ------: | ------: | ----------: | ---------: |
+| leave-5-out |    0.33 |    0.33 |        0.75 |       0.75 |
+| leave-4-out |    0.34 |    0.32 |        0.73 |       0.72 |
+| leave-3-out |    0.34 |    0.32 |        0.70 |       0.69 |
 
 所以不是完全裸拟合，但仍然是在**同一批 CaM 点突变数据**内部做 cross-validation，没有真正独立的外部蛋白或另一批 CaM 突变测试集。
 
@@ -227,6 +231,8 @@ $$
 6. **回归部分至少做了显著性检验和 cross-validation**，他们甚至主动否掉了看起来相关性更高、但统计上不显著的五参数模型。
 
 这些都算比较规范。
+
+> **规范之处**：作者没有掩盖原始结果的 mediocre 表现（Figure 9 直白标注 r ≈ 0.5），还主动否掉了看起来相关性更高但统计上不显著的五参数回归模型。这份透明度在当前 CADD 文献里不算多。
 
 ---
 
@@ -250,7 +256,9 @@ $$
 
 ### 2. $\varepsilon_\text{in} = 8$ 本身已经经过 CaM 体系校准
 
-他们没有 blindly 采用一个标准 PB 参数。论文明确说 $\varepsilon_\text{in} = 8$ 是之前在类似 CaM 体系比较后得到的最佳值。因此「原始 MM-PBSA」其实也不是完全无经验调整的 ab initio prediction。
+他们没有 blindly 采用一个标准 PB 参数。论文明确说 $\varepsilon_\text{in} = 8$ 是之前在类似 CaM 体系比较后得到的最佳值。因此**原始 MM-PBSA 本身也不是完全无经验调整的 ab initio prediction**，前面那层"便宜"不是免费的。
+
+> **经验校准的痕迹**：ε_in = 8 来自作者既往钙调蛋白工作的比较，不是标准 PB 默认值（默认通常是 1 或 2）。这意味着即使"原始" MM-PBSA 也已经混入了一项针对 CaM 的经验参数。
 
 ### 3. 最终模型只剩 vdW descriptor，有点反常
 
@@ -270,6 +278,8 @@ $\ce{Ca^{2+}}$ 结合明明是高度 electrostatic 的问题，最后统计模�
 
 作者自己也承认 2 ns 不能充分描述 CaM 结构涨落。对这些从同一个 holo 晶体结构出发的点突变，可能还能工作；换成一个磷酸化可能改变 EF-hand 构象 ensemble 的体系，风险明显更大。
 
+> **采样短不等于采样充分**：10 × 2 ns 压低的是均值估计的 standard error，不是构象采样的充分性。你的体系如果涉及构象重排（如磷酸化、变构），2 ns × 10 远远不够。
+
 ### 5. single-trajectory MM-PBSA 没有真正模拟结合过程
 
 蛋白、$\ce{Ca^{2+}}$ 和 complex 都从同一个 bound trajectory 提取，因此大量构象重组代价被假定相消。它实际上问的是：
@@ -279,6 +289,8 @@ $\ce{Ca^{2+}}$ 结合明明是高度 electrostatic 的问题，最后统计模�
 不是严格意义上的：
 
 > $\ce{Ca^{2+}}$ 从 bulk water 进入 EF-hand 的标准结合自由能是多少？
+
+**这是 endpoint 法的固有局限**，与轨迹长短无关；换 umbrella sampling 或 double-decoupling ABFE 才是严格意义上从 unbound 到 bound 的自由能路径。
 
 所以不能和 umbrella sampling、double-decoupling ABFE 等严格自由能方法等价。
 
