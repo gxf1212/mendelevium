@@ -99,5 +99,6 @@
 Skills会根据任务类型自动加载对应的rules文件，确保格式规范的一致性。
 
 ## 每次必做
+- 新建或修改 `_pages` 文章时，必须确认 frontmatter **九字段完整**（title/date/last_modified_at/tags/description/image/thumbnail/author/lang，见 @.claude/skills/blog/modules/structure/frontmatter.md）：`image` 与 `thumbnail` 必须一致且非 empty.jpg，`date`/`last_modified_at` 为当天日期。已配置 pre-commit 钩子（`tools/check_frontmatter.py`）在 commit 前自动拦截不完整的 frontmatter，**切勿只写 title**。
 - 深度对照PDF检查内容准确性
 - 最后，每次弄完以后，都检查一遍加粗、中文标点，检查图片提取是否正确、图文融合是否做到，是否该用公式的都用了，检查有哪些太短的列表其实可以表格化或合并，检查太短的单行是否能弄成小heading或者合并，检查哪些并列结构其实可以弄成列表（item长一点），检查专业名词是否正确，检查关键结论与批判性总结是否准确，检查和PDF是否一致，没有事实错误。检查是否逻辑清晰，通俗易懂地讲解了。。修复所有AI味。

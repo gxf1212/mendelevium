@@ -49,3 +49,38 @@
 
       其中，$k_B$ 是玻尔兹曼常数...
       ```
+
+---
+
+# 专业术语规范
+
+- **化学/生物物理核心术语必须用中文标准译名**，禁止 AI 翻译腔式的直译。常见易错对照：
+  - ❌ "协调" → ✅ "配位"（如 "配位数""第一配位层""配位氧"，coordination number / coordinated oxygen）
+  - ❌ "结合亲和力"（单独用） → ✅ "结合自由能" 或 "结合强度"（结合 affinity = 亲和，free energy = 自由能，不要混用）
+  - ❌ "overbind"（英文混入） → ✅ "过强结合" 或 "结合过强"
+  - ❌ "抓钙离子" → ✅ "配位钙离子"（保持学术语气）
+  - ❌ "descriptor" → ✅ "描述符"（如"单描述符模型""经验描述符"）
+  - ❌ "electrostatic"（英文混入） → ✅ "静电"或"高度静电"
+  - ❌ "抓"（动词） → ✅ "配位"（学术语境）
+- **写完后必须用以下脚本扫一遍**，确认无上述错误：
+  ```bash
+  F:/Anaconda/envs/download/python.exe -c "
+  import re, sys
+  files = sys.argv[1:]
+  patterns = [
+      (r'\\b协调\\b', '协调→配位'),
+      (r'\\boverbind\\b', 'overbind→过强结合'),
+      (r'\\b抓\\b钙离子|\\b抓\\b钙', '抓钙离子→配位钙离子'),
+  ]
+  for f in files:
+      text = open(f, encoding='utf-8').read()
+      for pat, msg in patterns:
+          if re.search(pat, text):
+              print(f'❌ {f}: {msg} ({pat})')
+              # 打印匹配行方便定位
+              for i, line in enumerate(text.split('\\n'), 1):
+                  if re.search(pat, line):
+                      print(f'   行{i}: {line.strip()[:120]}')
+  " -- <files...>
+  ```
+- **术语一致性检查**：全文对同一概念用同一译名（如 calcium binding free energy 统一用"结合自由能"，不要一会儿"亲和力"一会儿"结合能"）。
