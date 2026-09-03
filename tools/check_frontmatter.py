@@ -101,13 +101,13 @@ def main():
     try:
         root = subprocess.check_output(
             ["git", "rev-parse", "--show-toplevel"], text=True).strip()
-    except subprocess.CalledProcessError:
+    except (subprocess.CalledProcessError, OSError):
         sys.exit(0)
     try:
         out = subprocess.check_output(
             ["git", "diff", "--cached", "--name-only",
              "--diff-filter=ACMR"], text=True).strip()
-    except subprocess.CalledProcessError:
+    except (subprocess.CalledProcessError, OSError):
         out = ""
     candidates = []
     for f in out.split("\n"):

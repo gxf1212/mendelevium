@@ -1,7 +1,7 @@
 ---
 title: "ECCR电荷缩放与MM-PBSA钙调蛋白结合自由能计算细节"
 date: "2026-09-02"
-last_modified_at: "2026-09-02"
+last_modified_at: "2026-09-03"
 tags: [metal-ion-force-field, EF-hand, calmodulin, MM-PBSA, charge-scaling, AMBER, molecular-dynamics, calcium]
 description: "梳理ECCR电荷缩放与MM-PBSA预测钙调蛋白结合自由能的完整流程，逐条核对体系参数、能量分解与回归校准，给出计算细节"
 image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/4K_1080P_compressed/082135PV2YW.jpg"
@@ -20,7 +20,7 @@ lang: zh-CN
 
 ### 1. 基础MD体系参数
 
-以下参数来自正文Section 2和SI Table S2，已核对完整：
+以下参数来自正文Section 2（离子电荷与补偿见SI Table S1/S2），已核对完整：
 
 | 参数项 | 具体设置|
 | -------------------- | ------------------------------------- |
@@ -30,7 +30,7 @@ lang: zh-CN
 | 水盒边界| 10 Å|
 | 盐浓度 | 0.15 M $\ce{KCl}$|
 | $\ce{K^+}$/$\ce{Cl^-}$ 参数| Joung–Cheatham |
-| $\ce{Ca^{2+}}$ LJ参数 | Li–Merz 2013（Table S2）  |
+| $\ce{Ca^{2+}}$ LJ参数 | Li–Merz 2013（12-6 LJ，正文引用48）  |
 | 温度  | 298 K，Langevin thermostat，碰撞频率 $2~\mathrm{ps}^{-1}$ |
 | 压力  | Berendsen barostat，1 bar|
 | 长程静电| PME |
@@ -42,7 +42,7 @@ lang: zh-CN
 
 ## 2. ECCR电荷修改规则
 
-这篇并没有重新拟合新的 $\ce{Ca^{2+}}$ LJ参数。它以Li–Merz $\ce{Ca^{2+}}$ 参数为基础，**只修改静电部分**：
+这篇并没有重新拟合新的 $\ce{Ca^{2+}}$ LJ参数。它以Li–Merz 12-6 $\ce{Ca^{2+}}$ 参数为基础，**只修改静电部分**：
 
 **Table 1：ECCR电荷缩放规则（SI Table S2）**
 
@@ -52,7 +52,7 @@ lang: zh-CN
 | $\ce{K^{+}}$| +1.00 | +0.75 |
 | $\ce{Cl^{-}}$  | −1.00 | −0.75 |
 
-> 电荷规则的全部物理内容就是**统一乘0.75，用平均场方式近似电子极化**，缩放因子来自 $\sqrt{\varepsilon_\text{el}} \approx 0.75$。
+> 电荷规则的全部物理内容就是**统一乘0.75，用平均场方式近似电子极化**，缩放因子来自 $1/\sqrt{\varepsilon_\text{el}} \approx 0.75$（水的电子介电常数约1.78）。
 
 ### 蛋白如何补偿少掉的 +0.5e？
 
@@ -65,7 +65,7 @@ Asp/Glu的**两个羧酸O都修改**，**并不只修改晶体结构中直接朝
 
 ![图5 loop-3与loop-4结合位点的残基示意](./Basit-2022-ECCR-MM-PBSA_figs/fig5.png)
 
-**图5：loop-3与loop-4结合位点残基排布与电荷补偿氧原子**。左图为loop-3，右图为loop-4，单字母缩写加残基编号标注各配位残基。图中显示直接配位 $\ce{Ca^{2+}}$ 的氧原子包括Asp/Glu的羧酸氧、Asn/Gln的酰胺氧、Tyr/Thr的酚羟基或醇羟基氧。ECCR电荷补偿即对这些预先指定的氧原子统一施加 +0.0556e到 +0.0625e的小增量，使蛋白总电荷保持整数。
+**图5：loop-3与loop-4结合位点残基排布与电荷补偿氧原子**。左图为loop-3，右图为loop-4，单字母缩写加残基编号标注各配位残基，W代表结合位点中的水分子。图中显示直接配位 $\ce{Ca^{2+}}$ 的氧原子包括Asp/Glu的羧酸氧、Asn/Gln的酰胺氧、Tyr的酚羟基氧。ECCR电荷补偿即对这些预先指定的氧原子统一施加 +0.0556e到 +0.0625e的小增量，使蛋白总电荷保持整数。
 
 这点对你的体系很重要：
 
@@ -153,10 +153,11 @@ $$
 | F141L |  −11.61 | **−8.19** | −6.62 |
 
 单位均为kcal/mol。对这几个体系，**标准 +2e 钙离子明显过强结合**；简单的电荷缩放把结果大幅拉向实验值。
+> −11.04/−9.90/−11.61 kcal/mol 是正文 Table 5 报告的 STD（标准 ff14SB，正文字脚注注明括号里是 SEM）下的 10 条 2 ns 轨迹均值；ECCR 的 −8.10/−8.46/−8.19 是等价的 ECCR 计算值，实验值为 −7.64/−6.81/−6.62。
 
 ![STD力场下WT和两个突变体N97S / F141L的四种site-specific自由能分解](./Basit-2022-ECCR-MM-PBSA_figs/fig4.png)
 
-**图4（论文Figure 4）**：标准ff14SB力场下WT、N97S、F141L在loop-3 / loop-3* / loop-4 / loop-4* 四个位点的结合自由能分解柱状图。$\Delta E_\text{vdW}$（范德华）、$\Delta E_\text{el}$（气相静电）、$\Delta G_\text{PB}$（极化溶剂化）、$\Delta G_\text{cavitation}$（空腔）和 $\Delta G_\text{dispersion}$（色散）。与ECCR下的图6对照可见，STD力场下 $\Delta E_\text{el}$ 的量级显著更大（绝对值），且突变引起的 $\Delta E_\text{el}$ 变化方向与ECCR下相反。这种方向相反，正是ECCR能改善相对亲和力预测的核心机制之一。
+**图4（论文Figure 4）**：标准ff14SB力场下WT、N97S、F141L在loop-3 / loop-3\* / loop-4 / loop-4\* 四个位点的结合自由能分解柱状图。$\Delta E_\text{vdW}$（范德华）、$\Delta E_\text{el}$（气相静电）、$\Delta G_\text{PB}$（极化溶剂化）、$\Delta G_\text{cavitation}$（空腔）和 $\Delta G_\text{dispersion}$（色散）。与ECCR下的图6对照可见，STD力场下 $\Delta E_\text{el}$ 的量级显著更大（绝对值），且突变引起的 $\Delta E_\text{el}$ 变化方向与ECCR下相反。这种方向相反，正是ECCR能改善相对亲和力预测的核心机制之一。
 
 SI Table S7给出了全部体系的ECCR结果。我直接根据Table S7重新统计全部WT与17个突变体，**在任何后续回归拟合之前**：
 
@@ -213,7 +214,7 @@ $$
 
 > 用MD得到的vdW能量变化作为描述符，再对实验亲和力重新拟合一个线性模型。
 
-它得到RMSE ≈ **0.34 kcal/mol**、Spearman $r \approx$ **0.80**、Pearson $r \approx$ **0.80**；SI多描述符版本甚至有RMSE ≈ 0.31 kcal/mol。
+它得到RMSE ≈ **0.34 kcal/mol**、Spearman $r \approx$ **0.80**、Pearson $r \approx$ **0.80**；多描述符模型的误差与它接近（主文称各模型RMSE与相关性都很接近），其R²为0.698（SI Table S10）。
 
 作者也做了leave-3/4/5-out cross-validation：
 

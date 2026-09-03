@@ -687,16 +687,18 @@ def apply_inline_styles(html, theme=None, heading_style="plain", quote_style="ba
         bq_open = (f'<blockquote style="background:{bq["bg"]};'
                    f'padding:{bq["padding"]};color:{bq["color"]};'
                    f'margin:{bq["margin"]};border-radius:10px;'
-                   f'font-size:{bq["size"]}px;line-height:{bq["line_height"]};">'
+                   f'font-size:{bq["size"]}px;line-height:{bq["line_height"]};'
+                   f'text-align:left;">'
                    f'<span style="color:{col["link_border"]};font-size:34px;'
                    f'font-weight:bold;line-height:0.6;vertical-align:-12px;'
-                   f'margin-right:2px;">“</span>')
+                   f'margin-right:2px;">"</span>')
     else:  # bar
         bq_open = (f'<blockquote style="border-left:{bq["border_left"]};'
                    f'background-color:{bq["bg"]};padding:{bq["padding"]};'
                    f'color:{bq["color"]};margin:{bq["margin"]};'
                    f'border-radius:{bq["radius"]};'
-                   f'font-size:{bq["size"]}px;line-height:{bq["line_height"]};">')
+                   f'font-size:{bq["size"]}px;line-height:{bq["line_height"]};'
+                   f'text-align:left;">')
     html = re.sub(r'<blockquote>', bq_open, html)
     return html
 
