@@ -20,9 +20,9 @@ lang: zh-CN
 - **作者**：Jiaxuan Hu, Lianlian Wu, Song He, Xiaochen Bo, Jiang Lu（通讯作者Lianlian Wu、Song He、Xiaochen Bo、Jiang Lu，均标注 *）
 - **发表期刊**：Journal of Chemical Information and Modeling
 - **发表时间**：2026年8月21日
-- **DOI**：<https://doi.org/10.1021/acs.jcim.6c01920>
+- **DOI**：https://doi.org/10.1021/acs.jcim.6c01920
 - **单位**：中南林业科技大学（计算机与数学学院，长沙）、西安交通大学（前沿科学技术研究院）、天津大学（医学工程与转化医学研究院）、军事医学研究院（北京），均为中国
-- **引用格式**：Hu, J.; Wu, L.; He, S.; Bo, X.; Lu, J. (2026). AI-Driven Drug–Target Interaction Prediction: From Data Representation to Model Design. *Journal of Chemical Information and Modeling*. <https://doi.org/10.1021/acs.jcim.6c01920>
+- **引用格式**：Hu, J.; Wu, L.; He, S.; Bo, X.; Lu, J. (2026). AI-Driven Drug–Target Interaction Prediction: From Data Representation to Model Design. *Journal of Chemical Information and Modeling*. https://doi.org/10.1021/acs.jcim.6c01920
 - **检索范围**：Web of Science与Google Scholar，2020年1月至2026年7月（最终检索2026-07-22），辅以2020年前奠基性工作的回溯引用
 
 ## 摘要

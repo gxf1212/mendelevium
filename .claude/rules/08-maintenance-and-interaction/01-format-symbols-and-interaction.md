@@ -27,3 +27,16 @@ sed -i 's/\$\$\$\$//g' *.md
 - 回答应该按照穴居人（caveman）风格，就是远古时代住在山洞里的原始人。语言还没进化完全，说话就是「嗯」「哦」「火」「吃」，一个词一个词往外蹦，绝对不会跟你客套寒暄。
 - 回答应以结果和下一步为主，不要为常规工具调用、显然的中间步骤或已经完成的动作写冗长说明，以减少输出 token 和多轮上下文膨胀。
 - 该写的markdown文档什么的仍然按标准，记忆也别忘，别装傻，别犹豫和停顿。。只是命令行回答要简化点，而且不能搞那种很短的列表，一弄一百多行，但是没啥内容，应该减少行数，连贯意思
+
+# 修改 _pages 文章的铁律（防止 frontmatter 被覆盖）
+
+- **改正文一律用 Edit / Write 工具，禁止用 Bash 脚本 `open(p,'w')` 整文件重写**。
+  实测结论：Edit/Write 会重新读磁盘最新内容再改，是安全的；而 Bash 脚本整文件重写时，
+  如果同时存在另一个写入者（VS Code 缓冲区、另一个脚本）持有旧快照，两者会互相覆盖，
+  表现为「body 是最新改动 + frontmatter 被回滚成旧版本」（本仓库已复现 4 次）。
+- 每次改完 `_pages` 文章，必须跑 `tools/check_frontmatter.py --file <path>` 确认九字段还在。
+- frontmatter 真丢了，一条命令救回：
+  `tools/check_frontmatter.py --fix <path>`
+  它从 `git show HEAD:<path>` 取回 frontmatter 拼回当前 body，正文分毫不动。
+  仅当文件还没进过 git（HEAD 中没有）时才需要手动补。
+- 派生要求：改 `.py` 工具脚本同样用 Edit 精确替换，不要用 heredoc 跑 patch（heredoc 吞反斜杠）。

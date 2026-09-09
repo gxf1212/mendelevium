@@ -18,9 +18,9 @@ lang: zh-CN
 - **作者**：Yongjian Zang、Yu Ni、Xuhua Li、Zhiwei Yang、Zhaoming Fu、Shengli Zhang
 - **发表期刊**：Journal of Biomolecular Structure and Dynamics
 - **发表时间**：2025年2月12日
-- **DOI**：<https://doi.org/10.1080/07391102.2025.2460748>
+- **DOI**：https://doi.org/10.1080/07391102.2025.2460748
 - **单位**：云南师范大学物理与电子信息学院、云南省光电信息技术重点实验室（昆明，中国）；西安交通大学物理学院（西安，中国）
-- **引用格式**：Zang, Y., Ni, Y., Li, X., Yang, Z., Fu, Z., & Zhang, S. (2025). Mechanistic insights into the phosphorylation-regulated a disordered protein interaction module. *Journal of Biomolecular Structure and Dynamics*. <https://doi.org/10.1080/07391102.2025.2460748>
+- **引用格式**：Zang, Y., Ni, Y., Li, X., Yang, Z., Fu, Z., & Zhang, S. (2025). Mechanistic insights into the phosphorylation-regulated a disordered protein interaction module. *Journal of Biomolecular Structure and Dynamics*. https://doi.org/10.1080/07391102.2025.2460748
 
 ## 摘要
 

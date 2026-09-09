@@ -61,6 +61,61 @@ def parse_frontmatter(text):
     return data
 
 
+def split_fm(text):
+    """Split into (frontmatter_block, body). Block includes the --- fences."""
+    lines = text.split("\n")
+    if not lines or lines[0].strip() != "---":
+        return None, text
+    for i in range(1, len(lines)):
+        if lines[i].strip() == "---":
+            return "\n".join(lines[: i + 1]), "\n".join(lines[i + 1 :])
+    return None, text
+
+
+def repo_root():
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "--show-toplevel"], text=True,
+            cwd=os.path.dirname(os.path.abspath(__file__))).strip()
+    except (subprocess.CalledProcessError, OSError):
+        return None
+
+
+def fix_file(path):
+    """Restore a truncated frontmatter from git HEAD, keeping the current body."""
+    errs = check_file(path)
+    if not errs:
+        print(f"[OK] frontmatter 完整，无需修复: {path}")
+        return 0
+    root = repo_root()
+    if root is None:
+        print("[FAIL] 不在 git 仓库中，无法自动修复")
+        return 1
+    rel = os.path.relpath(os.path.abspath(path), root).replace("\\", "/")
+    try:
+        head = subprocess.check_output(
+            ["git", "show", f"HEAD:{rel}"], text=True, cwd=root,
+            stderr=subprocess.DEVNULL)
+    except (subprocess.CalledProcessError, OSError):
+        print(f"[FAIL] git HEAD 中没有该文件，无法自动修复: {rel}")
+        return 1
+    head_fm, _ = split_fm(head)
+    if head_fm is None:
+        print(f"[FAIL] HEAD 版本也没有 frontmatter，需手动补: {rel}")
+        return 1
+    cur = open(path, "r", encoding="utf-8").read()
+    _, body = split_fm(cur)
+    # 始终在 frontmatter 与正文之间保留一个空行，避免 Markdown 渲染粘连
+    open(path, "w", encoding="utf-8").write(
+        head_fm + "\n\n" + body.lstrip("\n"))
+    left = check_file(path)
+    if left:
+        print(f"[FAIL] 修复后仍不完整: {left}")
+        return 1
+    print(f"[FIXED] 已从 git HEAD 恢复 frontmatter，body 保持原样: {path}")
+    return 0
+
+
 def check_file(path):
     try:
         with open(path, "r", encoding="utf-8") as f:
@@ -86,6 +141,10 @@ def check_file(path):
 
 
 def main():
+    if "--fix" in sys.argv:
+        target = sys.argv[sys.argv.index("--fix") + 1]
+        sys.exit(fix_file(target))
+
     if "--file" in sys.argv:
         target = sys.argv[sys.argv.index("--file") + 1]
         errs = check_file(target)

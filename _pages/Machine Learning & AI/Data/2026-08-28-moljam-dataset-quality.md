@@ -18,10 +18,10 @@ lang: zh-CN
 - **作者**：Peng Wang, Zhaoqi Shi, Xufan Gao, Ruhong Zhou
 - **发表期刊**：bioRxiv（预印本）
 - **发表时间**：2026年8月25日
-- **DOI**：<https://doi.org/10.64898/2026.08.21.746384>
+- **DOI**：https://doi.org/10.64898/2026.08.21.746384
 - **单位**：浙江大学定量生物中心、浙江大学物理学院、美国哥伦比亚大学化学系
-- **引用格式**：Wang, P.; Shi, Z.; Gao, X.; Zhou, R. MolJam: A Multidimensional Framework for Assessing Molecular Dataset Quality and Its Impact on Machine Learning. bioRxiv, 2026. <https://doi.org/10.64898/2026.08.21.746384>
-- **代码与数据**：<https://github.com/thezombie0/moljam/>
+- **引用格式**：Wang, P.; Shi, Z.; Gao, X.; Zhou, R. MolJam: A Multidimensional Framework for Assessing Molecular Dataset Quality and Its Impact on Machine Learning. bioRxiv, 2026. https://doi.org/10.64898/2026.08.21.746384
+- **代码与数据**：https://github.com/thezombie0/moljam/
 
 ## 摘要
 

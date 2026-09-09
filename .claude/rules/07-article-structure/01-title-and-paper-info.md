@@ -13,13 +13,15 @@
 - **作者**：[论文的主要作者，不要翻译人名为中文。如果列表太长，就留着开头几个和最后几个（通讯）]
 - **发表期刊**：[英文期刊全称]
 - **发表时间**：[论文实际发表时间，注意Received/Accepted日期与最终发表年份可能不同，只写published时间，格式为**发表时间**：2025年9月25日，别的啥都不写]
-- **DOI**：[必须包含DOI链接，格式：https://doi.org/xxxxx]
+- **DOI**：[必须包含DOI链接，格式：https://doi.org/xxxxx。**写裸链接，不要加尖括号**]
 - **单位**：[如果可知，作者的主要单位，国家肯定是要标注的]
   - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成”浙江大学定量生物中心”，就是我们课题组
 - **引用格式**：[这里是完整的本文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
-- **代码与数据**：[如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在则删除此栏]
+- **代码与数据**：[如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在则删除此栏。**写裸链接，不要加尖括号**]
 
 > **重要提示**：
+> - **链接一律写裸链接**（`https://github.com/xxx`），**禁止**写成 Markdown 自动链接 `<https://github.com/xxx>`。
+>   全站 1800 余处链接都是裸链接，尖括号是异类。若确实需要超链接文字，用 `[文字](url)` 形式，也不要用尖括号。
 > - 发表年份必须根据DOI或PDF页面信息确定，不能仅根据Received日期推测
 > - 例如：Received November 2025，Accepted April 2026 → 发表年份是2026而非2025
 > - frontmatter的date: “2025-08-22”不是文章发表的时间，而是写blog的时间，最后一次修改的日期

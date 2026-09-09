@@ -89,7 +89,7 @@ class BlogQualityChecker:
             self.errors.append("❌ 🚨 发现双backslash公式（高危错误）: $\\\\xxx$")
 
         # 检查是否有未转义的微分符号
-        if re.search(r'\$[^\$]*\bd[A-Za-z]', self.body):
+        if re.search(r'\$[^\$]*(?<!\\mathrm\{)\bd[A-Za-z]', self.body):
             self.warnings.append("⚠️ 可能存在未使用\\mathrm的微分符号，应为 $\\mathrm{d}\\xi$")
 
     def check_bold_format(self):
@@ -153,14 +153,15 @@ class BlogQualityChecker:
 
         self.errors.extend(paren_bold_errors[:3])  # 最多显示3个错误
 
-        # 检查加粗包含LaTeX公式（仅在同一行内匹配，避免跨行误判）
-        formula_bold = re.findall(r'\*\*[^\*\n]*?\$[^\$\n]+\$[^\*\n]*?\*\*', self.body)
+        # 检查加粗包含LaTeX公式：先取出真正的加粗片段，再判断片段内是否含 $。
+        # 注意：不能用 \*\*...\$...\*\* 直接匹配，会把「两个加粗之间的公式」误判为「加粗内的公式」。
+        formula_bold = [m.group(1) for m in re.finditer(r'\*\*([^*\n]+?)\*\*', self.body) if '$' in m.group(1)]
         if formula_bold:
             self.errors.append(f"❌ 发现加粗包含LaTeX公式，禁止在加粗内使用公式")
 
         # 检查加粗包含代码（限制在同一行，避免跨列表项误匹配）
         for line in self.body.split("\n"):
-            if re.search(r'\*\*[^*\n]*?`[^`]+`[^*\n]*?\*\*', line):
+            if any('`' in m.group(1) for m in re.finditer(r'\*\*([^*\n]+?)\*\*', line)):
                 self.errors.append(f"❌ 发现加粗包含代码，禁止在加粗内使用代码")
                 break
 
@@ -173,12 +174,19 @@ class BlogQualityChecker:
             for match in short_bold[:3]:
                 self.warnings.append(f"⚠️ 发现过短的加粗: **{match}**，建议扩展加粗内容或删除加粗")
 
-        # 检查过于碎片化的加粗（多个短加粗在同一行）
+        # 检查过于碎片化的加粗：真正的碎片化是「两个加粗紧挨着、中间只隔极短的连接词」，
+        # 如 **A**、**B** 和 **C**。列表项里「开头加粗 + 若干 punchline 加粗」是规则鼓励的写法，不算碎片化。
+        _sep_pat = re.compile(r'^[\s、，,和或与及/：:]*$')
         for line in self.body.split('\n'):
-            bold_count = line.count('**')
-            if bold_count >= 6:  # 至少3个**xxx**加粗
-                self.warnings.append(f"⚠️ 可能存在过于碎片化的加粗，建议合并或删除部分加粗: {line[:60]}...")
-                break  # 每行只报告一次
+            spans = [m.span() for m in re.finditer(r'\*\*[^*\n]+?\*\*', line)]
+            for (_s1, _e1), (_s2, _e2) in zip(spans, spans[1:]):
+                between = line[_e1:_s2]
+                if len(between) <= 6 and _sep_pat.match(between):
+                    self.warnings.append(f"⚠️ 可能存在过于碎片化的加粗，建议合并或删除部分加粗: {line[:60]}...")
+                    break
+            else:
+                continue
+            break  # 只报告一次
 
     def check_punctuation(self):
         """检查中文标点"""
@@ -223,6 +231,13 @@ class BlogQualityChecker:
 
         if re.search(r'\d+\\.', self.body):
             self.warnings.append(r"⚠️ 可能存在 1\. 这样的转义符，应为 1.")
+
+    def check_links(self):
+        """链接写法：全站惯例是裸链接，禁止 Markdown 自动链接的尖括号 <url>"""
+        angled = re.findall(r'<https?://[^\s>]+>', self.body)
+        if angled:
+            self.errors.append(
+                f"❌ 发现 {len(angled)} 处尖括号链接，应写裸链接（去掉 <>）: {angled[0]}")
 
     def check_irregular_symbols(self):
         """检查不规范符号"""
@@ -324,6 +339,7 @@ class BlogQualityChecker:
         self.check_bold_format()
         self.check_punctuation()
         self.check_escape_characters()
+        self.check_links()
         self.check_irregular_symbols()
         self.check_mermaid()
         self.check_figures()
