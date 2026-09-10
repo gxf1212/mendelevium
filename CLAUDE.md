@@ -12,6 +12,7 @@
 ### 02-tools：工具、PDF和技术记录
 用工具、查PDF、整理技术记录、处理PMC/PubMed下载时，必须读这些：
 - @.claude/rules/02-tools/01-tools-pdf-and-technical-notes.md
+- @.claude/rules/02-tools/02-compress-thumbnail.md
 
 ### 03-article-workflow：推文角色、工作流和核心指令
 “根据PDF写推文”、“写微信公众号文章”、“读论文写文章”时，必须读这些：
@@ -43,6 +44,7 @@
 ### 08-maintenance-and-interaction：维护、符号规范和交互风格
 “格式修复”、“符号规范化”、“回答简洁点”、“按项目交互风格反馈”时，必须读这些：
 - @.claude/rules/08-maintenance-and-interaction/01-format-symbols-and-interaction.md
+- @.claude/rules/08-maintenance-and-interaction/02-translation.md（翻译他人英文博客/文章专用，与原创精读工作流区分）
 
 ## 常见任务索引
 

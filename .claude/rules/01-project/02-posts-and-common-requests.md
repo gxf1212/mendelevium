@@ -3,6 +3,7 @@
 ## posts注意事项
 
 - 图片路径使用相对路径，确保在不同环境下都能正常显示
+- 正常写推文**不需要主动压缩图片**：`tools/compress.py`（旧称 compress_images.py，把图片压到≤500kB）是按需工具，仅在图片体积过大、影响页面加载时才运行；新文章配图直接放进相对路径文件夹即可
 - 保持中英文混用的写作风格，适合中文科研环境
 - 定期整理和归档过时的内容
 - should add frontmatter for each post (identify .md files without ---), e.g.
