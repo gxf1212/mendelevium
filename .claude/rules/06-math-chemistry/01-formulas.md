@@ -63,6 +63,22 @@
   - ❌ "electrostatic"（英文混入） → ✅ "静电"或"高度静电"
   - ❌ "抓"（动词） → ✅ "配位"（学术语境）
   - ❌ "trajectory / sign error / blindly / mediocre / standard error" 等散装英文 → ✅ "轨迹 / 符号预测错误 / 盲目 / 平庸（或改写） / 标准误"（专有协议名如 single-trajectory、方法名如 ab initio 可保留）
+### 拓扑数据分析（TDA）/ 分子机器学习术语对照
+
+- **persistent homology**：「持续同调」与「持久同调」在中文文献中并存（AMS 专栏中文版用后者，《图学学报》用前者），**两者都对**。选定一个后全文统一，并在首次出现处注明另一个常见译法，方便读者检索。
+- 主流译法（优先用这些）：
+  - persistence diagram → **持久性图 / 持久图**；persistence landscape → **持久性景观**；persistence image → **持久性图像**
+  - persistence lifetime → **持久性寿命**（$\ell = d - b$）；**midlife 别译成「中寿」**，它是出生与死亡尺度的中点 $(b+d)/2$，译「**中值寿命**」并补注英文与含义
+  - Betti number → **Betti 数**（不译「贝蒂数」以外的怪名，$\beta_0$ 连通分量 / $\beta_1$ 环 / $\beta_2$ 空腔）
+  - simplicial complex → **单纯复形**；Vietoris-Rips filtration → **Vietoris-Rips 滤流**（不只是「复形」，filtration 是逐级嵌套的复形序列，要讲清 $\epsilon$ 由小到大放宽的过程）
+  - intrinsic dimension → **本征维度**（也作「内在维度」，但**同一篇里只能用一个**）
+  - topological data analysis → **拓扑数据分析（TDA）**
+- **化学信息学指标的缩写，首次出现必须给中文全称**：
+  - SALI = 结构-活性景观指数；SARI = 结构-活性关系指数
+  - MODI = 可模型性指数；RMODI = 回归可模型性指数
+  - ROGI = 粗糙度指数；ROGI-XD = 消去表征维度影响的改进版
+  - activity cliff = **活性悬崖**；property / QSAR landscape = **性质景观**
+  - scaffold split = 骨架拆分（Bemis-Murcko 骨架）
 - **写完后必须用以下脚本扫一遍**，确认无上述错误：
   ```bash
   F:/Anaconda/envs/download/python.exe -c "

@@ -18,6 +18,7 @@
   - 如果有Institute of Quantitative Biology, School of Physics, and College of Life Sciences, Zhejiang University，IQB应该翻译成”浙江大学定量生物中心”，就是我们课题组
 - **引用格式**：[这里是完整的本文引用信息，请使用标准的学术引用格式，例如：Author, A. A., & Author, B. B. (Year). Title of work. *Journal Title*, *Volume*(Issue), pages. https://doi.org/...]
 - **代码与数据**：[如果本文有源代码（GitHub等）、web server等，务必全部列出来。不存在则删除此栏。**写裸链接，不要加尖括号**]
+  - **写入前必须访问验证链接可达**（GitHub 组织名常带连字符，如 `Boehringer-Ingelheim` 不是 `BoehringerIngelheim`；一次笔误就是死链）。优先采用论文 Availability/Data availability 段登记的正式仓库，作者个人仓库若 404 就不写。
 
 > **重要提示**：
 > - **链接一律写裸链接**（`https://github.com/xxx`），**禁止**写成 Markdown 自动链接 `<https://github.com/xxx>`。

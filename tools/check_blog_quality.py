@@ -88,8 +88,11 @@ class BlogQualityChecker:
         if re.search(r'\$[^\$]*\\\\[^\$]*\$', self.body):
             self.errors.append("❌ 🚨 发现双backslash公式（高危错误）: $\\\\xxx$")
 
-        # 检查是否有未转义的微分符号
-        if re.search(r'\$[^\$]*(?<!\\mathrm\{)\bd[A-Za-z]', self.body):
+        # 检查是否有未转义的微分符号。
+        # 必须先按「$...$」成对切出公式片段再判断：直接用 \$[^\$]*\bd[A-Za-z] 会从
+        # 公式的结束 $ 一路扫到下一个公式的开始 $，把中间的正文误当成公式内容。
+        _inline = re.findall(r'\$[^\$\n]*\$', self.body)
+        if any(re.search(r'(?<!\\mathrm\{)\bd[A-Za-z]', f) for f in _inline):
             self.warnings.append("⚠️ 可能存在未使用\\mathrm的微分符号，应为 $\\mathrm{d}\\xi$")
 
     def check_bold_format(self):
