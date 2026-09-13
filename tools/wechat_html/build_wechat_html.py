@@ -800,10 +800,14 @@ def flatten_lists(html, theme=None, list_style="plain"):
                           f'color:{list_cfg["bullet_color"]};">'
                           f'{list_cfg["bullet_symbol"]}</span> ')
             indent = '&nbsp;' * (list_cfg["indent_per_level"] * depth)
+            # text-align:left —— 微信编辑器默认对 <p> 应用 justify，列表项多为短条目
+            # （如论文信息区的「引用格式/DOI/代码与数据」），两端对齐会把字距拉散，
+            # 必须显式左对齐覆盖。正文长段落保持 justify（中文标准排版）。
             out.append(f'<p style="margin:{list_cfg["margin"]};'
                        f'font-size:{body["size"]}px;'
                        f'line-height:{body["line_height"]};'
-                       f'color:{body["color"]};">'
+                       f'color:{body["color"]};'
+                       f'text-align:left;">'
                        f'{indent}{bullet}{text}</p>')
             out.extend(nested)
         return '\n'.join(out)

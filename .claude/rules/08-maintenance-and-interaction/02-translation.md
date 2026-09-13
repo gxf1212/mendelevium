@@ -38,9 +38,10 @@
 ## 5. frontmatter 与图片
 
 - 九字段照常补全：`author` 仍填博客主 `Xufan Gao`（出处靠文首翻译说明体现，不在 author 字段改原作者）；`image`/`thumbnail` 用本仓库图床（GitHub raw URL），不用原博客图。
-- 内文配图：可**直接引用原博客远程图**（保留原作者图床链接，用 `![](url)` 或 `[文字](url)`），按 `07-article-structure/01-title-and-paper-info.md` 的「写入前必须访问验证链接可达」核验；也可按项目图规范把图下载到文章同级 `emlmf/` 等文件夹再用相对路径。**禁止写「（此处原图）」「图X略」之类占位文字**。
-- 链接一律裸链接，禁止尖括号 `<https://...>`。
+- 内文配图：**优先把图下载到文章同级文件夹**（如 `emlmf/`、`agents_benchmarking_figs/`），用相对路径引用（如 `agents_benchmarking_figs/fig1.png`），与博客「图片放 md 同级子文件夹、不散放、不依赖远程」的惯例一致。下载前按 `07-article-structure/01-title-and-paper-info.md` 的「写入前必须访问验证链接可达」核验原图链接。**禁止写「（此处原图）」「图X略」之类占位文字**。
+- 确实要直引原博客远程图时，须先核验链接可达，并在交付说明里注明「远程图未入库」；但这只是兜底，默认仍下载本地下放仓库。
+- 链接一律裸链接，禁止尖括号 `<https://...>`。翻译时**保留原文的内联超链接**：原文在论文标题、数据集/工具名、arXiv编号、webinar等处的链接，逐一以 `[文字](URL)` 形式补回对应位置（如 Pat Walters 博文里的《Practically significant method comparison protocols for machine learning in small molecule drug discovery》论文、herdr、TabPFN、各模型 arXiv 编号等）；URL 用 `[]()` 形式、禁止尖括号，且与相邻中文之间不空格。
 
 ## 6. 校验
 
-翻译稿写完后同样跑 `tools/check_frontmatter.py --file <path>` 与 `tools/check_blog_quality.py <path>`；远程图片若被质量脚本标为「图不存在」，属预期（非本仓库图床），在交付说明里注明即可，不必强行改成本地图。
+翻译稿写完后同样跑 `tools/check_frontmatter.py --file <path>` 与 `tools/check_blog_quality.py <path>`；若因特殊原因用了远程图而被标为「图不存在」，在交付说明里注明原因即可，但默认仍应把图下载到本地、放进取仓库后再引用相对路径。

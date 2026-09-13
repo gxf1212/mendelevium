@@ -79,6 +79,10 @@
   - ROGI = 粗糙度指数；ROGI-XD = 消去表征维度影响的改进版
   - activity cliff = **活性悬崖**；property / QSAR landscape = **性质景观**
   - scaffold split = 骨架拆分（Bemis-Murcko 骨架）
+- **机构 / 药企中文名（易错）**：
+  - Boehringer Ingelheim → **勃林格殷格翰**（「勃」不是「柏」，勃林格殷格翰中国官网 boehringer-ingelheim.cn 可查；公司总部德国殷格翰）
+  - Central Data Science（其部门名）→ **中央数据科学部**（central 译「中央」）
+  - Biberach/Riss → **比伯拉赫**；University of Tübingen → **图宾根大学**
 - **写完后必须用以下脚本扫一遍**，确认无上述错误：
   ```bash
   F:/Anaconda/envs/download/python.exe -c "
