@@ -282,7 +282,7 @@ class BlogQualityChecker:
             self.warnings.append(f"⚠️ 正文图片数量较多（{len(figures)}张），建议最多8张")
 
         # 检查图注完整性
-        figure_captions = re.findall(r'\*\*图\d+[：:][^*]+\*\*', self.body)
+        figure_captions = re.findall(r'\*\*图S?\d+[：:][^*]+\*\*', self.body)
         if len(figure_captions) != len(figures):
             self.warnings.append(f"⚠️ 图片数量（{len(figures)}）与图注数量（{len(figure_captions)}）不匹配")
 

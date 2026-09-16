@@ -861,6 +861,18 @@ def suppress_dup_title(html, title):
     return html
 
 
+def links_to_plaintext(html):
+    """微信草稿会剥掉 <a> 超链接、只留文字而丢失 URL。
+    把外部 http(s) 链接渲染为可见文字「文字（URL）」；内部锚点(#fn)不动。"""
+    def _repl(m):
+        url = html_mod.unescape(m.group(1))
+        text = m.group(2).strip()
+        return f'{text}（{url}）'
+    # 只匹配外部 http(s) 链接，避免误伤 #fn 脚注锚点
+    return re.sub(r'<a\s+[^>]*href="(https?://[^"]+)"[^>]*>(.*?)</a>',
+                  _repl, html, flags=re.S)
+
+
 def build_doc(banner_b64, body_html, footer_b64, no_banner, no_footer, theme=None):
     theme = theme or load_theme()
     col = theme["colors"]
@@ -952,6 +964,8 @@ def main():
     # 1) MD → 原始 HTML（footnotes 支持 [^n] 参考文献）
     html = markdown.markdown(body_stashed, extensions=[
         "tables", "fenced_code", "sane_lists", "footnotes"])
+    # 1.1) 微信不支持超链接：外部 http(s) 链接改为可见文字「文字（URL）」
+    html = links_to_plaintext(html)
     # 2) mermaid → 图片
     html = render_mermaid(html, base_dir, args.diagram, args.quality, theme)
     # 2.5) 修复代码块内 code 被误套浅蓝底

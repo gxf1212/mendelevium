@@ -25,6 +25,7 @@ tools/__pycache__/
 *.docx
 *.pdf
 _pages/**/*.txt
+_pages/**/*.html
 reference-mcp
 *private
 .workbuddy
