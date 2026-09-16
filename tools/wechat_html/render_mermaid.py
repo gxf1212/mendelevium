@@ -57,7 +57,16 @@ def _is_word(ch):
     return (65 <= c <= 90) or (97 <= c <= 122) or (48 <= c <= 57)
 
 
-def wrap(draw, text, f, max_w):
+# Mermaid 标签里的显式换行：<br/> <br> <br />（大小写不敏感）。
+# 官方引擎（mermaid.js）会把它们渲染成真换行，内置 Pillow 渲染器必须自己拆，
+# 否则 <br/> 会被当成普通字符整串画进节点里。
+_BR_RE = re.compile(r'<br\s*/?>', re.I)
+# 简单内联标签：Pillow 画不出来，去掉标签、保留文字即可。
+_INLINE_TAG_RE = re.compile(
+    r'</?(?:b|i|u|s|em|strong|span|code|sub|sup|font|div|p)\b[^>]*/?>', re.I)
+
+
+def _wrap_one(draw, text, f, max_w):
     """按 max_w 换行；优先在英文/数字词之前断开，避免 SiteMap 这类词被逐字母截断。"""
     lines, cur = [], ""
     for ch in text:
@@ -82,6 +91,23 @@ def wrap(draw, text, f, max_w):
     if cur:
         lines.append(cur)
     return lines
+
+
+def wrap(draw, text, f, max_w):
+    """按 max_w 换行，并支持 mermaid 标签里的 <br/> 显式换行。
+
+    先按 <br/> 把标签拆成若干段，逐段折行后再拼起来；顺带剥掉 Pillow 渲染不了
+    的内联 HTML 标签。没有 <br/> 时行为与原来完全一致。
+    """
+    out = []
+    for seg in _BR_RE.split(text):
+        seg = _INLINE_TAG_RE.sub('', seg).strip()
+        out.extend(_wrap_one(draw, seg, f, max_w) if seg else [''])
+    while out and out[0] == '':
+        out.pop(0)
+    while out and out[-1] == '':
+        out.pop()
+    return out or ['']
 
 
 def node_box(draw, label, fs=NODE_FS, max_w=NODE_MAXW):

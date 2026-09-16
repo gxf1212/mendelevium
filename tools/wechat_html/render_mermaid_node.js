@@ -56,6 +56,11 @@ function defaultThemeVars(item) {
       // 让背景透明，截图时由页面背景兜底（白底）
       background: 'transparent',
     },
+    // 标签里的内联 HTML（<br/> 等）要生效，必须 securityLevel:'loose'
+    // 且 flowchart.htmlLabels:true。mermaid v11+ 在默认 strict 下会静默
+    // 降级成纯文本，<br/> 就画不出来（只剩一串字面量）。
+    securityLevel: 'loose',
+    flowchart: { htmlLabels: true },
   };
 }
 

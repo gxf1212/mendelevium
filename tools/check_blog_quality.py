@@ -272,9 +272,14 @@ class BlogQualityChecker:
                 self.warnings.append(f"⚠️ Mermaid图{i+1}列表格式可能有误，应为2.xx而非2. xx")
 
     def check_figures(self):
-        """检查图片和图注"""
-        # 查找所有图片
-        figures = re.findall(r'!\[([^\]]*)\]\(([^)]+)\)', self.body)
+        """检查图片和图注（Markdown 图片与 HTML <img> 标签一并统计）"""
+        # 查找所有图片：Markdown 语法 ![]() + HTML 标签 <img ...>
+        # 先剔除围栏代码块与行内代码，避免把代码里的示例标签算成图片
+        body_no_code = re.sub(r'```[\s\S]*?```', '', self.body)
+        body_no_code = re.sub(r'`[^`\n]*`', '', body_no_code)
+        md_figures = re.findall(r'!\[([^\]]*)\]\(([^)]+)\)', body_no_code)
+        html_figures = re.findall(r'<img\b[^>]*>', body_no_code, re.IGNORECASE)
+        figures = md_figures + [('<img>', '') for _ in html_figures]
 
         if len(figures) < 4:
             self.warnings.append(f"⚠️ 正文图片数量较少（{len(figures)}张），建议至少4张")
@@ -282,9 +287,12 @@ class BlogQualityChecker:
             self.warnings.append(f"⚠️ 正文图片数量较多（{len(figures)}张），建议最多8张")
 
         # 检查图注完整性
-        figure_captions = re.findall(r'\*\*图S?\d+[：:][^*]+\*\*', self.body)
+        figure_captions = re.findall(r'\*\*图S?\d+[：:][^*]+\*\*', body_no_code)
         if len(figure_captions) != len(figures):
-            self.warnings.append(f"⚠️ 图片数量（{len(figures)}）与图注数量（{len(figure_captions)}）不匹配")
+            self.warnings.append(
+                f"⚠️ 图片数量（{len(figures)}）与图注数量（{len(figure_captions)}）不匹配"
+                f"（Markdown {len(md_figures)} 张 + HTML <img> {len(html_figures)} 张）"
+            )
 
     def check_length(self):
         """检查文章长度"""
