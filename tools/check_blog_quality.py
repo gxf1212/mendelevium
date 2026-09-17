@@ -92,7 +92,8 @@ class BlogQualityChecker:
         # 必须先按「$...$」成对切出公式片段再判断：直接用 \$[^\$]*\bd[A-Za-z] 会从
         # 公式的结束 $ 一路扫到下一个公式的开始 $，把中间的正文误当成公式内容。
         _inline = re.findall(r'\$[^\$\n]*\$', self.body)
-        if any(re.search(r'(?<!\\mathrm\{)\bd[A-Za-z]', f) for f in _inline):
+        # (?<!\\) 排除 \dfrac、\delta、\ddagger 等 LaTeX 命令名的误报
+        if any(re.search(r'(?<!\\mathrm\{)(?<!\\)\bd[A-Za-z]', f) for f in _inline):
             self.warnings.append("⚠️ 可能存在未使用\\mathrm的微分符号，应为 $\\mathrm{d}\\xi$")
 
     def check_bold_format(self):
@@ -244,6 +245,9 @@ class BlogQualityChecker:
 
     def check_irregular_symbols(self):
         """检查不规范符号"""
+        # 先剔除 LaTeX 公式（$...$ 与 $$...$$），避免把化学式/数学里的 2+、~5 等误判为不规范符号
+        body_no_math = re.sub(r'\$\$[\s\S]*?\$\$', '', self.body)
+        body_no_math = re.sub(r'\$[^$\n]*\$', '', body_no_math)
         irregular_patterns = [
             (r'~\d+', '~700应改为约700个'),
             (r'\d+\+(?!\d)', '52000+应改为52000余个'),
@@ -251,7 +255,7 @@ class BlogQualityChecker:
         ]
 
         for pattern, msg in irregular_patterns:
-            if re.search(pattern, self.body):
+            if re.search(pattern, body_no_math):
                 self.warnings.append(f"⚠️ 发现不规范符号: {msg}")
 
     def check_mermaid(self):
