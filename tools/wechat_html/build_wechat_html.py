@@ -138,7 +138,14 @@ def wrap(draw, text, f, max_w):
 
 # ===== 图片 → base64（JPEG 压缩控制体积）=====
 def img_to_b64(path, max_w=1000, quality=82):
-    im = Image.open(path).convert("RGB")
+    if path.lower().endswith(".svg"):
+        import cairosvg
+        # 透明 SVG 若直接 convert("RGB") 会把透明区合成成黑色；
+        # 显式白底，避免微信里显示成黑块
+        png_bytes = cairosvg.svg2png(url=path, scale=2.0, background_color="white")
+        im = Image.open(io.BytesIO(png_bytes)).convert("RGB")
+    else:
+        im = Image.open(path).convert("RGB")
     if im.width > max_w:
         h = int(im.height * max_w / im.width)
         im = im.resize((max_w, h))

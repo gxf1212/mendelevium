@@ -4,8 +4,8 @@ date: "2026-08-14"
 last_modified_at: 2026-08-14
 tags: [gromacs, plumed, cuda, v100, mpi, gpu-computing, openmpi, molecular-dynamics]
 description: "在 8 张 V100 的机器上跑 GROMACS 2026.1 加 PLUMED 时踩的 CUDA 和 MPI 的坑以及最终解决方案"
-image: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-vg7vk8.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---

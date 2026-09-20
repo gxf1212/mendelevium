@@ -4,8 +4,8 @@ date: "2026-08-16"
 last_modified_at: 2026-08-16
 tags: [claude-code, cross-session, peer-messaging, compact, debugging, ai-tools]
 description: "Claude Code 跨 session 通信机制说明，以及版本更新失败、peer messaging 不可用、thinking block 解析错误、频繁 compact 等问题的排查记录"
-image: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
-thumbnail: "/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
+image: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
+thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/img/thumbnail_mine/wh-1kdv6v.jpg"
 author: Xufan Gao
 lang: zh-CN
 ---
