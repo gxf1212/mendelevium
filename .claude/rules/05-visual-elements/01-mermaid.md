@@ -3,7 +3,8 @@
 - **Mermaid使用规范**:
   - 有mermaid图就精简文字了，图里文字多点，比如未来方向。表不用改，就是那种一大堆文字的要改，精简图外的重复信息的文字。搞成mermaid思维导图的目的是改变一大堆文字的呈现方式，弄成图不至于太单调，而不是为了减少内容。当然一篇里面两三张mermaid图就行了，还有正文图呢，反正是隔一段文字就有图
   - **mermaid图和文章图不能连着放**：mermaid代码块和`![fig]`/`![scheme]`之间必须有至少一段文字隔开，不能直接相邻。mermaid结束后先写一段引导文字，再放图片
-  - **必须使用横向布局** (必须`graph TB`，如果subgraph中有箭头，请使用 `direction LR`，否（节点间只是简单并列）则TB方向。），以创建宽屏、信息密度高的图表，避免简单的垂直长条。参考_pages\Free Energy\2025-11-04-mm-pbsa-sampling-challenges.md这篇里面的示例。subgraph都有个代号，类似subgraph S3["3.多层次评估"] 
+  - **必须使用横向布局** (必须`graph TB`，如果subgraph中有箭头，请使用 `direction LR`，否（节点间只是简单并列）则TB方向。），以创建宽屏、信息密度高的图表，避免简单的垂直长条。参考_pages\Free Energy\2025-11-04-mm-pbsa-sampling-challenges.md这篇里面的示例。subgraph都有个代号，类似subgraph S3["3.多层次评估"]
+  - **层与层之间用 subgraph 级连接**：跨 subgraph 的连接写成 `S1 --> S2 --> S3`（subgraph 到 subgraph），不要把某一层 subgraph 内的节点直接连到另一层 subgraph 内的节点（例如 S1 里的 A 连到 S2 里的 B）。上面那篇参考示例就是这么画的。 
   - 鼓励使用 `subgraph "子图标题"` 来组织和划分逻辑模块，**子图标题不要使用任何Markdown标记**。单个元素的就不用subgraph了
   - 使用中文作为节点描述。节点内的换行请使用 `<br/>`。
   - "2. 随机森林"这样的列表不要在2.后有空格，应该是"2.随机森林"，否则会出现Unsupported Markdown
