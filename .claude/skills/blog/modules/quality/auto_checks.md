@@ -37,9 +37,9 @@ python3 tools/check_blog_quality.py <markdown_file>
 - 本文信息
 - 摘要
 - 核心结论
+- 创新点
 - 背景
 - 关键科学问题
-- 创新点
 - 研究内容
 - 关键结论与批判性总结
 
