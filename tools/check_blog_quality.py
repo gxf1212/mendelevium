@@ -298,6 +298,36 @@ class BlogQualityChecker:
                 f"（Markdown {len(md_figures)} 张 + HTML <img> {len(html_figures)} 张）"
             )
 
+    def check_list_blank_line(self):
+        """检查列表前是否缺空行：普通文本行后紧跟列表首项会导致列表不渲染。
+
+        Markdown 规定段落与列表之间必须有空行，否则列表被当作段落文字。
+        典型症状：图注 `**图N：标题**` 后直接跟 `- 子图说明`，公众号 HTML 里
+        列表项被塞进同一个 <p> 而不渲染成列表。
+        """
+        lines = self.body.split('\n')
+        in_fence = False
+        for i, line in enumerate(lines):
+            if re.match(r'^\s*```', line):
+                in_fence = not in_fence
+                continue
+            if in_fence:
+                continue
+            if not re.match(r'^\s*([-*+]\s|\d+\.\s)', line):
+                continue
+            if i == 0:
+                continue
+            prev = lines[i - 1]
+            # 上一行为空、或本身是列表/表格/引用/标题/代码围栏，均视为合法
+            if not prev.strip():
+                continue
+            if re.match(r'^\s*([-*+]\s|\d+\.\s|>|#|\||```)', prev):
+                continue
+            self.errors.append(
+                f"❌ 第{i + 1}行列表前缺空行：上一行「{prev.strip()[:30]}」是普通文本，"
+                f"列表不会被渲染，请在两者之间加一个空行"
+            )
+
     def check_length(self):
         """检查文章长度"""
         lines = self.content.split('\n')
@@ -358,6 +388,7 @@ class BlogQualityChecker:
         self.check_irregular_symbols()
         self.check_mermaid()
         self.check_figures()
+        self.check_list_blank_line()
         self.check_length()
         self.check_title_words()
         self.check_qa_format()

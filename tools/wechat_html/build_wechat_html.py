@@ -92,6 +92,34 @@ FONT_STACK = "-apple-system,'Segoe UI','Microsoft YaHei',sans-serif"
 MONO_STACK = "Consolas,'Courier New',monospace"
 
 
+def warn_list_blank_line(body):
+    """生成前检测列表前缺空行：普通文本行紧跟列表项会导致列表不渲染。"""
+    lines = body.replace('\r\n', '\n').split('\n')
+    bad = []
+    in_fence = False
+    for i, line in enumerate(lines):
+        if re.match(r'^\s*```', line):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        if not re.match(r'^\s*([-*+]\s|\d+\.\s)', line):
+            continue
+        if i == 0:
+            continue
+        prev = lines[i - 1]
+        if not prev.strip():
+            continue
+        if re.match(r'^\s*([-*+]\s|\d+\.\s|>|#|\||```)', prev):
+            continue
+        bad.append((i + 1, prev.strip()[:30]))
+    if bad:
+        print("⚠️  检测到列表前缺空行（Markdown 段落与列表之间必须有空行，否则列表不会被渲染）：")
+        for ln, prev in bad:
+            print(f"   第{ln}行，上一行：{prev}")
+    return bad
+
+
 def load_theme(path=None):
     """加载主题 JSON。path=None 时回退默认主题（themes/default.json）。
     返回 dict；缺失字段用 default.json 兜底，保证向后兼容。
@@ -964,6 +992,9 @@ def main():
     raw = open(md_path, encoding="utf-8").read()
     fm, body = parse_frontmatter(raw)
     title = fm.get("title", "")
+
+    # 0.1) 生成前检测列表前缺空行（Markdown 段落与列表间必须空行）
+    warn_list_blank_line(body)
 
     # 0) 提取公式，避免被 markdown 破坏（代码围栏内的 $ 不当公式）
     body_stashed, math_map = stash_math(body)
