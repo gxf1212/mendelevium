@@ -47,7 +47,6 @@ python3 tools/check_blog_quality.py <markdown_file>
 
 **本文信息检查**：
 - [ ] 标题
-- [ ] 作者
 - [ ] 发表期刊
 - [ ] 发表时间
 - [ ] 单位

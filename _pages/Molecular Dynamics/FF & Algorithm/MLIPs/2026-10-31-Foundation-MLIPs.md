@@ -15,7 +15,6 @@ lang: zh-CN
 ## 本文信息
 
 - **标题**：计算化学的新范式
-- **作者**：Raphael T. Husistein、Markus Reiher
 - **发表期刊**：Journal of the American Chemical Society
 - **发表时间**：2026年10月20日
 - **文章类型**：Perspective（观点文章）

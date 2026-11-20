@@ -19,7 +19,6 @@ lang: zh-CN
 - **发表时间**：2025年2月17日
 - **DOI**：https://doi.org/10.1021/acs.jcim.4c02326
 - **单位**：阿斯利康（AstraZeneca）生物制药研发部药物化学团队，瑞典哥德堡
-- **作者**：Zhao, H.; Kwapień, K.; Nittinger, E.; Tyrchan, C.; Nilsson, M.; Berglund, S.; Czechtizky, W.
 - **引用格式**：Zhao, H.; Kwapień, K.; Nittinger, E.; Tyrchan, C.; Nilsson, M.; Berglund, S.; Czechtizky, W. AI-Augmented R-Group Exploration in Medicinal Chemistry. *J. Chem. Inf. Model.* **2025**， *65* (5), 2251–2255. https://doi.org/10.1021/acs.jcim.4c02326
 - **代码与数据**：AIR GitHub仓库：https://github.com/WIMNZhao/AIR
 

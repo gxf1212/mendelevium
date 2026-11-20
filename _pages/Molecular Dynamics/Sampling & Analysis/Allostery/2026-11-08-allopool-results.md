@@ -17,7 +17,6 @@ lang: zh-CN
 ## 本文信息
 
 - **标题**：AlloPool是一种从分子动力学模拟推断蛋白质别构调控的深度学习框架
-- **作者**：Marfoglia, M., Pedraza-Joya, M. A., Guirardel, L., Chatzi Souleiman, A., & Barth, P.
 - **发表期刊**：PLOS Biology
 - **发表时间**：2026年9月21日
 - **单位**：瑞士洛桑联邦理工学院（EPFL）跨学院生物工程研究所；瑞士洛桑路德维希癌症研究所

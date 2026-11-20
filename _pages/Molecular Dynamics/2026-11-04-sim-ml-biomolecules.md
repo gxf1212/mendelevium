@@ -18,7 +18,6 @@ thumbnail: "https://raw.githubusercontent.com/gxf1212/mendelevium/main/assets/im
 - **发表期刊**：Current Opinion in Structural Biology
 - **发表时间**：2026年10月23日
 - **DOI**：[https://doi.org/10.1016/j.sbi.2026.103415](https://doi.org/10.1016/j.sbi.2026.103415)
-- **作者**：Syma Khalid、Francesco Luigi Gervasio
 - **单位**：英国牛津大学生物化学系；英国伦敦大学学院化学系；瑞士日内瓦大学药学院
 - **文章类型**：Editorial（专题导言）
 - **引用格式**：Khalid, S., & Gervasio, F. L. (2026). Editorial overview: Theory and Simulation/Computational Methods (2026): Combining simulations and machine learning to model the structure and dynamics of complex biomolecules. *Current Opinion in Structural Biology*, *102*, 103415. [https://doi.org/10.1016/j.sbi.2026.103415](https://doi.org/10.1016/j.sbi.2026.103415)

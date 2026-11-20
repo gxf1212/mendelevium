@@ -15,7 +15,6 @@ lang: zh-CN
 ## 本文信息
 
 - **标题**：利用人工智能理解酶催化并发现新酶
-- **作者**：Brownless, A.-L. R.; Kamerlin, S. C. L.
 - **发表期刊**：Current Opinion in Structural Biology
 - **发表时间**：2026年10月29日
 - **DOI**：https://doi.org/10.1016/j.sbi.2026.103422

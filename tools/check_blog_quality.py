@@ -77,7 +77,7 @@ class BlogQualityChecker:
         # 检查本文信息的完整性
         if '## 本文信息' in self.body:
             info_section = self.body.split('## 本文信息', 1)[1].split('##', 1)[0]
-            required_info = ['标题', '作者', '发表时间', '单位', '引用格式']
+            required_info = ['标题', '发表时间', '单位', '引用格式']
             for info in required_info:
                 if info not in info_section:
                     self.warnings.append(f"⚠️ 本文信息可能缺少: {info}")
