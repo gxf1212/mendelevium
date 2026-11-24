@@ -383,6 +383,24 @@ def parse_frontmatter(text):
     return fm, body
 
 
+# ===== 嵌套列表缩进规范化 =====
+def normalize_list_indent(body):
+    """博客源文件用 2 空格表示一级列表缩进（如「代码与数据」栏的子链接），
+    而 Python markdown 库按 4 空格一个 tab 识别嵌套，2 空格会被当成同级
+    bullet。把列表项行的前导缩进翻倍（2→4、4→8），使二级及更深列表正确
+    嵌套，避免被展平成同级。代码围栏已在 stash_math 里替换为占位符，
+    不会误伤代码块。"""
+    lines = body.replace('\r\n', '\n').split('\n')
+    out = []
+    for line in lines:
+        m = re.match(r'^(\s*)([-*+]|\d+\.)\s', line)
+        if m and m.group(1):
+            out.append(m.group(1) * 2 + line[len(m.group(1)):])
+        else:
+            out.append(line)
+    return '\n'.join(out)
+
+
 # ===== 公式：提取 / 还原 + 代码块修复 =====
 def stash_math(body):
     """markdown 转换前提取 $...$ / $$...$$ 为占位 token，避免被 markdown 破坏。
@@ -998,6 +1016,9 @@ def main():
 
     # 0) 提取公式，避免被 markdown 破坏（代码围栏内的 $ 不当公式）
     body_stashed, math_map = stash_math(body)
+
+    # 1.0) 嵌套列表缩进：2 空格 → 4 空格，让 Python markdown 正确嵌套子列表
+    body_stashed = normalize_list_indent(body_stashed)
 
     # 1) MD → 原始 HTML（footnotes 支持 [^n] 参考文献）
     html = markdown.markdown(body_stashed, extensions=[

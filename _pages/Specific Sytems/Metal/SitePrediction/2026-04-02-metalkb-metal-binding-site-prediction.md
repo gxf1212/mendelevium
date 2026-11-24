@@ -282,4 +282,4 @@ $$
 
 ## 相关文档
 
-**结果与评估**：[MetalKB：性能评估与案例分析](/Specific%20Sytems/Metal/2026-04-03-metalkb-results/) - Metal3D/TEMSP基准测试性能、多金属评估与代表性案例
+**结果与评估**：[MetalKB：性能评估与案例分析](/Specific%20Sytems/Metal/SitePrediction/2026-04-03-metalkb-results/) - Metal3D/TEMSP基准测试性能、多金属评估与代表性案例
