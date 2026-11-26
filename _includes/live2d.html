@@ -1,0 +1,95 @@
+<style>
+    #waifu {
+        left: auto;
+        right: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    #live2d {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    #waifu-tips {
+        bottom: 100%;
+        right: 0;
+        width: 15rem;
+        margin: 0;
+        box-sizing: border-box;
+        pointer-events: none;
+    }
+
+    #waifu-tips.waifu-tips-active {
+        pointer-events: auto;
+    }
+
+    #waifu-tool {
+        top: 0;
+    }
+
+    #waifu-tool .fa-lg {
+        height: 1.5rem;
+        font-family: "Font Awesome 6 Free";
+    }
+
+    #waifu-toggle {
+        left: auto;
+        right: 0;
+        margin: 0;
+        padding: .5rem .25rem;
+        width: auto;
+        z-index: 2;
+        display: none;
+    }
+
+    #waifu-toggle.waifu-toggle-active {
+        display: block;
+    }
+
+    @media (width < 1025px) {
+        #waifu, #waifu-toggle.waifu-toggle-active {
+            display: none !important;
+        }
+    }
+
+    @media (width >= 1025px) {
+        body:has(#waifu) .top-arrow {
+            left: min(calc(50vw + 23rem), calc(100vw - 16rem));
+            right: auto;
+        }
+    }
+</style>
+<script>
+    (() => {
+        if (!window.matchMedia("(min-width: 1025px)").matches) return;
+
+        const widget = "https://fastly.jsdelivr.net/gh/gxf1212/live2d-widget@39cab3033522739303661055ed0d1c36939e80f9/";
+        const load = (element, url) => new Promise((resolve, reject) => {
+            element.onload = resolve;
+            element.onerror = () => reject(new Error(url));
+            document.head.appendChild(element);
+        });
+        const stylesheet = (url) => {
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = url;
+            // Keep the theme's position overrides after the widget stylesheet.
+            return load(link, url);
+        };
+        const script = (url) => {
+            const tag = document.createElement("script");
+            tag.src = url;
+            return load(tag, url);
+        };
+
+        Promise.all([
+            stylesheet("https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"),
+            stylesheet(widget + "waifu.css"),
+            script(widget + "live2d.min.js"),
+            script(widget + "waifu-tips.js")
+        ]).then(() => initWidget({
+            waifuPath: widget + "waifu-tips.json",
+            cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/"
+        })).catch((error) => console.warn("Live2D widget could not load:", error));
+    })();
+</script>
